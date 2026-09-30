@@ -1,0 +1,40 @@
+{
+  "id": "DA-TEC-0002",
+  "type": "technology",
+  "title": "Apache Iceberg",
+  "domain": "Technologies",
+  "status": "proposed",
+  "quality": "draft",
+  "confidence": "medium",
+  "epistemic_status": "common-practice",
+  "owner": "unassigned",
+  "version": "0.1.0",
+  "publication_tier": "community",
+  "summary": "Open table format for large analytic datasets providing snapshots, time travel, schema evolution and hidden partitioning on file/object storage.",
+  "path": "17-technology/databases/Apache Iceberg.md",
+  "relationships": [
+    {
+      "type": "implements",
+      "direction": "out",
+      "target": "DA-CON-0009",
+      "title": "Physical Data Model"
+    },
+    {
+      "type": "implements",
+      "direction": "out",
+      "target": "DA-PAT-0009",
+      "title": "Layered Data Refinement"
+    }
+  ],
+  "sources": [],
+  "evidence": [],
+  "governance": {
+    "status": "proposed",
+    "authority": "unreviewed",
+    "required_levels": [
+      "technical"
+    ],
+    "records": []
+  },
+  "body_markdown": "# Apache Iceberg\n\n## Purpose\n\nReliable, engine-independent tables on object storage for lakehouse architectures.\n\n## Capabilities\n\n- Snapshot-based commits with atomic table changes.\n- Time travel to prior snapshots (technical, transaction-time-like).\n- Schema evolution and partition evolution; hidden partitioning.\n- Access from multiple processing engines via catalogs.\n\n## Limitations\n\n- Snapshot time travel is bounded by snapshot expiration and is not a business history model (no valid time).\n- Requires a catalog and maintenance (compaction, snapshot expiry).\n\n## Architecture Role\n\nStorage/table layer of a [[Data Platform]]; physical layer of [[Layered Data Refinement]].\n\n## Applicable Patterns\n\n[[Layered Data Refinement]], [[Change Data Capture]] targets, [[Slowly Changing Dimension Type 2]] tables.\n\n## Alternatives\n\nOther open table formats; warehouse-native storage.\n\n## Integration\n\nEngines and catalogs vary; verify per environment.\n\n## Verification Notes\n\nNo version pinned; capabilities stated at a general level.\n"
+}

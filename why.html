@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Why · Architecture Knowledge Graph</title>
+<meta name="description" content="Architecture knowledge is fragmented across documents, diagrams, spreadsheets, standards, repositories and experts. The Architecture Knowledge Graph connects these pieces.">
+<link rel="canonical" href="https://archknowledge.github.io/why.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Architecture Knowledge Graph">
+<meta property="og:title" content="Why">
+<meta property="og:description" content="Architecture knowledge is fragmented across documents, diagrams, spreadsheets, standards, repositories and experts. The Architecture Knowledge Graph connects these pieces.">
+<meta property="og:url" content="https://archknowledge.github.io/why.html">
+<meta name="twitter:card" content="summary">
+<meta name="color-scheme" content="light dark">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/style.css">
+<meta name="akg-root" content="">
+<script src="assets/site.js" defer></script>
+
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="index.html" aria-label="Architecture Knowledge Graph — home">
+      <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true"><path d="M6 24 16 8l10 16M6 24h20M16 8v16" /><circle cx="16" cy="8" r="3"/><circle cx="6" cy="24" r="3"/><circle cx="26" cy="24" r="3"/><circle cx="16" cy="24" r="2.2"/></svg>
+      <span>Architecture<br>Knowledge Graph</span>
+    </a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+    <nav id="site-nav" class="site-nav" aria-label="Main">
+      <ul>
+<li><a href="why.html" aria-current="page">Why</a></li>
+<li><a href="knowledge-graph.html">Knowledge Graph</a></li>
+<li><a href="explore.html">Explore</a></li>
+<li><a href="products.html">Products</a></li>
+<li><a href="governance.html">Governance</a></li>
+<li><a href="roadmap.html">Roadmap</a></li>
+<li><a href="search.html">Search</a></li>
+        <li><a class="gh" href="https://github.com/ArchKnowledge/Architecture-Knowledge-Graph">GitHub <span class="nav-note">private</span></a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+<p class="preview-bar wrap" role="note">Early preview · Phase 1 of the roadmap · All knowledge is in draft and awaiting human review.</p>
+<main id="main">
+<div class="wrap page-head">
+  <p class="eyebrow">About</p>
+  <h1>Why a knowledge graph for architecture?</h1>
+  <p class="lead">Most architecture knowledge exists. It is just not connected — so it is re-created, re-debated and lost.</p>
+</div>
+
+<section class="section">
+  <div class="wrap cols-2">
+    <div>
+      <h2>The problem: fragmentation</h2>
+      <p>In most organisations, architecture knowledge lives in:</p>
+      <ul class="checklist">
+        <li><strong>Documents</strong> — architecture descriptions that are outdated the day they are approved.</li>
+        <li><strong>Diagrams</strong> — pictures of structures, without the reasoning behind them.</li>
+        <li><strong>Spreadsheets</strong> — inventories and RACI matrices disconnected from the models they govern.</li>
+        <li><strong>Standards</strong> — external and internal, rarely linked to the decisions they constrain.</li>
+        <li><strong>Project repositories</strong> — decisions buried in project folders that close with the project.</li>
+        <li><strong>Individual experts</strong> — knowledge that leaves when people do.</li>
+      </ul>
+    </div>
+    <div>
+      <h2>The consequence</h2>
+      <p>The same questions are answered again in every project: which history pattern fits, who decides on a definition, which standard applies, what went wrong last time. Answers are inconsistent, and decisions cannot be traced to the principles and knowledge they rest on.</p>
+      <p>The Architecture Knowledge Graph treats each piece of knowledge as an object with an identity, metadata, a lifecycle and explicit relationships to other objects. Documents become <em>views</em> of the graph instead of its containers.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section grid-bg">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Connecting the pieces</h2>
+    </div>
+    <div class="convergence" role="group" aria-label="Sources converge into the knowledge graph, which produces knowledge, decisions, governance and automation">
+      <ul><li>Documents</li><li>Standards</li><li>Patterns</li><li>Decisions</li><li>Models</li><li>Governance</li></ul>
+      <div class="arrow" aria-hidden="true">→</div>
+      <div class="core"><strong>Architecture Knowledge Graph</strong><span class="muted">objects · typed relationships · lifecycle · validation</span></div>
+      <div class="arrow" aria-hidden="true">→</div>
+      <ul class="out"><li>Knowledge</li><li>Decisions</li><li>Governance</li><li>Automation <span class="muted">(later)</span></li></ul>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="section-head"><h2>What makes it different</h2></div>
+    <div class="cards">
+      <article class="card"><h3>Objects, not documents</h3><p>Every concept, pattern or decision is one object with an immutable ID, a type and required metadata.</p></article>
+      <article class="card"><h3>Relationships are knowledge</h3><p>57 controlled relationship types — <code>realizes</code>, <code>governed-by</code>, <code>constrained-by</code> — instead of vague “see also” links.</p></article>
+      <article class="card"><h3>Layers kept apart</h3><p>Meaning, information, logical and physical design, and technology are separate layers with their own decisions and decision rights.</p></article>
+      <article class="card"><h3>Governed</h3><p>Knowledge moves through a lifecycle from draft to approved, checked by automated rules and approved by people. <a href="governance.html">Governance</a></p></article>
+      <article class="card"><h3>Honest about uncertainty</h3><p>Each object says whether it is a fact, a standard, common practice, interpretation or recommendation, and how confident it is. Sources are never invented.</p></article>
+      <article class="card"><h3>Portable</h3><p>Markdown, YAML and Git as the source; JSON, CSV and RDF as exports. No lock-in to this website or any tool.</p></article>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="audience">
+  <div class="wrap cols-2">
+    <div>
+      <h2>Who it is for</h2>
+      <ul class="checklist">
+        <li>Data architects and information architects</li>
+        <li>Enterprise and solution architects</li>
+        <li>Semantic architects and ontology engineers</li>
+        <li>Data governance professionals, data owners and stewards</li>
+        <li>Architecture teams and CDO / CTO organisations</li>
+      </ul>
+    </div>
+    <div>
+      <h2>What it is not</h2>
+      <ul class="checklist">
+        <li>Not a vendor's product documentation: technologies are described as realisations of neutral concepts.</li>
+        <li>Not an AI that decides for you: AI helps draft and link knowledge; people review and approve it.</li>
+        <li>Not finished: it is an early, openly labelled draft.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+</main>
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <div>
+      <p class="footer-brand">Architecture Knowledge Graph</p>
+      <p class="muted">A structured and governed knowledge graph for data, information and enterprise architecture.</p>
+    </div>
+    <div>
+      <p class="muted">Generated from the knowledge graph on 2026-09-30: 155 objects, 388 typed relationships.</p>
+      <p class="muted"><a href="mailto:dalust1997@gmail.com?subject=Feedback%3A%20Architecture%20Knowledge%20Graph&amp;body=Page%20or%20knowledge%20object%3A%20%28page%20title%2C%20ID%20or%20URL%29%0AKind%20of%20feedback%20%28factual%20error%20/%20unclear%20/%20missing%20/%20terminology%20/%20suggestion%20/%20other%29%3A%20%0AWhat%20should%20change%2C%20and%20why%3A%0A%0A%0ASource%20%28optional%29%3A%0A">Send feedback</a> · <a href="https://github.com/ArchKnowledge/Architecture-Knowledge-Graph">Source repository</a> <span class="muted">(private during phase 1)</span> · No products are currently for sale.</p>
+      <p class="muted">© 2026 Architecture Knowledge Graph project. Content licence to be decided; all rights reserved until then. Referenced standards belong to their issuing organisations.</p>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

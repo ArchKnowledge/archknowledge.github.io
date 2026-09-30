@@ -1,0 +1,37 @@
+{
+  "id": "DA-APT-0004",
+  "type": "anti-pattern",
+  "title": "Governance as Afterthought",
+  "domain": "Architecture Governance",
+  "layer": [
+    "cross-layer"
+  ],
+  "status": "proposed",
+  "quality": "draft",
+  "confidence": "medium",
+  "epistemic_status": "expert-interpretation",
+  "owner": "unassigned",
+  "version": "0.1.0",
+  "publication_tier": "community",
+  "summary": "Governance is applied as a documentation and approval step at the end of delivery, instead of being embedded in the architecture and workflow.",
+  "path": "19-architecture-patterns/anti-patterns/Governance as Afterthought.md",
+  "relationships": [
+    {
+      "type": "violates",
+      "direction": "out",
+      "target": "DA-PRI-0009",
+      "title": "Governance Is Embedded in Delivery"
+    }
+  ],
+  "sources": [],
+  "evidence": [],
+  "governance": {
+    "status": "proposed",
+    "authority": "unreviewed",
+    "required_levels": [
+      "data-architecture"
+    ],
+    "records": []
+  },
+  "body_markdown": "# Governance as Afterthought\n\n## Problem\n\nArchitecture review and data governance happen after design is finished, as a gate to \"get the stamp\".\n\n## Symptoms\n\n- Review boards reject or wave through finished work.\n- Documentation written after go-live.\n- Governance perceived as bureaucracy.\n\n## Root Causes\n\n- Governance modeled as documents rather than decisions; no decision rights per layer.\n\n## Consequences\n\n- Late, expensive rework or accepted non-compliance.\n\n## Detection\n\n- Compare decision dates to implementation dates; count ADRs created after deployment.\n\n## Remediation\n\n- Define decision rights per layer ([[Decision Rights Model]]); embed controls in the workflow ([[Architecture Change Process]]); automate evidence.\n\n## Alternative Patterns\n\n[[Architecture Change Process]], [[Data Contract]].\n\n## When It May Be Acceptable\n\nNever as a default; post-hoc review is acceptable for emergency changes, with retroactive recording.\n"
+}

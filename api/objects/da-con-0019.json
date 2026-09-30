@@ -1,0 +1,55 @@
+{
+  "id": "DA-CON-0019",
+  "type": "concept",
+  "title": "Data Ownership",
+  "domain": "Data Governance",
+  "layer": [
+    "business"
+  ],
+  "status": "proposed",
+  "quality": "draft",
+  "confidence": "high",
+  "epistemic_status": "common-practice",
+  "owner": "unassigned",
+  "version": "0.1.0",
+  "publication_tier": "community",
+  "definition": "The assignment of accountability for a defined set of data \u2014 its meaning, quality, access and lifecycle \u2014 to a business role with the authority to make decisions about it.",
+  "path": "06-data-governance/Data Ownership.md",
+  "relationships": [
+    {
+      "type": "part-of",
+      "direction": "out",
+      "target": "DA-CON-0018",
+      "title": "Data Governance"
+    },
+    {
+      "type": "constrained-by",
+      "direction": "out",
+      "target": "DA-PRI-0001",
+      "title": "Data Has an Accountable Owner"
+    },
+    {
+      "type": "dependency-of",
+      "direction": "in",
+      "target": "DA-CON-0020",
+      "title": "Data Stewardship"
+    },
+    {
+      "type": "realized-by",
+      "direction": "in",
+      "target": "DA-ROL-0001",
+      "title": "Data Owner"
+    }
+  ],
+  "sources": [],
+  "evidence": [],
+  "governance": {
+    "status": "proposed",
+    "authority": "unreviewed",
+    "required_levels": [
+      "semantic"
+    ],
+    "records": []
+  },
+  "body_markdown": "# Data Ownership\n\n## Definition\n\nData Ownership is the assignment of accountability for a defined set of data \u2014 its meaning, quality, access and lifecycle \u2014 to a business role with the authority to make decisions about it.\n\n## Explanation\n\nOwnership is **accountability**, not possession or technical administration. The owning role ([[Data Owner]]) decides; [[Data Stewardship|stewardship]] executes day-to-day care; the [[Data Custodian]] operates the technical environment.\n\nOwnership must be scoped: a data domain, a data set, a [[Business Concept|concept]] or a data product.\n\n## Distinctions\n\n- Ownership \u2260 custody: IT operating a database does not own the data.\n- Ownership \u2260 authorship: the system or team creating data is not automatically its owner.\n\n## Examples\n\n- The head of Claims owns claims data, including approval of the definition of \"Open Claim\".\n"
+}

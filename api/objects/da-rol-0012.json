@@ -1,0 +1,43 @@
+{
+  "id": "DA-ROL-0012",
+  "type": "role",
+  "title": "Platform Architect",
+  "domain": "Data Platforms",
+  "layer": [
+    "technical"
+  ],
+  "status": "proposed",
+  "quality": "draft",
+  "confidence": "medium",
+  "epistemic_status": "common-practice",
+  "owner": "unassigned",
+  "version": "0.1.0",
+  "publication_tier": "community",
+  "summary": "Architect responsible for data platform capabilities, technical standards and technology lifecycle.",
+  "path": "06-data-governance/roles/Platform Architect.md",
+  "relationships": [
+    {
+      "type": "part-of",
+      "direction": "out",
+      "target": "DA-GOV-0003",
+      "title": "Governance Roles"
+    },
+    {
+      "type": "governs",
+      "direction": "in",
+      "target": "DA-CON-0028",
+      "title": "Data Platform"
+    }
+  ],
+  "sources": [],
+  "evidence": [],
+  "governance": {
+    "status": "proposed",
+    "authority": "unreviewed",
+    "required_levels": [
+      "technical"
+    ],
+    "records": []
+  },
+  "body_markdown": "# Platform Architect\n\n## Purpose\n\nProvide governed, fit-for-purpose platform capabilities.\n\n## Responsibilities\n\n- Define platform capability model and standards.\n- Select and lifecycle-manage technologies.\n- Approve physical/technical designs against standards.\n\n## Decision Rights\n\nTechnical/formal level approver for platform-related designs.\n\n## Inputs\n\nData architecture; technology market; operations feedback.\n\n## Outputs\n\nPlatform standards; technology decisions.\n\n## Required Competencies\n\nPlatform engineering; cloud; data technologies.\n\n## Escalation Paths\n\nArchitecture conflicts \u2192 [[Data Architect]] / [[Architecture Board]].\n\n## Related Governance Processes\n\n- [[Decision Rights Model]]\n- [[Architecture Change Process]]\n- [[Governance Lifecycle]]\n"
+}

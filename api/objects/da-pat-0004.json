@@ -1,0 +1,69 @@
+{
+  "id": "DA-PAT-0004",
+  "type": "pattern",
+  "title": "Event Sourcing",
+  "domain": "Data Modeling",
+  "layer": [
+    "logical",
+    "technical"
+  ],
+  "status": "proposed",
+  "quality": "draft",
+  "confidence": "high",
+  "epistemic_status": "common-practice",
+  "owner": "unassigned",
+  "version": "0.1.0",
+  "publication_tier": "community",
+  "summary": "Persist every state change as an immutable domain event in an append-only log and derive current and past states by replaying events.",
+  "path": "19-architecture-patterns/Event Sourcing.md",
+  "relationships": [
+    {
+      "type": "realizes",
+      "direction": "out",
+      "target": "DA-CON-0010",
+      "title": "Temporal Data Management"
+    },
+    {
+      "type": "realizes",
+      "direction": "out",
+      "target": "DA-CON-0029",
+      "title": "Data Integration"
+    },
+    {
+      "type": "alternative-to",
+      "direction": "out",
+      "target": "DA-PAT-0002",
+      "title": "System-Versioned History Table"
+    },
+    {
+      "type": "constrained-by",
+      "direction": "out",
+      "target": "DA-STD-0007",
+      "title": "GDPR"
+    },
+    {
+      "type": "alternative-to",
+      "direction": "in",
+      "target": "DA-PAT-0001",
+      "title": "Bitemporal Data Model"
+    },
+    {
+      "type": "recommended-by",
+      "direction": "in",
+      "target": "DA-DTR-0001",
+      "title": "Database History Pattern Decision Tree"
+    }
+  ],
+  "sources": [],
+  "evidence": [],
+  "governance": {
+    "status": "proposed",
+    "authority": "unreviewed",
+    "required_levels": [
+      "data-architecture",
+      "technical"
+    ],
+    "records": []
+  },
+  "body_markdown": "# Event Sourcing\n\n## Problem\n\nThe *reason* and *sequence* of changes matter, not just resulting states; state must be reconstructable and changes shared with other systems.\n\n## Context\n\nDomain-driven systems with rich business events; audit-heavy processes.\n\n## Forces\n\n- Complete audit and replay versus query simplicity.\n- Event schema evolution over long periods.\n\n## Solution\n\nStore each change as an immutable event (e.g. `AddressChanged`) in an append-only store. Current state is a projection built by replaying events; other projections serve queries and other systems.\n\n## Architecture\n\n```text\nCommand \u2192 Aggregate \u2192 Event Store (append-only) \u2192 Projections (read models) \u2192 Consumers\n```\n\n## Advantages\n\n- Full history with intent.\n- Natural integration via events.\n- New read models can be derived retroactively.\n\n## Disadvantages\n\n- Querying current state requires projections.\n- Event versioning and replay complexity.\n\n## Risks\n\n- Events designed as CRUD deltas lose business meaning.\n- Personal data in immutable logs complicates erasure obligations ([[GDPR]]).\n\n## When to Use\n\n- Business events are first-class; audit with intent is required.\n\n## When Not to Use\n\n- Simple CRUD applications; teams without event modeling experience.\n\n## Alternatives\n\n[[System-Versioned History Table]], [[Bitemporal Data Model]], [[Change Data Capture]] (for integration only).\n\n## Examples\n\n- A registration system storing `VehicleRegistered`, `OwnerChanged`, `RegistrationSuspended`.\n\n## Related Decisions\n\n- [[Select Historical Data Strategy]]\n- [[Select Data Integration Style]]\n"
+}

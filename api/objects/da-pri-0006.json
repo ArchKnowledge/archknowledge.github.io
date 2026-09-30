@@ -1,0 +1,43 @@
+{
+  "id": "DA-PRI-0006",
+  "type": "principle",
+  "title": "Metadata Is Captured by Design",
+  "domain": "Metadata Management",
+  "layer": [
+    "cross-layer"
+  ],
+  "status": "proposed",
+  "quality": "draft",
+  "confidence": "medium",
+  "epistemic_status": "recommendation",
+  "owner": "unassigned",
+  "version": "0.1.0",
+  "publication_tier": "community",
+  "summary": "Metadata is produced as part of designing and delivering data assets, preferably automatically, rather than documented afterwards.",
+  "path": "05-metadata/Metadata Is Captured by Design.md",
+  "relationships": [
+    {
+      "type": "constrains",
+      "direction": "in",
+      "target": "DA-CON-0016",
+      "title": "Metadata"
+    },
+    {
+      "type": "realized-by",
+      "direction": "in",
+      "target": "DA-PAT-0011",
+      "title": "Metadata Harvesting"
+    }
+  ],
+  "sources": [],
+  "evidence": [],
+  "governance": {
+    "status": "proposed",
+    "authority": "unreviewed",
+    "required_levels": [
+      "data-architecture"
+    ],
+    "records": []
+  },
+  "body_markdown": "# Metadata Is Captured by Design\n\n## Statement\n\nMetadata shall be produced as part of designing and delivering data assets \u2014 preferably automatically \u2014 rather than documented afterwards.\n\n## Rationale\n\nMetadata documented afterwards is incomplete and quickly outdated. Metadata created in the delivery flow is current by construction.\n\n## Implications\n\n- Definition of Done for data assets includes mandatory metadata ([[Mandatory Metadata Control]]).\n- Technical and lineage metadata are harvested from tools ([[Metadata Harvesting]]); business metadata is captured in the modeling workflow.\n\n## Consequences\n\n- Positive: current catalog, reliable lineage.\n- Negative: tooling investment; requires metadata standards.\n\n## Applicability\n\nAll governed data assets.\n\n## Exceptions\n\nLegacy assets are catalogued incrementally, prioritised by use and risk.\n\n## Related Principles\n\n- [[Governance Is Embedded in Delivery]]\n"
+}

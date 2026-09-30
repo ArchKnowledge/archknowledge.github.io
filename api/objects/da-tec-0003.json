@@ -1,0 +1,34 @@
+{
+  "id": "DA-TEC-0003",
+  "type": "technology",
+  "title": "Debezium",
+  "domain": "Technologies",
+  "status": "proposed",
+  "quality": "draft",
+  "confidence": "medium",
+  "epistemic_status": "common-practice",
+  "owner": "unassigned",
+  "version": "0.1.0",
+  "publication_tier": "community",
+  "summary": "Open-source, log-based change data capture platform, commonly deployed on Kafka Connect, emitting row-level change events from databases.",
+  "path": "17-technology/integration/Debezium.md",
+  "relationships": [
+    {
+      "type": "implements",
+      "direction": "out",
+      "target": "DA-PAT-0005",
+      "title": "Change Data Capture"
+    }
+  ],
+  "sources": [],
+  "evidence": [],
+  "governance": {
+    "status": "proposed",
+    "authority": "unreviewed",
+    "required_levels": [
+      "technical"
+    ],
+    "records": []
+  },
+  "body_markdown": "# Debezium\n\n## Purpose\n\nCapture database changes from transaction logs and publish them as event streams.\n\n## Capabilities\n\n- Connectors for several relational and document databases.\n- Initial snapshots followed by streaming changes, including deletes.\n- Deployable as Kafka Connect connectors or as a standalone server for other sinks.\n\n## Limitations\n\n- Emits physical row changes; business meaning must be added downstream or via a [[Data Contract]].\n- Dependent on source log configuration and retention.\n\n## Architecture Role\n\nTechnical implementation of [[Change Data Capture]] in [[Data Integration]].\n\n## Applicable Patterns\n\n[[Change Data Capture]], synchronisation within [[Phased Data Migration]].\n\n## Alternatives\n\nVendor CDC tools; database-native replication.\n\n## Integration\n\nTypically: source DB \u2192 Debezium \u2192 Kafka topics \u2192 sink connectors / stream processing \u2192 platform.\n\n## Verification Notes\n\nSupported connectors and deployment modes to be verified per version.\n"
+}

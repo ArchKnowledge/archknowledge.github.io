@@ -1,0 +1,57 @@
+{
+  "id": "DA-PAT-0008",
+  "type": "pattern",
+  "title": "Data Contract",
+  "domain": "Data Integration",
+  "layer": [
+    "information",
+    "logical"
+  ],
+  "status": "proposed",
+  "quality": "draft",
+  "confidence": "medium",
+  "epistemic_status": "common-practice",
+  "owner": "unassigned",
+  "version": "0.1.0",
+  "publication_tier": "community",
+  "summary": "Make the interface between a data producer and its consumers an explicit, versioned, owned agreement covering schema, semantics, quality and service levels, and enforce it automatically.",
+  "path": "19-architecture-patterns/Data Contract.md",
+  "relationships": [
+    {
+      "type": "realizes",
+      "direction": "out",
+      "target": "DA-PRI-0005",
+      "title": "Quality Is Managed at the Source"
+    },
+    {
+      "type": "mitigates",
+      "direction": "out",
+      "target": "DA-APT-0003",
+      "title": "Point-to-Point Integration Sprawl"
+    },
+    {
+      "type": "mitigates",
+      "direction": "out",
+      "target": "DA-APT-0001",
+      "title": "Implicit Semantics"
+    },
+    {
+      "type": "governs",
+      "direction": "in",
+      "target": "DA-CON-0029",
+      "title": "Data Integration"
+    }
+  ],
+  "sources": [],
+  "evidence": [],
+  "governance": {
+    "status": "proposed",
+    "authority": "unreviewed",
+    "required_levels": [
+      "information-model",
+      "data-architecture"
+    ],
+    "records": []
+  },
+  "body_markdown": "# Data Contract\n\n## Problem\n\nConsumers depend on data whose structure and meaning the producer changes without notice.\n\n## Context\n\nMultiple teams producing and consuming data (data mesh, microservices, platforms).\n\n## Forces\n\n- Producer autonomy vs. consumer stability.\n- Formality vs. speed.\n\n## Solution\n\nDefine per data interface a contract: schema, semantics (links to [[Business Concept|concepts]]), quality rules, freshness/SLA, owner, version and change policy. Validate it in the producer's pipeline and at ingestion ([[Data Quality Gate]]).\n\n## Architecture\n\n```text\nProducer \u2500publishes\u2192 dataset + contract(vN) \u2500validated by\u2192 CI & ingestion gate \u2500consumed by\u2192 consumers\n```\n\n## Advantages\n\n- Breaking changes become visible and negotiated.\n- Quality ownership sits with the producer.\n\n## Disadvantages\n\n- Governance overhead; contract sprawl.\n\n## Risks\n\n- Contracts that cover schema only, not meaning, give false assurance.\n\n## When to Use\n\n- Cross-team data interfaces with several consumers.\n\n## When Not to Use\n\n- Single-team, single-consumer pipelines.\n\n## Alternatives\n\nSchema registry only (weaker), shared canonical model.\n\n## Examples\n\n- A \"Policy Issued\" dataset contract with fields, definitions, completeness \u2265 99.9% and 1-hour freshness.\n\n## Related Decisions\n\n- [[Select Data Integration Style]]\n"
+}

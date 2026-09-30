@@ -1,0 +1,67 @@
+{
+  "id": "DA-PAT-0009",
+  "type": "pattern",
+  "title": "Layered Data Refinement",
+  "domain": "Data Platforms",
+  "layer": [
+    "logical",
+    "physical"
+  ],
+  "status": "proposed",
+  "quality": "draft",
+  "confidence": "medium",
+  "epistemic_status": "common-practice",
+  "owner": "unassigned",
+  "version": "0.1.0",
+  "publication_tier": "community",
+  "summary": "Organise an analytical platform in successive layers \u2014 raw, conformed, consumption-ready \u2014 each with explicit quality, modeling and governance guarantees.",
+  "aliases": [
+    "Medallion Architecture",
+    "Bronze-Silver-Gold"
+  ],
+  "path": "19-architecture-patterns/Layered Data Refinement.md",
+  "relationships": [
+    {
+      "type": "realizes",
+      "direction": "out",
+      "target": "DA-CON-0028",
+      "title": "Data Platform"
+    },
+    {
+      "type": "part-of",
+      "direction": "out",
+      "target": "DA-RAR-0001",
+      "title": "Governed Analytical Data Platform"
+    },
+    {
+      "type": "supported-by",
+      "direction": "out",
+      "target": "DA-PAT-0010",
+      "title": "Data Quality Gate"
+    },
+    {
+      "type": "implemented-by",
+      "direction": "in",
+      "target": "DA-TEC-0002",
+      "title": "Apache Iceberg"
+    },
+    {
+      "type": "has-part",
+      "direction": "in",
+      "target": "DA-PAT-0003",
+      "title": "Slowly Changing Dimension Type 2"
+    }
+  ],
+  "sources": [],
+  "evidence": [],
+  "governance": {
+    "status": "proposed",
+    "authority": "unreviewed",
+    "required_levels": [
+      "data-architecture",
+      "technical"
+    ],
+    "records": []
+  },
+  "body_markdown": "# Layered Data Refinement\n\n## Problem\n\nAnalytical platforms mix raw and curated data, so consumers cannot tell what is trustworthy and pipelines become entangled.\n\n## Context\n\nData lakes, lakehouses and warehouses serving several consumers.\n\n## Forces\n\n- Keep raw data for replay/audit vs. offer curated, governed data.\n- Number of layers vs. latency and cost.\n\n## Solution\n\nDefine layers with contracts:\n\n| Layer | Also called | Content | Guarantee |\n|---|---|---|---|\n| Raw | bronze, landing | source data as received, append-only | completeness of receipt, lineage |\n| Conformed | silver, integrated | cleansed, integrated, historized, linked to concepts | quality rules passed, semantics mapped |\n| Consumption | gold, marts | purpose-built models (e.g. dimensional) | fit for a specific use, owned |\n\nPromotion between layers passes a [[Data Quality Gate]].\n\n## Architecture\n\n```text\nSources \u2192 Raw \u2192 [gate] \u2192 Conformed \u2192 [gate] \u2192 Consumption \u2192 BI / ML / APIs\n```\n\n## Advantages\n\n- Replayability; clear trust levels; separation of concerns.\n\n## Disadvantages\n\n- Data duplication; added latency.\n\n## Risks\n\n- Layers named but without guarantees (\"gold\" that nobody owns).\n- Semantic integration postponed indefinitely in the conformed layer.\n\n## When to Use\n\n- Multi-source, multi-consumer analytical platforms.\n\n## When Not to Use\n\n- Single-source operational reporting; virtualization suffices.\n\n## Alternatives\n\nClassic staging\u2013warehouse\u2013mart; [[Data Virtualization]].\n\n## Examples\n\n- Claims data landed raw hourly, conformed with a bitemporal policy model, served as a claims mart.\n\n## Related Decisions\n\n- [[Select Historical Data Strategy]]\n"
+}

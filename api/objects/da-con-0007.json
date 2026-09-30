@@ -1,0 +1,85 @@
+{
+  "id": "DA-CON-0007",
+  "type": "concept",
+  "title": "Information Model",
+  "domain": "Data Modeling",
+  "layer": [
+    "information"
+  ],
+  "status": "proposed",
+  "quality": "draft",
+  "confidence": "medium",
+  "epistemic_status": "expert-interpretation",
+  "owner": "unassigned",
+  "version": "0.1.0",
+  "publication_tier": "community",
+  "definition": "A paradigm-independent model that represents governed meaning as information structures \u2014 classes, attributes, relationships, cardinalities and information-level constraints including history requirements.",
+  "path": "03-data-modeling/Information Model.md",
+  "relationships": [
+    {
+      "type": "part-of",
+      "direction": "out",
+      "target": "DA-CON-0003",
+      "title": "Architecture Layer"
+    },
+    {
+      "type": "part-of",
+      "direction": "out",
+      "target": "DA-CON-0002",
+      "title": "Information Architecture"
+    },
+    {
+      "type": "specializes",
+      "direction": "out",
+      "target": "DA-CON-0005",
+      "title": "Data Model"
+    },
+    {
+      "type": "owned-by",
+      "direction": "out",
+      "target": "DA-ROL-0007",
+      "title": "Information Architect"
+    },
+    {
+      "type": "produced-by",
+      "direction": "in",
+      "target": "DA-MTH-0001",
+      "title": "Layered Model Derivation"
+    },
+    {
+      "type": "follows",
+      "direction": "in",
+      "target": "DA-CON-0006",
+      "title": "Conceptual Data Model"
+    },
+    {
+      "type": "realized-by",
+      "direction": "in",
+      "target": "DA-CON-0008",
+      "title": "Logical Data Model"
+    },
+    {
+      "type": "applicable-to",
+      "direction": "in",
+      "target": "DA-PRI-0002",
+      "title": "Meaning Before Representation"
+    },
+    {
+      "type": "represents",
+      "direction": "in",
+      "target": "DA-CON-0012",
+      "title": "Semantic Model"
+    }
+  ],
+  "sources": [],
+  "evidence": [],
+  "governance": {
+    "status": "proposed",
+    "authority": "unreviewed",
+    "required_levels": [
+      "information-model"
+    ],
+    "records": []
+  },
+  "body_markdown": "# Information Model\n\n## Definition\n\nAn Information Model represents governed meaning as information structures \u2014 classes, attributes, relationships, cardinalities and information-level constraints (including history requirements) \u2014 independent of any data paradigm or technology.\n\n## Explanation\n\nThe information model answers: *how is the meaning defined in the [[Semantic Model]] represented in an information model?* It is typically expressed in UML class diagrams or an equivalent notation. It is the layer at which information-level [[Temporal Data Management|history requirements]] (valid time, transaction time) are stated, before a technical mechanism is chosen.\n\n## Distinctions\n\n- Versus [[Semantic Model]]: the semantic model defines meaning (e.g. \"a Customer is a Party with an active Agreement\"); the information model represents it (\"Customer: attribute `customerSince` 1..1\").\n- Versus [[Logical Data Model]]: the information model is paradigm-independent; the logical model commits to relational, dimensional, graph or document structures.\n- Some frameworks use \"information model\" and \"logical data model\" as synonyms. This knowledge base does not \u2014 flagged as interpretation.\n\n## Examples\n\n- A UML class model of Party, Role, Agreement with multiplicities and a note \"Agreement must be reconstructable as known at any past date\".\n\n## Open Questions\n\n- Needs validation whether the separation from the logical data model is useful for all target audiences.\n"
+}

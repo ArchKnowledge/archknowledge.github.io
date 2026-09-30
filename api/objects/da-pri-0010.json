@@ -1,0 +1,69 @@
+{
+  "id": "DA-PRI-0010",
+  "type": "principle",
+  "title": "Historical Requirements Are Explicit",
+  "domain": "Data Lifecycle",
+  "layer": [
+    "business",
+    "information"
+  ],
+  "status": "proposed",
+  "quality": "draft",
+  "confidence": "high",
+  "epistemic_status": "recommendation",
+  "owner": "unassigned",
+  "version": "0.1.0",
+  "publication_tier": "community",
+  "summary": "Requirements for history \u2014 which data, which time dimensions, which reconstruction questions and retention \u2014 are stated explicitly at the information layer before a history mechanism is chosen.",
+  "path": "10-data-lifecycle/Historical Requirements Are Explicit.md",
+  "relationships": [
+    {
+      "type": "constrains",
+      "direction": "in",
+      "target": "DA-CON-0010",
+      "title": "Temporal Data Management"
+    },
+    {
+      "type": "constrains",
+      "direction": "in",
+      "target": "DA-CON-0023",
+      "title": "Data Lifecycle"
+    },
+    {
+      "type": "source-of",
+      "direction": "in",
+      "target": "DA-TPL-0003",
+      "title": "Data Model Review Checklist"
+    },
+    {
+      "type": "constrains",
+      "direction": "in",
+      "target": "DA-REQ-0001",
+      "title": "Policy State Is Reproducible As Known At Any Past Date"
+    },
+    {
+      "type": "dependency-of",
+      "direction": "in",
+      "target": "DA-DTR-0001",
+      "title": "Database History Pattern Decision Tree"
+    },
+    {
+      "type": "source-of",
+      "direction": "in",
+      "target": "DA-RRL-0001",
+      "title": "Retroactive Corrections Call for Bitemporal History"
+    }
+  ],
+  "sources": [],
+  "evidence": [],
+  "governance": {
+    "status": "proposed",
+    "authority": "unreviewed",
+    "required_levels": [
+      "semantic",
+      "information-model"
+    ],
+    "records": []
+  },
+  "body_markdown": "# Historical Requirements Are Explicit\n\n## Statement\n\nRequirements for history \u2014 which data, which time dimensions (valid time, transaction time), which reconstruction questions and which retention \u2014 shall be stated explicitly at the information layer before a history mechanism is chosen.\n\n## Rationale\n\nHistory mechanisms are expensive to change after go-live. Choosing [[System-Versioned History Table|system versioning]] when the business needs valid-time corrections \u2014 or vice versa \u2014 is a common and costly mistake.\n\n## Implications\n\n- Information models annotate history requirements per entity/attribute.\n- The mechanism is selected with [[Database History Pattern Decision Tree]].\n\n## Consequences\n\n- Positive: right-sized history, fewer rebuilds.\n- Negative: requires business stakeholders to answer temporal questions they rarely consider.\n\n## Applicability\n\nOperational and analytical data subject to audit, correction or regulatory reconstruction.\n\n## Exceptions\n\nData without any history requirement is explicitly marked as \"current-state only\".\n\n## Related Principles\n\n- [[Decisions Belong to Their Layer]]\n"
+}

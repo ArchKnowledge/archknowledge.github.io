@@ -1,0 +1,46 @@
+{
+  "id": "DA-ARL-0001",
+  "type": "architecture-rule",
+  "title": "Technology Implements a Generic Pattern",
+  "domain": "Decision Intelligence",
+  "status": "proposed",
+  "quality": "draft",
+  "confidence": "medium",
+  "epistemic_status": "recommendation",
+  "owner": "unassigned",
+  "version": "0.1.0",
+  "publication_tier": "community",
+  "summary": "Every technology object implements at least one technology-neutral pattern, so technology knowledge never stands on its own.",
+  "path": "25-decision-intelligence/architecture-rules/Technology Implements a Generic Pattern.md",
+  "relationships": [
+    {
+      "type": "realizes",
+      "direction": "out",
+      "target": "DA-PRI-0004",
+      "title": "Technology-Neutral Architecture First"
+    }
+  ],
+  "sources": [],
+  "evidence": [],
+  "governance": {
+    "status": "proposed",
+    "authority": "unreviewed",
+    "required_levels": [
+      "data-architecture"
+    ],
+    "records": []
+  },
+  "body_markdown": "# Technology Implements a Generic Pattern\n\n## Rule\n\nFor every object of type `technology`: at least one `implements` relationship to a `pattern`. Machine-readable in `rule`; evaluated by `dakb.py rules` and during validation (W100).\n\n## Rationale\n\n[[Technology-Neutral Architecture First]]: technology-specific knowledge must reference the generic concept or pattern it realizes.\n\n## Enforcement\n\nWarning during validation. Scope today: this knowledge graph. The same rule shape is intended for customer architectures (architecture-as-code).\n\n## Exceptions\n\nNone known.\n",
+  "rule": {
+    "scope": "knowledge-graph",
+    "for_type": "technology",
+    "assert": {
+      "relationship": "implements",
+      "min": 1,
+      "target_types": [
+        "pattern"
+      ]
+    },
+    "severity": "warning"
+  }
+}

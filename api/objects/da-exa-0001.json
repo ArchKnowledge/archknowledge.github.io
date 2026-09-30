@@ -1,0 +1,46 @@
+{
+  "id": "DA-EXA-0001",
+  "type": "example",
+  "title": "Insurance Policy History Example",
+  "domain": "Examples & Case Studies",
+  "status": "proposed",
+  "quality": "draft",
+  "confidence": "medium",
+  "epistemic_status": "hypothesis",
+  "owner": "unassigned",
+  "version": "0.1.0",
+  "publication_tier": "community",
+  "summary": "Fictitious worked example: taking a history-strategy decision for policy data from requirement to recommendation, using the decision tree, a recommendation rule and a scoring model.",
+  "path": "23-examples/Insurance Policy History Example.md",
+  "relationships": [
+    {
+      "type": "depends-on",
+      "direction": "out",
+      "target": "DA-REQ-0001",
+      "title": "Policy State Is Reproducible As Known At Any Past Date"
+    },
+    {
+      "type": "consumes",
+      "direction": "out",
+      "target": "DA-DTR-0001",
+      "title": "Database History Pattern Decision Tree"
+    },
+    {
+      "type": "consumes",
+      "direction": "out",
+      "target": "DA-RRL-0001",
+      "title": "Retroactive Corrections Call for Bitemporal History"
+    }
+  ],
+  "sources": [],
+  "evidence": [],
+  "governance": {
+    "status": "proposed",
+    "authority": "unreviewed",
+    "required_levels": [
+      "data-architecture"
+    ],
+    "records": []
+  },
+  "body_markdown": "# Insurance Policy History Example\n\n## Context\n\n**Fictitious.** An insurer replaces its policy administration. Requirement: [[Policy State Is Reproducible As Known At Any Past Date]]. No real organisation, data or outcome is described.\n\n## Illustration\n\n1. **Facts** (decision-facts.yaml): history required, not analytical-only, operationally queried, retroactive corrections, reproducibility required.\n2. **Decision tree:**\n   ```text\n   dakb.py decide \"Database History Pattern Decision Tree\" --fact history.required=true \\\n     --fact history.analytical_attributes_only=false --fact history.operational_queries=true \\\n     --fact history.retroactive_corrections=true\n   \u2192 Bitemporal history: evaluate Bitemporal Data Model, System-Versioned History Table\n   ```\n3. **Recommendation rule:** `dakb.py recommend --fact history.retroactive_corrections=true --fact history.reproducibility_required=true` fires [[Retroactive Corrections Call for Bitemporal History]].\n4. **Scoring:** [[History Strategy Scoring Model]] compares the options. With its default weights the bitemporal model ranks third (system versioning and SCD2 score better on effort and query simplicity). Raising the weight of retroactive corrections to reflect this requirement (`--weight retroactive=5`) ranks it first. System versioning and SCD2 do not satisfy the requirement at all, which the tree already established; the scores only make the trade-off visible.\n5. **Decision:** recorded as an ADR based on [[Select Historical Data Strategy]], approved at the information-model and data-architecture levels ([[Separate Decision per Governance Level]]).\n\n## Lessons\n\nThe tree narrows options, rules explain why, scores make trade-offs explicit, and the decision remains a human, recorded act.\n"
+}

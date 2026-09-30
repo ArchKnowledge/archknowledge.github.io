@@ -1,0 +1,44 @@
+{
+  "id": "DA-STD-0004",
+  "type": "standard",
+  "title": "ISO IEC 11179 Metadata Registries",
+  "domain": "Standards & Regulations",
+  "status": "proposed",
+  "quality": "draft",
+  "confidence": "medium",
+  "epistemic_status": "external-standard",
+  "owner": "unassigned",
+  "version": "0.1.0",
+  "publication_tier": "community",
+  "summary": "ISO/IEC 11179 \u2014 a multi-part international standard for metadata registries, describing how to register, define, name and identify data elements and related concepts.",
+  "aliases": [
+    "ISO/IEC 11179",
+    "MDR"
+  ],
+  "path": "24-standards-regulations/ISO IEC 11179 Metadata Registries.md",
+  "relationships": [
+    {
+      "type": "applies-to",
+      "direction": "out",
+      "target": "DA-CON-0011",
+      "title": "Business Concept"
+    },
+    {
+      "type": "constrains",
+      "direction": "in",
+      "target": "DA-CON-0016",
+      "title": "Metadata"
+    }
+  ],
+  "sources": [],
+  "evidence": [],
+  "governance": {
+    "status": "proposed",
+    "authority": "unreviewed",
+    "required_levels": [
+      "data-architecture"
+    ],
+    "records": []
+  },
+  "body_markdown": "# ISO IEC 11179 Metadata Registries\n\n## Scope\n\nMetadata registries: the metamodel for registering data element concepts, value domains and data elements, and guidance on definitions, naming and identification.\n\n## Requirements\n\nIncludes guidance for formulating data definitions (e.g. state what the concept is, not only what it is not) and for naming conventions. Details to be taken from the standard text.\n\n## Applicability\n\nMetadata repository design ([[Metadata Management Reference Architecture]]), definition quality, naming standards.\n\n## Related Architecture Concepts\n\n[[Metadata]], [[Business Concept]], [[Reference Data]].\n\n## Related Controls\n\n[[Naming Standard Control]], [[Mandatory Metadata Control]].\n\n## Verification Notes\n\nPart numbers, current editions and dates must be verified against ISO's catalogue before approval. Content is paraphrased from general knowledge.\n"
+}

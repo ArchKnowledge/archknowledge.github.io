@@ -1,0 +1,51 @@
+{
+  "id": "DA-PRI-0005",
+  "type": "principle",
+  "title": "Quality Is Managed at the Source",
+  "domain": "Data Quality",
+  "layer": [
+    "business",
+    "cross-layer"
+  ],
+  "status": "proposed",
+  "quality": "draft",
+  "confidence": "high",
+  "epistemic_status": "recommendation",
+  "owner": "unassigned",
+  "version": "0.1.0",
+  "publication_tier": "community",
+  "summary": "Data quality issues are prevented and corrected as close as possible to where data is created, rather than repaired downstream.",
+  "path": "07-data-quality/Quality Is Managed at the Source.md",
+  "relationships": [
+    {
+      "type": "constrains",
+      "direction": "in",
+      "target": "DA-CON-0021",
+      "title": "Data Quality"
+    },
+    {
+      "type": "realized-by",
+      "direction": "in",
+      "target": "DA-PAT-0008",
+      "title": "Data Contract"
+    },
+    {
+      "type": "realized-by",
+      "direction": "in",
+      "target": "DA-PAT-0010",
+      "title": "Data Quality Gate"
+    }
+  ],
+  "sources": [],
+  "evidence": [],
+  "governance": {
+    "status": "proposed",
+    "authority": "unreviewed",
+    "required_levels": [
+      "semantic",
+      "data-architecture"
+    ],
+    "records": []
+  },
+  "body_markdown": "# Quality Is Managed at the Source\n\n## Statement\n\nData quality issues shall be prevented and corrected as close as possible to where data is created, rather than repaired downstream.\n\n## Rationale\n\nDownstream repairs multiply (every consumer fixes the same problem differently) and hide root causes.\n\n## Implications\n\n- Quality rules are owned by the producing domain and enforced at entry or at the producer interface ([[Data Contract]]).\n- Downstream [[Data Quality Gate|quality gates]] detect and report, and route issues back to the source.\n\n## Consequences\n\n- Positive: single fix, consistent data.\n- Negative: sources may be legacy or external systems that cannot be changed; then downstream correction is a documented, temporary exception.\n\n## Applicability\n\nAll shared data.\n\n## Exceptions\n\nExternal data sources beyond organisational control; migration cleansing ([[Data Migration]]) as a one-time activity.\n\n## Related Principles\n\n- [[Data Has an Accountable Owner]]\n"
+}

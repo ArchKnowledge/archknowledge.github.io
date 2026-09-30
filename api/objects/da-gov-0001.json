@@ -1,0 +1,103 @@
+{
+  "id": "DA-GOV-0001",
+  "type": "governance",
+  "title": "Architecture Governance Model",
+  "domain": "Architecture Governance",
+  "layer": [
+    "cross-layer"
+  ],
+  "status": "proposed",
+  "quality": "draft",
+  "confidence": "medium",
+  "epistemic_status": "recommendation",
+  "owner": "unassigned",
+  "version": "0.1.0",
+  "publication_tier": "community",
+  "summary": "The overall model of how data and architecture decisions are governed \u2014 layered decision rights, roles, lifecycle, controls and change process \u2014 treated as a first-class architectural layer.",
+  "path": "16-architecture-governance/Architecture Governance Model.md",
+  "relationships": [
+    {
+      "type": "realizes",
+      "direction": "out",
+      "target": "DA-CON-0018",
+      "title": "Data Governance"
+    },
+    {
+      "type": "realizes",
+      "direction": "out",
+      "target": "DA-PRI-0009",
+      "title": "Governance Is Embedded in Delivery"
+    },
+    {
+      "type": "governs",
+      "direction": "in",
+      "target": "DA-CON-0001",
+      "title": "Data Architecture"
+    },
+    {
+      "type": "has-part",
+      "direction": "in",
+      "target": "DA-GOV-0004",
+      "title": "Governance Lifecycle"
+    },
+    {
+      "type": "has-part",
+      "direction": "in",
+      "target": "DA-GOV-0003",
+      "title": "Governance Roles"
+    },
+    {
+      "type": "has-part",
+      "direction": "in",
+      "target": "DA-GOV-0006",
+      "title": "Knowledge Quality Model"
+    },
+    {
+      "type": "has-part",
+      "direction": "in",
+      "target": "DA-GOV-0007",
+      "title": "Knowledge Repository Governance"
+    },
+    {
+      "type": "has-part",
+      "direction": "in",
+      "target": "DA-GOV-0008",
+      "title": "Terminology Governance"
+    },
+    {
+      "type": "has-part",
+      "direction": "in",
+      "target": "DA-GRL-0002",
+      "title": "Separate Decision per Governance Level"
+    },
+    {
+      "type": "has-part",
+      "direction": "in",
+      "target": "DA-GRL-0003",
+      "title": "Separation of Duties in Approval"
+    },
+    {
+      "type": "has-part",
+      "direction": "in",
+      "target": "DA-GRL-0001",
+      "title": "Status Change Requires Governance Record"
+    },
+    {
+      "type": "governs",
+      "direction": "in",
+      "target": "DA-RAR-0001",
+      "title": "Governed Analytical Data Platform"
+    }
+  ],
+  "sources": [],
+  "evidence": [],
+  "governance": {
+    "status": "proposed",
+    "authority": "unreviewed",
+    "required_levels": [
+      "data-architecture"
+    ],
+    "records": []
+  },
+  "body_markdown": "# Architecture Governance Model\n\n## Purpose\n\nDefine how governance works as an architectural layer: who decides what, at which layer, on which basis, with which evidence, and how decisions are recorded, published and changed.\n\n## Scope\n\nArchitecture and data governance for the organisation's data landscape, and \u2014 by application of the same model \u2014 this knowledge base ([[Knowledge Repository Governance]]).\n\n## Model\n\n```text\n            \u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500 Governance layer \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\nStandards \u2192 \u2502 Decision Rights Model \u2192 Roles \u2192 Lifecycle \u2192 Controls \u2192 Change Process \u2502 \u2192 Recorded decisions\nPrinciples  \u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n                     \u2502 applies per architecture layer\n     Business \u00b7 Conceptual \u00b7 Semantic \u00b7 Information \u00b7 Logical \u00b7 Physical \u00b7 Technical\n```\n\n| Component | Answers | Object |\n|---|---|---|\n| Decision rights | Who can decide what, at which layer? | [[Decision Rights Model]] |\n| Roles | Who plays which part? | [[Governance Roles]] |\n| Lifecycle | Through which states does an artifact move? | [[Governance Lifecycle]] |\n| Controls | What must be checked, with which evidence? | [[Mandatory Metadata Control]], [[Architecture Review Control]], \u2026 |\n| Change process | How are changes proposed, validated, approved, implemented? | [[Architecture Change Process]] |\n| Quality | How trustworthy is the knowledge? | [[Knowledge Quality Model]] |\n| Terminology | How are terms and meanings governed? | [[Terminology Governance]] |\n\n## The governance questions (spec \u00a710)\n\n| Question | Answered by |\n|---|---|\n| Who can decide? | [[Decision Rights Model]], role objects |\n| What can they decide? | decision rights per layer |\n| At which architectural layer? | [[Architecture Layer]] |\n| Based on which standards? | standard objects, principles, `constrained-by` links |\n| What evidence is required? | controls (Evidence section) |\n| Who approves? | approver per layer in [[Decision Rights Model]] |\n| What is generated after approval? | [[Architecture Change Process]] step \"Artifact Generation\" |\n| How is the decision recorded? | ADR / governance decision objects, Git history |\n| How can it be changed? | [[Architecture Change Process]] and lifecycle transitions |\n\n## Principles\n\n[[Governance Is Embedded in Delivery]], [[Decisions Belong to Their Layer]], [[Architecture Decisions Are Traceable]], [[Data Has an Accountable Owner]].\n"
+}

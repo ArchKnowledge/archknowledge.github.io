@@ -1,0 +1,67 @@
+{
+  "id": "DA-CON-0015",
+  "type": "concept",
+  "title": "Controlled Vocabulary",
+  "domain": "Semantic Architecture",
+  "layer": [
+    "semantic"
+  ],
+  "status": "proposed",
+  "quality": "draft",
+  "confidence": "high",
+  "epistemic_status": "common-practice",
+  "owner": "unassigned",
+  "version": "0.1.0",
+  "publication_tier": "community",
+  "definition": "A governed list of approved terms, each with a defined meaning, used to label and classify information consistently.",
+  "path": "04-semantic-architecture/concepts/Controlled Vocabulary.md",
+  "relationships": [
+    {
+      "type": "specializes",
+      "direction": "out",
+      "target": "DA-CON-0012",
+      "title": "Semantic Model"
+    },
+    {
+      "type": "governed-by",
+      "direction": "out",
+      "target": "DA-GOV-0008",
+      "title": "Terminology Governance"
+    },
+    {
+      "type": "supported-by",
+      "direction": "out",
+      "target": "DA-STD-0001",
+      "title": "SKOS"
+    },
+    {
+      "type": "represented-by",
+      "direction": "out",
+      "target": "DA-CON-0027",
+      "title": "Reference Data"
+    },
+    {
+      "type": "dependency-of",
+      "direction": "in",
+      "target": "DA-CON-0014",
+      "title": "Taxonomy"
+    },
+    {
+      "type": "recommended-by",
+      "direction": "in",
+      "target": "DA-DTR-0005",
+      "title": "Semantic Modeling Approach Decision Tree"
+    }
+  ],
+  "sources": [],
+  "evidence": [],
+  "governance": {
+    "status": "proposed",
+    "authority": "unreviewed",
+    "required_levels": [
+      "semantic"
+    ],
+    "records": []
+  },
+  "body_markdown": "# Controlled Vocabulary\n\n## Definition\n\nA Controlled Vocabulary is a governed list of approved terms, each with a defined meaning, used to label and classify information consistently.\n\n## Explanation\n\nIt is the simplest form of [[Semantic Model]]. Its key properties are: preferred terms, definitions, synonyms mapped to preferred terms, forbidden terms, and a change process. This knowledge base itself uses a controlled vocabulary (`00-system/terminology/terminology.yaml`), governed by [[Terminology Governance]].\n\n## Distinctions\n\n- Versus [[Reference Data]]: reference data are the *coded values* used in data (e.g. `NL`, `DE`); a controlled vocabulary governs *terms and meanings*. A code list is often the data realization of a controlled vocabulary.\n- Versus [[Taxonomy]]: no hierarchy required.\n\n## Examples\n\n- The list of approved document types in a records management system.\n"
+}

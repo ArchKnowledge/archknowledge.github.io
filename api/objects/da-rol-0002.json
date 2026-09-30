@@ -1,0 +1,57 @@
+{
+  "id": "DA-ROL-0002",
+  "type": "role",
+  "title": "Data Steward",
+  "domain": "Data Governance",
+  "layer": [
+    "semantic",
+    "information"
+  ],
+  "status": "proposed",
+  "quality": "draft",
+  "confidence": "medium",
+  "epistemic_status": "common-practice",
+  "owner": "unassigned",
+  "version": "0.1.0",
+  "publication_tier": "community",
+  "summary": "Operational role caring for data on behalf of the owner: definitions, metadata, quality rules and issue resolution.",
+  "path": "06-data-governance/roles/Data Steward.md",
+  "relationships": [
+    {
+      "type": "realizes",
+      "direction": "out",
+      "target": "DA-CON-0020",
+      "title": "Data Stewardship"
+    },
+    {
+      "type": "part-of",
+      "direction": "out",
+      "target": "DA-GOV-0003",
+      "title": "Governance Roles"
+    },
+    {
+      "type": "supported-by",
+      "direction": "out",
+      "target": "DA-ROL-0004",
+      "title": "Domain Expert"
+    },
+    {
+      "type": "governs",
+      "direction": "in",
+      "target": "DA-CON-0027",
+      "title": "Reference Data"
+    }
+  ],
+  "sources": [],
+  "evidence": [],
+  "governance": {
+    "status": "proposed",
+    "authority": "unreviewed",
+    "required_levels": [
+      "semantic",
+      "information-model"
+    ],
+    "records": []
+  },
+  "body_markdown": "# Data Steward\n\n## Purpose\n\nTurn owner decisions into maintained definitions, metadata and quality rules ([[Data Stewardship]]).\n\n## Responsibilities\n\n- Draft and maintain definitions and synonyms.\n- Define and monitor quality rules; triage issues.\n- Maintain business metadata and reference data.\n- Coordinate with custodians on fixes.\n\n## Decision Rights\n\nProposes at the semantic level; decides on routine metadata maintenance within approved definitions.\n\n## Inputs\n\nOwner decisions; quality measurements; user questions.\n\n## Outputs\n\nDefinitions (proposed); rules; issue resolutions; metadata.\n\n## Required Competencies\n\nDomain knowledge; data quality methods; facilitation.\n\n## Escalation Paths\n\nUnresolved issues \u2192 [[Data Owner]].\n\n## Related Governance Processes\n\n- [[Decision Rights Model]]\n- [[Architecture Change Process]]\n- [[Governance Lifecycle]]\n"
+}

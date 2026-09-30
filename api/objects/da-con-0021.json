@@ -1,0 +1,82 @@
+{
+  "id": "DA-CON-0021",
+  "type": "concept",
+  "title": "Data Quality",
+  "domain": "Data Quality",
+  "layer": [
+    "cross-layer"
+  ],
+  "status": "proposed",
+  "quality": "draft",
+  "confidence": "high",
+  "epistemic_status": "common-practice",
+  "owner": "unassigned",
+  "version": "0.1.0",
+  "publication_tier": "community",
+  "definition": "The degree to which data is fit for its intended uses, assessed against explicit requirements along defined quality dimensions.",
+  "aliases": [
+    "DQ"
+  ],
+  "path": "07-data-quality/Data Quality.md",
+  "relationships": [
+    {
+      "type": "supported-by",
+      "direction": "out",
+      "target": "DA-CON-0016",
+      "title": "Metadata"
+    },
+    {
+      "type": "measured-by",
+      "direction": "out",
+      "target": "DA-CON-0022",
+      "title": "Data Quality Dimension"
+    },
+    {
+      "type": "governed-by",
+      "direction": "out",
+      "target": "DA-CON-0018",
+      "title": "Data Governance"
+    },
+    {
+      "type": "constrained-by",
+      "direction": "out",
+      "target": "DA-PRI-0005",
+      "title": "Quality Is Managed at the Source"
+    },
+    {
+      "type": "constrained-by",
+      "direction": "out",
+      "target": "DA-STD-0005",
+      "title": "ISO 8000 Data Quality"
+    },
+    {
+      "type": "constrained-by",
+      "direction": "out",
+      "target": "DA-STD-0006",
+      "title": "ISO IEC 25012 Data Quality Model"
+    },
+    {
+      "type": "supported-by",
+      "direction": "out",
+      "target": "DA-PAT-0010",
+      "title": "Data Quality Gate"
+    },
+    {
+      "type": "dependency-of",
+      "direction": "in",
+      "target": "DA-CON-0024",
+      "title": "Data Migration"
+    }
+  ],
+  "sources": [],
+  "evidence": [],
+  "governance": {
+    "status": "proposed",
+    "authority": "unreviewed",
+    "required_levels": [
+      "data-architecture"
+    ],
+    "records": []
+  },
+  "body_markdown": "# Data Quality\n\n## Definition\n\nData Quality is the degree to which data is fit for its intended uses, assessed against explicit requirements along defined [[Data Quality Dimension|quality dimensions]].\n\n## Explanation\n\nQuality is **relative to use**: the same data can be adequate for trend reporting and inadequate for invoicing. Therefore quality requirements must be explicit, owned and measurable. Architecture contributes by: placing controls near the source ([[Quality Is Managed at the Source]]), building [[Data Quality Gate|quality gates]] into flows, providing lineage for root-cause analysis, and designing models that prevent invalid states.\n\nRelevant standards include [[ISO IEC 25012 Data Quality Model]] (a quality model for data) and [[ISO 8000 Data Quality]] (a series on data quality and master data exchange).\n\n## Distinctions\n\n- Data quality vs **data validation**: validation is one mechanism to check quality rules.\n- Data quality vs **metadata quality**: metadata has quality too (completeness of definitions, accuracy of lineage).\n\n## Examples\n\n- \"99.5% of active policies have a valid postal code\" as a measurable requirement.\n"
+}

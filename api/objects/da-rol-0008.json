@@ -1,0 +1,56 @@
+{
+  "id": "DA-ROL-0008",
+  "type": "role",
+  "title": "Data Architect",
+  "domain": "Architecture",
+  "layer": [
+    "logical",
+    "cross-layer"
+  ],
+  "status": "proposed",
+  "quality": "draft",
+  "confidence": "medium",
+  "epistemic_status": "common-practice",
+  "owner": "unassigned",
+  "version": "0.1.0",
+  "publication_tier": "community",
+  "summary": "Architect responsible for the realization of information in data structures, flows, history mechanisms and authoritative sources.",
+  "path": "06-data-governance/roles/Data Architect.md",
+  "relationships": [
+    {
+      "type": "part-of",
+      "direction": "out",
+      "target": "DA-GOV-0003",
+      "title": "Governance Roles"
+    },
+    {
+      "type": "owns",
+      "direction": "in",
+      "target": "DA-CON-0008",
+      "title": "Logical Data Model"
+    },
+    {
+      "type": "generalizes",
+      "direction": "in",
+      "target": "DA-ROL-0009",
+      "title": "Domain Architect"
+    },
+    {
+      "type": "dependency-of",
+      "direction": "in",
+      "target": "DA-ROL-0011",
+      "title": "Solution Architect"
+    }
+  ],
+  "sources": [],
+  "evidence": [],
+  "governance": {
+    "status": "proposed",
+    "authority": "unreviewed",
+    "required_levels": [
+      "data-architecture"
+    ],
+    "records": []
+  },
+  "body_markdown": "# Data Architect\n\n## Purpose\n\nDesign data architecture that realizes information models within principles and standards.\n\n## Responsibilities\n\n- Design logical models and data flows.\n- Decide history, integration and MDM approaches (with ADRs).\n- Designate authoritative sources.\n- Perform impact analysis.\n\n## Decision Rights\n\nData architecture level: logical structures, integration style, history mechanism; above threshold via [[Architecture Board]].\n\n## Inputs\n\nInformation models; principles; platform capabilities.\n\n## Outputs\n\nLogical models; ADRs; data flow designs.\n\n## Required Competencies\n\nData modeling; integration; temporal data; governance.\n\n## Escalation Paths\n\nCross-domain or principle exceptions \u2192 [[Architecture Board]].\n\n## Related Governance Processes\n\n- [[Decision Rights Model]]\n- [[Architecture Change Process]]\n- [[Governance Lifecycle]]\n"
+}

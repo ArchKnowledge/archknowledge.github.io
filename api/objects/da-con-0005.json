@@ -1,0 +1,67 @@
+{
+  "id": "DA-CON-0005",
+  "type": "concept",
+  "title": "Data Model",
+  "domain": "Data Modeling",
+  "layer": [
+    "conceptual",
+    "information",
+    "logical",
+    "physical"
+  ],
+  "status": "proposed",
+  "quality": "draft",
+  "confidence": "high",
+  "epistemic_status": "common-practice",
+  "owner": "unassigned",
+  "version": "0.1.0",
+  "publication_tier": "community",
+  "definition": "A structured representation of data \u2014 its entities, attributes, relationships and constraints \u2014 at a stated level of abstraction and for a stated purpose.",
+  "path": "03-data-modeling/Data Model.md",
+  "relationships": [
+    {
+      "type": "part-of",
+      "direction": "out",
+      "target": "DA-CON-0001",
+      "title": "Data Architecture"
+    },
+    {
+      "type": "generalizes",
+      "direction": "in",
+      "target": "DA-CON-0007",
+      "title": "Information Model"
+    },
+    {
+      "type": "generalizes",
+      "direction": "in",
+      "target": "DA-CON-0006",
+      "title": "Conceptual Data Model"
+    },
+    {
+      "type": "generalizes",
+      "direction": "in",
+      "target": "DA-CON-0008",
+      "title": "Logical Data Model"
+    },
+    {
+      "type": "generalizes",
+      "direction": "in",
+      "target": "DA-CON-0009",
+      "title": "Physical Data Model"
+    }
+  ],
+  "sources": [],
+  "evidence": [],
+  "governance": {
+    "status": "proposed",
+    "authority": "unreviewed",
+    "required_levels": [
+      "semantic",
+      "information-model",
+      "data-architecture",
+      "technical"
+    ],
+    "records": []
+  },
+  "body_markdown": "# Data Model\n\n## Definition\n\nA Data Model is a structured representation of data \u2014 its entities, attributes, relationships and constraints \u2014 at a stated level of abstraction and for a stated purpose.\n\n## Explanation\n\n\"Data model\" is an umbrella term. A model is only meaningful when its **level** is explicit. This knowledge base distinguishes four model levels, each belonging to an [[Architecture Layer]]:\n\n| Model | Layer | Answers |\n|---|---|---|\n| [[Conceptual Data Model]] | Conceptual | Which things matter and how they relate? |\n| [[Information Model]] | Information | How is meaning represented, paradigm-independent? |\n| [[Logical Data Model]] | Logical | How is it structured in a paradigm (relational, dimensional, graph)? |\n| [[Physical Data Model]] | Physical | How is it realized in a specific store? |\n\nMeaning itself is defined in the [[Semantic Model]], not in the data model ([[Meaning Before Representation]]).\n\n## Distinctions\n\n- A data model is not a database schema; a schema is one realization of a physical model.\n- A data model is not a [[Semantic Model]]: data models represent meaning, semantic models define it.\n\n## Examples\n\n- An ER diagram of Party, Agreement and Product (conceptual).\n- A star schema with a Sales fact and Customer dimension (logical, dimensional paradigm).\n"
+}

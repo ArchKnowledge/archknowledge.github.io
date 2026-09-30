@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Concept-to-Model Traceability · Architecture Knowledge Graph</title>
+<meta name="description" content="Link every model element at each layer to the governed concept it represents and to the model element it realizes, so meaning and impact can be traced across layers.">
+<link rel="canonical" href="https://archknowledge.github.io/knowledge/da-pat-0014.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Architecture Knowledge Graph">
+<meta property="og:title" content="Concept-to-Model Traceability">
+<meta property="og:description" content="Link every model element at each layer to the governed concept it represents and to the model element it realizes, so meaning and impact can be traced across layers.">
+<meta property="og:url" content="https://archknowledge.github.io/knowledge/da-pat-0014.html">
+<meta name="twitter:card" content="summary">
+<meta name="color-scheme" content="light dark">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../assets/style.css">
+<meta name="akg-root" content="../">
+<script src="../assets/site.js" defer></script>
+
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="../index.html" aria-label="Architecture Knowledge Graph — home">
+      <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true"><path d="M6 24 16 8l10 16M6 24h20M16 8v16" /><circle cx="16" cy="8" r="3"/><circle cx="6" cy="24" r="3"/><circle cx="26" cy="24" r="3"/><circle cx="16" cy="24" r="2.2"/></svg>
+      <span>Architecture<br>Knowledge Graph</span>
+    </a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+    <nav id="site-nav" class="site-nav" aria-label="Main">
+      <ul>
+<li><a href="../why.html">Why</a></li>
+<li><a href="../knowledge-graph.html">Knowledge Graph</a></li>
+<li><a href="../explore.html" aria-current="page">Explore</a></li>
+<li><a href="../products.html">Products</a></li>
+<li><a href="../governance.html">Governance</a></li>
+<li><a href="../roadmap.html">Roadmap</a></li>
+<li><a href="../search.html">Search</a></li>
+        <li><a class="gh" href="https://github.com/ArchKnowledge/Architecture-Knowledge-Graph">GitHub <span class="nav-note">private</span></a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+<p class="preview-bar wrap" role="note">Early preview · Phase 1 of the roadmap · All knowledge is in draft and awaiting human review.</p>
+<main id="main">
+
+<article class="object page-narrow">
+  <p class="eyebrow"><span class="dot t-pattern"></span>Pattern · <a href="../explore/semantic-architecture.html">Semantic Architecture</a></p>
+  <h1>Concept-to-Model Traceability</h1>
+  <p class="lead">Link every model element at each layer to the governed concept it represents and to the model element it realizes, so meaning and impact can be traced across layers.</p>
+  <p class="notice" role="note"><strong>Draft knowledge.</strong> Status <code>proposed</code>, quality <code>draft</code>. Not yet reviewed or approved by a human architect.</p>
+  <div class="object-grid">
+    <div class="object-body"><h2>Problem</h2>
+<p>Nobody can tell which business concept a table or column represents, or which models are affected when a definition changes.</p>
+<h2>Context</h2>
+<p>Organisations with governed business concepts and models at multiple layers.</p>
+<h2>Forces</h2>
+<ul>
+<li>Traceability value vs. maintenance effort.</li>
+</ul>
+<h2>Solution</h2>
+<p>Maintain explicit links: <code>physical column → realizes → logical attribute → realizes → information attribute → represents → concept</code>. Store the links as metadata (e.g. concept IRIs in model annotations) and validate them automatically.</p>
+<h2>Architecture</h2>
+<pre><code class="language-text">Concept (semantic) ◀─represents─ Information element ◀─realizes─ Logical element ◀─realizes─ Physical element
+</code></pre>
+<h2>Advantages</h2>
+<ul>
+<li>Impact analysis of definition changes; shared meaning in integration and migration.</li>
+</ul>
+<h2>Disadvantages</h2>
+<ul>
+<li>Needs tooling and discipline.</li>
+</ul>
+<h2>Risks</h2>
+<ul>
+<li>Links created mechanically without semantic review.</li>
+</ul>
+<h2>When to Use</h2>
+<ul>
+<li>Governed, shared or regulated data.</li>
+</ul>
+<h2>When Not to Use</h2>
+<ul>
+<li>Throw-away prototypes.</li>
+</ul>
+<h2>Alternatives</h2>
+<p>Glossary-only linking (catalog term to column) — weaker, skips intermediate layers.</p>
+<h2>Examples</h2>
+<ul>
+<li>Column <code>klant.ingangsdatum</code> linked to concept "Customer Since Date" through the information model.</li>
+</ul>
+<h2>Related Decisions</h2>
+<ul>
+<li><span class="ref-locked" title="Professional tier — not published on this site">Select Semantic Modeling Formalism <span class="tier-tag">Professional</span></span></li>
+</ul></div>
+    <aside class="object-meta" aria-label="Metadata and relationships">
+      <h2>Metadata</h2><dl><dt>ID</dt><dd><code>DA-PAT-0014</code></dd><dt>Type</dt><dd>Pattern</dd><dt>Domain</dt><dd><a href="../explore/semantic-architecture.html">Semantic Architecture</a></dd><dt>Layer</dt><dd>semantic, information, logical, physical</dd><dt>Status</dt><dd>proposed</dd><dt>Quality</dt><dd>draft</dd><dt>Confidence</dt><dd>medium</dd><dt>Epistemic status</dt><dd>recommendation</dd><dt>Content tier</dt><dd>Community</dd><dt>Version</dt><dd>0.1.0</dd><dt>Updated</dt><dd>2026-09-29</dd><dt>Source file</dt><dd><code>19-architecture-patterns/Concept-to-Model Traceability.md</code></dd></dl>
+      <h2>Relationships</h2>
+      <table class='rels'><tbody><tr><td><code>mitigates</code></td><td><a class="ref t-anti" href="../knowledge/da-apt-0001.html">Implicit Semantics</a></td><td class="muted">Anti-pattern</td></tr><tr><td><code>mitigates</code></td><td><a class="ref t-anti" href="../knowledge/da-apt-0002.html">Overloaded Attribute</a></td><td class="muted">Anti-pattern</td></tr><tr><td><code>mitigates</code></td><td><a class="ref t-anti" href="../knowledge/da-apt-0006.html">Physical-Model-First Design</a></td><td class="muted">Anti-pattern</td></tr><tr><td><code>realizes</code></td><td><a class="ref t-principle" href="../knowledge/da-pri-0002.html">Meaning Before Representation</a></td><td class="muted">Principle</td></tr><tr><td><code>supported-by</code></td><td><a class="ref t-tool" href="../knowledge/da-mth-0001.html">Layered Model Derivation</a></td><td class="muted">Method</td></tr><tr><td><code>supported-by</code></td><td><span class="ref-locked" title="Architect tier — not published on this site">Metadata Management Reference Architecture <span class="tier-tag">Architect</span></span></td><td class="muted">Reference architecture</td></tr><tr><td><code>supported-by</code></td><td><span class="ref-locked" title="Professional tier — not published on this site">Traceability Control <span class="tier-tag">Professional</span></span></td><td class="muted">Control</td></tr><tr><td><code>recommended-by</code></td><td><a class="ref t-decision" href="../knowledge/da-dtr-0005.html">Semantic Modeling Approach Decision Tree</a></td><td class="muted">Decision tree</td></tr></tbody></table>
+      <h2>Sources</h2><p class="muted">No verified source attached yet.</p>
+      <h2>Feedback</h2><p><a href="mailto:dalust1997@gmail.com?subject=Feedback%3A%20DA-PAT-0014%20Concept-to-Model%20Traceability&amp;body=Page%20or%20knowledge%20object%3A%20DA-PAT-0014%20-%20Concept-to-Model%20Traceability%0AKind%20of%20feedback%20%28factual%20error%20/%20unclear%20/%20missing%20/%20terminology%20/%20suggestion%20/%20other%29%3A%20%0AWhat%20should%20change%2C%20and%20why%3A%0A%0A%0ASource%20%28optional%29%3A%0A">Give feedback on this page</a> — report an error, something unclear or missing, or a source.</p>
+    </aside>
+  </div>
+</article>
+</main>
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <div>
+      <p class="footer-brand">Architecture Knowledge Graph</p>
+      <p class="muted">A structured and governed knowledge graph for data, information and enterprise architecture.</p>
+    </div>
+    <div>
+      <p class="muted">Generated from the knowledge graph on 2026-09-30: 155 objects, 388 typed relationships.</p>
+      <p class="muted"><a href="mailto:dalust1997@gmail.com?subject=Feedback%3A%20Architecture%20Knowledge%20Graph&amp;body=Page%20or%20knowledge%20object%3A%20%28page%20title%2C%20ID%20or%20URL%29%0AKind%20of%20feedback%20%28factual%20error%20/%20unclear%20/%20missing%20/%20terminology%20/%20suggestion%20/%20other%29%3A%20%0AWhat%20should%20change%2C%20and%20why%3A%0A%0A%0ASource%20%28optional%29%3A%0A">Send feedback</a> · <a href="https://github.com/ArchKnowledge/Architecture-Knowledge-Graph">Source repository</a> <span class="muted">(private during phase 1)</span> · No products are currently for sale.</p>
+      <p class="muted">© 2026 Architecture Knowledge Graph project. Content licence to be decided; all rights reserved until then. Referenced standards belong to their issuing organisations.</p>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,46 @@
+{
+  "id": "DA-REQ-0001",
+  "type": "requirement",
+  "title": "Policy State Is Reproducible As Known At Any Past Date",
+  "domain": "Examples & Case Studies",
+  "status": "proposed",
+  "quality": "draft",
+  "confidence": "medium",
+  "epistemic_status": "hypothesis",
+  "owner": "unassigned",
+  "version": "0.1.0",
+  "publication_tier": "community",
+  "summary": "Fictitious example requirement: the policy administration must reproduce any policy as it was valid on a date and as it was recorded at another date.",
+  "path": "23-examples/Policy State Is Reproducible As Known At Any Past Date.md",
+  "relationships": [
+    {
+      "type": "constrained-by",
+      "direction": "out",
+      "target": "DA-PRI-0010",
+      "title": "Historical Requirements Are Explicit"
+    },
+    {
+      "type": "dependency-of",
+      "direction": "in",
+      "target": "DA-EXA-0001",
+      "title": "Insurance Policy History Example"
+    },
+    {
+      "type": "addressed-by",
+      "direction": "in",
+      "target": "DA-PAT-0001",
+      "title": "Bitemporal Data Model"
+    }
+  ],
+  "sources": [],
+  "evidence": [],
+  "governance": {
+    "status": "proposed",
+    "authority": "unreviewed",
+    "required_levels": [
+      "data-architecture"
+    ],
+    "records": []
+  },
+  "body_markdown": "# Policy State Is Reproducible As Known At Any Past Date\n\n## Requirement\n\n**Fictitious, for illustration.** For every policy, the system shall reproduce its state as valid on any date V as it was known on any date T (T \u2265 V or T < V), for at least seven years.\n\n## Rationale\n\nBackdated premium corrections are frequent; regulators may ask how an invoice was computed at the time.\n\n## Acceptance Criteria\n\n- A query \"policy P, valid on V, as known at T\" returns the recorded values.\n- Correcting a past value does not change the result of queries with T before the correction.\n"
+}

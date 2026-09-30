@@ -1,0 +1,43 @@
+{
+  "id": "DA-PRI-0007",
+  "type": "principle",
+  "title": "Architecture Decisions Are Traceable",
+  "domain": "Architecture Governance",
+  "layer": [
+    "cross-layer"
+  ],
+  "status": "proposed",
+  "quality": "draft",
+  "confidence": "high",
+  "epistemic_status": "recommendation",
+  "owner": "unassigned",
+  "version": "0.1.0",
+  "publication_tier": "community",
+  "summary": "Significant architecture decisions are recorded with their context, options and rationale, and are traceable from source knowledge to implementation.",
+  "path": "16-architecture-governance/principles/Architecture Decisions Are Traceable.md",
+  "relationships": [
+    {
+      "type": "constrains",
+      "direction": "in",
+      "target": "DA-CON-0004",
+      "title": "Architecture Decision"
+    },
+    {
+      "type": "constrains",
+      "direction": "in",
+      "target": "DA-FWK-0001",
+      "title": "Architecture Decision Framework"
+    }
+  ],
+  "sources": [],
+  "evidence": [],
+  "governance": {
+    "status": "proposed",
+    "authority": "unreviewed",
+    "required_levels": [
+      "data-architecture"
+    ],
+    "records": []
+  },
+  "body_markdown": "# Architecture Decisions Are Traceable\n\n## Statement\n\nSignificant architecture decisions shall be recorded with their context, options and rationale, and be traceable along the chain *Source \u2192 Knowledge \u2192 Decision \u2192 Architecture \u2192 Implementation*.\n\n## Rationale\n\nUnrecorded decisions are re-debated, silently reversed, or cannot be defended to auditors.\n\n## Implications\n\n- Decisions use the ADR structure (see `00-system/templates/ADR Template.md`).\n- Decisions link to the patterns and principles considered and to the architectures they affect.\n\n## Consequences\n\n- Positive: institutional memory, auditable architecture.\n- Negative: documentation effort; mitigated by lightweight ADRs.\n\n## Applicability\n\nDecisions that are costly to reverse, cross team boundaries or affect governed data.\n\n## Exceptions\n\nEasily reversible local decisions.\n\n## Related Principles\n\n- [[Decisions Belong to Their Layer]]\n"
+}

@@ -1,0 +1,55 @@
+{
+  "id": "DA-PRC-0001",
+  "type": "process",
+  "title": "Knowledge Change Review Process",
+  "domain": "Architecture Governance",
+  "layer": [
+    "cross-layer"
+  ],
+  "status": "proposed",
+  "quality": "draft",
+  "confidence": "medium",
+  "epistemic_status": "recommendation",
+  "owner": "unassigned",
+  "version": "0.1.0",
+  "publication_tier": "community",
+  "summary": "The pull-request based process by which a proposed change to the knowledge graph is validated, reviewed, decided per governance level, recorded, merged and published.",
+  "path": "16-architecture-governance/decision-making/Knowledge Change Review Process.md",
+  "relationships": [
+    {
+      "type": "part-of",
+      "direction": "out",
+      "target": "DA-GOV-0007",
+      "title": "Knowledge Repository Governance"
+    },
+    {
+      "type": "governed-by",
+      "direction": "out",
+      "target": "DA-GRL-0001",
+      "title": "Status Change Requires Governance Record"
+    },
+    {
+      "type": "governed-by",
+      "direction": "out",
+      "target": "DA-GRL-0002",
+      "title": "Separate Decision per Governance Level"
+    },
+    {
+      "type": "governed-by",
+      "direction": "out",
+      "target": "DA-GRL-0003",
+      "title": "Separation of Duties in Approval"
+    }
+  ],
+  "sources": [],
+  "evidence": [],
+  "governance": {
+    "status": "proposed",
+    "authority": "unreviewed",
+    "required_levels": [
+      "data-architecture"
+    ],
+    "records": []
+  },
+  "body_markdown": "# Knowledge Change Review Process\n\n## Purpose\n\nTurn \"a proposed change to the governed architecture knowledge graph\" (a pull request) into an audited decision. Machine-readable: `00-system/governance/review-process.yaml`.\n\n## Trigger\n\nA pull request from a `feature/`, `fix/`, `schema/`, `taxonomy/` or `governance/` branch.\n\n## Steps\n\n1. **Submit** \u2014 contributor opens the PR with the template; discloses AI assistance.\n2. **Validate** \u2014 workflows validate-schema, validate-knowledge, validate-links, governance-check; report in the job summary.\n3. **Triage** \u2014 domain owner assigns a reviewer, confirms required governance levels.\n4. **Content review** \u2014 reviewer applies the [[Knowledge Quality Model]].\n5. **Level decisions** \u2014 semantic \u2192 information model \u2192 data architecture \u2192 technical ([[Decision Rights Model]]).\n6. **Record** \u2014 governance record added in the same PR.\n7. **Merge** \u2014 after code-owner review and green checks.\n8. **Publish** \u2014 release tag and publication record.\n\n## Inputs\n\nPull request, validation report, governance levels required.\n\n## Outputs\n\nMerged change, governance record, audit trail.\n\n## Roles\n\nContributor, reviewer, domain owner, approvers per level, code owners, publisher \u2014 see `00-system/governance/roles.yaml`.\n"
+}

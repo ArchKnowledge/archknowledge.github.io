@@ -1,0 +1,57 @@
+{
+  "id": "DA-STD-0001",
+  "type": "standard",
+  "title": "SKOS",
+  "domain": "Standards & Regulations",
+  "status": "proposed",
+  "quality": "draft",
+  "confidence": "high",
+  "epistemic_status": "external-standard",
+  "owner": "unassigned",
+  "version": "0.1.0",
+  "publication_tier": "community",
+  "summary": "Simple Knowledge Organization System \u2014 a W3C data model for representing thesauri, taxonomies, classification schemes and other controlled vocabularies in RDF.",
+  "aliases": [
+    "Simple Knowledge Organization System"
+  ],
+  "path": "24-standards-regulations/SKOS.md",
+  "relationships": [
+    {
+      "type": "depends-on",
+      "direction": "out",
+      "target": "DA-STD-0003",
+      "title": "RDF 1.1"
+    },
+    {
+      "type": "supports",
+      "direction": "in",
+      "target": "DA-CON-0015",
+      "title": "Controlled Vocabulary"
+    },
+    {
+      "type": "supports",
+      "direction": "in",
+      "target": "DA-CON-0014",
+      "title": "Taxonomy"
+    },
+    {
+      "type": "recommended-by",
+      "direction": "in",
+      "target": "DA-DTR-0005",
+      "title": "Semantic Modeling Approach Decision Tree"
+    }
+  ],
+  "sources": [
+    "SKOS Simple Knowledge Organization System Reference, W3C Recommendation, https://www.w3.org/TR/skos-reference/"
+  ],
+  "evidence": [],
+  "governance": {
+    "status": "proposed",
+    "authority": "unreviewed",
+    "required_levels": [
+      "data-architecture"
+    ],
+    "records": []
+  },
+  "body_markdown": "# SKOS\n\n## Scope\n\nRepresentation of knowledge organization systems (thesauri, taxonomies, classification schemes, subject heading lists) as RDF data.\n\n## Requirements\n\nKey constructs (paraphrased): `skos:Concept`, `skos:ConceptScheme`, labels (`prefLabel`, `altLabel`, `hiddenLabel`), documentation (`definition`, `scopeNote`), semantic relations (`broader`, `narrower`, `related`), and mapping relations across schemes (`exactMatch`, `closeMatch`, `broadMatch`, `narrowMatch`, `relatedMatch`). Integrity conditions include at most one `prefLabel` per language per concept.\n\n## Applicability\n\nBusiness glossaries, taxonomies, code-list semantics ([[Reference Data]]), mapping between vocabularies.\n\n## Related Architecture Concepts\n\n[[Taxonomy]], [[Controlled Vocabulary]], [[Semantic Model]], [[Business Concept]].\n\n## Related Controls\n\n[[Naming Standard Control]] (preferred labels).\n\n## Verification Notes\n\nDate and URL reflect the author's knowledge; to be verified by the reviewer before approval.\n"
+}

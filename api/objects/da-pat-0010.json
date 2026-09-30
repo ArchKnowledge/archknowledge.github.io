@@ -1,0 +1,72 @@
+{
+  "id": "DA-PAT-0010",
+  "type": "pattern",
+  "title": "Data Quality Gate",
+  "domain": "Data Quality",
+  "layer": [
+    "logical",
+    "technical"
+  ],
+  "status": "proposed",
+  "quality": "draft",
+  "confidence": "medium",
+  "epistemic_status": "common-practice",
+  "owner": "unassigned",
+  "version": "0.1.0",
+  "publication_tier": "community",
+  "summary": "Validate data against explicit quality rules at defined points in a data flow and block, quarantine or flag data that fails, with evidence recorded.",
+  "aliases": [
+    "Quality Firewall"
+  ],
+  "path": "19-architecture-patterns/Data Quality Gate.md",
+  "relationships": [
+    {
+      "type": "part-of",
+      "direction": "out",
+      "target": "DA-RAR-0001",
+      "title": "Governed Analytical Data Platform"
+    },
+    {
+      "type": "realizes",
+      "direction": "out",
+      "target": "DA-PRI-0005",
+      "title": "Quality Is Managed at the Source"
+    },
+    {
+      "type": "measured-by",
+      "direction": "out",
+      "target": "DA-CON-0022",
+      "title": "Data Quality Dimension"
+    },
+    {
+      "type": "mitigates",
+      "direction": "out",
+      "target": "DA-APT-0005",
+      "title": "Migration Without Data Profiling"
+    },
+    {
+      "type": "supports",
+      "direction": "in",
+      "target": "DA-CON-0021",
+      "title": "Data Quality"
+    },
+    {
+      "type": "supports",
+      "direction": "in",
+      "target": "DA-PAT-0009",
+      "title": "Layered Data Refinement"
+    }
+  ],
+  "sources": [],
+  "evidence": [],
+  "governance": {
+    "status": "proposed",
+    "authority": "unreviewed",
+    "required_levels": [
+      "data-architecture",
+      "technical"
+    ],
+    "records": []
+  },
+  "body_markdown": "# Data Quality Gate\n\n## Problem\n\nBad data propagates silently to consumers and is discovered late.\n\n## Context\n\nPipelines between layers, producer interfaces, migrations.\n\n## Forces\n\n- Blocking protects consumers but can halt the business.\n- Rule maintenance effort.\n\n## Solution\n\nAt each gate, evaluate owned rules (per [[Data Quality Dimension|dimension]]) with a severity: **blocking** (stop/quarantine), **warning** (pass and flag), **info**. Record results as quality metadata and route issues to the owning steward.\n\n## Architecture\n\n```text\nInput \u2192 rule engine (rules from contract/catalog) \u2192 pass \u2192 next layer\n                                               \u2198 fail(blocking) \u2192 quarantine + issue\n                                               \u2198 fail(warning) \u2192 pass + flag\n```\n\nThis repository applies the same pattern to knowledge: VALID / WARNING / BLOCKING ERROR.\n\n## Advantages\n\n- Early detection; measurable quality; evidence for audits.\n\n## Disadvantages\n\n- Rule sprawl; false positives.\n\n## Risks\n\n- Gates that only warn become ignored.\n\n## When to Use\n\n- Any promotion to a trusted layer; migration loads.\n\n## When Not to Use\n\n- Exploratory sandboxes.\n\n## Alternatives\n\nDownstream reconciliation only (weaker).\n\n## Examples\n\n- Blocking rule \"policy has exactly one holder\"; warning rule \"email present\".\n\n## Related Decisions\n\n- [[Select Data Migration Approach]]\n"
+}

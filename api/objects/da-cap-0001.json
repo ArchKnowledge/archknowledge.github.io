@@ -1,0 +1,46 @@
+{
+  "id": "DA-CAP-0001",
+  "type": "capability",
+  "title": "Historical Data Reconstruction Capability",
+  "domain": "Architecture",
+  "status": "proposed",
+  "quality": "draft",
+  "confidence": "medium",
+  "epistemic_status": "expert-interpretation",
+  "owner": "unassigned",
+  "version": "0.1.0",
+  "publication_tier": "community",
+  "summary": "The ability of an organisation to reconstruct past states of its data - as they were true and as they were known - for operations, audit and regulation.",
+  "path": "02-architecture/capabilities/Historical Data Reconstruction Capability.md",
+  "relationships": [
+    {
+      "type": "requires",
+      "direction": "out",
+      "target": "DA-CON-0010",
+      "title": "Temporal Data Management"
+    },
+    {
+      "type": "realized-by",
+      "direction": "in",
+      "target": "DA-PAT-0001",
+      "title": "Bitemporal Data Model"
+    },
+    {
+      "type": "realized-by",
+      "direction": "in",
+      "target": "DA-PAT-0002",
+      "title": "System-Versioned History Table"
+    }
+  ],
+  "sources": [],
+  "evidence": [],
+  "governance": {
+    "status": "proposed",
+    "authority": "unreviewed",
+    "required_levels": [
+      "data-architecture"
+    ],
+    "records": []
+  },
+  "body_markdown": "# Historical Data Reconstruction Capability\n\n## Description\n\nReconstructing past states on demand, with the time dimensions the business actually requires.\n\n## Outcomes\n\nReproducible reports and decisions; defensible audits; correct handling of backdated corrections.\n\n## Enablers\n\n[[Historical Requirements Are Explicit]], [[Database History Pattern Decision Tree]], history patterns, platform support such as [[SQL Server Temporal Tables]].\n\n## Maturity Indicators\n\n| Level | Indicator |\n|---|---|\n| 1 Fragmented | History reconstructed ad hoc from backups and logs |\n| 2 Documented | History requirements described per system |\n| 3 Structured | History requirements in information models; patterns chosen with the decision tree |\n| 4 Governed | History decisions recorded and approved; retention governed |\n| 5 Executable | History requirements validated automatically against physical models |\n"
+}

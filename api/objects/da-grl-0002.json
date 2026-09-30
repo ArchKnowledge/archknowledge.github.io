@@ -1,0 +1,49 @@
+{
+  "id": "DA-GRL-0002",
+  "type": "governance-rule",
+  "title": "Separate Decision per Governance Level",
+  "domain": "Architecture Governance",
+  "layer": [
+    "cross-layer"
+  ],
+  "status": "proposed",
+  "quality": "draft",
+  "confidence": "medium",
+  "epistemic_status": "recommendation",
+  "owner": "unassigned",
+  "version": "0.1.0",
+  "publication_tier": "community",
+  "summary": "An approval contains one decision for each governance level the object's layers require - semantic, information model, data architecture, technical - never a single combined approval.",
+  "path": "16-architecture-governance/decision-making/Separate Decision per Governance Level.md",
+  "relationships": [
+    {
+      "type": "derived-from",
+      "direction": "out",
+      "target": "DA-PRI-0003",
+      "title": "Decisions Belong to Their Layer"
+    },
+    {
+      "type": "part-of",
+      "direction": "out",
+      "target": "DA-GOV-0001",
+      "title": "Architecture Governance Model"
+    },
+    {
+      "type": "governs",
+      "direction": "in",
+      "target": "DA-PRC-0001",
+      "title": "Knowledge Change Review Process"
+    }
+  ],
+  "sources": [],
+  "evidence": [],
+  "governance": {
+    "status": "proposed",
+    "authority": "unreviewed",
+    "required_levels": [
+      "data-architecture"
+    ],
+    "records": []
+  },
+  "body_markdown": "# Separate Decision per Governance Level\n\n## Rule\n\nRequired levels are derived from the object's `layer` (`decision-rights.yaml` `layer_levels`). The governance record must hold a positive decision per level, by an approver role of that level (E095, E097).\n\n## Rationale\n\n\"What does it mean?\", \"how is it represented?\", \"how does it participate in the architecture?\" and \"how is it technically represented?\" are different questions with different deciders ([[Decision Rights Model]]).\n\n## Scope\n\nAll approvals.\n\n## Enforcement\n\nAutomated: E095, E097. Machine definition: AR-002, AR-004.\n\n## Exceptions\n\nNone; small teams may have one person in several roles, but the decisions are still recorded separately.\n"
+}

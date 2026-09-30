@@ -1,0 +1,37 @@
+{
+  "id": "DA-ADR-0005",
+  "type": "decision",
+  "title": "Declare Epistemic Status on Every Object",
+  "domain": "Foundations",
+  "layer": [
+    "cross-layer"
+  ],
+  "status": "proposed",
+  "quality": "draft",
+  "confidence": "high",
+  "epistemic_status": "recommendation",
+  "owner": "unassigned",
+  "version": "0.1.0",
+  "publication_tier": "community",
+  "summary": "Every knowledge object declares epistemic_status (verified fact, external standard, common practice, expert interpretation, recommendation, hypothesis, experimental) and confidence, and leaves sources empty when no verified source exists.",
+  "path": "20-architecture-decisions/records/Declare Epistemic Status on Every Object.md",
+  "relationships": [
+    {
+      "type": "decides",
+      "direction": "in",
+      "target": "DA-GOV-0006",
+      "title": "Knowledge Quality Model"
+    }
+  ],
+  "sources": [],
+  "evidence": [],
+  "governance": {
+    "status": "proposed",
+    "authority": "unreviewed",
+    "required_levels": [
+      "data-architecture"
+    ],
+    "records": []
+  },
+  "body_markdown": "# Declare Epistemic Status on Every Object\n\n## Context\n\nSpec \u00a73.5 requires distinguishing facts, standards, practice, interpretation, recommendation, hypothesis and experiment. Spec \u00a720/\u00a731 forbid invented sources.\n\n## Problem\n\nHow to make uncertainty explicit and machine-checkable?\n\n## Options\n\n1. Object-level `epistemic_status` + `confidence` fields.\n2. Inline claim-level annotations only.\n3. Both.\n\n## Evaluation Criteria\n\nSimplicity, machine-readability, granularity.\n\n## Trade-offs\n\n- Object-level is coarse: a pattern may mix common practice with recommendations. Claim-level is precise but heavy.\n\n## Decision\n\nProposed: option 1 now, claim-level annotation later where needed (e.g. \"Open Questions\" sections and explicit \"flagged\" statements in body text).\n\n## Consequences\n\n- In release 0.1, almost all objects have `sources: []` and `confidence` reflecting the author's judgement. Standards objects carry a \"Verification Notes\" section: bibliographic details must be checked by a human before approval.\n\n## Assumptions\n\n- A human reviewer will attach verified sources during review.\n\n## Constraints\n\n- The LLM never invents sources.\n\n## Related Architecture\n\n- [[Knowledge Quality Model]]\n"
+}

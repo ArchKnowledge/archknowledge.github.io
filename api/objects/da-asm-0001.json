@@ -1,0 +1,40 @@
+{
+  "id": "DA-ASM-0001",
+  "type": "assessment",
+  "title": "Knowledge Base Maturity Model",
+  "domain": "Assessments & Maturity",
+  "status": "proposed",
+  "quality": "draft",
+  "confidence": "medium",
+  "epistemic_status": "recommendation",
+  "owner": "unassigned",
+  "version": "0.1.0",
+  "publication_tier": "community",
+  "summary": "Five-level maturity model for an architecture knowledge base, from fragmented to executable, with observable indicators and automatable checks per level.",
+  "path": "21-assessments/Knowledge Base Maturity Model.md",
+  "relationships": [
+    {
+      "type": "assesses",
+      "direction": "out",
+      "target": "DA-GOV-0007",
+      "title": "Knowledge Repository Governance"
+    },
+    {
+      "type": "assesses",
+      "direction": "out",
+      "target": "DA-GOV-0006",
+      "title": "Knowledge Quality Model"
+    }
+  ],
+  "sources": [],
+  "evidence": [],
+  "governance": {
+    "status": "proposed",
+    "authority": "unreviewed",
+    "required_levels": [
+      "data-architecture"
+    ],
+    "records": []
+  },
+  "body_markdown": "# Knowledge Base Maturity Model\n\n## Purpose\n\nAssess and steer the maturity of this (or any) architecture knowledge base (spec \u00a718). Target: Level 5.\n\n## Scope\n\nThe knowledge base as a whole, or a single domain within it.\n\n## Structure\n\n| Level | Name | Description | Observable indicators | Automatable check |\n|---|---|---|---|---|\n| 1 | Fragmented | Knowledge exists but is mostly unstructured. | documents, notes, no IDs | \u2014 |\n| 2 | Documented | Knowledge is documented and categorized. | domain folders; titles; some metadata | % objects with `type` and `domain` |\n| 3 | Structured | Knowledge objects and relationships are explicit. | schemas; typed relationships; resolved links | zero E0xx errors; relationships per object \u2265 2; few orphans |\n| 4 | Governed | Ownership, validation and lifecycle management. | owners/reviewers assigned; lifecycle transitions enforced in CI; approvals recorded | % objects \u2265 `validated` with owner; CI transition check active |\n| 5 | Executable | Knowledge drives decisions, assessments, validation and automation. | decision trees and assessments used in practice; products generated from graph; validation of real architectures against knowledge | exports consumed by tools; assessments derived from objects |\n\n## Scoring Mechanism\n\nOrdinal per domain: the highest level whose indicators are **all** met. No averaging across domains \u2014 report per domain.\n\n## Interpretation\n\nRelease 0.1 of this repository is expected to reach **Level 3 (Structured)** structurally, with Level 4 mechanisms in place (lifecycle, owner checks, CI) but not yet exercised: no object has passed human review, so it cannot claim Level 4.\n\n## Recommended Actions\n\n- 2 \u2192 3: introduce schemas and typed relationships; run the validator.\n- 3 \u2192 4: assign owners and reviewers; move objects through review; enforce `--base` transition checks in CI.\n- 4 \u2192 5: use decision trees and assessments in real engagements; generate products (checklists, guides) from the graph; feed exports into tooling.\n"
+}

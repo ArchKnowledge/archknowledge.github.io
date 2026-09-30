@@ -1,0 +1,77 @@
+{
+  "id": "DA-CON-0003",
+  "type": "concept",
+  "title": "Architecture Layer",
+  "domain": "Foundations",
+  "layer": [
+    "cross-layer"
+  ],
+  "status": "proposed",
+  "quality": "draft",
+  "confidence": "medium",
+  "epistemic_status": "expert-interpretation",
+  "owner": "unassigned",
+  "version": "0.1.0",
+  "publication_tier": "community",
+  "definition": "A level of abstraction in the architecture stack (business, conceptual, semantic, information, logical, physical, technical) with its own questions, artifacts and decision rights.",
+  "aliases": [
+    "Architecture Layers",
+    "Layer Model"
+  ],
+  "path": "01-foundations/concepts/Architecture Layer.md",
+  "relationships": [
+    {
+      "type": "constrained-by",
+      "direction": "out",
+      "target": "DA-PRI-0003",
+      "title": "Decisions Belong to Their Layer"
+    },
+    {
+      "type": "has-part",
+      "direction": "in",
+      "target": "DA-CON-0006",
+      "title": "Conceptual Data Model"
+    },
+    {
+      "type": "has-part",
+      "direction": "in",
+      "target": "DA-CON-0012",
+      "title": "Semantic Model"
+    },
+    {
+      "type": "has-part",
+      "direction": "in",
+      "target": "DA-CON-0007",
+      "title": "Information Model"
+    },
+    {
+      "type": "has-part",
+      "direction": "in",
+      "target": "DA-CON-0008",
+      "title": "Logical Data Model"
+    },
+    {
+      "type": "has-part",
+      "direction": "in",
+      "target": "DA-CON-0009",
+      "title": "Physical Data Model"
+    },
+    {
+      "type": "related-to",
+      "direction": "in",
+      "target": "DA-STD-0009",
+      "title": "ArchiMate"
+    }
+  ],
+  "sources": [],
+  "evidence": [],
+  "governance": {
+    "status": "proposed",
+    "authority": "unreviewed",
+    "required_levels": [
+      "data-architecture"
+    ],
+    "records": []
+  },
+  "body_markdown": "# Architecture Layer\n\n## Definition\n\nAn Architecture Layer is a level of abstraction in the architecture stack with its own questions, artifacts and decision rights. This knowledge base distinguishes seven layers (machine-readable in `00-system/taxonomy/layers.yaml`):\n\n| # | Layer | Central question | Typical decisions |\n|---|---|---|---|\n| 1 | Business | What does the organisation do and need? | scope, business rules, accountability |\n| 2 | Conceptual | Which things and relationships matter? | concept scope, high-level relationships |\n| 3 | Semantic | What exactly does each concept mean? | definitions, identity, specialization, equivalence |\n| 4 | Information | How is meaning represented as information structures, paradigm-independent? | classes, attributes, cardinalities, information-level history |\n| 5 | Logical Data | How is information structured in a chosen paradigm? | normalization, keys, temporal modeling approach |\n| 6 | Physical Data | How is the logical model realized in a store? | data types, partitioning, indexing, physical history mechanism |\n| 7 | Technical Implementation | Which technologies and operations implement it? | products, pipelines, deployment |\n\n## Explanation\n\nLayers are **not interchangeable**. A decision taken at the wrong layer produces lock-in or ambiguity: e.g. defining the meaning of \"customer\" in a physical table comment ([[Implicit Semantics]]) or choosing a history mechanism before stating the historical requirement ([[Historical Requirements Are Explicit]]).\n\nThe chain of realization is:\n\n```text\nBusiness Meaning \u2192 Governed Concept \u2192 Semantic Model \u2192 Information Model \u2192 Logical Data Model \u2192 Physical Data Model \u2192 Technical Implementation\n```\n\nEach step `realizes` the step above and is governed by the corresponding level of the [[Decision Rights Model]].\n\n## Distinctions\n\n- A layer is not a system tier (presentation / application / data). System tiers are a technical decomposition that lives entirely within the technical layer.\n- The separation of **semantic** from **information** layer is an interpretation adopted by this knowledge base: the semantic layer answers \"what does it mean?\", the information layer answers \"how is that meaning represented in an information model?\".\n\n## Examples\n\n- \"A customer is a party that has at least one active agreement\" \u2192 semantic layer.\n- \"Customer has attribute `customer since` with cardinality 1..1\" \u2192 information layer.\n- \"`customer_since DATE NOT NULL` partitioned by year\" \u2192 physical layer.\n\n## Open Questions\n\n- Many frameworks merge conceptual and semantic, or information and logical. The seven-layer separation needs review by the domain owner for Foundations.\n"
+}

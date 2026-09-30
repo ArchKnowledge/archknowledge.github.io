@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Architecture Decision Framework · Architecture Knowledge Graph</title>
+<meta name="description" content="A structured, machine-readable sequence for taking architecture decisions - question, criteria, conditions, alternatives, consequences, decision, evidence - that links each stage to knowledge objects.">
+<link rel="canonical" href="https://archknowledge.github.io/knowledge/da-fwk-0001.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Architecture Knowledge Graph">
+<meta property="og:title" content="Architecture Decision Framework">
+<meta property="og:description" content="A structured, machine-readable sequence for taking architecture decisions - question, criteria, conditions, alternatives, consequences, decision, evidence - that links each stage to knowledge objects.">
+<meta property="og:url" content="https://archknowledge.github.io/knowledge/da-fwk-0001.html">
+<meta name="twitter:card" content="summary">
+<meta name="color-scheme" content="light dark">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../assets/style.css">
+<meta name="akg-root" content="../">
+<script src="../assets/site.js" defer></script>
+
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="../index.html" aria-label="Architecture Knowledge Graph — home">
+      <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true"><path d="M6 24 16 8l10 16M6 24h20M16 8v16" /><circle cx="16" cy="8" r="3"/><circle cx="6" cy="24" r="3"/><circle cx="26" cy="24" r="3"/><circle cx="16" cy="24" r="2.2"/></svg>
+      <span>Architecture<br>Knowledge Graph</span>
+    </a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+    <nav id="site-nav" class="site-nav" aria-label="Main">
+      <ul>
+<li><a href="../why.html">Why</a></li>
+<li><a href="../knowledge-graph.html">Knowledge Graph</a></li>
+<li><a href="../explore.html" aria-current="page">Explore</a></li>
+<li><a href="../products.html">Products</a></li>
+<li><a href="../governance.html">Governance</a></li>
+<li><a href="../roadmap.html">Roadmap</a></li>
+<li><a href="../search.html">Search</a></li>
+        <li><a class="gh" href="https://github.com/ArchKnowledge/Architecture-Knowledge-Graph">GitHub <span class="nav-note">private</span></a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+<p class="preview-bar wrap" role="note">Early preview · Phase 1 of the roadmap · All knowledge is in draft and awaiting human review.</p>
+<main id="main">
+
+<article class="object page-narrow">
+  <p class="eyebrow"><span class="dot t-decision"></span>Framework · <a href="../explore/decision-intelligence.html">Decision Intelligence</a></p>
+  <h1>Architecture Decision Framework</h1>
+  <p class="lead">A structured, machine-readable sequence for taking architecture decisions - question, criteria, conditions, alternatives, consequences, decision, evidence - that links each stage to knowledge objects.</p>
+  <p class="notice" role="note"><strong>Draft knowledge.</strong> Status <code>proposed</code>, quality <code>draft</code>. Not yet reviewed or approved by a human architect.</p>
+  <div class="object-grid">
+    <div class="object-body"><h2>Purpose</h2>
+<p>Make architecture decisions reproducible and machine-supported: every stage has a defined output that is itself structured knowledge, so decision support does not live only in prose or in AI prompts.</p>
+<h2>Structure</h2>
+<!-- BEGIN GENERATED -->
+<ol>
+<li><strong>Question</strong> — What must be decided, at which architecture layer? <em>(output: problem statement and layer)</em></li>
+<li><strong>Decision criteria</strong> — Which criteria matter, and how much? <em>(output: weighted criteria (scoring model))</em></li>
+<li><strong>Conditions</strong> — Which facts about the situation hold? <em>(output: decision facts (decision-facts.yaml))</em></li>
+<li><strong>Possible alternatives</strong> — Which options apply under these conditions? <em>(output: options from decision trees and recommendation rules)</em></li>
+<li><strong>Consequences</strong> — What does each option imply, including risks and costs? <em>(output: trade-offs from pattern objects)</em></li>
+<li><strong>Decision</strong> — Which option is chosen, by whom, with which rationale? <em>(output: architecture decision record)</em></li>
+<li><strong>Evidence</strong> — What supports the decision and its approval? <em>(output: evidence and governance record)</em></li>
+</ol>
+<!-- END GENERATED -->
+
+<h2>How to Apply</h2>
+<ol>
+<li>State the question and its <a class="ref t-concept" href="../knowledge/da-con-0003.html">layer</a>; check that the decision belongs there (<a class="ref t-principle" href="../knowledge/da-pri-0003.html">Decisions Belong to Their Layer</a>).</li>
+<li>Establish the facts (conditions) using the controlled vocabulary in <code>00-system/taxonomy/decision-facts.yaml</code>.</li>
+<li>Generate alternatives: run the relevant decision tree (<code>dakb.py decide</code>, e.g. <a class="ref t-decision" href="../knowledge/da-dtr-0001.html">Database History Pattern Decision Tree</a>) and recommendation rules (<code>dakb.py recommend</code>).</li>
+<li>Compare alternatives with a scoring model where one exists (<code>dakb.py score</code>, e.g. <span class="ref-locked" title="Professional tier — not published on this site">History Strategy Scoring Model <span class="tier-tag">Professional</span></span>), adjusting weights to the context.</li>
+<li>Record the decision as an architecture decision (template: <code>00-system/templates/ADR Template.md</code>) linking the options, criteria and principles.</li>
+<li>Attach evidence and take the decision through governance (<a class="ref t-gov" href="../knowledge/da-grl-0002.html">Separate Decision per Governance Level</a>).</li>
+</ol>
+<h2>Limitations</h2>
+<p>The framework structures a decision; it does not take it. Scores and rules are expert judgement with declared confidence, not optimisation.</p></div>
+    <aside class="object-meta" aria-label="Metadata and relationships">
+      <h2>Metadata</h2><dl><dt>ID</dt><dd><code>DA-FWK-0001</code></dd><dt>Type</dt><dd>Framework</dd><dt>Domain</dt><dd><a href="../explore/decision-intelligence.html">Decision Intelligence</a></dd><dt>Layer</dt><dd>cross-layer</dd><dt>Status</dt><dd>proposed</dd><dt>Quality</dt><dd>draft</dd><dt>Confidence</dt><dd>medium</dd><dt>Epistemic status</dt><dd>recommendation</dd><dt>Content tier</dt><dd>Community</dd><dt>Version</dt><dd>0.1.0</dd><dt>Updated</dt><dd>2026-09-29</dd><dt>Source file</dt><dd><code>25-decision-intelligence/decision-frameworks/Architecture Decision Framework.md</code></dd></dl>
+      <h2>Relationships</h2>
+      <table class='rels'><tbody><tr><td><code>constrained-by</code></td><td><a class="ref t-principle" href="../knowledge/da-pri-0007.html">Architecture Decisions Are Traceable</a></td><td class="muted">Principle</td></tr><tr><td><code>constrained-by</code></td><td><a class="ref t-principle" href="../knowledge/da-pri-0003.html">Decisions Belong to Their Layer</a></td><td class="muted">Principle</td></tr><tr><td><code>realizes</code></td><td><a class="ref t-concept" href="../knowledge/da-cap-0002.html">Architecture Decision Management Capability</a></td><td class="muted">Capability</td></tr><tr><td><code>has-part</code></td><td><span class="ref-locked" title="Professional tier — not published on this site">Cross-Team Interfaces Need a Data Contract <span class="tier-tag">Professional</span></span></td><td class="muted">Recommendation rule</td></tr><tr><td><code>has-part</code></td><td><span class="ref-locked" title="Professional tier — not published on this site">History Strategy Scoring Model <span class="tier-tag">Professional</span></span></td><td class="muted">Scoring model</td></tr><tr><td><code>has-part</code></td><td><a class="ref t-decision" href="../knowledge/da-rrl-0001.html">Retroactive Corrections Call for Bitemporal History</a></td><td class="muted">Recommendation rule</td></tr><tr><td><code>supports</code></td><td><a class="ref t-concept" href="../knowledge/da-con-0004.html">Architecture Decision</a></td><td class="muted">Concept</td></tr></tbody></table>
+      <h2>Sources</h2><p class="muted">No verified source attached yet.</p>
+      <h2>Feedback</h2><p><a href="mailto:dalust1997@gmail.com?subject=Feedback%3A%20DA-FWK-0001%20Architecture%20Decision%20Framework&amp;body=Page%20or%20knowledge%20object%3A%20DA-FWK-0001%20-%20Architecture%20Decision%20Framework%0AKind%20of%20feedback%20%28factual%20error%20/%20unclear%20/%20missing%20/%20terminology%20/%20suggestion%20/%20other%29%3A%20%0AWhat%20should%20change%2C%20and%20why%3A%0A%0A%0ASource%20%28optional%29%3A%0A">Give feedback on this page</a> — report an error, something unclear or missing, or a source.</p>
+    </aside>
+  </div>
+</article>
+</main>
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <div>
+      <p class="footer-brand">Architecture Knowledge Graph</p>
+      <p class="muted">A structured and governed knowledge graph for data, information and enterprise architecture.</p>
+    </div>
+    <div>
+      <p class="muted">Generated from the knowledge graph on 2026-09-30: 155 objects, 388 typed relationships.</p>
+      <p class="muted"><a href="mailto:dalust1997@gmail.com?subject=Feedback%3A%20Architecture%20Knowledge%20Graph&amp;body=Page%20or%20knowledge%20object%3A%20%28page%20title%2C%20ID%20or%20URL%29%0AKind%20of%20feedback%20%28factual%20error%20/%20unclear%20/%20missing%20/%20terminology%20/%20suggestion%20/%20other%29%3A%20%0AWhat%20should%20change%2C%20and%20why%3A%0A%0A%0ASource%20%28optional%29%3A%0A">Send feedback</a> · <a href="https://github.com/ArchKnowledge/Architecture-Knowledge-Graph">Source repository</a> <span class="muted">(private during phase 1)</span> · No products are currently for sale.</p>
+      <p class="muted">© 2026 Architecture Knowledge Graph project. Content licence to be decided; all rights reserved until then. Referenced standards belong to their issuing organisations.</p>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

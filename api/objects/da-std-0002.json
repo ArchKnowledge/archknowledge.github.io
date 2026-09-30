@@ -1,0 +1,51 @@
+{
+  "id": "DA-STD-0002",
+  "type": "standard",
+  "title": "OWL 2",
+  "domain": "Standards & Regulations",
+  "status": "proposed",
+  "quality": "draft",
+  "confidence": "high",
+  "epistemic_status": "external-standard",
+  "owner": "unassigned",
+  "version": "0.1.0",
+  "publication_tier": "community",
+  "summary": "Web Ontology Language 2 \u2014 a W3C language for ontologies with formally defined semantics, enabling reasoning over classes, properties and individuals.",
+  "aliases": [
+    "Web Ontology Language"
+  ],
+  "path": "24-standards-regulations/OWL 2.md",
+  "relationships": [
+    {
+      "type": "depends-on",
+      "direction": "out",
+      "target": "DA-STD-0003",
+      "title": "RDF 1.1"
+    },
+    {
+      "type": "supports",
+      "direction": "in",
+      "target": "DA-CON-0013",
+      "title": "Ontology"
+    },
+    {
+      "type": "recommended-by",
+      "direction": "in",
+      "target": "DA-DTR-0005",
+      "title": "Semantic Modeling Approach Decision Tree"
+    }
+  ],
+  "sources": [
+    "OWL 2 Web Ontology Language Document Overview (Second Edition), W3C Recommendation, https://www.w3.org/TR/owl2-overview/"
+  ],
+  "evidence": [],
+  "governance": {
+    "status": "proposed",
+    "authority": "unreviewed",
+    "required_levels": [
+      "data-architecture"
+    ],
+    "records": []
+  },
+  "body_markdown": "# OWL 2\n\n## Scope\n\nFormal ontologies: classes, object and data properties, individuals, axioms (subclass, equivalence, disjointness, cardinality restrictions), with profiles (EL, QL, RL) trading expressiveness for reasoning performance.\n\n## Requirements\n\nNot a compliance standard; defines language syntax and semantics. OWL semantics are open-world: absence of a statement does not imply its negation.\n\n## Applicability\n\nDomain ontologies requiring inference or consistency checking; semantic integration.\n\n## Related Architecture Concepts\n\n[[Ontology]], [[Semantic Model]].\n\n## Related Controls\n\n[[Model Validation Control]] (ontology consistency checks).\n\n## Verification Notes\n\nOWL 2 first became a Recommendation in 2009; the Second Edition date is from the author's knowledge; verify before approval.\n"
+}

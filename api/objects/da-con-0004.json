@@ -1,0 +1,65 @@
+{
+  "id": "DA-CON-0004",
+  "type": "concept",
+  "title": "Architecture Decision",
+  "domain": "Architecture",
+  "layer": [
+    "cross-layer"
+  ],
+  "status": "proposed",
+  "quality": "draft",
+  "confidence": "high",
+  "epistemic_status": "common-practice",
+  "owner": "unassigned",
+  "version": "0.1.0",
+  "publication_tier": "community",
+  "definition": "A justified choice between alternatives that affects the structure, qualities or constraints of an architecture, recorded independently of the architecture documentation it shapes.",
+  "aliases": [
+    "Architecture Decision Record",
+    "ADR"
+  ],
+  "path": "02-architecture/concepts/Architecture Decision.md",
+  "relationships": [
+    {
+      "type": "constrained-by",
+      "direction": "out",
+      "target": "DA-PRI-0007",
+      "title": "Architecture Decisions Are Traceable"
+    },
+    {
+      "type": "decided-by",
+      "direction": "out",
+      "target": "DA-ROL-0015",
+      "title": "Architecture Board"
+    },
+    {
+      "type": "supported-by",
+      "direction": "out",
+      "target": "DA-FWK-0001",
+      "title": "Architecture Decision Framework"
+    },
+    {
+      "type": "required-by",
+      "direction": "in",
+      "target": "DA-CAP-0002",
+      "title": "Architecture Decision Management Capability"
+    },
+    {
+      "type": "applicable-to",
+      "direction": "in",
+      "target": "DA-PRI-0003",
+      "title": "Decisions Belong to Their Layer"
+    }
+  ],
+  "sources": [],
+  "evidence": [],
+  "governance": {
+    "status": "proposed",
+    "authority": "unreviewed",
+    "required_levels": [
+      "data-architecture"
+    ],
+    "records": []
+  },
+  "body_markdown": "# Architecture Decision\n\n## Definition\n\nAn Architecture Decision is a justified choice between alternatives that affects the structure, qualities or constraints of an architecture. It is recorded as a separate object (an Architecture Decision Record, ADR) so it can be traced, reviewed and superseded independently of the documentation it shapes.\n\n## Explanation\n\nA decision record captures: context, problem, options, evaluation criteria, trade-offs, decision, consequences, assumptions and constraints. Recording decisions separately supports [[Architecture Decisions Are Traceable|traceability]] from knowledge to implementation.\n\nDecisions belong to a [[Architecture Layer|layer]]: semantic decisions (meaning) are taken by different roles than physical design decisions (see [[Decision Rights Model]]).\n\nIn this knowledge base, reusable decisions are captured as decision records (e.g. [[Select Historical Data Strategy]]) and their logic as decision trees (e.g. [[Database History Pattern Decision Tree]]).\n\n## Distinctions\n\n- A **decision** is not a **principle**: a principle guides many decisions; a decision applies in a context.\n- A **decision tree** encodes reusable decision logic; a **decision record** documents one decision (or one reusable decision archetype).\n- A **governance decision** (approval/rejection of an artifact by a governance body) is a different object type (`governance-decision`).\n\n## Examples\n\n- \"Use a bitemporal model for policy data because retroactive corrections must be reconstructable.\"\n- [[Use Markdown and Git as the Initial Knowledge Store]].\n"
+}

@@ -1,0 +1,43 @@
+{
+  "id": "DA-ROL-0015",
+  "type": "role",
+  "title": "Architecture Board",
+  "domain": "Architecture Governance",
+  "layer": [
+    "cross-layer"
+  ],
+  "status": "proposed",
+  "quality": "draft",
+  "confidence": "medium",
+  "epistemic_status": "common-practice",
+  "owner": "unassigned",
+  "version": "0.1.0",
+  "publication_tier": "community",
+  "summary": "Governance body that approves architecture decisions above the agreed threshold and decides on exceptions and cross-domain conflicts.",
+  "path": "06-data-governance/roles/Architecture Board.md",
+  "relationships": [
+    {
+      "type": "part-of",
+      "direction": "out",
+      "target": "DA-GOV-0003",
+      "title": "Governance Roles"
+    },
+    {
+      "type": "decides",
+      "direction": "in",
+      "target": "DA-CON-0004",
+      "title": "Architecture Decision"
+    }
+  ],
+  "sources": [],
+  "evidence": [],
+  "governance": {
+    "status": "proposed",
+    "authority": "unreviewed",
+    "required_levels": [
+      "data-architecture"
+    ],
+    "records": []
+  },
+  "body_markdown": "# Architecture Board\n\n## Purpose\n\nProvide a legitimate, cross-domain decision forum.\n\n## Responsibilities\n\n- Approve significant ADRs.\n- Grant or refuse exceptions to principles.\n- Resolve cross-domain conflicts.\n- Monitor architecture compliance.\n\n## Decision Rights\n\nData architecture level above threshold; exceptions to principles.\n\n## Inputs\n\nADRs; impact analyses; review reports.\n\n## Outputs\n\nGovernance decisions (recorded with the Governance Decision Template).\n\n## Required Competencies\n\nComposite: enterprise, data, security architects and business representatives.\n\n## Escalation Paths\n\nStrategic issues \u2192 executive management.\n\n## Related Governance Processes\n\n- [[Decision Rights Model]]\n- [[Architecture Change Process]]\n- [[Governance Lifecycle]]\n"
+}

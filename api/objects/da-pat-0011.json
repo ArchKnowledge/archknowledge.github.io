@@ -1,0 +1,55 @@
+{
+  "id": "DA-PAT-0011",
+  "type": "pattern",
+  "title": "Metadata Harvesting",
+  "domain": "Metadata Management",
+  "layer": [
+    "technical"
+  ],
+  "status": "proposed",
+  "quality": "draft",
+  "confidence": "medium",
+  "epistemic_status": "common-practice",
+  "owner": "unassigned",
+  "version": "0.1.0",
+  "publication_tier": "community",
+  "summary": "Automatically extract technical, operational and lineage metadata from source systems, pipelines and tools into a central metadata repository on a schedule or event basis.",
+  "path": "19-architecture-patterns/Metadata Harvesting.md",
+  "relationships": [
+    {
+      "type": "part-of",
+      "direction": "out",
+      "target": "DA-RAR-0001",
+      "title": "Governed Analytical Data Platform"
+    },
+    {
+      "type": "realizes",
+      "direction": "out",
+      "target": "DA-PRI-0006",
+      "title": "Metadata Is Captured by Design"
+    },
+    {
+      "type": "produces",
+      "direction": "out",
+      "target": "DA-CON-0017",
+      "title": "Data Lineage"
+    },
+    {
+      "type": "produces",
+      "direction": "out",
+      "target": "DA-CON-0016",
+      "title": "Metadata"
+    }
+  ],
+  "sources": [],
+  "evidence": [],
+  "governance": {
+    "status": "proposed",
+    "authority": "unreviewed",
+    "required_levels": [
+      "technical"
+    ],
+    "records": []
+  },
+  "body_markdown": "# Metadata Harvesting\n\n## Problem\n\nManually maintained catalogs are incomplete and outdated.\n\n## Context\n\nHeterogeneous landscapes with databases, pipelines and BI tools.\n\n## Forces\n\n- Automation breadth vs. metadata depth (business meaning cannot be harvested).\n\n## Solution\n\nConnectors read schemas, job definitions, query logs and run events; normalise into the repository's metamodel; link harvested technical assets to curated business metadata (concepts, owners).\n\n## Architecture\n\n```text\nDBs / pipelines / BI \u2192 connectors \u2192 normalise (metamodel) \u2192 metadata repository \u2192 catalog UI / API\n                                                          \u2196 curated business metadata\n```\n\n## Advantages\n\n- Current technical metadata and lineage at low marginal cost.\n\n## Disadvantages\n\n- Connector coverage gaps; lineage through custom code is hard.\n\n## Risks\n\n- A catalog full of harvested but unexplained assets (\"metadata swamp\").\n\n## When to Use\n\n- More than a handful of systems; lineage required.\n\n## When Not to Use\n\n- Very small landscapes where curated documentation suffices.\n\n## Alternatives\n\nManual curation; metadata-driven development (generate pipelines from metadata).\n\n## Examples\n\n- Nightly harvest of warehouse schemas plus runtime lineage events from orchestration.\n\n## Related Decisions\n\n- None yet; candidate decision \"Metadata Architecture\" (see recommended next batch).\n"
+}

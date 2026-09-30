@@ -1,0 +1,43 @@
+{
+  "id": "DA-STD-0006",
+  "type": "standard",
+  "title": "ISO IEC 25012 Data Quality Model",
+  "domain": "Standards & Regulations",
+  "status": "proposed",
+  "quality": "draft",
+  "confidence": "medium",
+  "epistemic_status": "external-standard",
+  "owner": "unassigned",
+  "version": "0.1.0",
+  "publication_tier": "community",
+  "summary": "ISO/IEC 25012 \u2014 defines a general data quality model for data retained in a structured format within a computer system, with inherent and system-dependent characteristics.",
+  "aliases": [
+    "ISO/IEC 25012"
+  ],
+  "path": "24-standards-regulations/ISO IEC 25012 Data Quality Model.md",
+  "relationships": [
+    {
+      "type": "constrains",
+      "direction": "in",
+      "target": "DA-CON-0021",
+      "title": "Data Quality"
+    },
+    {
+      "type": "source-of",
+      "direction": "in",
+      "target": "DA-CON-0022",
+      "title": "Data Quality Dimension"
+    }
+  ],
+  "sources": [],
+  "evidence": [],
+  "governance": {
+    "status": "proposed",
+    "authority": "unreviewed",
+    "required_levels": [
+      "data-architecture"
+    ],
+    "records": []
+  },
+  "body_markdown": "# ISO IEC 25012 Data Quality Model\n\n## Scope\n\nA data quality model (part of the SQuaRE family) categorising quality characteristics as inherent, system-dependent, or both.\n\n## Requirements\n\nDefines characteristics (e.g. accuracy, completeness, consistency, credibility, currentness, and others). The full list must be taken from the standard.\n\n## Applicability\n\nDefining [[Data Quality Dimension|quality dimensions]] and requirements in a standards-aligned way.\n\n## Related Architecture Concepts\n\n[[Data Quality]], [[Data Quality Dimension]].\n\n## Related Controls\n\nNone yet.\n\n## Verification Notes\n\nEdition year and characteristic list to be verified.\n"
+}

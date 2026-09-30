@@ -1,0 +1,76 @@
+{
+  "id": "DA-RAR-0001",
+  "type": "reference-architecture",
+  "title": "Governed Analytical Data Platform",
+  "domain": "Data Platforms",
+  "layer": [
+    "logical",
+    "physical",
+    "technical"
+  ],
+  "status": "proposed",
+  "quality": "draft",
+  "confidence": "medium",
+  "epistemic_status": "recommendation",
+  "owner": "unassigned",
+  "version": "0.1.0",
+  "publication_tier": "community",
+  "summary": "Reference architecture for an analytical data platform with layered refinement, embedded quality gates, metadata and lineage, and governance built in.",
+  "path": "18-reference-architectures/Governed Analytical Data Platform.md",
+  "relationships": [
+    {
+      "type": "realizes",
+      "direction": "out",
+      "target": "DA-CON-0028",
+      "title": "Data Platform"
+    },
+    {
+      "type": "depends-on",
+      "direction": "out",
+      "target": "DA-PAT-0005",
+      "title": "Change Data Capture"
+    },
+    {
+      "type": "depends-on",
+      "direction": "out",
+      "target": "DA-PAT-0006",
+      "title": "Batch Extract-Transform-Load"
+    },
+    {
+      "type": "governed-by",
+      "direction": "out",
+      "target": "DA-GOV-0001",
+      "title": "Architecture Governance Model"
+    },
+    {
+      "type": "has-part",
+      "direction": "in",
+      "target": "DA-PAT-0010",
+      "title": "Data Quality Gate"
+    },
+    {
+      "type": "has-part",
+      "direction": "in",
+      "target": "DA-PAT-0011",
+      "title": "Metadata Harvesting"
+    },
+    {
+      "type": "has-part",
+      "direction": "in",
+      "target": "DA-PAT-0009",
+      "title": "Layered Data Refinement"
+    }
+  ],
+  "sources": [],
+  "evidence": [],
+  "governance": {
+    "status": "proposed",
+    "authority": "unreviewed",
+    "required_levels": [
+      "data-architecture",
+      "technical"
+    ],
+    "records": []
+  },
+  "body_markdown": "# Governed Analytical Data Platform\n\n## Purpose\n\nProvide a reusable structure for analytical platforms that serve trusted, governed data to BI, analytics and data science.\n\n## Scope\n\nIngestion to consumption for analytical use. Excludes operational (OLTP) systems and ML model serving.\n\n## Context\n\nMultiple sources, multiple consumers, regulatory reporting, need for history.\n\n## Architecture\n\n```text\nSources \u2500(CDC / batch / events)\u2500\u25b6 RAW \u2500[DQ gate]\u2500\u25b6 CONFORMED \u2500[DQ gate]\u2500\u25b6 CONSUMPTION \u2500\u25b6 BI / analytics / APIs\n                                   \u2502                  \u2502                      \u2502\n                                   \u2514\u2500\u2500\u2500\u2500 metadata & lineage harvesting \u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u25b6 Catalog\n                                                  governance: contracts, ownership, classification\n```\n\n## Components\n\n| Component | Responsibility | Pattern |\n|---|---|---|\n| Ingestion | acquire data with lineage | [[Change Data Capture]], [[Batch Extract-Transform-Load]] |\n| Raw layer | immutable landing, replay | [[Layered Data Refinement]] |\n| Conformed layer | cleansed, integrated, historized, concept-linked | [[Bitemporal Data Model]] or [[Slowly Changing Dimension Type 2]], [[Concept-to-Model Traceability]] |\n| Consumption layer | purpose-built models | dimensional marts |\n| Quality | rule evaluation at promotion | [[Data Quality Gate]] |\n| Metadata & catalog | technical, business, lineage metadata | [[Metadata Harvesting]], [[Metadata Management Reference Architecture]] |\n| Security | classification-driven access | [[Security Classification Control]] |\n\n## Interfaces\n\n- Producer interfaces governed by [[Data Contract|data contracts]].\n- Consumer interfaces: SQL, semantic/BI layer, APIs.\n- Metadata API to the catalog.\n\n## Data Flows\n\nSource \u2192 raw (as received) \u2192 conformed (integrated + history) \u2192 consumption (fit for use). Issues flow back to source owners.\n\n## Governance\n\nOwners per data product/layer; contracts at ingestion; quality rules owned by producers ([[Quality Is Managed at the Source]]); decisions recorded as ADRs.\n\n## Security\n\nClassification per data set; masking/pseudonymisation in conformed layer for personal data; least-privilege access.\n\n## Operational Considerations\n\nOrchestration, observability (freshness, volume, quality), cost management, reprocessing from raw.\n\n## Variants\n\nWarehouse-centric; lakehouse (e.g. [[Apache Iceberg]] tables); virtualized consumption ([[Data Virtualization]]).\n\n## Trade-offs\n\nTrust and replayability vs. latency, duplication and cost.\n\n## Implementation Considerations\n\nStart with one domain end-to-end including metadata and quality, rather than all sources raw-only.\n"
+}

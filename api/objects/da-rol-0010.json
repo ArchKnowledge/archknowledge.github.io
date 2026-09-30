@@ -1,0 +1,45 @@
+{
+  "id": "DA-ROL-0010",
+  "type": "role",
+  "title": "Enterprise Architect",
+  "domain": "Architecture",
+  "layer": [
+    "business",
+    "cross-layer"
+  ],
+  "status": "proposed",
+  "quality": "draft",
+  "confidence": "medium",
+  "epistemic_status": "common-practice",
+  "owner": "unassigned",
+  "version": "0.1.0",
+  "publication_tier": "community",
+  "summary": "Architect accountable for enterprise-wide principles, standards and cross-domain coherence.",
+  "path": "06-data-governance/roles/Enterprise Architect.md",
+  "relationships": [
+    {
+      "type": "part-of",
+      "direction": "out",
+      "target": "DA-GOV-0003",
+      "title": "Governance Roles"
+    },
+    {
+      "type": "governs",
+      "direction": "in",
+      "target": "DA-CON-0001",
+      "title": "Data Architecture"
+    }
+  ],
+  "sources": [],
+  "evidence": [],
+  "governance": {
+    "status": "proposed",
+    "authority": "unreviewed",
+    "required_levels": [
+      "semantic",
+      "data-architecture"
+    ],
+    "records": []
+  },
+  "body_markdown": "# Enterprise Architect\n\n## Purpose\n\nSet the frame within which all other architecture decisions are taken.\n\n## Responsibilities\n\n- Define principles and standards.\n- Set thresholds for board-level decisions.\n- Resolve cross-domain architecture conflicts.\n\n## Decision Rights\n\nEnterprise principles, standards, thresholds; chairs or advises the [[Architecture Board]].\n\n## Inputs\n\nStrategy; regulation; domain architectures.\n\n## Outputs\n\nPrinciples; standards; board decisions.\n\n## Required Competencies\n\nEnterprise architecture; governance; stakeholder management.\n\n## Escalation Paths\n\nStrategic conflicts \u2192 executive management.\n\n## Related Governance Processes\n\n- [[Decision Rights Model]]\n- [[Architecture Change Process]]\n- [[Governance Lifecycle]]\n"
+}

@@ -1,0 +1,49 @@
+{
+  "id": "DA-ROL-0005",
+  "type": "role",
+  "title": "Semantic Architect",
+  "domain": "Semantic Architecture",
+  "layer": [
+    "semantic"
+  ],
+  "status": "proposed",
+  "quality": "draft",
+  "confidence": "medium",
+  "epistemic_status": "common-practice",
+  "owner": "unassigned",
+  "version": "0.1.0",
+  "publication_tier": "community",
+  "summary": "Architect responsible for the structure, formalism and integrity of semantic models across domains.",
+  "path": "06-data-governance/roles/Semantic Architect.md",
+  "relationships": [
+    {
+      "type": "supported-by",
+      "direction": "out",
+      "target": "DA-ROL-0004",
+      "title": "Domain Expert"
+    },
+    {
+      "type": "part-of",
+      "direction": "out",
+      "target": "DA-GOV-0003",
+      "title": "Governance Roles"
+    },
+    {
+      "type": "governs",
+      "direction": "in",
+      "target": "DA-CON-0012",
+      "title": "Semantic Model"
+    }
+  ],
+  "sources": [],
+  "evidence": [],
+  "governance": {
+    "status": "proposed",
+    "authority": "unreviewed",
+    "required_levels": [
+      "semantic"
+    ],
+    "records": []
+  },
+  "body_markdown": "# Semantic Architect\n\n## Purpose\n\nKeep meaning explicit, consistent and reusable across domains ([[Meaning Before Representation]]).\n\n## Responsibilities\n\n- Design semantic model structure and conventions.\n- Select formalism ([[Select Semantic Modeling Formalism]]).\n- Detect semantic overlaps, homonyms and conflicts.\n- Maintain concept-to-model traceability conventions.\n\n## Decision Rights\n\nSemantic level: model structure and formalism; proposes definitions for owner approval.\n\n## Inputs\n\nBusiness concepts; domain input; standards ([[SKOS]], [[OWL 2]]).\n\n## Outputs\n\nSemantic models; conventions; conflict reports.\n\n## Required Competencies\n\nSemantic modeling; SKOS/OWL; facilitation.\n\n## Escalation Paths\n\nConflicting meanings across domains \u2192 [[Architecture Board]].\n\n## Related Governance Processes\n\n- [[Decision Rights Model]]\n- [[Architecture Change Process]]\n- [[Governance Lifecycle]]\n"
+}

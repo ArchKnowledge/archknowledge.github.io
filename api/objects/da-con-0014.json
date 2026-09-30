@@ -1,0 +1,61 @@
+{
+  "id": "DA-CON-0014",
+  "type": "concept",
+  "title": "Taxonomy",
+  "domain": "Semantic Architecture",
+  "layer": [
+    "semantic"
+  ],
+  "status": "proposed",
+  "quality": "draft",
+  "confidence": "high",
+  "epistemic_status": "common-practice",
+  "owner": "unassigned",
+  "version": "0.1.0",
+  "publication_tier": "community",
+  "definition": "A hierarchical classification of concepts organised by broader/narrower relationships.",
+  "path": "04-semantic-architecture/concepts/Taxonomy.md",
+  "relationships": [
+    {
+      "type": "part-of",
+      "direction": "out",
+      "target": "DA-CON-0002",
+      "title": "Information Architecture"
+    },
+    {
+      "type": "specializes",
+      "direction": "out",
+      "target": "DA-CON-0012",
+      "title": "Semantic Model"
+    },
+    {
+      "type": "depends-on",
+      "direction": "out",
+      "target": "DA-CON-0015",
+      "title": "Controlled Vocabulary"
+    },
+    {
+      "type": "supported-by",
+      "direction": "out",
+      "target": "DA-STD-0001",
+      "title": "SKOS"
+    },
+    {
+      "type": "recommended-by",
+      "direction": "in",
+      "target": "DA-DTR-0005",
+      "title": "Semantic Modeling Approach Decision Tree"
+    }
+  ],
+  "sources": [],
+  "evidence": [],
+  "governance": {
+    "status": "proposed",
+    "authority": "unreviewed",
+    "required_levels": [
+      "semantic"
+    ],
+    "records": []
+  },
+  "body_markdown": "# Taxonomy\n\n## Definition\n\nA Taxonomy is a hierarchical classification of concepts organised by broader/narrower relationships.\n\n## Explanation\n\nTaxonomies support classification, navigation and aggregation (e.g. product categories, document types). In [[SKOS]], a taxonomy is a concept scheme with `skos:broader`/`skos:narrower` relations. Many [[Reference Data|reference data]] sets are taxonomies.\n\n## Distinctions\n\n- Broader/narrower in a taxonomy is **not necessarily** class specialization (\"is-a\"): it may mean part-of or topical grouping. Ontologies make that distinction explicit.\n- Versus [[Controlled Vocabulary]]: a flat list without hierarchy.\n\n## Examples\n\n- Product category hierarchy: Insurance \u2192 Non-life \u2192 Motor \u2192 Motor third-party liability.\n"
+}

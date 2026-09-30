@@ -1,0 +1,44 @@
+{
+  "id": "DA-ROL-0003",
+  "type": "role",
+  "title": "Data Custodian",
+  "domain": "Data Governance",
+  "layer": [
+    "physical",
+    "technical"
+  ],
+  "status": "proposed",
+  "quality": "draft",
+  "confidence": "medium",
+  "epistemic_status": "common-practice",
+  "owner": "unassigned",
+  "version": "0.1.0",
+  "publication_tier": "community",
+  "summary": "Technical role operating the storage, security and availability of data according to owner decisions.",
+  "path": "06-data-governance/roles/Data Custodian.md",
+  "relationships": [
+    {
+      "type": "depends-on",
+      "direction": "out",
+      "target": "DA-ROL-0001",
+      "title": "Data Owner"
+    },
+    {
+      "type": "part-of",
+      "direction": "out",
+      "target": "DA-GOV-0003",
+      "title": "Governance Roles"
+    }
+  ],
+  "sources": [],
+  "evidence": [],
+  "governance": {
+    "status": "proposed",
+    "authority": "unreviewed",
+    "required_levels": [
+      "technical"
+    ],
+    "records": []
+  },
+  "body_markdown": "# Data Custodian\n\n## Purpose\n\nSafeguard data technically without deciding on its meaning or use.\n\n## Responsibilities\n\n- Operate databases and platforms.\n- Implement access controls as decided.\n- Run backup, recovery and retention jobs.\n- Provide technical metadata.\n\n## Decision Rights\n\nTechnical/formal level: operational configuration within standards. No rights on meaning or access policy.\n\n## Inputs\n\nAccess decisions; retention rules; platform standards.\n\n## Outputs\n\nOperated environments; technical metadata; incident reports.\n\n## Required Competencies\n\nDatabase/platform operations; security operations.\n\n## Escalation Paths\n\nPolicy conflicts \u2192 [[Data Owner]]; technical conflicts \u2192 [[Platform Architect]].\n\n## Related Governance Processes\n\n- [[Decision Rights Model]]\n- [[Architecture Change Process]]\n- [[Governance Lifecycle]]\n"
+}

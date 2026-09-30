@@ -1,0 +1,58 @@
+{
+  "id": "DA-CON-0002",
+  "type": "concept",
+  "title": "Information Architecture",
+  "domain": "Architecture",
+  "layer": [
+    "conceptual",
+    "semantic",
+    "information"
+  ],
+  "status": "proposed",
+  "quality": "draft",
+  "confidence": "medium",
+  "epistemic_status": "expert-interpretation",
+  "owner": "unassigned",
+  "version": "0.1.0",
+  "publication_tier": "community",
+  "definition": "The structuring of information \u2014 its meaning, organisation, classification and relationships \u2014 so that people and processes can find, understand and use it consistently.",
+  "path": "02-architecture/concepts/Information Architecture.md",
+  "relationships": [
+    {
+      "type": "related-to",
+      "direction": "out",
+      "target": "DA-CON-0001",
+      "title": "Data Architecture"
+    },
+    {
+      "type": "depends-on",
+      "direction": "out",
+      "target": "DA-CON-0012",
+      "title": "Semantic Model"
+    },
+    {
+      "type": "has-part",
+      "direction": "in",
+      "target": "DA-CON-0007",
+      "title": "Information Model"
+    },
+    {
+      "type": "has-part",
+      "direction": "in",
+      "target": "DA-CON-0014",
+      "title": "Taxonomy"
+    }
+  ],
+  "sources": [],
+  "evidence": [],
+  "governance": {
+    "status": "proposed",
+    "authority": "unreviewed",
+    "required_levels": [
+      "semantic",
+      "information-model"
+    ],
+    "records": []
+  },
+  "body_markdown": "# Information Architecture\n\n## Definition\n\nInformation Architecture is the structuring of information \u2014 its meaning, organisation, classification and relationships \u2014 so that people and processes can find, understand and use it consistently.\n\n## Explanation\n\nInformation architecture concentrates on the upper and middle [[Architecture Layer|layers]]: which information the organisation needs, how it is classified ([[Taxonomy]]), how it is represented as an [[Information Model]], and how it relates to business processes. It consumes meaning from the [[Semantic Model]] and hands representation choices to the [[Logical Data Model]].\n\n## Distinctions\n\n- Compared with [[Data Architecture]]: information architecture is more concerned with meaning, structure and use; data architecture additionally addresses realization, integration, storage and operations.\n- In user-experience design, \"information architecture\" also denotes navigation and content structure of websites. That usage is out of scope here.\n\n## Examples\n\n- A classification scheme for product documents used by several departments.\n- An information model of \"Case\", \"Party\" and \"Decision\" for a public-sector organisation.\n\n## Open Questions\n\n- Different frameworks draw the boundary with data architecture differently; flagged, not resolved.\n"
+}

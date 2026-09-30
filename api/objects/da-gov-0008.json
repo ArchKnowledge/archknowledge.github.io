@@ -1,0 +1,49 @@
+{
+  "id": "DA-GOV-0008",
+  "type": "governance",
+  "title": "Terminology Governance",
+  "domain": "Architecture Governance",
+  "layer": [
+    "semantic"
+  ],
+  "status": "proposed",
+  "quality": "draft",
+  "confidence": "medium",
+  "epistemic_status": "recommendation",
+  "owner": "unassigned",
+  "version": "0.1.0",
+  "publication_tier": "community",
+  "summary": "How preferred terms, definitions, synonyms, forbidden terms and abbreviations are governed and how terminology inconsistencies are detected.",
+  "path": "16-architecture-governance/Terminology Governance.md",
+  "relationships": [
+    {
+      "type": "part-of",
+      "direction": "out",
+      "target": "DA-GOV-0001",
+      "title": "Architecture Governance Model"
+    },
+    {
+      "type": "governs",
+      "direction": "in",
+      "target": "DA-CON-0011",
+      "title": "Business Concept"
+    },
+    {
+      "type": "governs",
+      "direction": "in",
+      "target": "DA-CON-0015",
+      "title": "Controlled Vocabulary"
+    }
+  ],
+  "sources": [],
+  "evidence": [],
+  "governance": {
+    "status": "proposed",
+    "authority": "unreviewed",
+    "required_levels": [
+      "semantic"
+    ],
+    "records": []
+  },
+  "body_markdown": "# Terminology Governance\n\n## Purpose\n\nEnsure consistent terminology across the knowledge base and the data landscape (spec \u00a724).\n\n## Scope\n\nTerms used in knowledge objects and in governed data definitions.\n\n## Term Record\n\nEach governed term has: preferred term, definition (on the linked concept), synonyms, forbidden terms, abbreviations, related terms, domain, source, status. Machine-readable in `00-system/terminology/terminology.yaml`; the definition lives in the linked concept object to avoid duplication.\n\n## Rules\n\n1. One preferred term per concept per language.\n2. Synonyms are stored as `aliases` on the concept (visible to Obsidian search and link suggestions).\n3. Forbidden terms must not appear in object bodies; the validator warns (`W050-forbidden-term`).\n4. The same label on two objects triggers a duplicate-concept warning (`W011-label-collision`).\n5. New terms follow the [[Governance Lifecycle]]; approval at the semantic level of the [[Decision Rights Model]].\n\n## Example\n\n| Preferred | Forbidden |\n|---|---|\n| Data Architecture | `Data Arch`; `Data Structure Architecture` |\n| Metadata | `meta-data`; `meta data` |\n"
+}

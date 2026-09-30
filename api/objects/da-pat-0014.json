@@ -1,0 +1,73 @@
+{
+  "id": "DA-PAT-0014",
+  "type": "pattern",
+  "title": "Concept-to-Model Traceability",
+  "domain": "Semantic Architecture",
+  "layer": [
+    "semantic",
+    "information",
+    "logical",
+    "physical"
+  ],
+  "status": "proposed",
+  "quality": "draft",
+  "confidence": "medium",
+  "epistemic_status": "recommendation",
+  "owner": "unassigned",
+  "version": "0.1.0",
+  "publication_tier": "community",
+  "summary": "Link every model element at each layer to the governed concept it represents and to the model element it realizes, so meaning and impact can be traced across layers.",
+  "path": "19-architecture-patterns/Concept-to-Model Traceability.md",
+  "relationships": [
+    {
+      "type": "supported-by",
+      "direction": "out",
+      "target": "DA-MTH-0001",
+      "title": "Layered Model Derivation"
+    },
+    {
+      "type": "realizes",
+      "direction": "out",
+      "target": "DA-PRI-0002",
+      "title": "Meaning Before Representation"
+    },
+    {
+      "type": "mitigates",
+      "direction": "out",
+      "target": "DA-APT-0001",
+      "title": "Implicit Semantics"
+    },
+    {
+      "type": "mitigates",
+      "direction": "out",
+      "target": "DA-APT-0002",
+      "title": "Overloaded Attribute"
+    },
+    {
+      "type": "mitigates",
+      "direction": "out",
+      "target": "DA-APT-0006",
+      "title": "Physical-Model-First Design"
+    },
+    {
+      "type": "recommended-by",
+      "direction": "in",
+      "target": "DA-DTR-0005",
+      "title": "Semantic Modeling Approach Decision Tree"
+    }
+  ],
+  "sources": [],
+  "evidence": [],
+  "governance": {
+    "status": "proposed",
+    "authority": "unreviewed",
+    "required_levels": [
+      "semantic",
+      "information-model",
+      "data-architecture",
+      "technical"
+    ],
+    "records": []
+  },
+  "body_markdown": "# Concept-to-Model Traceability\n\n## Problem\n\nNobody can tell which business concept a table or column represents, or which models are affected when a definition changes.\n\n## Context\n\nOrganisations with governed business concepts and models at multiple layers.\n\n## Forces\n\n- Traceability value vs. maintenance effort.\n\n## Solution\n\nMaintain explicit links: `physical column \u2192 realizes \u2192 logical attribute \u2192 realizes \u2192 information attribute \u2192 represents \u2192 concept`. Store the links as metadata (e.g. concept IRIs in model annotations) and validate them automatically.\n\n## Architecture\n\n```text\nConcept (semantic) \u25c0\u2500represents\u2500 Information element \u25c0\u2500realizes\u2500 Logical element \u25c0\u2500realizes\u2500 Physical element\n```\n\n## Advantages\n\n- Impact analysis of definition changes; shared meaning in integration and migration.\n\n## Disadvantages\n\n- Needs tooling and discipline.\n\n## Risks\n\n- Links created mechanically without semantic review.\n\n## When to Use\n\n- Governed, shared or regulated data.\n\n## When Not to Use\n\n- Throw-away prototypes.\n\n## Alternatives\n\nGlossary-only linking (catalog term to column) \u2014 weaker, skips intermediate layers.\n\n## Examples\n\n- Column `klant.ingangsdatum` linked to concept \"Customer Since Date\" through the information model.\n\n## Related Decisions\n\n- [[Select Semantic Modeling Formalism]]\n"
+}

@@ -1,0 +1,55 @@
+{
+  "id": "DA-CON-0022",
+  "type": "concept",
+  "title": "Data Quality Dimension",
+  "domain": "Data Quality",
+  "layer": [
+    "cross-layer"
+  ],
+  "status": "proposed",
+  "quality": "draft",
+  "confidence": "medium",
+  "epistemic_status": "common-practice",
+  "owner": "unassigned",
+  "version": "0.1.0",
+  "publication_tier": "community",
+  "definition": "A named aspect of data quality \u2014 such as completeness, accuracy, consistency, timeliness, validity or uniqueness \u2014 along which quality requirements are specified and measured.",
+  "path": "07-data-quality/dimensions/Data Quality Dimension.md",
+  "relationships": [
+    {
+      "type": "derived-from",
+      "direction": "out",
+      "target": "DA-STD-0006",
+      "title": "ISO IEC 25012 Data Quality Model"
+    },
+    {
+      "type": "derived-from",
+      "direction": "out",
+      "target": "DA-STD-0008",
+      "title": "DAMA-DMBOK"
+    },
+    {
+      "type": "measures",
+      "direction": "in",
+      "target": "DA-CON-0021",
+      "title": "Data Quality"
+    },
+    {
+      "type": "measures",
+      "direction": "in",
+      "target": "DA-PAT-0010",
+      "title": "Data Quality Gate"
+    }
+  ],
+  "sources": [],
+  "evidence": [],
+  "governance": {
+    "status": "proposed",
+    "authority": "unreviewed",
+    "required_levels": [
+      "data-architecture"
+    ],
+    "records": []
+  },
+  "body_markdown": "# Data Quality Dimension\n\n## Definition\n\nA Data Quality Dimension is a named aspect of data quality along which requirements are specified and measured.\n\n## Explanation\n\nCommonly used dimensions (lists differ between sources; this is common practice, not a single standard):\n\n| Dimension | Question |\n|---|---|\n| Completeness | Are required values present? |\n| Validity | Do values conform to the defined domain/format? |\n| Accuracy | Do values correctly represent reality? |\n| Consistency | Do related values agree across records and systems? |\n| Timeliness | Is data available and current when needed? |\n| Uniqueness | Is each real-world entity represented once? |\n\n[[ISO IEC 25012 Data Quality Model]] defines its own set of characteristics (inherent and system-dependent); names and definitions differ from the list above. Mapping between the two is an open task.\n\n## Distinctions\n\n- A dimension is not a rule: rules are concrete, testable checks that measure a dimension.\n\n## Examples\n\n- Rule \"email matches pattern\" measures *validity*; \"customer has exactly one active record\" measures *uniqueness*.\n\n## Open Questions\n\n- Map the common-practice dimensions to the ISO/IEC 25012 characteristics after verification against the standard text.\n"
+}

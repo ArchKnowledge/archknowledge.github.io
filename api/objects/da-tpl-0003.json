@@ -1,0 +1,46 @@
+{
+  "id": "DA-TPL-0003",
+  "type": "template",
+  "title": "Data Model Review Checklist",
+  "domain": "Data Modeling",
+  "status": "proposed",
+  "quality": "draft",
+  "confidence": "medium",
+  "epistemic_status": "recommendation",
+  "owner": "unassigned",
+  "version": "0.1.0",
+  "publication_tier": "community",
+  "summary": "Checklist for reviewing a data model at its layer, derived from the principles, patterns and anti-patterns in this knowledge base.",
+  "path": "22-templates/Data Model Review Checklist.md",
+  "relationships": [
+    {
+      "type": "derived-from",
+      "direction": "out",
+      "target": "DA-PRI-0002",
+      "title": "Meaning Before Representation"
+    },
+    {
+      "type": "derived-from",
+      "direction": "out",
+      "target": "DA-PRI-0003",
+      "title": "Decisions Belong to Their Layer"
+    },
+    {
+      "type": "derived-from",
+      "direction": "out",
+      "target": "DA-PRI-0010",
+      "title": "Historical Requirements Are Explicit"
+    }
+  ],
+  "sources": [],
+  "evidence": [],
+  "governance": {
+    "status": "proposed",
+    "authority": "unreviewed",
+    "required_levels": [
+      "data-architecture"
+    ],
+    "records": []
+  },
+  "body_markdown": "# Data Model Review Checklist\n\n## Purpose\n\nStructured review of a [[Data Model]] submission.\n\n## Template\n\n| # | Check | Source knowledge | Result (yes/no/n.a.) | Note |\n|---|---|---|---|---|\n| 1 | The model states its layer (conceptual / information / logical / physical). | [[Architecture Layer]] | | |\n| 2 | Every entity/class links to a governed concept. | [[Concept-to-Model Traceability]] | | |\n| 3 | No attribute carries more than one meaning. | [[Overloaded Attribute]] | | |\n| 4 | History requirements are stated per entity and the mechanism is justified. | [[Historical Requirements Are Explicit]] | | |\n| 5 | Authoritative source is identified for shared entities. | [[Each Data Element Has an Authoritative Source]] | | |\n| 6 | Reference data uses governed code lists. | [[Reference Data]] | | |\n| 7 | Quality rules are specified for critical attributes. | [[Data Quality Rule Specification]] | | |\n| 8 | Classification is set for sensitive data. | [[Security Classification Control]] | | |\n| 9 | Decisions taken are recorded as ADRs. | [[Architecture Decisions Are Traceable]] | | |\n| 10 | No decisions belonging to another layer are made implicitly. | [[Decisions Belong to Their Layer]] | | |\n\n## Usage Guidance\n\nBinary results are intentional: the checklist gates approval; maturity is assessed separately.\n"
+}

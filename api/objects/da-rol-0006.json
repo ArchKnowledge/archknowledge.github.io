@@ -1,0 +1,43 @@
+{
+  "id": "DA-ROL-0006",
+  "type": "role",
+  "title": "Ontology Engineer",
+  "domain": "Semantic Architecture",
+  "layer": [
+    "semantic"
+  ],
+  "status": "proposed",
+  "quality": "draft",
+  "confidence": "medium",
+  "epistemic_status": "common-practice",
+  "owner": "unassigned",
+  "version": "0.1.0",
+  "publication_tier": "community",
+  "summary": "Specialist who formalises semantic models as ontologies and ensures their logical consistency.",
+  "path": "06-data-governance/roles/Ontology Engineer.md",
+  "relationships": [
+    {
+      "type": "part-of",
+      "direction": "out",
+      "target": "DA-GOV-0003",
+      "title": "Governance Roles"
+    },
+    {
+      "type": "owns",
+      "direction": "in",
+      "target": "DA-CON-0013",
+      "title": "Ontology"
+    }
+  ],
+  "sources": [],
+  "evidence": [],
+  "governance": {
+    "status": "proposed",
+    "authority": "unreviewed",
+    "required_levels": [
+      "semantic"
+    ],
+    "records": []
+  },
+  "body_markdown": "# Ontology Engineer\n\n## Purpose\n\nProvide formal rigor where machine reasoning is required.\n\n## Responsibilities\n\n- Formalise concepts as OWL classes, properties and axioms.\n- Run reasoners and consistency checks.\n- Manage IRIs, namespaces and versioning of ontologies.\n\n## Decision Rights\n\nFormal semantic level: axioms and formal consistency, within approved meaning.\n\n## Inputs\n\nApproved definitions; semantic model.\n\n## Outputs\n\nOntologies; consistency reports.\n\n## Required Competencies\n\nDescription logics; OWL; RDF tooling.\n\n## Escalation Paths\n\nMeaning ambiguities \u2192 [[Semantic Architect]].\n\n## Related Governance Processes\n\n- [[Decision Rights Model]]\n- [[Architecture Change Process]]\n- [[Governance Lifecycle]]\n"
+}

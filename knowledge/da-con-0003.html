@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Architecture Layer · Architecture Knowledge Graph</title>
+<meta name="description" content="A level of abstraction in the architecture stack (business, conceptual, semantic, information, logical, physical, technical) with its own questions, artifacts and decision rights.">
+<link rel="canonical" href="https://archknowledge.github.io/knowledge/da-con-0003.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Architecture Knowledge Graph">
+<meta property="og:title" content="Architecture Layer">
+<meta property="og:description" content="A level of abstraction in the architecture stack (business, conceptual, semantic, information, logical, physical, technical) with its own questions, artifacts and decision rights.">
+<meta property="og:url" content="https://archknowledge.github.io/knowledge/da-con-0003.html">
+<meta name="twitter:card" content="summary">
+<meta name="color-scheme" content="light dark">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../assets/style.css">
+<meta name="akg-root" content="../">
+<script src="../assets/site.js" defer></script>
+
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="../index.html" aria-label="Architecture Knowledge Graph — home">
+      <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true"><path d="M6 24 16 8l10 16M6 24h20M16 8v16" /><circle cx="16" cy="8" r="3"/><circle cx="6" cy="24" r="3"/><circle cx="26" cy="24" r="3"/><circle cx="16" cy="24" r="2.2"/></svg>
+      <span>Architecture<br>Knowledge Graph</span>
+    </a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+    <nav id="site-nav" class="site-nav" aria-label="Main">
+      <ul>
+<li><a href="../why.html">Why</a></li>
+<li><a href="../knowledge-graph.html">Knowledge Graph</a></li>
+<li><a href="../explore.html" aria-current="page">Explore</a></li>
+<li><a href="../products.html">Products</a></li>
+<li><a href="../governance.html">Governance</a></li>
+<li><a href="../roadmap.html">Roadmap</a></li>
+<li><a href="../search.html">Search</a></li>
+        <li><a class="gh" href="https://github.com/ArchKnowledge/Architecture-Knowledge-Graph">GitHub <span class="nav-note">private</span></a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+<p class="preview-bar wrap" role="note">Early preview · Phase 1 of the roadmap · All knowledge is in draft and awaiting human review.</p>
+<main id="main">
+
+<article class="object page-narrow">
+  <p class="eyebrow"><span class="dot t-concept"></span>Concept · <a href="../explore/foundations.html">Foundations</a></p>
+  <h1>Architecture Layer</h1>
+  <p class="lead">A level of abstraction in the architecture stack (business, conceptual, semantic, information, logical, physical, technical) with its own questions, artifacts and decision rights.</p>
+  <p class="notice" role="note"><strong>Draft knowledge.</strong> Status <code>proposed</code>, quality <code>draft</code>. Not yet reviewed or approved by a human architect.</p>
+  <div class="object-grid">
+    <div class="object-body"><h2>Definition</h2>
+<p>An Architecture Layer is a level of abstraction in the architecture stack with its own questions, artifacts and decision rights. This knowledge base distinguishes seven layers (machine-readable in <code>00-system/taxonomy/layers.yaml</code>):</p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Layer</th>
+<th>Central question</th>
+<th>Typical decisions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Business</td>
+<td>What does the organisation do and need?</td>
+<td>scope, business rules, accountability</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Conceptual</td>
+<td>Which things and relationships matter?</td>
+<td>concept scope, high-level relationships</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Semantic</td>
+<td>What exactly does each concept mean?</td>
+<td>definitions, identity, specialization, equivalence</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Information</td>
+<td>How is meaning represented as information structures, paradigm-independent?</td>
+<td>classes, attributes, cardinalities, information-level history</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Logical Data</td>
+<td>How is information structured in a chosen paradigm?</td>
+<td>normalization, keys, temporal modeling approach</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Physical Data</td>
+<td>How is the logical model realized in a store?</td>
+<td>data types, partitioning, indexing, physical history mechanism</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Technical Implementation</td>
+<td>Which technologies and operations implement it?</td>
+<td>products, pipelines, deployment</td>
+</tr>
+</tbody>
+</table>
+<h2>Explanation</h2>
+<p>Layers are <strong>not interchangeable</strong>. A decision taken at the wrong layer produces lock-in or ambiguity: e.g. defining the meaning of "customer" in a physical table comment (<a class="ref t-anti" href="../knowledge/da-apt-0001.html">Implicit Semantics</a>) or choosing a history mechanism before stating the historical requirement (<a class="ref t-principle" href="../knowledge/da-pri-0010.html">Historical Requirements Are Explicit</a>).</p>
+<p>The chain of realization is:</p>
+<pre><code class="language-text">Business Meaning → Governed Concept → Semantic Model → Information Model → Logical Data Model → Physical Data Model → Technical Implementation
+</code></pre>
+<p>Each step <code>realizes</code> the step above and is governed by the corresponding level of the <span class="ref-locked" title="Architect tier — not published on this site">Decision Rights Model <span class="tier-tag">Architect</span></span>.</p>
+<h2>Distinctions</h2>
+<ul>
+<li>A layer is not a system tier (presentation / application / data). System tiers are a technical decomposition that lives entirely within the technical layer.</li>
+<li>The separation of <strong>semantic</strong> from <strong>information</strong> layer is an interpretation adopted by this knowledge base: the semantic layer answers "what does it mean?", the information layer answers "how is that meaning represented in an information model?".</li>
+</ul>
+<h2>Examples</h2>
+<ul>
+<li>"A customer is a party that has at least one active agreement" → semantic layer.</li>
+<li>"Customer has attribute <code>customer since</code> with cardinality 1..1" → information layer.</li>
+<li>"<code>customer_since DATE NOT NULL</code> partitioned by year" → physical layer.</li>
+</ul>
+<h2>Open Questions</h2>
+<ul>
+<li>Many frameworks merge conceptual and semantic, or information and logical. The seven-layer separation needs review by the domain owner for Foundations.</li>
+</ul></div>
+    <aside class="object-meta" aria-label="Metadata and relationships">
+      <h2>Metadata</h2><dl><dt>ID</dt><dd><code>DA-CON-0003</code></dd><dt>Type</dt><dd>Concept</dd><dt>Domain</dt><dd><a href="../explore/foundations.html">Foundations</a></dd><dt>Layer</dt><dd>cross-layer</dd><dt>Status</dt><dd>proposed</dd><dt>Quality</dt><dd>draft</dd><dt>Confidence</dt><dd>medium</dd><dt>Epistemic status</dt><dd>expert-interpretation</dd><dt>Content tier</dt><dd>Community</dd><dt>Version</dt><dd>0.1.0</dd><dt>Updated</dt><dd>2026-09-29</dd><dt>Source file</dt><dd><code>01-foundations/concepts/Architecture Layer.md</code></dd></dl>
+      <h2>Relationships</h2>
+      <table class='rels'><tbody><tr><td><code>constrained-by</code></td><td><a class="ref t-principle" href="../knowledge/da-pri-0003.html">Decisions Belong to Their Layer</a></td><td class="muted">Principle</td></tr><tr><td><code>governed-by</code></td><td><span class="ref-locked" title="Architect tier — not published on this site">Decision Rights Model <span class="tier-tag">Architect</span></span></td><td class="muted">Governance model</td></tr><tr><td><code>assessed-by</code></td><td><span class="ref-locked" title="Professional tier — not published on this site">Architecture Layers Are Separated <span class="tier-tag">Professional</span></span></td><td class="muted">Assessment criterion</td></tr><tr><td><code>has-part</code></td><td><a class="ref t-concept" href="../knowledge/da-con-0006.html">Conceptual Data Model</a></td><td class="muted">Concept</td></tr><tr><td><code>has-part</code></td><td><a class="ref t-concept" href="../knowledge/da-con-0007.html">Information Model</a></td><td class="muted">Concept</td></tr><tr><td><code>has-part</code></td><td><a class="ref t-concept" href="../knowledge/da-con-0008.html">Logical Data Model</a></td><td class="muted">Concept</td></tr><tr><td><code>has-part</code></td><td><a class="ref t-concept" href="../knowledge/da-con-0009.html">Physical Data Model</a></td><td class="muted">Concept</td></tr><tr><td><code>has-part</code></td><td><a class="ref t-concept" href="../knowledge/da-con-0012.html">Semantic Model</a></td><td class="muted">Concept</td></tr><tr><td><code>related-to</code></td><td><a class="ref t-standard" href="../knowledge/da-std-0009.html">ArchiMate</a></td><td class="muted">Standard</td></tr></tbody></table>
+      <h2>Sources</h2><p class="muted">No verified source attached yet.</p>
+      <h2>Feedback</h2><p><a href="mailto:dalust1997@gmail.com?subject=Feedback%3A%20DA-CON-0003%20Architecture%20Layer&amp;body=Page%20or%20knowledge%20object%3A%20DA-CON-0003%20-%20Architecture%20Layer%0AKind%20of%20feedback%20%28factual%20error%20/%20unclear%20/%20missing%20/%20terminology%20/%20suggestion%20/%20other%29%3A%20%0AWhat%20should%20change%2C%20and%20why%3A%0A%0A%0ASource%20%28optional%29%3A%0A">Give feedback on this page</a> — report an error, something unclear or missing, or a source.</p>
+    </aside>
+  </div>
+</article>
+</main>
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <div>
+      <p class="footer-brand">Architecture Knowledge Graph</p>
+      <p class="muted">A structured and governed knowledge graph for data, information and enterprise architecture.</p>
+    </div>
+    <div>
+      <p class="muted">Generated from the knowledge graph on 2026-09-30: 155 objects, 388 typed relationships.</p>
+      <p class="muted"><a href="mailto:dalust1997@gmail.com?subject=Feedback%3A%20Architecture%20Knowledge%20Graph&amp;body=Page%20or%20knowledge%20object%3A%20%28page%20title%2C%20ID%20or%20URL%29%0AKind%20of%20feedback%20%28factual%20error%20/%20unclear%20/%20missing%20/%20terminology%20/%20suggestion%20/%20other%29%3A%20%0AWhat%20should%20change%2C%20and%20why%3A%0A%0A%0ASource%20%28optional%29%3A%0A">Send feedback</a> · <a href="https://github.com/ArchKnowledge/Architecture-Knowledge-Graph">Source repository</a> <span class="muted">(private during phase 1)</span> · No products are currently for sale.</p>
+      <p class="muted">© 2026 Architecture Knowledge Graph project. Content licence to be decided; all rights reserved until then. Referenced standards belong to their issuing organisations.</p>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

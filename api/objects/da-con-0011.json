@@ -1,0 +1,71 @@
+{
+  "id": "DA-CON-0011",
+  "type": "concept",
+  "title": "Business Concept",
+  "domain": "Semantic Architecture",
+  "layer": [
+    "business",
+    "semantic"
+  ],
+  "status": "proposed",
+  "quality": "draft",
+  "confidence": "medium",
+  "epistemic_status": "expert-interpretation",
+  "owner": "unassigned",
+  "version": "0.1.0",
+  "publication_tier": "community",
+  "definition": "A unit of business meaning \u2014 a thing, event, role or idea the organisation talks and decides about \u2014 identified by a preferred term and a governed definition.",
+  "aliases": [
+    "Governed Concept"
+  ],
+  "path": "04-semantic-architecture/concepts/Business Concept.md",
+  "relationships": [
+    {
+      "type": "part-of",
+      "direction": "out",
+      "target": "DA-CON-0012",
+      "title": "Semantic Model"
+    },
+    {
+      "type": "owned-by",
+      "direction": "out",
+      "target": "DA-ROL-0001",
+      "title": "Data Owner"
+    },
+    {
+      "type": "governed-by",
+      "direction": "out",
+      "target": "DA-GOV-0008",
+      "title": "Terminology Governance"
+    },
+    {
+      "type": "represented-by",
+      "direction": "out",
+      "target": "DA-CON-0006",
+      "title": "Conceptual Data Model"
+    },
+    {
+      "type": "applicable-to",
+      "direction": "in",
+      "target": "DA-PRI-0001",
+      "title": "Data Has an Accountable Owner"
+    },
+    {
+      "type": "applicable-to",
+      "direction": "in",
+      "target": "DA-STD-0004",
+      "title": "ISO IEC 11179 Metadata Registries"
+    }
+  ],
+  "sources": [],
+  "evidence": [],
+  "governance": {
+    "status": "proposed",
+    "authority": "unreviewed",
+    "required_levels": [
+      "semantic"
+    ],
+    "records": []
+  },
+  "body_markdown": "# Business Concept\n\n## Definition\n\nA Business Concept is a unit of business meaning \u2014 a thing, event, role or idea the organisation talks and decides about \u2014 identified by a preferred term and a governed definition.\n\n## Explanation\n\nBusiness concepts are the anchor of the chain *Business Meaning \u2192 Governed Concept \u2192 Semantic Model \u2192 Information Model \u2192 Logical \u2192 Physical*. A business concept becomes a **governed concept** once its definition has an owner, a status and approval (see [[Terminology Governance]] and [[Governance Lifecycle]]).\n\nA well-formed concept has: preferred term, definition, identity criterion (\"when are two X the same X?\"), synonyms, forbidden terms, broader/narrower concepts and an owner.\n\n## Distinctions\n\n- A concept is not a term: one concept can have several terms (synonyms), and one term can denote several concepts (homonyms). Governance manages the mapping.\n- A concept is not an entity: an entity in a [[Data Model]] *represents* one or more concepts.\n\n## Examples\n\n- \"Customer\", \"Policy\", \"Claim\", \"Registration\" in an insurance or public-sector context.\n"
+}

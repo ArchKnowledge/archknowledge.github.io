@@ -1,0 +1,55 @@
+{
+  "id": "DA-GOV-0006",
+  "type": "governance",
+  "title": "Knowledge Quality Model",
+  "domain": "Architecture Governance",
+  "layer": [
+    "cross-layer"
+  ],
+  "status": "proposed",
+  "quality": "draft",
+  "confidence": "medium",
+  "epistemic_status": "recommendation",
+  "owner": "unassigned",
+  "version": "0.1.0",
+  "publication_tier": "community",
+  "summary": "Quality criteria and quality statuses for knowledge objects, and how quality relates to lifecycle status, confidence and epistemic status.",
+  "path": "16-architecture-governance/Knowledge Quality Model.md",
+  "relationships": [
+    {
+      "type": "part-of",
+      "direction": "out",
+      "target": "DA-GOV-0001",
+      "title": "Architecture Governance Model"
+    },
+    {
+      "type": "decided-by",
+      "direction": "out",
+      "target": "DA-ADR-0004",
+      "title": "Separate Lifecycle Status from Knowledge Quality"
+    },
+    {
+      "type": "decided-by",
+      "direction": "out",
+      "target": "DA-ADR-0005",
+      "title": "Declare Epistemic Status on Every Object"
+    },
+    {
+      "type": "assessed-by",
+      "direction": "in",
+      "target": "DA-ASM-0001",
+      "title": "Knowledge Base Maturity Model"
+    }
+  ],
+  "sources": [],
+  "evidence": [],
+  "governance": {
+    "status": "proposed",
+    "authority": "unreviewed",
+    "required_levels": [
+      "data-architecture"
+    ],
+    "records": []
+  },
+  "body_markdown": "# Knowledge Quality Model\n\n## Purpose\n\nMake knowledge trustworthiness explicit and assessable. Machine-readable in `00-system/governance/quality-model.yaml`.\n\n## Scope\n\nAll knowledge objects.\n\n## Quality Criteria\n\n| Criterion | Question | Automatable check |\n|---|---|---|\n| Accuracy | Is it correct? | \u2014 (review) |\n| Completeness | Are required sections and metadata present? | yes: required fields/sections |\n| Consistency | Consistent terminology and relationships? | partly: terminology, link resolution |\n| Traceability | Traceable to sources and related objects? | partly: sources, relationships |\n| Currency | Up to date? | yes: `review_date` |\n| Applicability | Context and limits stated? | partly: \"When not to use\", \"Exceptions\" sections |\n| Clarity | Understandable? | \u2014 (review) |\n| Reusability | Reusable across contexts? | \u2014 (review) |\n| Authority | Backed by source or authorized approval? | partly: sources, status |\n| Confidence | Declared confidence matches evidence? | \u2014 (review) |\n\n## Quality Statuses\n\n| Quality | Meaning | Compatible lifecycle status |\n|---|---|---|\n| draft | unreviewed | any |\n| reviewed | read by reviewer | under-review or later |\n| validated | checked against criteria and sources | validated or later |\n| authoritative | approved reference knowledge; not to be overwritten without explicit approval | approved, published, implemented |\n| deprecated | no longer recommended | deprecated, retired |\n| superseded | replaced; requires `superseded-by` | deprecated, retired |\n\n## Epistemic Status and Confidence\n\nEvery object also declares `epistemic_status` (verified-fact, external-standard, common-practice, expert-interpretation, recommendation, hypothesis, experimental) and `confidence` (high/medium/low). See [[Declare Epistemic Status on Every Object]].\n"
+}

@@ -1,0 +1,85 @@
+{
+  "id": "DA-CON-0012",
+  "type": "concept",
+  "title": "Semantic Model",
+  "domain": "Semantic Architecture",
+  "layer": [
+    "semantic"
+  ],
+  "status": "proposed",
+  "quality": "draft",
+  "confidence": "medium",
+  "epistemic_status": "expert-interpretation",
+  "owner": "unassigned",
+  "version": "0.1.0",
+  "publication_tier": "community",
+  "definition": "An explicit, governed representation of meaning \u2014 concepts, their definitions, identity criteria and semantic relationships such as specialization, generalization, part-whole and equivalence.",
+  "path": "04-semantic-architecture/concepts/Semantic Model.md",
+  "relationships": [
+    {
+      "type": "part-of",
+      "direction": "out",
+      "target": "DA-CON-0003",
+      "title": "Architecture Layer"
+    },
+    {
+      "type": "represented-by",
+      "direction": "out",
+      "target": "DA-CON-0007",
+      "title": "Information Model"
+    },
+    {
+      "type": "constrained-by",
+      "direction": "out",
+      "target": "DA-PRI-0002",
+      "title": "Meaning Before Representation"
+    },
+    {
+      "type": "governed-by",
+      "direction": "out",
+      "target": "DA-ROL-0005",
+      "title": "Semantic Architect"
+    },
+    {
+      "type": "dependency-of",
+      "direction": "in",
+      "target": "DA-CON-0002",
+      "title": "Information Architecture"
+    },
+    {
+      "type": "has-part",
+      "direction": "in",
+      "target": "DA-CON-0011",
+      "title": "Business Concept"
+    },
+    {
+      "type": "generalizes",
+      "direction": "in",
+      "target": "DA-CON-0015",
+      "title": "Controlled Vocabulary"
+    },
+    {
+      "type": "generalizes",
+      "direction": "in",
+      "target": "DA-CON-0013",
+      "title": "Ontology"
+    },
+    {
+      "type": "generalizes",
+      "direction": "in",
+      "target": "DA-CON-0014",
+      "title": "Taxonomy"
+    }
+  ],
+  "sources": [],
+  "evidence": [],
+  "governance": {
+    "status": "proposed",
+    "authority": "unreviewed",
+    "required_levels": [
+      "semantic"
+    ],
+    "records": []
+  },
+  "body_markdown": "# Semantic Model\n\n## Definition\n\nA Semantic Model is an explicit, governed representation of meaning: concepts, their definitions and identity criteria, and semantic relationships such as specialization, generalization, part-whole and equivalence.\n\n## Explanation\n\nThe semantic model answers **\"what does something mean?\"** \u2014 deliberately separated from **\"how is that meaning represented in an information model?\"** ([[Information Model]]) and **\"how is it technically implemented?\"** (physical and technical layers).\n\nSemantic models range in formality:\n\n| Form | Formality | Typical standard |\n|---|---|---|\n| [[Controlled Vocabulary]] | list of approved terms | \u2014 |\n| [[Taxonomy]] | hierarchy (broader/narrower) | [[SKOS]] |\n| Thesaurus | hierarchy + associative relations + synonyms | [[SKOS]] |\n| [[Ontology]] | classes, properties, axioms, reasoning | [[OWL 2]] on [[RDF 1.1]] |\n\nChoosing the formality is supported by [[Semantic Modeling Approach Decision Tree]].\n\n## Distinctions\n\n- Versus [[Conceptual Data Model]]: the conceptual model scopes data; the semantic model defines meaning, including concepts that never become data.\n- Semantic relationships (specializes, equivalent-to) are different from data relationships (foreign keys).\n\n## Examples\n\n- \"Natural Person\" specializes \"Party\"; \"Client\" is equivalent to \"Customer\" in the sales vocabulary.\n"
+}

@@ -1,0 +1,50 @@
+{
+  "id": "DA-ROL-0004",
+  "type": "role",
+  "title": "Domain Expert",
+  "domain": "Semantic Architecture",
+  "layer": [
+    "business",
+    "semantic"
+  ],
+  "status": "proposed",
+  "quality": "draft",
+  "confidence": "medium",
+  "epistemic_status": "common-practice",
+  "owner": "unassigned",
+  "version": "0.1.0",
+  "publication_tier": "community",
+  "summary": "Subject-matter authority whose knowledge of the business domain informs definitions and models.",
+  "path": "06-data-governance/roles/Domain Expert.md",
+  "relationships": [
+    {
+      "type": "part-of",
+      "direction": "out",
+      "target": "DA-GOV-0003",
+      "title": "Governance Roles"
+    },
+    {
+      "type": "supports",
+      "direction": "in",
+      "target": "DA-ROL-0005",
+      "title": "Semantic Architect"
+    },
+    {
+      "type": "supports",
+      "direction": "in",
+      "target": "DA-ROL-0002",
+      "title": "Data Steward"
+    }
+  ],
+  "sources": [],
+  "evidence": [],
+  "governance": {
+    "status": "proposed",
+    "authority": "unreviewed",
+    "required_levels": [
+      "semantic"
+    ],
+    "records": []
+  },
+  "body_markdown": "# Domain Expert\n\n## Purpose\n\nProvide authoritative input on meaning and business rules.\n\n## Responsibilities\n\n- Explain business meaning, exceptions and edge cases.\n- Review definitions and models for correctness.\n\n## Decision Rights\n\nNone formally; consulted at the semantic and information levels.\n\n## Inputs\n\nDraft definitions and models.\n\n## Outputs\n\nReview comments; examples; edge cases.\n\n## Required Competencies\n\nDeep domain knowledge.\n\n## Escalation Paths\n\nDisagreements on meaning \u2192 [[Data Owner]].\n\n## Related Governance Processes\n\n- [[Decision Rights Model]]\n- [[Architecture Change Process]]\n- [[Governance Lifecycle]]\n"
+}

@@ -1,0 +1,87 @@
+{
+  "id": "DA-CON-0010",
+  "type": "concept",
+  "title": "Temporal Data Management",
+  "domain": "Data Modeling",
+  "layer": [
+    "information",
+    "logical",
+    "physical"
+  ],
+  "status": "proposed",
+  "quality": "draft",
+  "confidence": "high",
+  "epistemic_status": "common-practice",
+  "owner": "unassigned",
+  "version": "0.1.0",
+  "publication_tier": "community",
+  "definition": "The capture, storage and querying of how data and knowledge about data change over time, including valid time (when a fact is true in reality) and transaction time (when the fact was recorded).",
+  "aliases": [
+    "Data History",
+    "Historization"
+  ],
+  "path": "03-data-modeling/Temporal Data Management.md",
+  "relationships": [
+    {
+      "type": "constrained-by",
+      "direction": "out",
+      "target": "DA-PRI-0010",
+      "title": "Historical Requirements Are Explicit"
+    },
+    {
+      "type": "constrained-by",
+      "direction": "out",
+      "target": "DA-STD-0010",
+      "title": "SQL Standard Temporal Support"
+    },
+    {
+      "type": "part-of",
+      "direction": "out",
+      "target": "DA-CON-0023",
+      "title": "Data Lifecycle"
+    },
+    {
+      "type": "required-by",
+      "direction": "in",
+      "target": "DA-CAP-0001",
+      "title": "Historical Data Reconstruction Capability"
+    },
+    {
+      "type": "realized-by",
+      "direction": "in",
+      "target": "DA-PAT-0001",
+      "title": "Bitemporal Data Model"
+    },
+    {
+      "type": "realized-by",
+      "direction": "in",
+      "target": "DA-PAT-0004",
+      "title": "Event Sourcing"
+    },
+    {
+      "type": "realized-by",
+      "direction": "in",
+      "target": "DA-PAT-0003",
+      "title": "Slowly Changing Dimension Type 2"
+    },
+    {
+      "type": "realized-by",
+      "direction": "in",
+      "target": "DA-PAT-0002",
+      "title": "System-Versioned History Table"
+    }
+  ],
+  "sources": [],
+  "evidence": [],
+  "governance": {
+    "status": "proposed",
+    "authority": "unreviewed",
+    "required_levels": [
+      "information-model",
+      "data-architecture",
+      "technical"
+    ],
+    "records": []
+  },
+  "body_markdown": "# Temporal Data Management\n\n## Definition\n\nTemporal Data Management is the capture, storage and querying of how data \u2014 and knowledge about data \u2014 changes over time.\n\n## Explanation\n\nTwo time dimensions are commonly distinguished:\n\n- **Valid time** (application time, business time): when a fact is true in the modeled reality.\n- **Transaction time** (system time): when the fact was recorded in, and removed from, the database.\n\nA model supporting both is *bitemporal*. The concept is technology-neutral; it is realized by patterns such as [[Bitemporal Data Model]], [[System-Versioned History Table]], [[Slowly Changing Dimension Type 2]] and [[Event Sourcing]], and implemented by technologies such as [[SQL Server Temporal Tables]].\n\nThe requirement must be stated before the mechanism is chosen ([[Historical Requirements Are Explicit]]). The choice is supported by [[Database History Pattern Decision Tree]].\n\n## Distinctions\n\n- History versus **audit**: an audit trail records who changed what and when for accountability; history supports reconstruction and temporal querying. They overlap but are not identical.\n- History versus **backup**: backups restore a whole state; they are not a queryable history.\n\n## Examples\n\n- \"What was the customer's address on 1 March, as we knew it on 15 March?\" requires both valid and transaction time.\n"
+}

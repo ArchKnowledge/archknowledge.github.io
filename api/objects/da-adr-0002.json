@@ -1,0 +1,37 @@
+{
+  "id": "DA-ADR-0002",
+  "type": "decision",
+  "title": "Use Title-Based File Names for Knowledge Objects",
+  "domain": "Foundations",
+  "layer": [
+    "technical"
+  ],
+  "status": "proposed",
+  "quality": "draft",
+  "confidence": "medium",
+  "epistemic_status": "recommendation",
+  "owner": "unassigned",
+  "version": "0.1.0",
+  "publication_tier": "community",
+  "summary": "Name each knowledge object file after its title (unique across the repository) and keep the immutable ID in front matter, so Obsidian wikilinks and graph labels are human-readable.",
+  "path": "20-architecture-decisions/records/Use Title-Based File Names for Knowledge Objects.md",
+  "relationships": [
+    {
+      "type": "depends-on",
+      "direction": "out",
+      "target": "DA-ADR-0001",
+      "title": "Use Markdown and Git as the Initial Knowledge Store"
+    }
+  ],
+  "sources": [],
+  "evidence": [],
+  "governance": {
+    "status": "proposed",
+    "authority": "unreviewed",
+    "required_levels": [
+      "technical"
+    ],
+    "records": []
+  },
+  "body_markdown": "# Use Title-Based File Names for Knowledge Objects\n\n## Context\n\nObsidian resolves `[[wikilinks]]` by file name and labels graph nodes by file name. The spec example uses `[[Information Architecture]]`-style links.\n\n## Problem\n\nShould files be named by ID (`DA-CON-0001.md`) or by title (`Data Architecture.md`)?\n\n## Options\n\n1. Title-based file names, ID in front matter.\n2. ID-based file names, title in front matter, links as `[[DA-CON-0001|Data Architecture]]`.\n\n## Evaluation Criteria\n\nGraph readability, link readability in plain text, rename stability, uniqueness.\n\n## Trade-offs\n\n- Title-based: readable links and graph; renames require link updates (Obsidian does this automatically; outside Obsidian a script must).\n- ID-based: rename-stable; unreadable graph labels and raw links.\n\n## Decision\n\nProposed: option 1. The validator enforces `title == file name`, unique titles and unique IDs. IDs are immutable; titles may change via governed rename.\n\n## Consequences\n\n- Titles may not contain `/ \\ : # ^ [ ] |`; e.g. \"ISO IEC 11179\" instead of \"ISO/IEC 11179\" (the official form is kept as an alias).\n\n## Assumptions\n\n- Exports use IDs as stable keys, so external stores are unaffected by renames.\n\n## Constraints\n\n- File-system-safe characters only.\n\n## Related Architecture\n\n- [[Use Markdown and Git as the Initial Knowledge Store]]\n"
+}

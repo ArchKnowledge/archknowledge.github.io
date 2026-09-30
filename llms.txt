@@ -1,0 +1,128 @@
+# Architecture Knowledge Graph
+
+> A structured and governed knowledge graph for data, information and enterprise architecture. All content is draft (status proposed) unless stated otherwise; check `status` and `authority` before relying on it.
+
+## Machine-readable
+
+- [Graph (published objects and typed relationships)](api/graph.json)
+
+## Objects
+
+- [Architecture Layer](api/objects/da-con-0003.json): concept, proposed
+- [Architecture Decision Management Capability](api/objects/da-cap-0002.json): capability, proposed
+- [Historical Data Reconstruction Capability](api/objects/da-cap-0001.json): capability, proposed
+- [Architecture Decision](api/objects/da-con-0004.json): concept, proposed
+- [Data Architecture](api/objects/da-con-0001.json): concept, proposed
+- [Information Architecture](api/objects/da-con-0002.json): concept, proposed
+- [Layered Model Derivation](api/objects/da-mth-0001.json): method, proposed
+- [Decisions Belong to Their Layer](api/objects/da-pri-0003.json): principle, proposed
+- [Each Data Element Has an Authoritative Source](api/objects/da-pri-0008.json): principle, proposed
+- [Technology-Neutral Architecture First](api/objects/da-pri-0004.json): principle, proposed
+- [Data Model](api/objects/da-con-0005.json): concept, proposed
+- [Information Model](api/objects/da-con-0007.json): concept, proposed
+- [Temporal Data Management](api/objects/da-con-0010.json): concept, proposed
+- [Conceptual Data Model](api/objects/da-con-0006.json): concept, proposed
+- [Logical Data Model](api/objects/da-con-0008.json): concept, proposed
+- [Physical Data Model](api/objects/da-con-0009.json): concept, proposed
+- [Meaning Before Representation](api/objects/da-pri-0002.json): principle, proposed
+- [Business Concept](api/objects/da-con-0011.json): concept, proposed
+- [Controlled Vocabulary](api/objects/da-con-0015.json): concept, proposed
+- [Ontology](api/objects/da-con-0013.json): concept, proposed
+- [Semantic Model](api/objects/da-con-0012.json): concept, proposed
+- [Taxonomy](api/objects/da-con-0014.json): concept, proposed
+- [Metadata Is Captured by Design](api/objects/da-pri-0006.json): principle, proposed
+- [Data Lineage](api/objects/da-con-0017.json): concept, proposed
+- [Metadata](api/objects/da-con-0016.json): concept, proposed
+- [Data Governance](api/objects/da-con-0018.json): concept, proposed
+- [Data Ownership](api/objects/da-con-0019.json): concept, proposed
+- [Data Stewardship](api/objects/da-con-0020.json): concept, proposed
+- [Data Has an Accountable Owner](api/objects/da-pri-0001.json): principle, proposed
+- [Architecture Board](api/objects/da-rol-0015.json): role, proposed
+- [Data Architect](api/objects/da-rol-0008.json): role, proposed
+- [Data Custodian](api/objects/da-rol-0003.json): role, proposed
+- [Data Owner](api/objects/da-rol-0001.json): role, proposed
+- [Data Steward](api/objects/da-rol-0002.json): role, proposed
+- [Domain Architect](api/objects/da-rol-0009.json): role, proposed
+- [Domain Expert](api/objects/da-rol-0004.json): role, proposed
+- [Enterprise Architect](api/objects/da-rol-0010.json): role, proposed
+- [Information Architect](api/objects/da-rol-0007.json): role, proposed
+- [Ontology Engineer](api/objects/da-rol-0006.json): role, proposed
+- [Platform Architect](api/objects/da-rol-0012.json): role, proposed
+- [Privacy Specialist](api/objects/da-rol-0014.json): role, proposed
+- [Security Architect](api/objects/da-rol-0013.json): role, proposed
+- [Semantic Architect](api/objects/da-rol-0005.json): role, proposed
+- [Solution Architect](api/objects/da-rol-0011.json): role, proposed
+- [Data Quality](api/objects/da-con-0021.json): concept, proposed
+- [Quality Is Managed at the Source](api/objects/da-pri-0005.json): principle, proposed
+- [Data Quality Dimension](api/objects/da-con-0022.json): concept, proposed
+- [Data Platform](api/objects/da-con-0028.json): concept, proposed
+- [Data Integration](api/objects/da-con-0029.json): concept, proposed
+- [Data Lifecycle](api/objects/da-con-0023.json): concept, proposed
+- [Historical Requirements Are Explicit](api/objects/da-pri-0010.json): principle, proposed
+- [Data Migration](api/objects/da-con-0024.json): concept, proposed
+- [Golden Record](api/objects/da-con-0026.json): concept, proposed
+- [Master Data](api/objects/da-con-0025.json): concept, proposed
+- [Reference Data](api/objects/da-con-0027.json): concept, proposed
+- [Architecture Governance Model](api/objects/da-gov-0001.json): governance, proposed
+- [Governance Lifecycle](api/objects/da-gov-0004.json): governance, proposed
+- [Governance Roles](api/objects/da-gov-0003.json): governance, proposed
+- [Knowledge Quality Model](api/objects/da-gov-0006.json): governance, proposed
+- [Knowledge Repository Governance](api/objects/da-gov-0007.json): governance, proposed
+- [Terminology Governance](api/objects/da-gov-0008.json): governance, proposed
+- [Knowledge Change Review Process](api/objects/da-prc-0001.json): process, proposed
+- [Separate Decision per Governance Level](api/objects/da-grl-0002.json): governance-rule, proposed
+- [Separation of Duties in Approval](api/objects/da-grl-0003.json): governance-rule, proposed
+- [Status Change Requires Governance Record](api/objects/da-grl-0001.json): governance-rule, proposed
+- [Architecture Decisions Are Traceable](api/objects/da-pri-0007.json): principle, proposed
+- [Governance Is Embedded in Delivery](api/objects/da-pri-0009.json): principle, proposed
+- [Apache Iceberg](api/objects/da-tec-0002.json): technology, proposed
+- [SQL Server Temporal Tables](api/objects/da-tec-0001.json): technology, proposed
+- [Debezium](api/objects/da-tec-0003.json): technology, proposed
+- [Governed Analytical Data Platform](api/objects/da-rar-0001.json): reference-architecture, proposed
+- [Batch Extract-Transform-Load](api/objects/da-pat-0006.json): pattern, proposed
+- [Big Bang Data Migration](api/objects/da-pat-0016.json): pattern, proposed
+- [Bitemporal Data Model](api/objects/da-pat-0001.json): pattern, proposed
+- [Change Data Capture](api/objects/da-pat-0005.json): pattern, proposed
+- [Concept-to-Model Traceability](api/objects/da-pat-0014.json): pattern, proposed
+- [Data Contract](api/objects/da-pat-0008.json): pattern, proposed
+- [Data Quality Gate](api/objects/da-pat-0010.json): pattern, proposed
+- [Data Virtualization](api/objects/da-pat-0007.json): pattern, proposed
+- [Event Sourcing](api/objects/da-pat-0004.json): pattern, proposed
+- [Layered Data Refinement](api/objects/da-pat-0009.json): pattern, proposed
+- [Master Data Hub](api/objects/da-pat-0012.json): pattern, proposed
+- [Metadata Harvesting](api/objects/da-pat-0011.json): pattern, proposed
+- [Phased Data Migration](api/objects/da-pat-0015.json): pattern, proposed
+- [Reference Data Hub](api/objects/da-pat-0013.json): pattern, proposed
+- [Slowly Changing Dimension Type 2](api/objects/da-pat-0003.json): pattern, proposed
+- [System-Versioned History Table](api/objects/da-pat-0002.json): pattern, proposed
+- [Governance as Afterthought](api/objects/da-apt-0004.json): anti-pattern, proposed
+- [Implicit Semantics](api/objects/da-apt-0001.json): anti-pattern, proposed
+- [Migration Without Data Profiling](api/objects/da-apt-0005.json): anti-pattern, proposed
+- [Overloaded Attribute](api/objects/da-apt-0002.json): anti-pattern, proposed
+- [Physical-Model-First Design](api/objects/da-apt-0006.json): anti-pattern, proposed
+- [Point-to-Point Integration Sprawl](api/objects/da-apt-0003.json): anti-pattern, proposed
+- [Declare Epistemic Status on Every Object](api/objects/da-adr-0005.json): decision, proposed
+- [Separate Lifecycle Status from Knowledge Quality](api/objects/da-adr-0004.json): decision, proposed
+- [Store Typed Relationships as Front-Matter Keys](api/objects/da-adr-0003.json): decision, proposed
+- [Use Markdown and Git as the Initial Knowledge Store](api/objects/da-adr-0001.json): decision, proposed
+- [Use Title-Based File Names for Knowledge Objects](api/objects/da-adr-0002.json): decision, proposed
+- [Knowledge Base Maturity Model](api/objects/da-asm-0001.json): assessment, proposed
+- [Data Model Review Checklist](api/objects/da-tpl-0003.json): template, proposed
+- [Insurance Policy History Example](api/objects/da-exa-0001.json): example, proposed
+- [Policy State Is Reproducible As Known At Any Past Date](api/objects/da-req-0001.json): requirement, proposed
+- [ArchiMate](api/objects/da-std-0009.json): standard, proposed
+- [DAMA-DMBOK](api/objects/da-std-0008.json): standard, proposed
+- [GDPR](api/objects/da-std-0007.json): standard, proposed
+- [ISO 8000 Data Quality](api/objects/da-std-0005.json): standard, proposed
+- [ISO IEC 11179 Metadata Registries](api/objects/da-std-0004.json): standard, proposed
+- [ISO IEC 25012 Data Quality Model](api/objects/da-std-0006.json): standard, proposed
+- [OWL 2](api/objects/da-std-0002.json): standard, proposed
+- [RDF 1.1](api/objects/da-std-0003.json): standard, proposed
+- [SKOS](api/objects/da-std-0001.json): standard, proposed
+- [SQL Standard Temporal Support](api/objects/da-std-0010.json): standard, proposed
+- [Pattern Realizes a Concept or Principle](api/objects/da-arl-0002.json): architecture-rule, proposed
+- [Technology Implements a Generic Pattern](api/objects/da-arl-0001.json): architecture-rule, proposed
+- [Architecture Decision Framework](api/objects/da-fwk-0001.json): framework, proposed
+- [Database History Pattern Decision Tree](api/objects/da-dtr-0001.json): decision-tree, proposed
+- [Semantic Modeling Approach Decision Tree](api/objects/da-dtr-0005.json): decision-tree, proposed
+- [Retroactive Corrections Call for Bitemporal History](api/objects/da-rrl-0001.json): recommendation-rule, proposed

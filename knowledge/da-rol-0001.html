@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Data Owner · Architecture Knowledge Graph</title>
+<meta name="description" content="Business role accountable for a defined set of data: its meaning, quality requirements, access and lifecycle.">
+<link rel="canonical" href="https://archknowledge.github.io/knowledge/da-rol-0001.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Architecture Knowledge Graph">
+<meta property="og:title" content="Data Owner">
+<meta property="og:description" content="Business role accountable for a defined set of data: its meaning, quality requirements, access and lifecycle.">
+<meta property="og:url" content="https://archknowledge.github.io/knowledge/da-rol-0001.html">
+<meta name="twitter:card" content="summary">
+<meta name="color-scheme" content="light dark">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../assets/style.css">
+<meta name="akg-root" content="../">
+<script src="../assets/site.js" defer></script>
+
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="../index.html" aria-label="Architecture Knowledge Graph — home">
+      <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true"><path d="M6 24 16 8l10 16M6 24h20M16 8v16" /><circle cx="16" cy="8" r="3"/><circle cx="6" cy="24" r="3"/><circle cx="26" cy="24" r="3"/><circle cx="16" cy="24" r="2.2"/></svg>
+      <span>Architecture<br>Knowledge Graph</span>
+    </a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+    <nav id="site-nav" class="site-nav" aria-label="Main">
+      <ul>
+<li><a href="../why.html">Why</a></li>
+<li><a href="../knowledge-graph.html">Knowledge Graph</a></li>
+<li><a href="../explore.html" aria-current="page">Explore</a></li>
+<li><a href="../products.html">Products</a></li>
+<li><a href="../governance.html">Governance</a></li>
+<li><a href="../roadmap.html">Roadmap</a></li>
+<li><a href="../search.html">Search</a></li>
+        <li><a class="gh" href="https://github.com/ArchKnowledge/Architecture-Knowledge-Graph">GitHub <span class="nav-note">private</span></a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+<p class="preview-bar wrap" role="note">Early preview · Phase 1 of the roadmap · All knowledge is in draft and awaiting human review.</p>
+<main id="main">
+
+<article class="object page-narrow">
+  <p class="eyebrow"><span class="dot t-gov"></span>Role · <a href="../explore/data-governance.html">Data Governance</a></p>
+  <h1>Data Owner</h1>
+  <p class="lead">Business role accountable for a defined set of data: its meaning, quality requirements, access and lifecycle.</p>
+  <p class="notice" role="note"><strong>Draft knowledge.</strong> Status <code>proposed</code>, quality <code>draft</code>. Not yet reviewed or approved by a human architect.</p>
+  <div class="object-grid">
+    <div class="object-body"><h2>Purpose</h2>
+<p>Carry accountability for owned data so decisions about it have a legitimate decider (<a class="ref t-principle" href="../knowledge/da-pri-0001.html">Data Has an Accountable Owner</a>).</p>
+<h2>Responsibilities</h2>
+<ul>
+<li>Approve definitions of owned <a class="ref t-concept" href="../knowledge/da-con-0011.html">concepts</a>.</li>
+<li>Set quality requirements and accept residual quality risk.</li>
+<li>Decide on access and sharing within policy.</li>
+<li>Decide retention within legal limits, with the <a class="ref t-gov" href="../knowledge/da-rol-0014.html">Privacy Specialist</a>.</li>
+</ul>
+<h2>Decision Rights</h2>
+<p>Semantic level approver in the <span class="ref-locked" title="Architect tier — not published on this site">Decision Rights Model <span class="tier-tag">Architect</span></span>: meaning, quality requirements, access. No technical design rights.</p>
+<h2>Inputs</h2>
+<p>Proposals from <a class="ref t-gov" href="../knowledge/da-rol-0002.html">Data Steward</a>; impact analyses; quality reports.</p>
+<h2>Outputs</h2>
+<p>Approved definitions; quality requirements; access decisions.</p>
+<h2>Required Competencies</h2>
+<p>Business domain authority; data literacy; ability to weigh risk.</p>
+<h2>Escalation Paths</h2>
+<p>Cross-domain conflicts → <a class="ref t-gov" href="../knowledge/da-rol-0015.html">Architecture Board</a> or data governance council.</p>
+<h2>Related Governance Processes</h2>
+<ul>
+<li><span class="ref-locked" title="Architect tier — not published on this site">Decision Rights Model <span class="tier-tag">Architect</span></span></li>
+<li><span class="ref-locked" title="Architect tier — not published on this site">Architecture Change Process <span class="tier-tag">Architect</span></span></li>
+<li><a class="ref t-gov" href="../knowledge/da-gov-0004.html">Governance Lifecycle</a></li>
+</ul></div>
+    <aside class="object-meta" aria-label="Metadata and relationships">
+      <h2>Metadata</h2><dl><dt>ID</dt><dd><code>DA-ROL-0001</code></dd><dt>Type</dt><dd>Role</dd><dt>Domain</dt><dd><a href="../explore/data-governance.html">Data Governance</a></dd><dt>Layer</dt><dd>business, semantic</dd><dt>Status</dt><dd>proposed</dd><dt>Quality</dt><dd>draft</dd><dt>Confidence</dt><dd>medium</dd><dt>Epistemic status</dt><dd>common-practice</dd><dt>Content tier</dt><dd>Community</dd><dt>Version</dt><dd>0.1.0</dd><dt>Updated</dt><dd>2026-09-29</dd><dt>Source file</dt><dd><code>06-data-governance/roles/Data Owner.md</code></dd></dl>
+      <h2>Relationships</h2>
+      <table class='rels'><tbody><tr><td><code>part-of</code></td><td><a class="ref t-gov" href="../knowledge/da-gov-0003.html">Governance Roles</a></td><td class="muted">Governance model</td></tr><tr><td><code>realizes</code></td><td><a class="ref t-concept" href="../knowledge/da-con-0019.html">Data Ownership</a></td><td class="muted">Concept</td></tr><tr><td><code>dependency-of</code></td><td><a class="ref t-gov" href="../knowledge/da-rol-0003.html">Data Custodian</a></td><td class="muted">Role</td></tr><tr><td><code>governs</code></td><td><span class="ref-locked" title="Architect tier — not published on this site">Master Data Management Reference Architecture <span class="tier-tag">Architect</span></span></td><td class="muted">Reference architecture</td></tr><tr><td><code>owns</code></td><td><a class="ref t-concept" href="../knowledge/da-con-0011.html">Business Concept</a></td><td class="muted">Concept</td></tr></tbody></table>
+      <h2>Sources</h2><p class="muted">No verified source attached yet.</p>
+      <h2>Feedback</h2><p><a href="mailto:dalust1997@gmail.com?subject=Feedback%3A%20DA-ROL-0001%20Data%20Owner&amp;body=Page%20or%20knowledge%20object%3A%20DA-ROL-0001%20-%20Data%20Owner%0AKind%20of%20feedback%20%28factual%20error%20/%20unclear%20/%20missing%20/%20terminology%20/%20suggestion%20/%20other%29%3A%20%0AWhat%20should%20change%2C%20and%20why%3A%0A%0A%0ASource%20%28optional%29%3A%0A">Give feedback on this page</a> — report an error, something unclear or missing, or a source.</p>
+    </aside>
+  </div>
+</article>
+</main>
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <div>
+      <p class="footer-brand">Architecture Knowledge Graph</p>
+      <p class="muted">A structured and governed knowledge graph for data, information and enterprise architecture.</p>
+    </div>
+    <div>
+      <p class="muted">Generated from the knowledge graph on 2026-09-30: 155 objects, 388 typed relationships.</p>
+      <p class="muted"><a href="mailto:dalust1997@gmail.com?subject=Feedback%3A%20Architecture%20Knowledge%20Graph&amp;body=Page%20or%20knowledge%20object%3A%20%28page%20title%2C%20ID%20or%20URL%29%0AKind%20of%20feedback%20%28factual%20error%20/%20unclear%20/%20missing%20/%20terminology%20/%20suggestion%20/%20other%29%3A%20%0AWhat%20should%20change%2C%20and%20why%3A%0A%0A%0ASource%20%28optional%29%3A%0A">Send feedback</a> · <a href="https://github.com/ArchKnowledge/Architecture-Knowledge-Graph">Source repository</a> <span class="muted">(private during phase 1)</span> · No products are currently for sale.</p>
+      <p class="muted">© 2026 Architecture Knowledge Graph project. Content licence to be decided; all rights reserved until then. Referenced standards belong to their issuing organisations.</p>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

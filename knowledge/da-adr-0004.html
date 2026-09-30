@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Separate Lifecycle Status from Knowledge Quality · Architecture Knowledge Graph</title>
+<meta name="description" content="Track governance lifecycle (`status`) and knowledge quality (`quality`) as two separate fields, reconcile the spec&#x27;s Draft/Proposed ambiguity with two initial states, and treat the spec&#x27;s `approval_status` as derived from `status`.">
+<link rel="canonical" href="https://archknowledge.github.io/knowledge/da-adr-0004.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Architecture Knowledge Graph">
+<meta property="og:title" content="Separate Lifecycle Status from Knowledge Quality">
+<meta property="og:description" content="Track governance lifecycle (`status`) and knowledge quality (`quality`) as two separate fields, reconcile the spec&#x27;s Draft/Proposed ambiguity with two initial states, and treat the spec&#x27;s `approval_status` as derived from `status`.">
+<meta property="og:url" content="https://archknowledge.github.io/knowledge/da-adr-0004.html">
+<meta name="twitter:card" content="summary">
+<meta name="color-scheme" content="light dark">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../assets/style.css">
+<meta name="akg-root" content="../">
+<script src="../assets/site.js" defer></script>
+
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="../index.html" aria-label="Architecture Knowledge Graph — home">
+      <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true"><path d="M6 24 16 8l10 16M6 24h20M16 8v16" /><circle cx="16" cy="8" r="3"/><circle cx="6" cy="24" r="3"/><circle cx="26" cy="24" r="3"/><circle cx="16" cy="24" r="2.2"/></svg>
+      <span>Architecture<br>Knowledge Graph</span>
+    </a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+    <nav id="site-nav" class="site-nav" aria-label="Main">
+      <ul>
+<li><a href="../why.html">Why</a></li>
+<li><a href="../knowledge-graph.html">Knowledge Graph</a></li>
+<li><a href="../explore.html" aria-current="page">Explore</a></li>
+<li><a href="../products.html">Products</a></li>
+<li><a href="../governance.html">Governance</a></li>
+<li><a href="../roadmap.html">Roadmap</a></li>
+<li><a href="../search.html">Search</a></li>
+        <li><a class="gh" href="https://github.com/ArchKnowledge/Architecture-Knowledge-Graph">GitHub <span class="nav-note">private</span></a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+<p class="preview-bar wrap" role="note">Early preview · Phase 1 of the roadmap · All knowledge is in draft and awaiting human review.</p>
+<main id="main">
+
+<article class="object page-narrow">
+  <p class="eyebrow"><span class="dot t-decision"></span>Decision · <a href="../explore/architecture-governance.html">Architecture Governance</a></p>
+  <h1>Separate Lifecycle Status from Knowledge Quality</h1>
+  <p class="lead">Track governance lifecycle (`status`) and knowledge quality (`quality`) as two separate fields, reconcile the spec&#x27;s Draft/Proposed ambiguity with two initial states, and treat the spec&#x27;s `approval_status` as derived from `status`.</p>
+  <p class="notice" role="note"><strong>Draft knowledge.</strong> Status <code>proposed</code>, quality <code>draft</code>. Not yet reviewed or approved by a human architect.</p>
+  <div class="object-grid">
+    <div class="object-body"><h2>Context</h2>
+<p>The spec defines a governance lifecycle (§13: Proposed … Retired), a quality status (§17: Draft … Superseded), and an <code>approval_status</code> field (§16). The §13 transition example starts at "Draft → Review" while the lifecycle list starts at "Proposed".</p>
+<h2>Problem</h2>
+<p>How to represent these without redundant, contradictory fields?</p>
+<h2>Options</h2>
+<ol>
+<li>One combined status field.</li>
+<li>Two fields: <code>status</code> (governance lifecycle) and <code>quality</code> (content trust); <code>approval_status</code> derived.</li>
+<li>Three fields as listed in the spec.</li>
+</ol>
+<h2>Evaluation Criteria</h2>
+<p>Non-redundancy, expressiveness, validator enforceability, fidelity to spec.</p>
+<h2>Trade-offs</h2>
+<ul>
+<li>Option 1 loses information (a published object can still be of limited quality).</li>
+<li>Option 3 creates contradictions (<code>status: draft</code> with <code>approval_status: approved</code>).</li>
+</ul>
+<h2>Decision</h2>
+<p>Proposed: option 2.
+- <code>status</code>: <code>draft → proposed → under-review → validated → approved → published → (implemented) → deprecated → retired</code>, plus <code>rejected</code>. Both <code>draft</code> and <code>proposed</code> are initial states; the LLM may set at most <code>proposed</code>.
+- <code>quality</code>: <code>draft | reviewed | validated | authoritative | deprecated | superseded</code>, with constraints on the compatible <code>status</code>.
+- <code>approval_status</code> is <strong>not stored</strong>; it is derived (<code>approved: true</code> for approved/published/implemented/deprecated in <code>00-system/governance/lifecycle.yaml</code>).</p>
+<p><strong>Flagged deviation from spec §16</strong> (which lists <code>approval_status</code> as a field) — requires human approval.</p>
+<h2>Consequences</h2>
+<ul>
+<li>Validator enforces status–quality compatibility and allowed transitions (with <code>--base</code>).</li>
+</ul>
+<h2>Assumptions</h2>
+<ul>
+<li>Reviewers accept the derived approval status.</li>
+</ul>
+<h2>Constraints</h2>
+<ul>
+<li>Git history is the audit log of transitions.</li>
+</ul>
+<h2>Related Architecture</h2>
+<ul>
+<li><a class="ref t-gov" href="../knowledge/da-gov-0004.html">Governance Lifecycle</a></li>
+<li><a class="ref t-gov" href="../knowledge/da-gov-0006.html">Knowledge Quality Model</a></li>
+</ul></div>
+    <aside class="object-meta" aria-label="Metadata and relationships">
+      <h2>Metadata</h2><dl><dt>ID</dt><dd><code>DA-ADR-0004</code></dd><dt>Type</dt><dd>Decision</dd><dt>Domain</dt><dd><a href="../explore/architecture-governance.html">Architecture Governance</a></dd><dt>Layer</dt><dd>cross-layer</dd><dt>Status</dt><dd>proposed</dd><dt>Quality</dt><dd>draft</dd><dt>Confidence</dt><dd>medium</dd><dt>Epistemic status</dt><dd>recommendation</dd><dt>Content tier</dt><dd>Community</dd><dt>Version</dt><dd>0.1.0</dd><dt>Updated</dt><dd>2026-09-29</dd><dt>Source file</dt><dd><code>20-architecture-decisions/records/Separate Lifecycle Status from Knowledge Quality.md</code></dd></dl>
+      <h2>Relationships</h2>
+      <table class='rels'><tbody><tr><td><code>decides</code></td><td><a class="ref t-gov" href="../knowledge/da-gov-0004.html">Governance Lifecycle</a></td><td class="muted">Governance model</td></tr><tr><td><code>decides</code></td><td><a class="ref t-gov" href="../knowledge/da-gov-0006.html">Knowledge Quality Model</a></td><td class="muted">Governance model</td></tr></tbody></table>
+      <h2>Sources</h2><p class="muted">No verified source attached yet.</p>
+      <h2>Feedback</h2><p><a href="mailto:dalust1997@gmail.com?subject=Feedback%3A%20DA-ADR-0004%20Separate%20Lifecycle%20Status%20from%20Knowledge%20Quality&amp;body=Page%20or%20knowledge%20object%3A%20DA-ADR-0004%20-%20Separate%20Lifecycle%20Status%20from%20Knowledge%20Quality%0AKind%20of%20feedback%20%28factual%20error%20/%20unclear%20/%20missing%20/%20terminology%20/%20suggestion%20/%20other%29%3A%20%0AWhat%20should%20change%2C%20and%20why%3A%0A%0A%0ASource%20%28optional%29%3A%0A">Give feedback on this page</a> — report an error, something unclear or missing, or a source.</p>
+    </aside>
+  </div>
+</article>
+</main>
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <div>
+      <p class="footer-brand">Architecture Knowledge Graph</p>
+      <p class="muted">A structured and governed knowledge graph for data, information and enterprise architecture.</p>
+    </div>
+    <div>
+      <p class="muted">Generated from the knowledge graph on 2026-09-30: 155 objects, 388 typed relationships.</p>
+      <p class="muted"><a href="mailto:dalust1997@gmail.com?subject=Feedback%3A%20Architecture%20Knowledge%20Graph&amp;body=Page%20or%20knowledge%20object%3A%20%28page%20title%2C%20ID%20or%20URL%29%0AKind%20of%20feedback%20%28factual%20error%20/%20unclear%20/%20missing%20/%20terminology%20/%20suggestion%20/%20other%29%3A%20%0AWhat%20should%20change%2C%20and%20why%3A%0A%0A%0ASource%20%28optional%29%3A%0A">Send feedback</a> · <a href="https://github.com/ArchKnowledge/Architecture-Knowledge-Graph">Source repository</a> <span class="muted">(private during phase 1)</span> · No products are currently for sale.</p>
+      <p class="muted">© 2026 Architecture Knowledge Graph project. Content licence to be decided; all rights reserved until then. Referenced standards belong to their issuing organisations.</p>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

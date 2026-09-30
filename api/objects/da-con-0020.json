@@ -1,0 +1,51 @@
+{
+  "id": "DA-CON-0020",
+  "type": "concept",
+  "title": "Data Stewardship",
+  "domain": "Data Governance",
+  "layer": [
+    "business",
+    "cross-layer"
+  ],
+  "status": "proposed",
+  "quality": "draft",
+  "confidence": "high",
+  "epistemic_status": "common-practice",
+  "owner": "unassigned",
+  "version": "0.1.0",
+  "publication_tier": "community",
+  "definition": "The operational care for data on behalf of its owner \u2014 maintaining definitions, metadata, quality rules and issue resolution.",
+  "path": "06-data-governance/Data Stewardship.md",
+  "relationships": [
+    {
+      "type": "part-of",
+      "direction": "out",
+      "target": "DA-CON-0018",
+      "title": "Data Governance"
+    },
+    {
+      "type": "depends-on",
+      "direction": "out",
+      "target": "DA-CON-0019",
+      "title": "Data Ownership"
+    },
+    {
+      "type": "realized-by",
+      "direction": "in",
+      "target": "DA-ROL-0002",
+      "title": "Data Steward"
+    }
+  ],
+  "sources": [],
+  "evidence": [],
+  "governance": {
+    "status": "proposed",
+    "authority": "unreviewed",
+    "required_levels": [
+      "semantic",
+      "data-architecture"
+    ],
+    "records": []
+  },
+  "body_markdown": "# Data Stewardship\n\n## Definition\n\nData Stewardship is the operational care for data on behalf of its owner \u2014 maintaining definitions, [[Metadata|metadata]], [[Data Quality|quality]] rules and issue resolution.\n\n## Explanation\n\nStewards turn owner decisions into maintained reality: they propose definitions, monitor quality, triage issues and coordinate with custodians. Stewardship without [[Data Ownership|ownership]] lacks authority; ownership without stewardship lacks execution.\n\n## Distinctions\n\n- Business stewardship (meaning, rules) vs technical stewardship (structures, pipelines) \u2014 some organisations split the role.\n\n## Examples\n\n- A steward maintains the rule \"policy end date \u2265 policy start date\" and follows up violations.\n"
+}

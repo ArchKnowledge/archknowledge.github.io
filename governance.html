@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Governance · Architecture Knowledge Graph</title>
+<meta name="description" content="The knowledge in the Architecture Knowledge Graph is itself governed — a lifecycle from draft to approved, automated validation, human decision rights and clearly bounded AI assistance.">
+<link rel="canonical" href="https://archknowledge.github.io/governance.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Architecture Knowledge Graph">
+<meta property="og:title" content="Governance">
+<meta property="og:description" content="The knowledge in the Architecture Knowledge Graph is itself governed — a lifecycle from draft to approved, automated validation, human decision rights and clearly bounded AI assistance.">
+<meta property="og:url" content="https://archknowledge.github.io/governance.html">
+<meta name="twitter:card" content="summary">
+<meta name="color-scheme" content="light dark">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/style.css">
+<meta name="akg-root" content="">
+<script src="assets/site.js" defer></script>
+
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="index.html" aria-label="Architecture Knowledge Graph — home">
+      <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true"><path d="M6 24 16 8l10 16M6 24h20M16 8v16" /><circle cx="16" cy="8" r="3"/><circle cx="6" cy="24" r="3"/><circle cx="26" cy="24" r="3"/><circle cx="16" cy="24" r="2.2"/></svg>
+      <span>Architecture<br>Knowledge Graph</span>
+    </a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+    <nav id="site-nav" class="site-nav" aria-label="Main">
+      <ul>
+<li><a href="why.html">Why</a></li>
+<li><a href="knowledge-graph.html">Knowledge Graph</a></li>
+<li><a href="explore.html">Explore</a></li>
+<li><a href="products.html">Products</a></li>
+<li><a href="governance.html" aria-current="page">Governance</a></li>
+<li><a href="roadmap.html">Roadmap</a></li>
+<li><a href="search.html">Search</a></li>
+        <li><a class="gh" href="https://github.com/ArchKnowledge/Architecture-Knowledge-Graph">GitHub <span class="nav-note">private</span></a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+<p class="preview-bar wrap" role="note">Early preview · Phase 1 of the roadmap · All knowledge is in draft and awaiting human review.</p>
+<main id="main">
+<div class="wrap page-head">
+  <p class="eyebrow">Governance</p>
+  <h1>The knowledge itself is governed</h1>
+  <p class="lead">Every object moves through a lifecycle. Automated rules check it; people review and approve it. Generation is not approval.</p>
+</div>
+
+<section class="section">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Lifecycle</h2>
+      <p>The main path, with the current number of objects in each state. States with a green edge count as approved.</p>
+    </div>
+    <ol class="lifecycle"><li class=""><span class="state">draft</span><span class="state-desc">Being authored. Not submitted.</span><span class="state-count">0 objects</span></li><li class=""><span class="state">proposed</span><span class="state-desc">Submitted for governance. Maximum state an LLM may assign.</span><span class="state-count">155 objects</span></li><li class=""><span class="state">under-review</span><span class="state-desc">Assigned reviewer is assessing content and relationships.</span><span class="state-count">0 objects</span></li><li class=""><span class="state">validated</span><span class="state-desc">Passed review and automated validation; awaiting approval decision.</span><span class="state-count">0 objects</span></li><li class="state-approved"><span class="state">approved</span><span class="state-desc">Approved by the approver with decision rights for its layer/domain.</span><span class="state-count">0 objects</span></li><li class="state-approved"><span class="state">published</span><span class="state-desc">Approved and released as part of a knowledge product/release.</span><span class="state-count">0 objects</span></li><li class="state-approved"><span class="state">deprecated</span><span class="state-desc">Still visible but no longer recommended; superseding object should exist.</span><span class="state-count">0 objects</span></li><li class=""><span class="state">retired</span><span class="state-desc">Withdrawn. Kept for traceability only. Terminal.</span><span class="state-count">0 objects</span></li></ol>
+    <p class="muted" style="margin-top:1rem">Also: <code>rejected</code> (returned for rework) and <code>implemented</code> (for decisions only).</p>
+    <details class="transitions"><summary>All allowed transitions</summary><p><code>draft → proposed</code>, <code>proposed → draft</code>, <code>proposed → under-review</code>, <code>under-review → validated</code>, <code>under-review → proposed</code>, <code>under-review → draft</code>, <code>under-review → rejected</code>, <code>validated → approved</code>, <code>validated → under-review</code>, <code>validated → rejected</code>, <code>approved → published</code>, <code>approved → deprecated</code>, <code>published → implemented</code>, <code>published → under-review</code>, <code>published → deprecated</code>, <code>implemented → deprecated</code>, <code>deprecated → retired</code>, <code>rejected → draft</code></p></details>
+    <div class="table-scroll">
+    <table style="margin-top:1rem">
+      <thead><tr><th>Invalid transition</th><th>Why</th></tr></thead>
+      <tbody><tr><td><code>draft → approved</code></td><td>Skips review and validation.</td></tr>
+<tr><td><code>proposed → published</code></td><td>Generation is not approval (spec §32).</td></tr>
+<tr><td><code>validated → published</code></td><td>Validation is not approval; approver decision required.</td></tr>
+<tr><td><code>deprecated → published</code></td><td>Reinstatement must go through review as a new revision.</td></tr>
+<tr><td><code>retired → *</code></td><td>Retired is terminal; create a new object that supersedes it.</td></tr>
+<tr><td><code>* → implemented</code></td><td>Only decision-type objects can be implemented, and only after publication.</td></tr></tbody>
+    </table>
+    </div>
+  </div>
+</section>
+
+<section class="section grid-bg">
+  <div class="wrap cols-2">
+    <div>
+      <h2>Approval is a record, not a field</h2>
+      <p>Changing <code>status: approved</code> approves nothing. An object counts as approved only when an append-only <strong>governance record</strong> establishes that transition for its exact version. The record holds one decision for every governance level the object's layers require, each taken by someone with decision rights for that level who is neither the proposer nor the owner.</p>
+      <p>The validator rejects any approved object without such a record; the pull-request check requires the record to arrive in the same change. 0 objects are approved today — none has been through human review yet.</p>
+    </div>
+    <div>
+      <h3>What the audit trail answers</h3>
+      <ul class="checklist">
+        <li>Who proposed the change, and what changed — pull request and Git history</li>
+        <li>Which validation rules ran, with which results — validation report attached to every check run</li>
+        <li>Who reviewed and who approved, per governance level — governance record</li>
+        <li>What was decided, when it was published, what it superseded — record, release tag, <code>supersedes</code> relationships</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Human governance and AI assistance</h2>
+      <p>AI is used to draft, classify, link and validate knowledge. It has no decision rights.</p>
+    </div>
+    <div class="split">
+      <div>
+        <h3>AI may</h3>
+        <ul><li>discover and extract knowledge</li><li>propose new objects (status at most <code>proposed</code>)</li><li>classify and link objects</li><li>run validation</li></ul>
+      </div>
+      <div>
+        <h3>Only people may</h3>
+        <ul><li>review, validate and approve knowledge</li><li>take architecture and governance decisions</li><li>mark knowledge as authoritative</li><li>decide on commercial IP and publication</li></ul>
+      </div>
+    </div>
+    <div class="table-scroll">
+    <table style="margin-top:1.5rem">
+      <thead><tr><th>Repository role</th><th>Accountable for</th><th>May</th><th>May not</th></tr></thead>
+      <tbody><tr><th scope="row">Repository Owner</th><td>The repository, its governance model and commercial IP decisions</td><td>assign-roles, change-governance-model, approve-commercial-ip, configure-branch-protection</td><td>—</td></tr>
+<tr><th scope="row">Knowledge Owner</th><td>Content of an object</td><td>create, edit, request-review</td><td>—</td></tr>
+<tr><th scope="row">Domain Owner</th><td>Coherence of a domain and its taxonomy</td><td>assign-reviewers, resolve-conflicts, approve-domain-objects</td><td>—</td></tr>
+<tr><th scope="row">Reviewer</th><td>Content review</td><td>set-status-validated, set-quality-reviewed, set-quality-validated, reject</td><td>—</td></tr>
+<tr><th scope="row">Publisher</th><td>Releases and knowledge products</td><td>set-status-published, tag-release</td><td>—</td></tr>
+<tr><th scope="row">Maintainer</th><td>00-system, tooling, CI</td><td>change-schemas, change-vocabularies, change-validation</td><td>—</td></tr>
+<tr class="ai-row"><th scope="row">AI Assistant</th><td>Nothing - assists only (spec §33)</td><td>discover, extract, propose, classify, link, validate</td><td>approve, publish, set-status-beyond-proposed, overwrite-authoritative, decide-commercial-ip</td></tr></tbody>
+    </table>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap cols-2">
+    <div>
+      <h2>Decision rights by layer</h2>
+      <p>Meaning is decided before representation, and representation before implementation. A lower level may not silently override a higher one.</p>
+      <ol class="hierarchy">
+        <li><strong>Semantic governance</strong><span>defines meaning</span></li>
+        <li><strong>Information model governance</strong><span>defines representation in an information model</span></li>
+        <li><strong>Data architecture governance</strong><span>defines architectural realization</span></li>
+        <li><strong>Technical / formal governance</strong><span>defines implementation</span></li>
+      </ol>
+    </div>
+    <div>
+      <h2>Automated validation</h2>
+      <p>Every change is checked by 76 rules before it can be merged. Results are <strong>valid</strong>, <strong>warning</strong> or <strong>blocking error</strong>. Examples of blocking errors:</p>
+      <ul class="checklist">
+        <li>an object without an ID, or with a duplicate ID</li>
+        <li>missing required metadata</li>
+        <li>a relationship to an object that does not exist</li>
+        <li>an approved object without an owner</li>
+        <li>a lifecycle transition that skips review</li>
+        <li>a changed ID — IDs are immutable</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+</main>
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <div>
+      <p class="footer-brand">Architecture Knowledge Graph</p>
+      <p class="muted">A structured and governed knowledge graph for data, information and enterprise architecture.</p>
+    </div>
+    <div>
+      <p class="muted">Generated from the knowledge graph on 2026-09-30: 155 objects, 388 typed relationships.</p>
+      <p class="muted"><a href="mailto:dalust1997@gmail.com?subject=Feedback%3A%20Architecture%20Knowledge%20Graph&amp;body=Page%20or%20knowledge%20object%3A%20%28page%20title%2C%20ID%20or%20URL%29%0AKind%20of%20feedback%20%28factual%20error%20/%20unclear%20/%20missing%20/%20terminology%20/%20suggestion%20/%20other%29%3A%20%0AWhat%20should%20change%2C%20and%20why%3A%0A%0A%0ASource%20%28optional%29%3A%0A">Send feedback</a> · <a href="https://github.com/ArchKnowledge/Architecture-Knowledge-Graph">Source repository</a> <span class="muted">(private during phase 1)</span> · No products are currently for sale.</p>
+      <p class="muted">© 2026 Architecture Knowledge Graph project. Content licence to be decided; all rights reserved until then. Referenced standards belong to their issuing organisations.</p>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

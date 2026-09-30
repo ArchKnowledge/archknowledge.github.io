@@ -1,0 +1,81 @@
+{
+  "id": "DA-PRI-0002",
+  "type": "principle",
+  "title": "Meaning Before Representation",
+  "domain": "Semantic Architecture",
+  "layer": [
+    "semantic",
+    "information"
+  ],
+  "status": "proposed",
+  "quality": "draft",
+  "confidence": "medium",
+  "epistemic_status": "recommendation",
+  "owner": "unassigned",
+  "version": "0.1.0",
+  "publication_tier": "community",
+  "summary": "The meaning of a concept is defined and governed before, and independently of, its representation in information and data models.",
+  "path": "04-semantic-architecture/Meaning Before Representation.md",
+  "relationships": [
+    {
+      "type": "applies-to",
+      "direction": "out",
+      "target": "DA-CON-0007",
+      "title": "Information Model"
+    },
+    {
+      "type": "realized-by",
+      "direction": "in",
+      "target": "DA-MTH-0001",
+      "title": "Layered Model Derivation"
+    },
+    {
+      "type": "constrains",
+      "direction": "in",
+      "target": "DA-CON-0012",
+      "title": "Semantic Model"
+    },
+    {
+      "type": "realized-by",
+      "direction": "in",
+      "target": "DA-PAT-0014",
+      "title": "Concept-to-Model Traceability"
+    },
+    {
+      "type": "violated-by",
+      "direction": "in",
+      "target": "DA-APT-0001",
+      "title": "Implicit Semantics"
+    },
+    {
+      "type": "violated-by",
+      "direction": "in",
+      "target": "DA-APT-0002",
+      "title": "Overloaded Attribute"
+    },
+    {
+      "type": "violated-by",
+      "direction": "in",
+      "target": "DA-APT-0006",
+      "title": "Physical-Model-First Design"
+    },
+    {
+      "type": "source-of",
+      "direction": "in",
+      "target": "DA-TPL-0003",
+      "title": "Data Model Review Checklist"
+    }
+  ],
+  "sources": [],
+  "evidence": [],
+  "governance": {
+    "status": "proposed",
+    "authority": "unreviewed",
+    "required_levels": [
+      "semantic",
+      "information-model"
+    ],
+    "records": []
+  },
+  "body_markdown": "# Meaning Before Representation\n\n## Statement\n\nThe meaning of a concept shall be defined and governed before, and independently of, its representation in information and data models.\n\n## Rationale\n\nWhen meaning is only implicit in models, code or column names, every consumer reinterprets it. Integration, migration and analytics then fail on semantic mismatch rather than on technology.\n\n## Implications\n\n- A governed [[Business Concept]] exists (at least `proposed`) before an entity representing it is approved.\n- Model elements link to concepts ([[Concept-to-Model Traceability]]).\n- Changing a definition is a semantic governance decision, not a model change ([[Decision Rights Model]]).\n\n## Consequences\n\n- Positive: stable meaning across systems; cheaper integration and migration.\n- Negative: upfront effort; risk of analysis paralysis if applied dogmatically to low-value data.\n\n## Applicability\n\nShared, integrated and regulated data; master and reference data.\n\n## Exceptions\n\nLocal, single-application data without sharing ambitions. Prototypes, provided concepts are backfilled before production.\n\n## Related Principles\n\n- [[Decisions Belong to Their Layer]]\n"
+}

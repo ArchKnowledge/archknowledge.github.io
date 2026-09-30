@@ -1,0 +1,51 @@
+{
+  "id": "DA-APT-0003",
+  "type": "anti-pattern",
+  "title": "Point-to-Point Integration Sprawl",
+  "domain": "Data Integration",
+  "layer": [
+    "logical",
+    "technical"
+  ],
+  "status": "proposed",
+  "quality": "draft",
+  "confidence": "medium",
+  "epistemic_status": "common-practice",
+  "owner": "unassigned",
+  "version": "0.1.0",
+  "publication_tier": "community",
+  "summary": "Systems are integrated through many individually built point-to-point interfaces, each with its own mapping, semantics and quality handling.",
+  "path": "19-architecture-patterns/anti-patterns/Point-to-Point Integration Sprawl.md",
+  "relationships": [
+    {
+      "type": "violates",
+      "direction": "out",
+      "target": "DA-PRI-0008",
+      "title": "Each Data Element Has an Authoritative Source"
+    },
+    {
+      "type": "mitigated-by",
+      "direction": "in",
+      "target": "DA-PAT-0008",
+      "title": "Data Contract"
+    },
+    {
+      "type": "mitigated-by",
+      "direction": "in",
+      "target": "DA-PAT-0012",
+      "title": "Master Data Hub"
+    }
+  ],
+  "sources": [],
+  "evidence": [],
+  "governance": {
+    "status": "proposed",
+    "authority": "unreviewed",
+    "required_levels": [
+      "data-architecture",
+      "technical"
+    ],
+    "records": []
+  },
+  "body_markdown": "# Point-to-Point Integration Sprawl\n\n## Problem\n\nEvery new need creates another direct interface; the number of interfaces grows towards n \u00d7 (n\u22121).\n\n## Symptoms\n\n- Nobody has an overview of interfaces.\n- The same data transformed differently in several interfaces.\n- Changes in one system break unknown consumers.\n\n## Root Causes\n\n- Project-by-project funding; no integration architecture or authoritative sources.\n\n## Consequences\n\n- High change cost; inconsistent data; fragile landscape.\n\n## Detection\n\n- Interface inventory and [[Data Lineage|lineage]] show multiple copies of the same entity with different transformations.\n\n## Remediation\n\n- Designate authoritative sources; introduce hubs or shared platforms; govern interfaces with [[Data Contract|contracts]].\n\n## Alternative Patterns\n\n[[Master Data Hub]], [[Change Data Capture]] to a shared platform, [[Data Contract]].\n\n## When It May Be Acceptable\n\nVery few systems with stable interfaces.\n"
+}

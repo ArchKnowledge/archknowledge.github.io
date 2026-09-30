@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Insurance Policy History Example · Architecture Knowledge Graph</title>
+<meta name="description" content="Fictitious worked example: taking a history-strategy decision for policy data from requirement to recommendation, using the decision tree, a recommendation rule and a scoring model.">
+<link rel="canonical" href="https://archknowledge.github.io/knowledge/da-exa-0001.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Architecture Knowledge Graph">
+<meta property="og:title" content="Insurance Policy History Example">
+<meta property="og:description" content="Fictitious worked example: taking a history-strategy decision for policy data from requirement to recommendation, using the decision tree, a recommendation rule and a scoring model.">
+<meta property="og:url" content="https://archknowledge.github.io/knowledge/da-exa-0001.html">
+<meta name="twitter:card" content="summary">
+<meta name="color-scheme" content="light dark">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../assets/style.css">
+<meta name="akg-root" content="../">
+<script src="../assets/site.js" defer></script>
+
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="../index.html" aria-label="Architecture Knowledge Graph — home">
+      <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true"><path d="M6 24 16 8l10 16M6 24h20M16 8v16" /><circle cx="16" cy="8" r="3"/><circle cx="6" cy="24" r="3"/><circle cx="26" cy="24" r="3"/><circle cx="16" cy="24" r="2.2"/></svg>
+      <span>Architecture<br>Knowledge Graph</span>
+    </a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+    <nav id="site-nav" class="site-nav" aria-label="Main">
+      <ul>
+<li><a href="../why.html">Why</a></li>
+<li><a href="../knowledge-graph.html">Knowledge Graph</a></li>
+<li><a href="../explore.html" aria-current="page">Explore</a></li>
+<li><a href="../products.html">Products</a></li>
+<li><a href="../governance.html">Governance</a></li>
+<li><a href="../roadmap.html">Roadmap</a></li>
+<li><a href="../search.html">Search</a></li>
+        <li><a class="gh" href="https://github.com/ArchKnowledge/Architecture-Knowledge-Graph">GitHub <span class="nav-note">private</span></a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+<p class="preview-bar wrap" role="note">Early preview · Phase 1 of the roadmap · All knowledge is in draft and awaiting human review.</p>
+<main id="main">
+
+<article class="object page-narrow">
+  <p class="eyebrow"><span class="dot t-concept"></span>Example · <a href="../explore/examples-case-studies.html">Examples &amp; Case Studies</a></p>
+  <h1>Insurance Policy History Example</h1>
+  <p class="lead">Fictitious worked example: taking a history-strategy decision for policy data from requirement to recommendation, using the decision tree, a recommendation rule and a scoring model.</p>
+  <p class="notice" role="note"><strong>Draft knowledge.</strong> Status <code>proposed</code>, quality <code>draft</code>. Not yet reviewed or approved by a human architect.</p>
+  <div class="object-grid">
+    <div class="object-body"><h2>Context</h2>
+<p><strong>Fictitious.</strong> An insurer replaces its policy administration. Requirement: <a class="ref t-concept" href="../knowledge/da-req-0001.html">Policy State Is Reproducible As Known At Any Past Date</a>. No real organisation, data or outcome is described.</p>
+<h2>Illustration</h2>
+<ol>
+<li><strong>Facts</strong> (decision-facts.yaml): history required, not analytical-only, operationally queried, retroactive corrections, reproducibility required.</li>
+<li><strong>Decision tree:</strong>
+   <code>text
+   dakb.py decide "Database History Pattern Decision Tree" --fact history.required=true \
+     --fact history.analytical_attributes_only=false --fact history.operational_queries=true \
+     --fact history.retroactive_corrections=true
+   → Bitemporal history: evaluate Bitemporal Data Model, System-Versioned History Table</code></li>
+<li><strong>Recommendation rule:</strong> <code>dakb.py recommend --fact history.retroactive_corrections=true --fact history.reproducibility_required=true</code> fires <a class="ref t-decision" href="../knowledge/da-rrl-0001.html">Retroactive Corrections Call for Bitemporal History</a>.</li>
+<li><strong>Scoring:</strong> <span class="ref-locked" title="Professional tier — not published on this site">History Strategy Scoring Model <span class="tier-tag">Professional</span></span> compares the options. With its default weights the bitemporal model ranks third (system versioning and SCD2 score better on effort and query simplicity). Raising the weight of retroactive corrections to reflect this requirement (<code>--weight retroactive=5</code>) ranks it first. System versioning and SCD2 do not satisfy the requirement at all, which the tree already established; the scores only make the trade-off visible.</li>
+<li><strong>Decision:</strong> recorded as an ADR based on <span class="ref-locked" title="Professional tier — not published on this site">Select Historical Data Strategy <span class="tier-tag">Professional</span></span>, approved at the information-model and data-architecture levels (<a class="ref t-gov" href="../knowledge/da-grl-0002.html">Separate Decision per Governance Level</a>).</li>
+</ol>
+<h2>Lessons</h2>
+<p>The tree narrows options, rules explain why, scores make trade-offs explicit, and the decision remains a human, recorded act.</p></div>
+    <aside class="object-meta" aria-label="Metadata and relationships">
+      <h2>Metadata</h2><dl><dt>ID</dt><dd><code>DA-EXA-0001</code></dd><dt>Type</dt><dd>Example</dd><dt>Domain</dt><dd><a href="../explore/examples-case-studies.html">Examples &amp; Case Studies</a></dd><dt>Layer</dt><dd>—</dd><dt>Status</dt><dd>proposed</dd><dt>Quality</dt><dd>draft</dd><dt>Confidence</dt><dd>medium</dd><dt>Epistemic status</dt><dd>hypothesis</dd><dt>Content tier</dt><dd>Community</dd><dt>Version</dt><dd>0.1.0</dd><dt>Updated</dt><dd>2026-09-29</dd><dt>Source file</dt><dd><code>23-examples/Insurance Policy History Example.md</code></dd></dl>
+      <h2>Relationships</h2>
+      <table class='rels'><tbody><tr><td><code>consumes</code></td><td><a class="ref t-decision" href="../knowledge/da-dtr-0001.html">Database History Pattern Decision Tree</a></td><td class="muted">Decision tree</td></tr><tr><td><code>consumes</code></td><td><span class="ref-locked" title="Professional tier — not published on this site">History Strategy Scoring Model <span class="tier-tag">Professional</span></span></td><td class="muted">Scoring model</td></tr><tr><td><code>consumes</code></td><td><a class="ref t-decision" href="../knowledge/da-rrl-0001.html">Retroactive Corrections Call for Bitemporal History</a></td><td class="muted">Recommendation rule</td></tr><tr><td><code>depends-on</code></td><td><a class="ref t-concept" href="../knowledge/da-req-0001.html">Policy State Is Reproducible As Known At Any Past Date</a></td><td class="muted">Requirement</td></tr></tbody></table>
+      <h2>Sources</h2><p class="muted">No verified source attached yet.</p>
+      <h2>Feedback</h2><p><a href="mailto:dalust1997@gmail.com?subject=Feedback%3A%20DA-EXA-0001%20Insurance%20Policy%20History%20Example&amp;body=Page%20or%20knowledge%20object%3A%20DA-EXA-0001%20-%20Insurance%20Policy%20History%20Example%0AKind%20of%20feedback%20%28factual%20error%20/%20unclear%20/%20missing%20/%20terminology%20/%20suggestion%20/%20other%29%3A%20%0AWhat%20should%20change%2C%20and%20why%3A%0A%0A%0ASource%20%28optional%29%3A%0A">Give feedback on this page</a> — report an error, something unclear or missing, or a source.</p>
+    </aside>
+  </div>
+</article>
+</main>
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <div>
+      <p class="footer-brand">Architecture Knowledge Graph</p>
+      <p class="muted">A structured and governed knowledge graph for data, information and enterprise architecture.</p>
+    </div>
+    <div>
+      <p class="muted">Generated from the knowledge graph on 2026-09-30: 155 objects, 388 typed relationships.</p>
+      <p class="muted"><a href="mailto:dalust1997@gmail.com?subject=Feedback%3A%20Architecture%20Knowledge%20Graph&amp;body=Page%20or%20knowledge%20object%3A%20%28page%20title%2C%20ID%20or%20URL%29%0AKind%20of%20feedback%20%28factual%20error%20/%20unclear%20/%20missing%20/%20terminology%20/%20suggestion%20/%20other%29%3A%20%0AWhat%20should%20change%2C%20and%20why%3A%0A%0A%0ASource%20%28optional%29%3A%0A">Send feedback</a> · <a href="https://github.com/ArchKnowledge/Architecture-Knowledge-Graph">Source repository</a> <span class="muted">(private during phase 1)</span> · No products are currently for sale.</p>
+      <p class="muted">© 2026 Architecture Knowledge Graph project. Content licence to be decided; all rights reserved until then. Referenced standards belong to their issuing organisations.</p>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

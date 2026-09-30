@@ -1,0 +1,51 @@
+{
+  "id": "DA-APT-0005",
+  "type": "anti-pattern",
+  "title": "Migration Without Data Profiling",
+  "domain": "Data Migration",
+  "layer": [
+    "logical",
+    "technical"
+  ],
+  "status": "proposed",
+  "quality": "draft",
+  "confidence": "medium",
+  "epistemic_status": "common-practice",
+  "owner": "unassigned",
+  "version": "0.1.0",
+  "publication_tier": "community",
+  "summary": "Migration mappings are designed from documentation and schema only, without profiling the actual source data.",
+  "path": "19-architecture-patterns/anti-patterns/Migration Without Data Profiling.md",
+  "relationships": [
+    {
+      "type": "causes",
+      "direction": "out",
+      "target": "DA-APT-0002",
+      "title": "Overloaded Attribute"
+    },
+    {
+      "type": "mitigated-by",
+      "direction": "in",
+      "target": "DA-PAT-0010",
+      "title": "Data Quality Gate"
+    },
+    {
+      "type": "mitigated-by",
+      "direction": "in",
+      "target": "DA-PAT-0015",
+      "title": "Phased Data Migration"
+    }
+  ],
+  "sources": [],
+  "evidence": [],
+  "governance": {
+    "status": "proposed",
+    "authority": "unreviewed",
+    "required_levels": [
+      "data-architecture",
+      "technical"
+    ],
+    "records": []
+  },
+  "body_markdown": "# Migration Without Data Profiling\n\n## Problem\n\nMappings assume documented behaviour; actual data contains undocumented codes, overloaded fields and invalid combinations.\n\n## Symptoms\n\n- Load failures late in the project; manual fix lists; reconciliation that never balances.\n\n## Root Causes\n\n- Schedule pressure; source access restrictions; overconfidence in documentation.\n\n## Consequences\n\n- Delays, data loss, corrupted history in the target.\n\n## Detection\n\n- No profiling results linked to mapping specifications.\n\n## Remediation\n\n- Profile early (value distributions, nulls, patterns, referential integrity); revise mappings; add [[Data Quality Gate|quality gates]] to rehearsals.\n\n## Alternative Patterns\n\n[[Phased Data Migration]] (learning between waves), [[Big Bang Data Migration]] with repeated rehearsals.\n\n## When It May Be Acceptable\n\nTiny, fully understood data sets.\n"
+}

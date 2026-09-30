@@ -1,0 +1,55 @@
+{
+  "id": "DA-ADR-0001",
+  "type": "decision",
+  "title": "Use Markdown and Git as the Initial Knowledge Store",
+  "domain": "Foundations",
+  "layer": [
+    "technical"
+  ],
+  "status": "proposed",
+  "quality": "draft",
+  "confidence": "high",
+  "epistemic_status": "recommendation",
+  "owner": "unassigned",
+  "version": "0.1.0",
+  "publication_tier": "community",
+  "summary": "Implement the knowledge graph initially as Markdown files with YAML front matter in a Git repository, navigable in Obsidian, validated by a script.",
+  "path": "20-architecture-decisions/records/Use Markdown and Git as the Initial Knowledge Store.md",
+  "relationships": [
+    {
+      "type": "governed-by",
+      "direction": "out",
+      "target": "DA-GOV-0007",
+      "title": "Knowledge Repository Governance"
+    },
+    {
+      "type": "dependency-of",
+      "direction": "in",
+      "target": "DA-ADR-0003",
+      "title": "Store Typed Relationships as Front-Matter Keys"
+    },
+    {
+      "type": "supports",
+      "direction": "in",
+      "target": "DA-PRI-0009",
+      "title": "Governance Is Embedded in Delivery"
+    },
+    {
+      "type": "dependency-of",
+      "direction": "in",
+      "target": "DA-ADR-0002",
+      "title": "Use Title-Based File Names for Knowledge Objects"
+    }
+  ],
+  "sources": [],
+  "evidence": [],
+  "governance": {
+    "status": "proposed",
+    "authority": "unreviewed",
+    "required_levels": [
+      "technical"
+    ],
+    "records": []
+  },
+  "body_markdown": "# Use Markdown and Git as the Initial Knowledge Store\n\n## Context\n\nThe knowledge base must be personally usable now, governed, and transformable later into another knowledge-store technology (spec \u00a719, \u00a738).\n\n## Problem\n\nWhich storage and change-management mechanism to use for version 0.1?\n\n## Options\n\n1. Markdown + YAML front matter + Git (+ Obsidian as viewer).\n2. A graph database (property graph or RDF triple store) from the start.\n3. A wiki or document-management system.\n\n## Evaluation Criteria\n\nHuman readability, machine readability, change governance, tooling cost, portability, graph navigation.\n\n## Trade-offs\n\n| Option | Gains | Losses |\n|---|---|---|\n| Markdown + Git | readable, diffable, PR-based governance, free, portable | no query language, validation must be built |\n| Graph database | queries, constraints | lower readability, no PR review, lock-in early |\n| Wiki | easy editing | weak structure and validation |\n\n## Decision\n\nProposed: option 1. Typed relationships live in front matter so the files can be exported to a graph (`dakb.py export` produces JSON, CSV and RDF Turtle).\n\n## Consequences\n\n- Validation is implemented as a script and CI workflow.\n- Query capability is limited until export targets are used.\n\n## Assumptions\n\n- Repository stays below a few thousand objects for the Markdown phase.\n\n## Constraints\n\n- Must open in Obsidian (spec \u00a738).\n\n## Related Architecture\n\n- [[Store Typed Relationships as Front-Matter Keys]]\n- [[Use Title-Based File Names for Knowledge Objects]]\n"
+}

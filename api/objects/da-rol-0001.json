@@ -1,0 +1,56 @@
+{
+  "id": "DA-ROL-0001",
+  "type": "role",
+  "title": "Data Owner",
+  "domain": "Data Governance",
+  "layer": [
+    "business",
+    "semantic"
+  ],
+  "status": "proposed",
+  "quality": "draft",
+  "confidence": "medium",
+  "epistemic_status": "common-practice",
+  "owner": "unassigned",
+  "version": "0.1.0",
+  "publication_tier": "community",
+  "summary": "Business role accountable for a defined set of data: its meaning, quality requirements, access and lifecycle.",
+  "path": "06-data-governance/roles/Data Owner.md",
+  "relationships": [
+    {
+      "type": "realizes",
+      "direction": "out",
+      "target": "DA-CON-0019",
+      "title": "Data Ownership"
+    },
+    {
+      "type": "part-of",
+      "direction": "out",
+      "target": "DA-GOV-0003",
+      "title": "Governance Roles"
+    },
+    {
+      "type": "owns",
+      "direction": "in",
+      "target": "DA-CON-0011",
+      "title": "Business Concept"
+    },
+    {
+      "type": "dependency-of",
+      "direction": "in",
+      "target": "DA-ROL-0003",
+      "title": "Data Custodian"
+    }
+  ],
+  "sources": [],
+  "evidence": [],
+  "governance": {
+    "status": "proposed",
+    "authority": "unreviewed",
+    "required_levels": [
+      "semantic"
+    ],
+    "records": []
+  },
+  "body_markdown": "# Data Owner\n\n## Purpose\n\nCarry accountability for owned data so decisions about it have a legitimate decider ([[Data Has an Accountable Owner]]).\n\n## Responsibilities\n\n- Approve definitions of owned [[Business Concept|concepts]].\n- Set quality requirements and accept residual quality risk.\n- Decide on access and sharing within policy.\n- Decide retention within legal limits, with the [[Privacy Specialist]].\n\n## Decision Rights\n\nSemantic level approver in the [[Decision Rights Model]]: meaning, quality requirements, access. No technical design rights.\n\n## Inputs\n\nProposals from [[Data Steward]]; impact analyses; quality reports.\n\n## Outputs\n\nApproved definitions; quality requirements; access decisions.\n\n## Required Competencies\n\nBusiness domain authority; data literacy; ability to weigh risk.\n\n## Escalation Paths\n\nCross-domain conflicts \u2192 [[Architecture Board]] or data governance council.\n\n## Related Governance Processes\n\n- [[Decision Rights Model]]\n- [[Architecture Change Process]]\n- [[Governance Lifecycle]]\n"
+}

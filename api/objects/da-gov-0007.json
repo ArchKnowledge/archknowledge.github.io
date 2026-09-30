@@ -1,0 +1,61 @@
+{
+  "id": "DA-GOV-0007",
+  "type": "governance",
+  "title": "Knowledge Repository Governance",
+  "domain": "Architecture Governance",
+  "layer": [
+    "cross-layer"
+  ],
+  "status": "proposed",
+  "quality": "draft",
+  "confidence": "medium",
+  "epistemic_status": "recommendation",
+  "owner": "unassigned",
+  "version": "0.1.0",
+  "publication_tier": "community",
+  "summary": "How this knowledge base itself is governed \u2014 repository roles, Git workflow, automated validation, human-in-the-loop approval and rules for LLM contributions.",
+  "path": "16-architecture-governance/Knowledge Repository Governance.md",
+  "relationships": [
+    {
+      "type": "part-of",
+      "direction": "out",
+      "target": "DA-GOV-0001",
+      "title": "Architecture Governance Model"
+    },
+    {
+      "type": "has-part",
+      "direction": "in",
+      "target": "DA-PRC-0001",
+      "title": "Knowledge Change Review Process"
+    },
+    {
+      "type": "applicable-to",
+      "direction": "in",
+      "target": "DA-GRL-0003",
+      "title": "Separation of Duties in Approval"
+    },
+    {
+      "type": "governs",
+      "direction": "in",
+      "target": "DA-ADR-0001",
+      "title": "Use Markdown and Git as the Initial Knowledge Store"
+    },
+    {
+      "type": "assessed-by",
+      "direction": "in",
+      "target": "DA-ASM-0001",
+      "title": "Knowledge Base Maturity Model"
+    }
+  ],
+  "sources": [],
+  "evidence": [],
+  "governance": {
+    "status": "proposed",
+    "authority": "unreviewed",
+    "required_levels": [
+      "data-architecture"
+    ],
+    "records": []
+  },
+  "body_markdown": "# Knowledge Repository Governance\n\n## Purpose\n\nGovern the knowledge base as an architecture repository (spec \u00a716, \u00a721, \u00a733).\n\n## Scope\n\nAll content in this repository, including `00-system/`.\n\n## Repository Roles\n\nMachine-readable in `00-system/governance/roles.yaml` (repository roles and governance roles, with members).\n\n| Role | Accountable for | May |\n|---|---|---|\n| Knowledge Owner | content of an object | create, edit, request review |\n| Domain Owner | coherence of a domain | approve domain objects, assign reviewers, resolve conflicts |\n| Reviewer | content review | set validated / reviewed, reject |\n| Approver | governance decision | set approved, authoritative, approve deprecation |\n| Publisher | releases, products | set published, tag releases |\n| Maintainer | `00-system`, tooling, CI | change schemas, vocabularies, validation |\n| LLM assistant | nothing | discover, extract, propose, classify, link, validate \u2014 **never** approve, publish or overwrite authoritative knowledge |\n\nEvery important object carries `owner`, `reviewer`, `version`, `created`, `updated`, `review_date` and `status` (approval status is derived from `status`, see [[Separate Lifecycle Status from Knowledge Quality]]).\n\n## Git Workflow\n\n```text\nBranch \u2192 Change \u2192 Automated validation (CI) \u2192 Review \u2192 Approval \u2192 Merge \u2192 Publication (tag)\n```\n\n- Four workflows run on every pull request: validate-schema, validate-knowledge, validate-links and governance-check. BLOCKING ERRORs fail the build; WARNINGs must be acknowledged in the PR description.\n- Approval is established by an append-only governance record (`00-system/governance/records/`) with one decision per required governance level \u2014 see [[Status Change Requires Governance Record]] and [[Knowledge Change Review Process]].\n- Status transitions are checked against the lifecycle; ID changes are rejected.\n- Changes to objects with quality `authoritative` raise a warning that explicit approval must be recorded in the pull request.\n\n## Human-in-the-Loop\n\n```text\nLLM: discover \u00b7 extract \u00b7 propose \u00b7 classify \u00b7 link \u00b7 validate\n                     \u25bc\nHuman architect: review \u00b7 decide \u00b7 approve\n                     \u25bc\n            Knowledge repository\n```\n\nGeneration is not approval. LLM-created objects enter at status `proposed` with quality `draft`, owner `unassigned`, and `sources: []` unless a verified source exists.\n\n## LLM Build Workflow (spec \u00a732)\n\nInspect taxonomy \u2192 inspect existing concepts \u2192 identify gaps \u2192 propose objects \u2192 check duplicates (validator label-collision warnings) \u2192 create objects \u2192 create relationships \u2192 validate metadata \u2192 validate governance \u2192 identify conflicts \u2192 propose changes (pull request) \u2192 human approval \u2192 publish.\n"
+}

@@ -1,0 +1,52 @@
+{
+  "id": "DA-CON-0017",
+  "type": "concept",
+  "title": "Data Lineage",
+  "domain": "Metadata Management",
+  "layer": [
+    "cross-layer"
+  ],
+  "status": "proposed",
+  "quality": "draft",
+  "confidence": "high",
+  "epistemic_status": "common-practice",
+  "owner": "unassigned",
+  "version": "0.1.0",
+  "publication_tier": "community",
+  "definition": "Metadata describing the origin of data and the path, transformations and dependencies through which it flows from source to consumption.",
+  "aliases": [
+    "Lineage"
+  ],
+  "path": "05-metadata/concepts/Data Lineage.md",
+  "relationships": [
+    {
+      "type": "part-of",
+      "direction": "out",
+      "target": "DA-CON-0016",
+      "title": "Metadata"
+    },
+    {
+      "type": "dependency-of",
+      "direction": "in",
+      "target": "DA-CON-0024",
+      "title": "Data Migration"
+    },
+    {
+      "type": "produced-by",
+      "direction": "in",
+      "target": "DA-PAT-0011",
+      "title": "Metadata Harvesting"
+    }
+  ],
+  "sources": [],
+  "evidence": [],
+  "governance": {
+    "status": "proposed",
+    "authority": "unreviewed",
+    "required_levels": [
+      "data-architecture"
+    ],
+    "records": []
+  },
+  "body_markdown": "# Data Lineage\n\n## Definition\n\nData Lineage is metadata describing the origin of data and the path, transformations and dependencies through which it flows from source to consumption.\n\n## Explanation\n\nLineage can be captured at several granularities (system, dataset, column) and in two flavours:\n\n- **Design lineage**: intended flows derived from mappings and models.\n- **Runtime (operational) lineage**: flows actually executed, captured from job execution.\n\nIt supports impact analysis (see [[Architecture Change Process]]), root-cause analysis of [[Data Quality]] issues, regulatory traceability and migration reconciliation.\n\n## Distinctions\n\n- Lineage vs **provenance**: provenance emphasises the origin and history of a specific data item; lineage emphasises flows between assets. Usage overlaps.\n- Lineage vs **knowledge traceability** (this knowledge base's source \u2192 decision \u2192 implementation chain): same idea applied to architecture knowledge instead of data.\n\n## Examples\n\n- Report KPI \"claims ratio\" \u2190 mart table \u2190 warehouse fact \u2190 two source systems, with transformation rules on each hop.\n"
+}

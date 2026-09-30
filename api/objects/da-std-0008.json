@@ -1,0 +1,50 @@
+{
+  "id": "DA-STD-0008",
+  "type": "standard",
+  "title": "DAMA-DMBOK",
+  "domain": "Standards & Regulations",
+  "status": "proposed",
+  "quality": "draft",
+  "confidence": "medium",
+  "epistemic_status": "external-standard",
+  "owner": "unassigned",
+  "version": "0.1.0",
+  "publication_tier": "community",
+  "summary": "DAMA Data Management Body of Knowledge \u2014 an industry body of knowledge describing data management knowledge areas, including data architecture, modeling, governance, quality and metadata.",
+  "aliases": [
+    "DMBOK",
+    "DAMA-DMBOK2"
+  ],
+  "path": "24-standards-regulations/DAMA-DMBOK.md",
+  "relationships": [
+    {
+      "type": "source-of",
+      "direction": "in",
+      "target": "DA-CON-0001",
+      "title": "Data Architecture"
+    },
+    {
+      "type": "source-of",
+      "direction": "in",
+      "target": "DA-CON-0018",
+      "title": "Data Governance"
+    },
+    {
+      "type": "source-of",
+      "direction": "in",
+      "target": "DA-CON-0022",
+      "title": "Data Quality Dimension"
+    }
+  ],
+  "sources": [],
+  "evidence": [],
+  "governance": {
+    "status": "proposed",
+    "authority": "unreviewed",
+    "required_levels": [
+      "data-architecture"
+    ],
+    "records": []
+  },
+  "body_markdown": "# DAMA-DMBOK\n\n## Scope\n\nBody of knowledge (not a formal standard) organised in knowledge areas with data governance at the centre.\n\n## Requirements\n\nNot normative. Provides definitions, activities, roles and deliverables per knowledge area.\n\n## Applicability\n\nReference for terminology and scope of this knowledge base's domains.\n\n## Related Architecture Concepts\n\n[[Data Governance]], [[Data Architecture]], [[Data Quality]], [[Metadata]].\n\n## Related Controls\n\nNone.\n\n## Verification Notes\n\nClassified as `standard` type for lack of a \"body of knowledge\" type; flagged for taxonomy review. A revised edition may exist; verify current edition.\n"
+}

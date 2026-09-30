@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Declare Epistemic Status on Every Object · Architecture Knowledge Graph</title>
+<meta name="description" content="Every knowledge object declares epistemic_status (verified fact, external standard, common practice, expert interpretation, recommendation, hypothesis, experimental) and confidence, and leaves sources empty when no verified source exists.">
+<link rel="canonical" href="https://archknowledge.github.io/knowledge/da-adr-0005.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Architecture Knowledge Graph">
+<meta property="og:title" content="Declare Epistemic Status on Every Object">
+<meta property="og:description" content="Every knowledge object declares epistemic_status (verified fact, external standard, common practice, expert interpretation, recommendation, hypothesis, experimental) and confidence, and leaves sources empty when no verified source exists.">
+<meta property="og:url" content="https://archknowledge.github.io/knowledge/da-adr-0005.html">
+<meta name="twitter:card" content="summary">
+<meta name="color-scheme" content="light dark">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../assets/style.css">
+<meta name="akg-root" content="../">
+<script src="../assets/site.js" defer></script>
+
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="../index.html" aria-label="Architecture Knowledge Graph — home">
+      <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true"><path d="M6 24 16 8l10 16M6 24h20M16 8v16" /><circle cx="16" cy="8" r="3"/><circle cx="6" cy="24" r="3"/><circle cx="26" cy="24" r="3"/><circle cx="16" cy="24" r="2.2"/></svg>
+      <span>Architecture<br>Knowledge Graph</span>
+    </a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+    <nav id="site-nav" class="site-nav" aria-label="Main">
+      <ul>
+<li><a href="../why.html">Why</a></li>
+<li><a href="../knowledge-graph.html">Knowledge Graph</a></li>
+<li><a href="../explore.html" aria-current="page">Explore</a></li>
+<li><a href="../products.html">Products</a></li>
+<li><a href="../governance.html">Governance</a></li>
+<li><a href="../roadmap.html">Roadmap</a></li>
+<li><a href="../search.html">Search</a></li>
+        <li><a class="gh" href="https://github.com/ArchKnowledge/Architecture-Knowledge-Graph">GitHub <span class="nav-note">private</span></a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+<p class="preview-bar wrap" role="note">Early preview · Phase 1 of the roadmap · All knowledge is in draft and awaiting human review.</p>
+<main id="main">
+
+<article class="object page-narrow">
+  <p class="eyebrow"><span class="dot t-decision"></span>Decision · <a href="../explore/foundations.html">Foundations</a></p>
+  <h1>Declare Epistemic Status on Every Object</h1>
+  <p class="lead">Every knowledge object declares epistemic_status (verified fact, external standard, common practice, expert interpretation, recommendation, hypothesis, experimental) and confidence, and leaves sources empty when no verified source exists.</p>
+  <p class="notice" role="note"><strong>Draft knowledge.</strong> Status <code>proposed</code>, quality <code>draft</code>. Not yet reviewed or approved by a human architect.</p>
+  <div class="object-grid">
+    <div class="object-body"><h2>Context</h2>
+<p>Spec §3.5 requires distinguishing facts, standards, practice, interpretation, recommendation, hypothesis and experiment. Spec §20/§31 forbid invented sources.</p>
+<h2>Problem</h2>
+<p>How to make uncertainty explicit and machine-checkable?</p>
+<h2>Options</h2>
+<ol>
+<li>Object-level <code>epistemic_status</code> + <code>confidence</code> fields.</li>
+<li>Inline claim-level annotations only.</li>
+<li>Both.</li>
+</ol>
+<h2>Evaluation Criteria</h2>
+<p>Simplicity, machine-readability, granularity.</p>
+<h2>Trade-offs</h2>
+<ul>
+<li>Object-level is coarse: a pattern may mix common practice with recommendations. Claim-level is precise but heavy.</li>
+</ul>
+<h2>Decision</h2>
+<p>Proposed: option 1 now, claim-level annotation later where needed (e.g. "Open Questions" sections and explicit "flagged" statements in body text).</p>
+<h2>Consequences</h2>
+<ul>
+<li>In release 0.1, almost all objects have <code>sources: []</code> and <code>confidence</code> reflecting the author's judgement. Standards objects carry a "Verification Notes" section: bibliographic details must be checked by a human before approval.</li>
+</ul>
+<h2>Assumptions</h2>
+<ul>
+<li>A human reviewer will attach verified sources during review.</li>
+</ul>
+<h2>Constraints</h2>
+<ul>
+<li>The LLM never invents sources.</li>
+</ul>
+<h2>Related Architecture</h2>
+<ul>
+<li><a class="ref t-gov" href="../knowledge/da-gov-0006.html">Knowledge Quality Model</a></li>
+</ul></div>
+    <aside class="object-meta" aria-label="Metadata and relationships">
+      <h2>Metadata</h2><dl><dt>ID</dt><dd><code>DA-ADR-0005</code></dd><dt>Type</dt><dd>Decision</dd><dt>Domain</dt><dd><a href="../explore/foundations.html">Foundations</a></dd><dt>Layer</dt><dd>cross-layer</dd><dt>Status</dt><dd>proposed</dd><dt>Quality</dt><dd>draft</dd><dt>Confidence</dt><dd>high</dd><dt>Epistemic status</dt><dd>recommendation</dd><dt>Content tier</dt><dd>Community</dd><dt>Version</dt><dd>0.1.0</dd><dt>Updated</dt><dd>2026-09-29</dd><dt>Source file</dt><dd><code>20-architecture-decisions/records/Declare Epistemic Status on Every Object.md</code></dd></dl>
+      <h2>Relationships</h2>
+      <table class='rels'><tbody><tr><td><code>decides</code></td><td><a class="ref t-gov" href="../knowledge/da-gov-0006.html">Knowledge Quality Model</a></td><td class="muted">Governance model</td></tr></tbody></table>
+      <h2>Sources</h2><p class="muted">No verified source attached yet.</p>
+      <h2>Feedback</h2><p><a href="mailto:dalust1997@gmail.com?subject=Feedback%3A%20DA-ADR-0005%20Declare%20Epistemic%20Status%20on%20Every%20Object&amp;body=Page%20or%20knowledge%20object%3A%20DA-ADR-0005%20-%20Declare%20Epistemic%20Status%20on%20Every%20Object%0AKind%20of%20feedback%20%28factual%20error%20/%20unclear%20/%20missing%20/%20terminology%20/%20suggestion%20/%20other%29%3A%20%0AWhat%20should%20change%2C%20and%20why%3A%0A%0A%0ASource%20%28optional%29%3A%0A">Give feedback on this page</a> — report an error, something unclear or missing, or a source.</p>
+    </aside>
+  </div>
+</article>
+</main>
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <div>
+      <p class="footer-brand">Architecture Knowledge Graph</p>
+      <p class="muted">A structured and governed knowledge graph for data, information and enterprise architecture.</p>
+    </div>
+    <div>
+      <p class="muted">Generated from the knowledge graph on 2026-09-30: 155 objects, 388 typed relationships.</p>
+      <p class="muted"><a href="mailto:dalust1997@gmail.com?subject=Feedback%3A%20Architecture%20Knowledge%20Graph&amp;body=Page%20or%20knowledge%20object%3A%20%28page%20title%2C%20ID%20or%20URL%29%0AKind%20of%20feedback%20%28factual%20error%20/%20unclear%20/%20missing%20/%20terminology%20/%20suggestion%20/%20other%29%3A%20%0AWhat%20should%20change%2C%20and%20why%3A%0A%0A%0ASource%20%28optional%29%3A%0A">Send feedback</a> · <a href="https://github.com/ArchKnowledge/Architecture-Knowledge-Graph">Source repository</a> <span class="muted">(private during phase 1)</span> · No products are currently for sale.</p>
+      <p class="muted">© 2026 Architecture Knowledge Graph project. Content licence to be decided; all rights reserved until then. Referenced standards belong to their issuing organisations.</p>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

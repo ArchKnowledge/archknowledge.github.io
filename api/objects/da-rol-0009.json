@@ -1,0 +1,43 @@
+{
+  "id": "DA-ROL-0009",
+  "type": "role",
+  "title": "Domain Architect",
+  "domain": "Architecture",
+  "layer": [
+    "logical"
+  ],
+  "status": "proposed",
+  "quality": "draft",
+  "confidence": "medium",
+  "epistemic_status": "common-practice",
+  "owner": "unassigned",
+  "version": "0.1.0",
+  "publication_tier": "community",
+  "summary": "Architect accountable for coherent architecture within one business domain, aligned with enterprise principles.",
+  "path": "06-data-governance/roles/Domain Architect.md",
+  "relationships": [
+    {
+      "type": "specializes",
+      "direction": "out",
+      "target": "DA-ROL-0008",
+      "title": "Data Architect"
+    },
+    {
+      "type": "part-of",
+      "direction": "out",
+      "target": "DA-GOV-0003",
+      "title": "Governance Roles"
+    }
+  ],
+  "sources": [],
+  "evidence": [],
+  "governance": {
+    "status": "proposed",
+    "authority": "unreviewed",
+    "required_levels": [
+      "data-architecture"
+    ],
+    "records": []
+  },
+  "body_markdown": "# Domain Architect\n\n## Purpose\n\nKeep a domain's architecture coherent and aligned.\n\n## Responsibilities\n\n- Maintain domain architecture and roadmap.\n- Apply enterprise principles in the domain.\n- Coordinate domain data owners and architects.\n\n## Decision Rights\n\nData architecture level within the domain, below cross-domain threshold.\n\n## Inputs\n\nEnterprise principles; domain strategy.\n\n## Outputs\n\nDomain architecture; domain ADRs.\n\n## Required Competencies\n\nDomain knowledge; architecture methods.\n\n## Escalation Paths\n\nCross-domain issues \u2192 [[Enterprise Architect]].\n\n## Related Governance Processes\n\n- [[Decision Rights Model]]\n- [[Architecture Change Process]]\n- [[Governance Lifecycle]]\n"
+}

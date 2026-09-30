@@ -1,0 +1,48 @@
+{
+  "id": "DA-CON-0026",
+  "type": "concept",
+  "title": "Golden Record",
+  "domain": "Master Data",
+  "layer": [
+    "information",
+    "logical"
+  ],
+  "status": "proposed",
+  "quality": "draft",
+  "confidence": "high",
+  "epistemic_status": "common-practice",
+  "owner": "unassigned",
+  "version": "0.1.0",
+  "publication_tier": "community",
+  "definition": "The consolidated, best-known version of a master data entity, assembled from one or more source records according to survivorship rules.",
+  "aliases": [
+    "Best Version of the Truth"
+  ],
+  "path": "12-master-data/Golden Record.md",
+  "relationships": [
+    {
+      "type": "part-of",
+      "direction": "out",
+      "target": "DA-CON-0025",
+      "title": "Master Data"
+    },
+    {
+      "type": "produced-by",
+      "direction": "in",
+      "target": "DA-PAT-0012",
+      "title": "Master Data Hub"
+    }
+  ],
+  "sources": [],
+  "evidence": [],
+  "governance": {
+    "status": "proposed",
+    "authority": "unreviewed",
+    "required_levels": [
+      "information-model",
+      "data-architecture"
+    ],
+    "records": []
+  },
+  "body_markdown": "# Golden Record\n\n## Definition\n\nA Golden Record is the consolidated, best-known version of a master data entity, assembled from one or more source records according to matching and survivorship rules.\n\n## Explanation\n\nCreating a golden record requires: identity resolution (match), linking source records (cross-reference), survivorship rules per attribute (which source wins, recency, completeness), and lineage back to contributing records. It is *best-known*, not *true*: its quality depends on sources and rules.\n\n## Distinctions\n\n- A golden record is not necessarily physically stored: in a registry-style hub it can be virtual.\n\n## Examples\n\n- One customer record combining the address from the CRM (most recent) and the birth date from the policy system (most trusted).\n"
+}

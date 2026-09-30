@@ -1,0 +1,43 @@
+{
+  "id": "DA-ADR-0004",
+  "type": "decision",
+  "title": "Separate Lifecycle Status from Knowledge Quality",
+  "domain": "Architecture Governance",
+  "layer": [
+    "cross-layer"
+  ],
+  "status": "proposed",
+  "quality": "draft",
+  "confidence": "medium",
+  "epistemic_status": "recommendation",
+  "owner": "unassigned",
+  "version": "0.1.0",
+  "publication_tier": "community",
+  "summary": "Track governance lifecycle (`status`) and knowledge quality (`quality`) as two separate fields, reconcile the spec's Draft/Proposed ambiguity with two initial states, and treat the spec's `approval_status` as derived from `status`.",
+  "path": "20-architecture-decisions/records/Separate Lifecycle Status from Knowledge Quality.md",
+  "relationships": [
+    {
+      "type": "decides",
+      "direction": "in",
+      "target": "DA-GOV-0004",
+      "title": "Governance Lifecycle"
+    },
+    {
+      "type": "decides",
+      "direction": "in",
+      "target": "DA-GOV-0006",
+      "title": "Knowledge Quality Model"
+    }
+  ],
+  "sources": [],
+  "evidence": [],
+  "governance": {
+    "status": "proposed",
+    "authority": "unreviewed",
+    "required_levels": [
+      "data-architecture"
+    ],
+    "records": []
+  },
+  "body_markdown": "# Separate Lifecycle Status from Knowledge Quality\n\n## Context\n\nThe spec defines a governance lifecycle (\u00a713: Proposed \u2026 Retired), a quality status (\u00a717: Draft \u2026 Superseded), and an `approval_status` field (\u00a716). The \u00a713 transition example starts at \"Draft \u2192 Review\" while the lifecycle list starts at \"Proposed\".\n\n## Problem\n\nHow to represent these without redundant, contradictory fields?\n\n## Options\n\n1. One combined status field.\n2. Two fields: `status` (governance lifecycle) and `quality` (content trust); `approval_status` derived.\n3. Three fields as listed in the spec.\n\n## Evaluation Criteria\n\nNon-redundancy, expressiveness, validator enforceability, fidelity to spec.\n\n## Trade-offs\n\n- Option 1 loses information (a published object can still be of limited quality).\n- Option 3 creates contradictions (`status: draft` with `approval_status: approved`).\n\n## Decision\n\nProposed: option 2.\n- `status`: `draft \u2192 proposed \u2192 under-review \u2192 validated \u2192 approved \u2192 published \u2192 (implemented) \u2192 deprecated \u2192 retired`, plus `rejected`. Both `draft` and `proposed` are initial states; the LLM may set at most `proposed`.\n- `quality`: `draft | reviewed | validated | authoritative | deprecated | superseded`, with constraints on the compatible `status`.\n- `approval_status` is **not stored**; it is derived (`approved: true` for approved/published/implemented/deprecated in `00-system/governance/lifecycle.yaml`).\n\n**Flagged deviation from spec \u00a716** (which lists `approval_status` as a field) \u2014 requires human approval.\n\n## Consequences\n\n- Validator enforces status\u2013quality compatibility and allowed transitions (with `--base`).\n\n## Assumptions\n\n- Reviewers accept the derived approval status.\n\n## Constraints\n\n- Git history is the audit log of transitions.\n\n## Related Architecture\n\n- [[Governance Lifecycle]]\n- [[Knowledge Quality Model]]\n"
+}

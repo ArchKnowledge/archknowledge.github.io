@@ -1,0 +1,56 @@
+{
+  "id": "DA-PAT-0006",
+  "type": "pattern",
+  "title": "Batch Extract-Transform-Load",
+  "domain": "Data Integration",
+  "layer": [
+    "logical",
+    "technical"
+  ],
+  "status": "proposed",
+  "quality": "draft",
+  "confidence": "high",
+  "epistemic_status": "common-practice",
+  "owner": "unassigned",
+  "version": "0.1.0",
+  "publication_tier": "community",
+  "summary": "Periodically extract data sets from sources, transform them and load them into a target, in scheduled batches (ETL or ELT).",
+  "aliases": [
+    "ETL",
+    "ELT",
+    "Batch Integration"
+  ],
+  "path": "19-architecture-patterns/Batch Extract-Transform-Load.md",
+  "relationships": [
+    {
+      "type": "realizes",
+      "direction": "out",
+      "target": "DA-CON-0029",
+      "title": "Data Integration"
+    },
+    {
+      "type": "dependency-of",
+      "direction": "in",
+      "target": "DA-RAR-0001",
+      "title": "Governed Analytical Data Platform"
+    },
+    {
+      "type": "alternative-to",
+      "direction": "in",
+      "target": "DA-PAT-0005",
+      "title": "Change Data Capture"
+    }
+  ],
+  "sources": [],
+  "evidence": [],
+  "governance": {
+    "status": "proposed",
+    "authority": "unreviewed",
+    "required_levels": [
+      "data-architecture",
+      "technical"
+    ],
+    "records": []
+  },
+  "body_markdown": "# Batch Extract-Transform-Load\n\n## Problem\n\nData from several sources must be combined and made available in a target on a predictable schedule.\n\n## Context\n\nAnalytical platforms, reporting, periodic interfaces, migrations.\n\n## Forces\n\n- Simplicity and robustness vs. latency.\n- Source load windows.\n\n## Solution\n\nScheduled jobs extract full or incremental data sets, transform them (before load: ETL; after load in the target: ELT), and load them into the target with restartable, idempotent steps.\n\n## Architecture\n\n```text\nSources \u2192 extract (full/incremental) \u2192 staging \u2192 transform \u2192 target \u2192 quality gate \u2192 publish\n```\n\n## Advantages\n\n- Simple, mature, easy to reason about and reconcile.\n- Low runtime coupling.\n\n## Disadvantages\n\n- Latency equals schedule.\n- Incremental extraction without CDC may miss deletes.\n\n## Risks\n\n- Growing batch windows; silent partial loads without reconciliation.\n\n## When to Use\n\n- Latency of hours is acceptable; large set-based transformations.\n\n## When Not to Use\n\n- Near-real-time requirements \u2192 [[Change Data Capture]].\n\n## Alternatives\n\n[[Change Data Capture]], [[Data Virtualization]].\n\n## Examples\n\n- Nightly load of finance ledgers into a warehouse.\n\n## Related Decisions\n\n- [[Select Data Integration Style]]\n"
+}

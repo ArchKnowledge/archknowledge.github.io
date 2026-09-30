@@ -1,0 +1,59 @@
+{
+  "id": "DA-PAT-0003",
+  "type": "pattern",
+  "title": "Slowly Changing Dimension Type 2",
+  "domain": "Analytics & BI",
+  "layer": [
+    "logical"
+  ],
+  "status": "proposed",
+  "quality": "draft",
+  "confidence": "high",
+  "epistemic_status": "common-practice",
+  "owner": "unassigned",
+  "version": "0.1.0",
+  "publication_tier": "community",
+  "summary": "In a dimensional model, preserve history of dimension attributes by inserting a new dimension row with its own surrogate key and effective period for each change.",
+  "aliases": [
+    "SCD2",
+    "SCD Type 2"
+  ],
+  "path": "19-architecture-patterns/Slowly Changing Dimension Type 2.md",
+  "relationships": [
+    {
+      "type": "realizes",
+      "direction": "out",
+      "target": "DA-CON-0010",
+      "title": "Temporal Data Management"
+    },
+    {
+      "type": "part-of",
+      "direction": "out",
+      "target": "DA-PAT-0009",
+      "title": "Layered Data Refinement"
+    },
+    {
+      "type": "alternative-to",
+      "direction": "in",
+      "target": "DA-PAT-0001",
+      "title": "Bitemporal Data Model"
+    },
+    {
+      "type": "recommended-by",
+      "direction": "in",
+      "target": "DA-DTR-0001",
+      "title": "Database History Pattern Decision Tree"
+    }
+  ],
+  "sources": [],
+  "evidence": [],
+  "governance": {
+    "status": "proposed",
+    "authority": "unreviewed",
+    "required_levels": [
+      "data-architecture"
+    ],
+    "records": []
+  },
+  "body_markdown": "# Slowly Changing Dimension Type 2\n\n## Problem\n\nAnalytical facts must be reported against the dimension attributes that were valid when the fact occurred (e.g. customer segment at sale time).\n\n## Context\n\nDimensional data warehouses and marts.\n\n## Forces\n\n- Reports need both \"as was\" and sometimes \"as is\" views.\n- Fact tables should join simply to dimensions.\n\n## Solution\n\nOn change of a tracked attribute, expire the current dimension row (`effective_to`, `is_current = false`) and insert a new row with a new surrogate key. Facts reference the surrogate key valid at the fact's time.\n\n## Architecture\n\n```text\ndim_customer(sk, customer_bk, segment, effective_from, effective_to, is_current)\nfact_sales(customer_sk \u2192 dim_customer.sk, date_sk, amount)\n```\n\n## Advantages\n\n- Simple, well-known, tool-supported.\n- Fast \"as was\" reporting.\n\n## Disadvantages\n\n- Typically single time dimension; backdated corrections are awkward.\n- Dimension growth with volatile attributes.\n\n## Risks\n\n- Tracking too many attributes explodes dimension size.\n- Late-arriving facts can bind to the wrong version.\n\n## When to Use\n\n- Analytical history of descriptive attributes.\n\n## When Not to Use\n\n- Operational reconstruction or legal reproducibility \u2192 [[Bitemporal Data Model]].\n\n## Alternatives\n\nSCD Type 1 (overwrite), SCD Type 4 (history table), [[Bitemporal Data Model]].\n\n## Examples\n\n- Sales by customer segment as the segment was at sale time.\n\n## Related Decisions\n\n- [[Select Historical Data Strategy]]\n"
+}

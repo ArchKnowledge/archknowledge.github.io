@@ -1,0 +1,105 @@
+{
+  "id": "DA-FWK-0001",
+  "type": "framework",
+  "title": "Architecture Decision Framework",
+  "domain": "Decision Intelligence",
+  "layer": [
+    "cross-layer"
+  ],
+  "status": "proposed",
+  "quality": "draft",
+  "confidence": "medium",
+  "epistemic_status": "recommendation",
+  "owner": "unassigned",
+  "version": "0.1.0",
+  "publication_tier": "community",
+  "summary": "A structured, machine-readable sequence for taking architecture decisions - question, criteria, conditions, alternatives, consequences, decision, evidence - that links each stage to knowledge objects.",
+  "path": "25-decision-intelligence/decision-frameworks/Architecture Decision Framework.md",
+  "relationships": [
+    {
+      "type": "constrained-by",
+      "direction": "out",
+      "target": "DA-PRI-0007",
+      "title": "Architecture Decisions Are Traceable"
+    },
+    {
+      "type": "constrained-by",
+      "direction": "out",
+      "target": "DA-PRI-0003",
+      "title": "Decisions Belong to Their Layer"
+    },
+    {
+      "type": "realizes",
+      "direction": "out",
+      "target": "DA-CAP-0002",
+      "title": "Architecture Decision Management Capability"
+    },
+    {
+      "type": "supports",
+      "direction": "in",
+      "target": "DA-CON-0004",
+      "title": "Architecture Decision"
+    },
+    {
+      "type": "has-part",
+      "direction": "in",
+      "target": "DA-RRL-0001",
+      "title": "Retroactive Corrections Call for Bitemporal History"
+    }
+  ],
+  "sources": [],
+  "evidence": [],
+  "governance": {
+    "status": "proposed",
+    "authority": "unreviewed",
+    "required_levels": [
+      "data-architecture"
+    ],
+    "records": []
+  },
+  "body_markdown": "# Architecture Decision Framework\n\n## Purpose\n\nMake architecture decisions reproducible and machine-supported: every stage has a defined output that is itself structured knowledge, so decision support does not live only in prose or in AI prompts.\n\n## Structure\n\n<!-- BEGIN GENERATED -->\n1. **Question** \u2014 What must be decided, at which architecture layer? *(output: problem statement and layer)*\n2. **Decision criteria** \u2014 Which criteria matter, and how much? *(output: weighted criteria (scoring model))*\n3. **Conditions** \u2014 Which facts about the situation hold? *(output: decision facts (decision-facts.yaml))*\n4. **Possible alternatives** \u2014 Which options apply under these conditions? *(output: options from decision trees and recommendation rules)*\n5. **Consequences** \u2014 What does each option imply, including risks and costs? *(output: trade-offs from pattern objects)*\n6. **Decision** \u2014 Which option is chosen, by whom, with which rationale? *(output: architecture decision record)*\n7. **Evidence** \u2014 What supports the decision and its approval? *(output: evidence and governance record)*\n<!-- END GENERATED -->\n\n## How to Apply\n\n1. State the question and its [[Architecture Layer|layer]]; check that the decision belongs there ([[Decisions Belong to Their Layer]]).\n2. Establish the facts (conditions) using the controlled vocabulary in `00-system/taxonomy/decision-facts.yaml`.\n3. Generate alternatives: run the relevant decision tree (`dakb.py decide`, e.g. [[Database History Pattern Decision Tree]]) and recommendation rules (`dakb.py recommend`).\n4. Compare alternatives with a scoring model where one exists (`dakb.py score`, e.g. [[History Strategy Scoring Model]]), adjusting weights to the context.\n5. Record the decision as an architecture decision (template: `00-system/templates/ADR Template.md`) linking the options, criteria and principles.\n6. Attach evidence and take the decision through governance ([[Separate Decision per Governance Level]]).\n\n## Limitations\n\nThe framework structures a decision; it does not take it. Scores and rules are expert judgement with declared confidence, not optimisation.\n",
+  "stages": [
+    {
+      "id": "question",
+      "name": "Question",
+      "question": "What must be decided, at which architecture layer?",
+      "output": "problem statement and layer"
+    },
+    {
+      "id": "criteria",
+      "name": "Decision criteria",
+      "question": "Which criteria matter, and how much?",
+      "output": "weighted criteria (scoring model)"
+    },
+    {
+      "id": "conditions",
+      "name": "Conditions",
+      "question": "Which facts about the situation hold?",
+      "output": "decision facts (decision-facts.yaml)"
+    },
+    {
+      "id": "alternatives",
+      "name": "Possible alternatives",
+      "question": "Which options apply under these conditions?",
+      "output": "options from decision trees and recommendation rules"
+    },
+    {
+      "id": "consequences",
+      "name": "Consequences",
+      "question": "What does each option imply, including risks and costs?",
+      "output": "trade-offs from pattern objects"
+    },
+    {
+      "id": "decision",
+      "name": "Decision",
+      "question": "Which option is chosen, by whom, with which rationale?",
+      "output": "architecture decision record"
+    },
+    {
+      "id": "evidence",
+      "name": "Evidence",
+      "question": "What supports the decision and its approval?",
+      "output": "evidence and governance record"
+    }
+  ]
+}

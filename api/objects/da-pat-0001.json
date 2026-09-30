@@ -1,0 +1,90 @@
+{
+  "id": "DA-PAT-0001",
+  "type": "pattern",
+  "title": "Bitemporal Data Model",
+  "domain": "Data Modeling",
+  "layer": [
+    "information",
+    "logical"
+  ],
+  "status": "proposed",
+  "quality": "draft",
+  "confidence": "high",
+  "epistemic_status": "common-practice",
+  "owner": "unassigned",
+  "version": "0.1.0",
+  "publication_tier": "community",
+  "summary": "Record both valid time and transaction time for each fact so that any past state can be reconstructed as it was true and as it was known.",
+  "aliases": [
+    "Bitemporal Model"
+  ],
+  "path": "19-architecture-patterns/Bitemporal Data Model.md",
+  "relationships": [
+    {
+      "type": "realizes",
+      "direction": "out",
+      "target": "DA-CAP-0001",
+      "title": "Historical Data Reconstruction Capability"
+    },
+    {
+      "type": "realizes",
+      "direction": "out",
+      "target": "DA-CON-0010",
+      "title": "Temporal Data Management"
+    },
+    {
+      "type": "alternative-to",
+      "direction": "out",
+      "target": "DA-PAT-0002",
+      "title": "System-Versioned History Table"
+    },
+    {
+      "type": "alternative-to",
+      "direction": "out",
+      "target": "DA-PAT-0004",
+      "title": "Event Sourcing"
+    },
+    {
+      "type": "alternative-to",
+      "direction": "out",
+      "target": "DA-PAT-0003",
+      "title": "Slowly Changing Dimension Type 2"
+    },
+    {
+      "type": "constrained-by",
+      "direction": "out",
+      "target": "DA-STD-0010",
+      "title": "SQL Standard Temporal Support"
+    },
+    {
+      "type": "addresses",
+      "direction": "out",
+      "target": "DA-REQ-0001",
+      "title": "Policy State Is Reproducible As Known At Any Past Date"
+    },
+    {
+      "type": "recommended-by",
+      "direction": "in",
+      "target": "DA-DTR-0001",
+      "title": "Database History Pattern Decision Tree"
+    },
+    {
+      "type": "recommended-by",
+      "direction": "in",
+      "target": "DA-RRL-0001",
+      "title": "Retroactive Corrections Call for Bitemporal History"
+    }
+  ],
+  "sources": [],
+  "evidence": [],
+  "governance": {
+    "status": "proposed",
+    "authority": "unreviewed",
+    "required_levels": [
+      "information-model",
+      "data-architecture"
+    ],
+    "records": []
+  },
+  "body_markdown": "# Bitemporal Data Model\n\n## Problem\n\nThe business must answer \"what was true at time T?\" **and** \"what did we believe at time T\u2032 about time T?\" \u2014 for example after retroactive corrections.\n\n## Context\n\nRegulated domains (insurance, finance, public registers, HR/payroll) where corrections are backdated and decisions must be reproducible.\n\n## Forces\n\n- Retroactive corrections must not destroy what was previously known.\n- Queries must stay understandable.\n- Storage and write complexity grow with two time dimensions.\n\n## Solution\n\nEvery versioned fact carries two periods: a **valid-time** period `[valid_from, valid_to)` maintained by the application, and a **transaction-time** period `[recorded_from, recorded_to)` maintained by the system. Updates never overwrite: they close the current transaction-time period and insert new rows.\n\n## Architecture\n\n```text\nEntity key | attributes | valid_from | valid_to | recorded_from | recorded_to\n```\n\nQueries filter on both periods (\"as of valid date V, as known at T\"). The information model states which entities/attributes are bitemporal; the physical model may combine an application-time period with a [[System-Versioned History Table]].\n\n## Advantages\n\n- Full reproducibility of past decisions and reports.\n- Clean handling of backdated corrections.\n\n## Disadvantages\n\n- Complex writes (period splitting) and queries.\n- Higher storage.\n- Many tools and developers are unfamiliar with it.\n\n## Risks\n\n- Incorrect period maintenance creates gaps or overlaps; needs constraints and tests.\n- Uniform application to all entities over-engineers the model.\n\n## When to Use\n\n- Retroactive changes are common **and** reproducibility of past knowledge is required.\n\n## When Not to Use\n\n- Only an audit of changes is required \u2192 [[System-Versioned History Table]] or audit log.\n- Only analytical history of attribute changes \u2192 [[Slowly Changing Dimension Type 2]].\n\n## Alternatives\n\n[[System-Versioned History Table]], [[Event Sourcing]], [[Slowly Changing Dimension Type 2]].\n\n## Examples\n\n- A policy premium is corrected in March with effect from January; the January invoice run can still be reproduced as it was.\n\n## Related Decisions\n\n- [[Select Historical Data Strategy]]\n- [[Database History Pattern Decision Tree]]\n"
+}

@@ -1,0 +1,70 @@
+{
+  "id": "DA-CON-0009",
+  "type": "concept",
+  "title": "Physical Data Model",
+  "domain": "Data Modeling",
+  "layer": [
+    "physical"
+  ],
+  "status": "proposed",
+  "quality": "draft",
+  "confidence": "high",
+  "epistemic_status": "common-practice",
+  "owner": "unassigned",
+  "version": "0.1.0",
+  "publication_tier": "community",
+  "definition": "A data model that specifies how a logical data model is realized in a specific data store, including data types, storage structures, indexing, partitioning and physical history mechanisms.",
+  "aliases": [
+    "PDM"
+  ],
+  "path": "03-data-modeling/physical/Physical Data Model.md",
+  "relationships": [
+    {
+      "type": "part-of",
+      "direction": "out",
+      "target": "DA-CON-0003",
+      "title": "Architecture Layer"
+    },
+    {
+      "type": "specializes",
+      "direction": "out",
+      "target": "DA-CON-0005",
+      "title": "Data Model"
+    },
+    {
+      "type": "realizes",
+      "direction": "out",
+      "target": "DA-CON-0008",
+      "title": "Logical Data Model"
+    },
+    {
+      "type": "produced-by",
+      "direction": "in",
+      "target": "DA-MTH-0001",
+      "title": "Layered Model Derivation"
+    },
+    {
+      "type": "implemented-by",
+      "direction": "in",
+      "target": "DA-TEC-0001",
+      "title": "SQL Server Temporal Tables"
+    },
+    {
+      "type": "implemented-by",
+      "direction": "in",
+      "target": "DA-TEC-0002",
+      "title": "Apache Iceberg"
+    }
+  ],
+  "sources": [],
+  "evidence": [],
+  "governance": {
+    "status": "proposed",
+    "authority": "unreviewed",
+    "required_levels": [
+      "technical"
+    ],
+    "records": []
+  },
+  "body_markdown": "# Physical Data Model\n\n## Definition\n\nA Physical Data Model specifies how a [[Logical Data Model]] is realized in a specific data store: data types, tables/files, indexing, partitioning, compression and physical history mechanisms.\n\n## Explanation\n\nThe physical model is where technology enters. Choices here should be traceable to logical and information-level requirements, e.g. a [[System-Versioned History Table]] realizing a transaction-time requirement.\n\n## Distinctions\n\n- Versus [[Logical Data Model]]: logical says *what structure*, physical says *how it is stored*.\n- Versus technical implementation: deployment, pipelines and operations belong to the technical layer.\n\n## Examples\n\n- A table `customer` with `customer_id BIGINT`, clustered index, partitioned by region.\n- An [[Apache Iceberg]] table partitioned by day with snapshot retention of 30 days.\n"
+}

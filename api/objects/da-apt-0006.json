@@ -1,0 +1,55 @@
+{
+  "id": "DA-APT-0006",
+  "type": "anti-pattern",
+  "title": "Physical-Model-First Design",
+  "domain": "Data Modeling",
+  "layer": [
+    "physical"
+  ],
+  "status": "proposed",
+  "quality": "draft",
+  "confidence": "medium",
+  "epistemic_status": "expert-interpretation",
+  "owner": "unassigned",
+  "version": "0.1.0",
+  "publication_tier": "community",
+  "summary": "Data structures are designed directly as database tables, skipping the conceptual, semantic and information layers.",
+  "path": "19-architecture-patterns/anti-patterns/Physical-Model-First Design.md",
+  "relationships": [
+    {
+      "type": "violates",
+      "direction": "out",
+      "target": "DA-PRI-0002",
+      "title": "Meaning Before Representation"
+    },
+    {
+      "type": "violates",
+      "direction": "out",
+      "target": "DA-PRI-0003",
+      "title": "Decisions Belong to Their Layer"
+    },
+    {
+      "type": "causes",
+      "direction": "out",
+      "target": "DA-APT-0001",
+      "title": "Implicit Semantics"
+    },
+    {
+      "type": "mitigated-by",
+      "direction": "in",
+      "target": "DA-PAT-0014",
+      "title": "Concept-to-Model Traceability"
+    }
+  ],
+  "sources": [],
+  "evidence": [],
+  "governance": {
+    "status": "proposed",
+    "authority": "unreviewed",
+    "required_levels": [
+      "technical"
+    ],
+    "records": []
+  },
+  "body_markdown": "# Physical-Model-First Design\n\n## Problem\n\nDesign starts with `CREATE TABLE`. Meaning, scope and history requirements are implicit in the physical design.\n\n## Symptoms\n\n- No conceptual or information model exists; ER diagrams are reverse-engineered.\n- Technology choices dictate business definitions.\n\n## Root Causes\n\n- Developer-led delivery without architecture roles; tools that start physical.\n\n## Consequences\n\n- Semantic drift; hard-to-change history mechanisms; poor reuse.\n\n## Detection\n\n- Models exist only at physical level; no concept links.\n\n## Remediation\n\n- Introduce lightweight conceptual and information models for shared data; add traceability.\n\n## Alternative Patterns\n\n[[Concept-to-Model Traceability]].\n\n## When It May Be Acceptable\n\nTechnical/internal data with no semantic sharing; prototypes that will be redesigned.\n"
+}

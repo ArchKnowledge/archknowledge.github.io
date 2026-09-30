@@ -1,0 +1,75 @@
+{
+  "id": "DA-CON-0027",
+  "type": "concept",
+  "title": "Reference Data",
+  "domain": "Reference Data",
+  "layer": [
+    "semantic",
+    "information",
+    "logical"
+  ],
+  "status": "proposed",
+  "quality": "draft",
+  "confidence": "high",
+  "epistemic_status": "common-practice",
+  "owner": "unassigned",
+  "version": "0.1.0",
+  "publication_tier": "community",
+  "definition": "Sets of permissible values \u2014 codes and their meanings \u2014 used to classify or categorise other data, often defined by external bodies and shared across systems.",
+  "aliases": [
+    "Code List",
+    "Code Table"
+  ],
+  "path": "13-reference-data/Reference Data.md",
+  "relationships": [
+    {
+      "type": "distinct-from",
+      "direction": "out",
+      "target": "DA-CON-0016",
+      "title": "Metadata"
+    },
+    {
+      "type": "governed-by",
+      "direction": "out",
+      "target": "DA-ROL-0002",
+      "title": "Data Steward"
+    },
+    {
+      "type": "applicable-to",
+      "direction": "in",
+      "target": "DA-PRI-0008",
+      "title": "Each Data Element Has an Authoritative Source"
+    },
+    {
+      "type": "distinct-from",
+      "direction": "in",
+      "target": "DA-CON-0025",
+      "title": "Master Data"
+    },
+    {
+      "type": "represents",
+      "direction": "in",
+      "target": "DA-CON-0015",
+      "title": "Controlled Vocabulary"
+    },
+    {
+      "type": "realized-by",
+      "direction": "in",
+      "target": "DA-PAT-0013",
+      "title": "Reference Data Hub"
+    }
+  ],
+  "sources": [],
+  "evidence": [],
+  "governance": {
+    "status": "proposed",
+    "authority": "unreviewed",
+    "required_levels": [
+      "semantic",
+      "information-model",
+      "data-architecture"
+    ],
+    "records": []
+  },
+  "body_markdown": "# Reference Data\n\n## Definition\n\nReference Data are sets of permissible values \u2014 codes and their meanings \u2014 used to classify or categorise other data. They are often defined by external bodies (e.g. country and currency codes) and shared across systems.\n\n## Explanation\n\nReference data typically realizes a [[Controlled Vocabulary]] or [[Taxonomy]] at the data level. Architectural concerns: authoritative source per code list, versioning and validity periods of codes, mappings between code lists, and distribution ([[Reference Data Hub]]).\n\nCodes change over time: a code can be retired while historical data still uses it. Code lists therefore need their own [[Temporal Data Management|temporal management]].\n\n## Distinctions\n\n- vs [[Master Data]]: see there.\n- vs [[Metadata]]: reference data values appear *in* business data.\n\n## Examples\n\n- Country codes, currency codes, claim status codes, product categories.\n"
+}

@@ -1,0 +1,127 @@
+{
+  "id": "DA-GOV-0003",
+  "type": "governance",
+  "title": "Governance Roles",
+  "domain": "Architecture Governance",
+  "layer": [
+    "cross-layer"
+  ],
+  "status": "proposed",
+  "quality": "draft",
+  "confidence": "medium",
+  "epistemic_status": "recommendation",
+  "owner": "unassigned",
+  "version": "0.1.0",
+  "publication_tier": "community",
+  "summary": "Overview of the reusable governance roles, their layer focus and their decision rights, linking to the individual role definitions.",
+  "path": "16-architecture-governance/Governance Roles.md",
+  "relationships": [
+    {
+      "type": "part-of",
+      "direction": "out",
+      "target": "DA-GOV-0001",
+      "title": "Architecture Governance Model"
+    },
+    {
+      "type": "has-part",
+      "direction": "in",
+      "target": "DA-ROL-0015",
+      "title": "Architecture Board"
+    },
+    {
+      "type": "has-part",
+      "direction": "in",
+      "target": "DA-ROL-0008",
+      "title": "Data Architect"
+    },
+    {
+      "type": "has-part",
+      "direction": "in",
+      "target": "DA-ROL-0003",
+      "title": "Data Custodian"
+    },
+    {
+      "type": "has-part",
+      "direction": "in",
+      "target": "DA-ROL-0001",
+      "title": "Data Owner"
+    },
+    {
+      "type": "has-part",
+      "direction": "in",
+      "target": "DA-ROL-0002",
+      "title": "Data Steward"
+    },
+    {
+      "type": "has-part",
+      "direction": "in",
+      "target": "DA-ROL-0009",
+      "title": "Domain Architect"
+    },
+    {
+      "type": "has-part",
+      "direction": "in",
+      "target": "DA-ROL-0004",
+      "title": "Domain Expert"
+    },
+    {
+      "type": "has-part",
+      "direction": "in",
+      "target": "DA-ROL-0010",
+      "title": "Enterprise Architect"
+    },
+    {
+      "type": "has-part",
+      "direction": "in",
+      "target": "DA-ROL-0007",
+      "title": "Information Architect"
+    },
+    {
+      "type": "has-part",
+      "direction": "in",
+      "target": "DA-ROL-0006",
+      "title": "Ontology Engineer"
+    },
+    {
+      "type": "has-part",
+      "direction": "in",
+      "target": "DA-ROL-0012",
+      "title": "Platform Architect"
+    },
+    {
+      "type": "has-part",
+      "direction": "in",
+      "target": "DA-ROL-0014",
+      "title": "Privacy Specialist"
+    },
+    {
+      "type": "has-part",
+      "direction": "in",
+      "target": "DA-ROL-0013",
+      "title": "Security Architect"
+    },
+    {
+      "type": "has-part",
+      "direction": "in",
+      "target": "DA-ROL-0005",
+      "title": "Semantic Architect"
+    },
+    {
+      "type": "has-part",
+      "direction": "in",
+      "target": "DA-ROL-0011",
+      "title": "Solution Architect"
+    }
+  ],
+  "sources": [],
+  "evidence": [],
+  "governance": {
+    "status": "proposed",
+    "authority": "unreviewed",
+    "required_levels": [
+      "data-architecture"
+    ],
+    "records": []
+  },
+  "body_markdown": "# Governance Roles\n\n## Purpose\n\nProvide a single overview of governance roles and their place in the [[Decision Rights Model]].\n\n## Scope\n\nDomain governance roles. Repository roles (knowledge owner, reviewer, approver, publisher, maintainer) are defined in [[Knowledge Repository Governance]].\n\n## Role Overview\n\n| Role | Primary level | Decides (summary) |\n|---|---|---|\n| [[Data Owner]] | Semantic / business | approves meaning, quality requirements, access for owned data |\n| [[Domain Expert]] | Semantic | none formally; authoritative input on meaning |\n| [[Data Steward]] | Semantic / information | proposes definitions, maintains rules and metadata |\n| [[Semantic Architect]] | Semantic | semantic model structure, formalism |\n| [[Ontology Engineer]] | Semantic (formal) | ontology axioms and formal consistency |\n| [[Information Architect]] | Information | information model structure |\n| [[Data Architect]] | Data architecture | logical structures, history, integration, authoritative sources |\n| [[Domain Architect]] | Data architecture (domain) | architecture within a business domain |\n| [[Enterprise Architect]] | Cross-domain | principles, standards, thresholds |\n| [[Solution Architect]] | Technical | solution design within standards |\n| [[Platform Architect]] | Technical | platform capabilities and technical standards |\n| [[Security Architect]] | Cross-layer | security controls and classification rules |\n| [[Privacy Specialist]] | Cross-layer | privacy assessment; advises on lawful processing |\n| [[Data Custodian]] | Technical | operates storage and access per owner decisions |\n| [[Architecture Board]] | Data architecture (above threshold) | approves significant decisions and exceptions |\n\n## Separation of Duties\n\nThe approver of an artifact is not its author. One person may hold several roles in small organisations; the roles, and the recorded decisions, remain distinct.\n"
+}

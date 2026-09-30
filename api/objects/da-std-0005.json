@@ -1,0 +1,43 @@
+{
+  "id": "DA-STD-0005",
+  "type": "standard",
+  "title": "ISO 8000 Data Quality",
+  "domain": "Standards & Regulations",
+  "status": "proposed",
+  "quality": "draft",
+  "confidence": "medium",
+  "epistemic_status": "external-standard",
+  "owner": "unassigned",
+  "version": "0.1.0",
+  "publication_tier": "community",
+  "summary": "ISO 8000 \u2014 a multi-part international standard series on data quality, including data quality management and the exchange of quality master data.",
+  "aliases": [
+    "ISO 8000"
+  ],
+  "path": "24-standards-regulations/ISO 8000 Data Quality.md",
+  "relationships": [
+    {
+      "type": "applies-to",
+      "direction": "out",
+      "target": "DA-CON-0025",
+      "title": "Master Data"
+    },
+    {
+      "type": "constrains",
+      "direction": "in",
+      "target": "DA-CON-0021",
+      "title": "Data Quality"
+    }
+  ],
+  "sources": [],
+  "evidence": [],
+  "governance": {
+    "status": "proposed",
+    "authority": "unreviewed",
+    "required_levels": [
+      "data-architecture"
+    ],
+    "records": []
+  },
+  "body_markdown": "# ISO 8000 Data Quality\n\n## Scope\n\nData quality concepts, data quality management, and master data quality/exchange.\n\n## Requirements\n\nTo be summarised per relevant part after verification.\n\n## Applicability\n\nData quality management frameworks; master data exchange with partners.\n\n## Related Architecture Concepts\n\n[[Data Quality]], [[Master Data]].\n\n## Related Controls\n\nNone yet.\n\n## Verification Notes\n\nLow detail on purpose: part structure and requirements must be verified against the standard before content is added.\n"
+}

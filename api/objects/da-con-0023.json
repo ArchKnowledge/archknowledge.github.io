@@ -1,0 +1,63 @@
+{
+  "id": "DA-CON-0023",
+  "type": "concept",
+  "title": "Data Lifecycle",
+  "domain": "Data Lifecycle",
+  "layer": [
+    "business",
+    "cross-layer"
+  ],
+  "status": "proposed",
+  "quality": "draft",
+  "confidence": "high",
+  "epistemic_status": "common-practice",
+  "owner": "unassigned",
+  "version": "0.1.0",
+  "publication_tier": "community",
+  "definition": "The sequence of stages data passes through \u2014 creation or acquisition, storage, use, change, sharing, archiving and disposal \u2014 together with the rules governing each transition.",
+  "path": "10-data-lifecycle/Data Lifecycle.md",
+  "relationships": [
+    {
+      "type": "part-of",
+      "direction": "out",
+      "target": "DA-CON-0001",
+      "title": "Data Architecture"
+    },
+    {
+      "type": "governed-by",
+      "direction": "out",
+      "target": "DA-CON-0018",
+      "title": "Data Governance"
+    },
+    {
+      "type": "constrained-by",
+      "direction": "out",
+      "target": "DA-STD-0007",
+      "title": "GDPR"
+    },
+    {
+      "type": "constrained-by",
+      "direction": "out",
+      "target": "DA-PRI-0010",
+      "title": "Historical Requirements Are Explicit"
+    },
+    {
+      "type": "has-part",
+      "direction": "in",
+      "target": "DA-CON-0010",
+      "title": "Temporal Data Management"
+    }
+  ],
+  "sources": [],
+  "evidence": [],
+  "governance": {
+    "status": "proposed",
+    "authority": "unreviewed",
+    "required_levels": [
+      "semantic",
+      "data-architecture"
+    ],
+    "records": []
+  },
+  "body_markdown": "# Data Lifecycle\n\n## Definition\n\nThe Data Lifecycle is the sequence of stages data passes through \u2014 creation or acquisition, storage, use, change, sharing, archiving and disposal \u2014 together with the rules governing each transition.\n\n## Explanation\n\nArchitecturally relevant lifecycle decisions:\n\n- **Change**: is history kept, and which kind? \u2192 [[Temporal Data Management]].\n- **Retention**: how long must data be kept (legal, business), and how long may it be kept (privacy: storage limitation under [[GDPR]])?\n- **Archiving**: when does data move to cheaper, less accessible storage, and can it still be queried?\n- **Disposal**: deletion, anonymisation or pseudonymisation; proving it happened.\n\nRetention *obligations* and deletion *obligations* can conflict (e.g. audit history vs. right to erasure). Such conflicts must be flagged and decided by the [[Data Owner]] with the [[Privacy Specialist]], not silently resolved in design.\n\n## Distinctions\n\n- Data lifecycle vs **knowledge lifecycle**: the [[Governance Lifecycle]] governs knowledge objects and architecture artifacts, not business data.\n\n## Examples\n\n- Claims data: active use 2 years, archive 5 years, anonymise afterwards unless under litigation hold.\n"
+}

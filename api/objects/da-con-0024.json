@@ -1,0 +1,58 @@
+{
+  "id": "DA-CON-0024",
+  "type": "concept",
+  "title": "Data Migration",
+  "domain": "Data Migration",
+  "layer": [
+    "logical",
+    "physical",
+    "technical"
+  ],
+  "status": "proposed",
+  "quality": "draft",
+  "confidence": "high",
+  "epistemic_status": "common-practice",
+  "owner": "unassigned",
+  "version": "0.1.0",
+  "publication_tier": "community",
+  "definition": "The controlled, one-time or phased transfer of data from source systems to target systems, including mapping, transformation, cleansing, validation and reconciliation, with preserved meaning and traceability.",
+  "path": "11-data-migration/Data Migration.md",
+  "relationships": [
+    {
+      "type": "depends-on",
+      "direction": "out",
+      "target": "DA-CON-0017",
+      "title": "Data Lineage"
+    },
+    {
+      "type": "depends-on",
+      "direction": "out",
+      "target": "DA-CON-0021",
+      "title": "Data Quality"
+    },
+    {
+      "type": "realized-by",
+      "direction": "in",
+      "target": "DA-PAT-0016",
+      "title": "Big Bang Data Migration"
+    },
+    {
+      "type": "realized-by",
+      "direction": "in",
+      "target": "DA-PAT-0015",
+      "title": "Phased Data Migration"
+    }
+  ],
+  "sources": [],
+  "evidence": [],
+  "governance": {
+    "status": "proposed",
+    "authority": "unreviewed",
+    "required_levels": [
+      "data-architecture",
+      "technical"
+    ],
+    "records": []
+  },
+  "body_markdown": "# Data Migration\n\n## Definition\n\nData Migration is the controlled, one-time or phased transfer of data from source systems to target systems \u2014 including mapping, transformation, cleansing, validation and reconciliation \u2014 with preserved meaning and traceability.\n\n## Explanation\n\nA migration is a data architecture problem before it is an ETL problem. It requires:\n\n1. **Semantic mapping**: do source and target concepts mean the same? (see [[Semantic Model]])\n2. **Profiling**: what is actually in the source? (anti-pattern: [[Migration Without Data Profiling]])\n3. **Mapping and transformation** with documented [[Data Lineage]].\n4. **Quality treatment**: cleanse at source, in transit, or accept and flag.\n5. **Reconciliation**: prove completeness and correctness (counts, sums, samples, business checks).\n6. **History**: decide whether history migrates, and in which temporal form.\n7. **Cut-over approach**: [[Big Bang Data Migration]] or [[Phased Data Migration]].\n\n## Distinctions\n\n- Migration vs **integration**: migration is transitional and ends; [[Data Integration]] is permanent.\n- Migration vs **replication**: replication keeps copies synchronized; it may be a technique used during a phased migration.\n\n## Examples\n\n- Moving policy administration from a legacy mainframe to a package system in three product-line waves.\n"
+}

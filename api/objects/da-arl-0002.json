@@ -1,0 +1,40 @@
+{
+  "id": "DA-ARL-0002",
+  "type": "architecture-rule",
+  "title": "Pattern Realizes a Concept or Principle",
+  "domain": "Decision Intelligence",
+  "status": "proposed",
+  "quality": "draft",
+  "confidence": "medium",
+  "epistemic_status": "recommendation",
+  "owner": "unassigned",
+  "version": "0.1.0",
+  "publication_tier": "community",
+  "summary": "Every pattern realizes at least one concept or principle, keeping solutions traceable to the knowledge they serve.",
+  "path": "25-decision-intelligence/architecture-rules/Pattern Realizes a Concept or Principle.md",
+  "relationships": [],
+  "sources": [],
+  "evidence": [],
+  "governance": {
+    "status": "proposed",
+    "authority": "unreviewed",
+    "required_levels": [
+      "data-architecture"
+    ],
+    "records": []
+  },
+  "body_markdown": "# Pattern Realizes a Concept or Principle\n\n## Rule\n\nFor every object of type `pattern`: at least one `realizes` relationship to a `concept` or `principle`.\n\n## Rationale\n\nTraceability from principle to pattern to decision ([[Architecture Decisions Are Traceable]]) breaks when a pattern floats free of what it serves.\n\n## Enforcement\n\nWarning during validation (W100) and via `dakb.py rules`.\n\n## Exceptions\n\nNone known.\n",
+  "rule": {
+    "scope": "knowledge-graph",
+    "for_type": "pattern",
+    "assert": {
+      "relationship": "realizes",
+      "min": 1,
+      "target_types": [
+        "concept",
+        "principle"
+      ]
+    },
+    "severity": "warning"
+  }
+}

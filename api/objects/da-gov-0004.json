@@ -1,0 +1,49 @@
+{
+  "id": "DA-GOV-0004",
+  "type": "governance",
+  "title": "Governance Lifecycle",
+  "domain": "Architecture Governance",
+  "layer": [
+    "cross-layer"
+  ],
+  "status": "proposed",
+  "quality": "draft",
+  "confidence": "medium",
+  "epistemic_status": "recommendation",
+  "owner": "unassigned",
+  "version": "0.1.0",
+  "publication_tier": "community",
+  "summary": "The lifecycle states of governed artifacts and knowledge objects, the allowed and invalid transitions, and who may perform each transition.",
+  "path": "16-architecture-governance/Governance Lifecycle.md",
+  "relationships": [
+    {
+      "type": "part-of",
+      "direction": "out",
+      "target": "DA-GOV-0001",
+      "title": "Architecture Governance Model"
+    },
+    {
+      "type": "decided-by",
+      "direction": "out",
+      "target": "DA-ADR-0004",
+      "title": "Separate Lifecycle Status from Knowledge Quality"
+    },
+    {
+      "type": "applicable-to",
+      "direction": "in",
+      "target": "DA-GRL-0001",
+      "title": "Status Change Requires Governance Record"
+    }
+  ],
+  "sources": [],
+  "evidence": [],
+  "governance": {
+    "status": "proposed",
+    "authority": "unreviewed",
+    "required_levels": [
+      "data-architecture"
+    ],
+    "records": []
+  },
+  "body_markdown": "# Governance Lifecycle\n\n## Purpose\n\nDefine the states a governed artifact (knowledge object, definition, model, decision) moves through, and which transitions are allowed. Machine-readable in `00-system/governance/lifecycle.yaml`; enforced by `dakb.py validate --base <ref>`.\n\n## Scope\n\nAll objects in this repository; reusable for data definitions and models.\n\n## States\n\n```text\ndraft \u2500\u25b6 proposed \u2500\u25b6 under-review \u2500\u25b6 validated \u2500\u25b6 approved \u2500\u25b6 published \u2500\u25b6 implemented*\n  \u25b2          \u2502            \u2502  \u2502            \u2502                     \u2502   \u2502           \u2502\n  \u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518            \u2502  \u2514\u25b6 rejected \u25c0\u2518                     \u2502   \u25bc           \u25bc\n  \u25b2  (withdraw/rework)    \u2502        \u2502                            \u2502 deprecated \u2500\u25b6 retired\n  \u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\u25c0\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518            (revision) under-review \u25c0\u2518\n* implemented: decision-type objects only\n```\n\n| State | Meaning | Who sets it |\n|---|---|---|\n| draft | being authored | author |\n| proposed | submitted for governance; **maximum state an LLM may set** | author / LLM |\n| under-review | reviewer assigned and reviewing | domain owner |\n| validated | review and automated validation passed | reviewer |\n| approved | approved by role with decision rights | approver ([[Decision Rights Model]]) |\n| published | released in a knowledge product/release | publisher |\n| implemented | decision realized in architecture | owner, with evidence |\n| deprecated | no longer recommended | approver |\n| retired | withdrawn, kept for traceability | approver |\n| rejected | not accepted | reviewer / approver |\n\n## Allowed Transitions\n\n`draft\u2192proposed`, `proposed\u2192draft`, `proposed\u2192under-review`, `under-review\u2192proposed`, `under-review\u2192validated`, `under-review\u2192draft`, `under-review\u2192rejected`, `validated\u2192approved`, `validated\u2192under-review`, `validated\u2192rejected`, `approved\u2192published`, `approved\u2192deprecated`, `published\u2192implemented`, `published\u2192under-review` (revision, requires explicit approval), `published\u2192deprecated`, `implemented\u2192deprecated`, `deprecated\u2192retired`, `rejected\u2192draft`.\n\n## Invalid Transitions (examples)\n\n| Transition | Why invalid |\n|---|---|\n| draft \u2192 approved | skips review and validation |\n| proposed \u2192 published | generation is not approval |\n| validated \u2192 published | validation is not approval |\n| deprecated \u2192 published | reinstatement requires a new review |\n| retired \u2192 anything | terminal; create a superseding object |\n| any \u2192 implemented (non-decision) | only decisions are implemented |\n\n## Approval Requires a Governance Record\n\nA transition into `approved`, `published`, `implemented`, `deprecated` or `retired` is valid only together with a governance record for the object's current version ([[Status Change Requires Governance Record]]). Editing the status field alone is rejected by validation.\n\n## Change Statuses Are Not the Same\n\nFor changes, the [[Architecture Change Process]] distinguishes: change proposed \u2260 technically valid \u2260 architecturally valid \u2260 governance approved \u2260 implemented.\n"
+}

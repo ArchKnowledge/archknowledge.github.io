@@ -1,0 +1,72 @@
+{
+  "id": "DA-PAT-0005",
+  "type": "pattern",
+  "title": "Change Data Capture",
+  "domain": "Data Integration",
+  "layer": [
+    "logical",
+    "technical"
+  ],
+  "status": "proposed",
+  "quality": "draft",
+  "confidence": "high",
+  "epistemic_status": "common-practice",
+  "owner": "unassigned",
+  "version": "0.1.0",
+  "publication_tier": "community",
+  "summary": "Detect inserts, updates and deletes in a source database (typically from its transaction log) and propagate them as a change stream to targets.",
+  "aliases": [
+    "CDC"
+  ],
+  "path": "19-architecture-patterns/Change Data Capture.md",
+  "relationships": [
+    {
+      "type": "realizes",
+      "direction": "out",
+      "target": "DA-CON-0029",
+      "title": "Data Integration"
+    },
+    {
+      "type": "alternative-to",
+      "direction": "out",
+      "target": "DA-PAT-0006",
+      "title": "Batch Extract-Transform-Load"
+    },
+    {
+      "type": "implemented-by",
+      "direction": "in",
+      "target": "DA-TEC-0003",
+      "title": "Debezium"
+    },
+    {
+      "type": "dependency-of",
+      "direction": "in",
+      "target": "DA-RAR-0001",
+      "title": "Governed Analytical Data Platform"
+    },
+    {
+      "type": "dependency-of",
+      "direction": "in",
+      "target": "DA-PAT-0015",
+      "title": "Phased Data Migration"
+    },
+    {
+      "type": "recommended-by",
+      "direction": "in",
+      "target": "DA-DTR-0001",
+      "title": "Database History Pattern Decision Tree"
+    }
+  ],
+  "sources": [],
+  "evidence": [],
+  "governance": {
+    "status": "proposed",
+    "authority": "unreviewed",
+    "required_levels": [
+      "data-architecture",
+      "technical"
+    ],
+    "records": []
+  },
+  "body_markdown": "# Change Data Capture\n\n## Problem\n\nTargets need source changes with low latency, without heavy load on the source and without modifying the source application.\n\n## Context\n\nReplication to warehouses/lakes, cache invalidation, phased migrations.\n\n## Forces\n\n- Low latency vs. source impact.\n- Technical change events vs. business meaning.\n\n## Solution\n\nRead the database transaction log (or triggers/timestamps as weaker variants), emit ordered change events per row, and apply them to targets.\n\n## Architecture\n\n```text\nSource DB log \u2192 CDC connector \u2192 change stream (topic/queue) \u2192 target appliers / consumers\n```\n\n## Advantages\n\n- Near-real-time; low source impact (log-based).\n- Captures deletes (log-based).\n\n## Disadvantages\n\n- Exposes the source's physical schema as an implicit contract.\n- Row-level changes lack business intent.\n\n## Risks\n\n- Source schema changes break consumers \u2192 mitigate with a [[Data Contract]].\n- Log retention and connector outages cause gaps; needs reconciliation.\n\n## When to Use\n\n- Low-latency replication; [[Phased Data Migration]] synchronization.\n\n## When Not to Use\n\n- Consumers need business events \u2192 [[Event Sourcing]] / domain events.\n- Daily latency suffices \u2192 [[Batch Extract-Transform-Load]].\n\n## Alternatives\n\n[[Batch Extract-Transform-Load]], [[Event Sourcing]], [[Data Virtualization]].\n\n## Examples\n\n- Streaming CRM customer changes into a lakehouse bronze layer ([[Layered Data Refinement]]).\n\n## Related Decisions\n\n- [[Select Data Integration Style]]\n"
+}

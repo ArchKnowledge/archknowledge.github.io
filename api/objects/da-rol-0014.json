@@ -1,0 +1,43 @@
+{
+  "id": "DA-ROL-0014",
+  "type": "role",
+  "title": "Privacy Specialist",
+  "domain": "Data Security & Privacy",
+  "layer": [
+    "cross-layer"
+  ],
+  "status": "proposed",
+  "quality": "draft",
+  "confidence": "medium",
+  "epistemic_status": "common-practice",
+  "owner": "unassigned",
+  "version": "0.1.0",
+  "publication_tier": "community",
+  "summary": "Specialist who assesses personal data processing for privacy compliance and advises on privacy by design.",
+  "path": "06-data-governance/roles/Privacy Specialist.md",
+  "relationships": [
+    {
+      "type": "constrained-by",
+      "direction": "out",
+      "target": "DA-STD-0007",
+      "title": "GDPR"
+    },
+    {
+      "type": "part-of",
+      "direction": "out",
+      "target": "DA-GOV-0003",
+      "title": "Governance Roles"
+    }
+  ],
+  "sources": [],
+  "evidence": [],
+  "governance": {
+    "status": "proposed",
+    "authority": "unreviewed",
+    "required_levels": [
+      "data-architecture"
+    ],
+    "records": []
+  },
+  "body_markdown": "# Privacy Specialist\n\n## Purpose\n\nEnsure lawful, minimal and transparent processing of personal data.\n\n## Responsibilities\n\n- Perform or support privacy impact assessments.\n- Advise on retention, erasure and minimisation.\n- Review designs for privacy by design.\n\n## Decision Rights\n\nAdvisory; can block via escalation to accountable management. Legal interpretation remains with legal counsel.\n\n## Inputs\n\nDesigns; processing records; regulation ([[GDPR]]).\n\n## Outputs\n\nPrivacy assessments; requirements.\n\n## Required Competencies\n\nPrivacy law; privacy engineering.\n\n## Escalation Paths\n\nUnresolved privacy risk \u2192 data protection officer / management.\n\n## Related Governance Processes\n\n- [[Decision Rights Model]]\n- [[Architecture Change Process]]\n- [[Governance Lifecycle]]\n"
+}

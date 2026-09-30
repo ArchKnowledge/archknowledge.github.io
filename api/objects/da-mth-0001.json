@@ -1,0 +1,67 @@
+{
+  "id": "DA-MTH-0001",
+  "type": "method",
+  "title": "Layered Model Derivation",
+  "domain": "Architecture",
+  "layer": [
+    "semantic",
+    "information",
+    "logical",
+    "physical"
+  ],
+  "status": "proposed",
+  "quality": "draft",
+  "confidence": "medium",
+  "epistemic_status": "recommendation",
+  "owner": "unassigned",
+  "version": "0.1.0",
+  "publication_tier": "community",
+  "summary": "Derive models layer by layer - governed concepts, then information model, then logical, then physical - keeping a traceability link at every step.",
+  "path": "02-architecture/methods/Layered Model Derivation.md",
+  "relationships": [
+    {
+      "type": "realizes",
+      "direction": "out",
+      "target": "DA-PRI-0002",
+      "title": "Meaning Before Representation"
+    },
+    {
+      "type": "produces",
+      "direction": "out",
+      "target": "DA-CON-0007",
+      "title": "Information Model"
+    },
+    {
+      "type": "produces",
+      "direction": "out",
+      "target": "DA-CON-0008",
+      "title": "Logical Data Model"
+    },
+    {
+      "type": "produces",
+      "direction": "out",
+      "target": "DA-CON-0009",
+      "title": "Physical Data Model"
+    },
+    {
+      "type": "supports",
+      "direction": "in",
+      "target": "DA-PAT-0014",
+      "title": "Concept-to-Model Traceability"
+    }
+  ],
+  "sources": [],
+  "evidence": [],
+  "governance": {
+    "status": "proposed",
+    "authority": "unreviewed",
+    "required_levels": [
+      "semantic",
+      "information-model",
+      "data-architecture",
+      "technical"
+    ],
+    "records": []
+  },
+  "body_markdown": "# Layered Model Derivation\n\n## Purpose\n\nA repeatable way to go from business meaning to implementation without taking decisions at the wrong layer.\n\n## Steps\n\n1. Identify and govern the [[Business Concept|business concepts]] in scope (semantic layer).\n2. Represent them in an [[Information Model]], stating history and quality requirements.\n3. Realize the information model in a [[Logical Data Model]] for the chosen paradigm; record paradigm and history decisions as ADRs.\n4. Realize the logical model in a [[Physical Data Model]] for the chosen store.\n5. At each step, link every element to the element it realizes ([[Concept-to-Model Traceability]]) and run model validation ([[Model Validation Control]]).\n\n## Inputs\n\nGoverned concepts, requirements, principles, platform constraints.\n\n## Outputs\n\nInformation, logical and physical models with traceability links; ADRs per layer.\n\n## When to Use\n\nShared, governed or regulated data. For throw-away prototypes, steps may be compressed but concepts are backfilled.\n"
+}

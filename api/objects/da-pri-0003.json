@@ -1,0 +1,79 @@
+{
+  "id": "DA-PRI-0003",
+  "type": "principle",
+  "title": "Decisions Belong to Their Layer",
+  "domain": "Architecture",
+  "layer": [
+    "cross-layer"
+  ],
+  "status": "proposed",
+  "quality": "draft",
+  "confidence": "medium",
+  "epistemic_status": "recommendation",
+  "owner": "unassigned",
+  "version": "0.1.0",
+  "publication_tier": "community",
+  "summary": "Each architecture decision is taken at the layer where it belongs, by the role with decision rights for that layer, and lower layers do not silently override higher-layer decisions.",
+  "path": "02-architecture/principles/Decisions Belong to Their Layer.md",
+  "relationships": [
+    {
+      "type": "applies-to",
+      "direction": "out",
+      "target": "DA-CON-0004",
+      "title": "Architecture Decision"
+    },
+    {
+      "type": "supported-by",
+      "direction": "out",
+      "target": "DA-PRI-0004",
+      "title": "Technology-Neutral Architecture First"
+    },
+    {
+      "type": "constrains",
+      "direction": "in",
+      "target": "DA-CON-0003",
+      "title": "Architecture Layer"
+    },
+    {
+      "type": "constrains",
+      "direction": "in",
+      "target": "DA-CON-0001",
+      "title": "Data Architecture"
+    },
+    {
+      "type": "source-of",
+      "direction": "in",
+      "target": "DA-GRL-0002",
+      "title": "Separate Decision per Governance Level"
+    },
+    {
+      "type": "violated-by",
+      "direction": "in",
+      "target": "DA-APT-0006",
+      "title": "Physical-Model-First Design"
+    },
+    {
+      "type": "source-of",
+      "direction": "in",
+      "target": "DA-TPL-0003",
+      "title": "Data Model Review Checklist"
+    },
+    {
+      "type": "constrains",
+      "direction": "in",
+      "target": "DA-FWK-0001",
+      "title": "Architecture Decision Framework"
+    }
+  ],
+  "sources": [],
+  "evidence": [],
+  "governance": {
+    "status": "proposed",
+    "authority": "unreviewed",
+    "required_levels": [
+      "data-architecture"
+    ],
+    "records": []
+  },
+  "body_markdown": "# Decisions Belong to Their Layer\n\n## Statement\n\nEach architecture decision shall be taken at the [[Architecture Layer|layer]] where it belongs, by the role with decision rights for that layer; lower layers shall not silently override decisions of higher layers.\n\n## Rationale\n\nMixing layers produces technology lock-in of meaning (e.g. semantics defined by a database product) and untraceable decisions.\n\n## Implications\n\n- Decision records state their layer (`layer` metadata).\n- A physical design that cannot honour an information-level requirement is escalated, not worked around ([[Architecture Change Process]]).\n\n## Consequences\n\n- Positive: clean traceability, replaceable technology.\n- Negative: more explicit hand-offs between roles.\n\n## Applicability\n\nAll architecture work covered by this knowledge base.\n\n## Exceptions\n\nSmall solutions where one person holds all roles still record the layer, but may combine approval steps.\n\n## Related Principles\n\n- [[Technology-Neutral Architecture First]]\n- [[Meaning Before Representation]]\n"
+}

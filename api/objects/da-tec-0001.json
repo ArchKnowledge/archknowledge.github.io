@@ -1,0 +1,46 @@
+{
+  "id": "DA-TEC-0001",
+  "type": "technology",
+  "title": "SQL Server Temporal Tables",
+  "domain": "Technologies",
+  "status": "proposed",
+  "quality": "draft",
+  "confidence": "medium",
+  "epistemic_status": "common-practice",
+  "owner": "unassigned",
+  "version": "0.1.0",
+  "publication_tier": "community",
+  "summary": "Microsoft SQL Server / Azure SQL feature that implements system-versioned (transaction-time) tables with automatic history tables and FOR SYSTEM_TIME queries.",
+  "path": "17-technology/databases/SQL Server Temporal Tables.md",
+  "relationships": [
+    {
+      "type": "implements",
+      "direction": "out",
+      "target": "DA-CON-0009",
+      "title": "Physical Data Model"
+    },
+    {
+      "type": "implements",
+      "direction": "out",
+      "target": "DA-PAT-0002",
+      "title": "System-Versioned History Table"
+    },
+    {
+      "type": "constrained-by",
+      "direction": "out",
+      "target": "DA-STD-0010",
+      "title": "SQL Standard Temporal Support"
+    }
+  ],
+  "sources": [],
+  "evidence": [],
+  "governance": {
+    "status": "proposed",
+    "authority": "unreviewed",
+    "required_levels": [
+      "technical"
+    ],
+    "records": []
+  },
+  "body_markdown": "# SQL Server Temporal Tables\n\n## Purpose\n\nAutomatic retention of prior row versions for point-in-time analysis and audit.\n\n## Capabilities\n\n- System-versioned tables with period columns and a linked history table.\n- Query clauses `FOR SYSTEM_TIME AS OF | FROM \u2026 TO | BETWEEN \u2026 AND | CONTAINED IN | ALL`.\n- History retention policies (availability depends on version/platform).\n\n## Limitations\n\n- Transaction time only; application-time (valid-time) periods from the SQL standard are not provided natively, so a [[Bitemporal Data Model]] needs application-maintained valid time.\n- Some schema changes require temporarily disabling system versioning.\n\n## Architecture Role\n\nPhysical implementation of the [[System-Versioned History Table]] pattern for [[Temporal Data Management]].\n\n## Applicable Patterns\n\n[[System-Versioned History Table]]; transaction-time half of [[Bitemporal Data Model]].\n\n## Alternatives\n\nOther DBMSs with system versioning; trigger-based history tables; [[Change Data Capture]] into an archive.\n\n## Integration\n\nHistory tables can be exposed to analytical platforms via CDC or batch extraction.\n\n## Verification Notes\n\nVersion-specific capabilities to be verified against current vendor documentation.\n"
+}

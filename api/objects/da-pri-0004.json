@@ -1,0 +1,60 @@
+{
+  "id": "DA-PRI-0004",
+  "type": "principle",
+  "title": "Technology-Neutral Architecture First",
+  "domain": "Architecture",
+  "layer": [
+    "conceptual",
+    "semantic",
+    "information",
+    "logical"
+  ],
+  "status": "proposed",
+  "quality": "draft",
+  "confidence": "high",
+  "epistemic_status": "recommendation",
+  "owner": "unassigned",
+  "version": "0.1.0",
+  "publication_tier": "community",
+  "summary": "Architecture is expressed in technology-neutral concepts and patterns first; technology-specific choices reference and realize them.",
+  "path": "02-architecture/principles/Technology-Neutral Architecture First.md",
+  "relationships": [
+    {
+      "type": "constrains",
+      "direction": "in",
+      "target": "DA-CON-0001",
+      "title": "Data Architecture"
+    },
+    {
+      "type": "supports",
+      "direction": "in",
+      "target": "DA-PRI-0003",
+      "title": "Decisions Belong to Their Layer"
+    },
+    {
+      "type": "constrains",
+      "direction": "in",
+      "target": "DA-CON-0028",
+      "title": "Data Platform"
+    },
+    {
+      "type": "realized-by",
+      "direction": "in",
+      "target": "DA-ARL-0001",
+      "title": "Technology Implements a Generic Pattern"
+    }
+  ],
+  "sources": [],
+  "evidence": [],
+  "governance": {
+    "status": "proposed",
+    "authority": "unreviewed",
+    "required_levels": [
+      "semantic",
+      "information-model",
+      "data-architecture"
+    ],
+    "records": []
+  },
+  "body_markdown": "# Technology-Neutral Architecture First\n\n## Statement\n\nArchitecture shall be expressed in technology-neutral concepts and patterns first; technology-specific choices shall reference and realize them.\n\n## Rationale\n\nTechnologies change faster than business meaning and architectural intent. Neutral architecture survives product replacement and allows fair comparison of alternatives.\n\n## Implications\n\n- Every [[SQL Server Temporal Tables|technology object]] links to the generic concept or pattern it implements.\n- Requirements are stated as capabilities before product selection.\n\n## Consequences\n\n- Positive: portability, clearer evaluation of products.\n- Negative: an extra abstraction step; risk of \"neutral\" designs that ignore real platform constraints.\n\n## Applicability\n\nConceptual through logical layers; platform capability models.\n\n## Exceptions\n\nWhen a technology is a hard constraint (e.g. mandated by enterprise standard), record it as a constraint in the relevant [[Architecture Decision]].\n\n## Related Principles\n\n- [[Decisions Belong to Their Layer]]\n"
+}

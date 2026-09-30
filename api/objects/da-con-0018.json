@@ -1,0 +1,87 @@
+{
+  "id": "DA-CON-0018",
+  "type": "concept",
+  "title": "Data Governance",
+  "domain": "Data Governance",
+  "layer": [
+    "business",
+    "cross-layer"
+  ],
+  "status": "proposed",
+  "quality": "draft",
+  "confidence": "high",
+  "epistemic_status": "common-practice",
+  "owner": "unassigned",
+  "version": "0.1.0",
+  "publication_tier": "community",
+  "definition": "The exercise of authority, control and shared decision-making over the management of data assets \u2014 who may decide what about data, on which basis, and how compliance is ensured.",
+  "path": "06-data-governance/Data Governance.md",
+  "relationships": [
+    {
+      "type": "constrained-by",
+      "direction": "out",
+      "target": "DA-PRI-0009",
+      "title": "Governance Is Embedded in Delivery"
+    },
+    {
+      "type": "derived-from",
+      "direction": "out",
+      "target": "DA-STD-0008",
+      "title": "DAMA-DMBOK"
+    },
+    {
+      "type": "governs",
+      "direction": "in",
+      "target": "DA-CON-0001",
+      "title": "Data Architecture"
+    },
+    {
+      "type": "governs",
+      "direction": "in",
+      "target": "DA-CON-0016",
+      "title": "Metadata"
+    },
+    {
+      "type": "has-part",
+      "direction": "in",
+      "target": "DA-CON-0019",
+      "title": "Data Ownership"
+    },
+    {
+      "type": "has-part",
+      "direction": "in",
+      "target": "DA-CON-0020",
+      "title": "Data Stewardship"
+    },
+    {
+      "type": "governs",
+      "direction": "in",
+      "target": "DA-CON-0021",
+      "title": "Data Quality"
+    },
+    {
+      "type": "governs",
+      "direction": "in",
+      "target": "DA-CON-0023",
+      "title": "Data Lifecycle"
+    },
+    {
+      "type": "realized-by",
+      "direction": "in",
+      "target": "DA-GOV-0001",
+      "title": "Architecture Governance Model"
+    }
+  ],
+  "sources": [],
+  "evidence": [],
+  "governance": {
+    "status": "proposed",
+    "authority": "unreviewed",
+    "required_levels": [
+      "semantic",
+      "data-architecture"
+    ],
+    "records": []
+  },
+  "body_markdown": "# Data Governance\n\n## Definition\n\nData Governance is the exercise of authority, control and shared decision-making over the management of data assets: who may decide what about data, on which basis, and how compliance is ensured.\n\n## Explanation\n\nData governance answers the questions of spec \u00a710:\n\n- Who can decide? What can they decide? At which [[Architecture Layer|layer]]?\n- Based on which standards? What evidence is required?\n- Who approves? What is generated after approval?\n- How is the decision recorded and how can it be changed?\n\nThese questions are answered structurally in [[Decision Rights Model]], [[Governance Roles]], [[Governance Lifecycle]] and the [[Architecture Governance Model]]. Governance is a **first-class architectural layer**, not a document produced at the end ([[Governance Is Embedded in Delivery]]; anti-pattern: [[Governance as Afterthought]]).\n\n## Distinctions\n\n- Governance vs **management**: governance decides and oversees; data management executes.\n- Data governance vs **architecture governance**: data governance is about data assets; architecture governance is about architecture decisions and artifacts. They share roles and decision rights and are modeled together in [[Architecture Governance Model]].\n\n## Examples\n\n- A data owner approves the definition of \"Active Customer\"; a steward maintains the related quality rules.\n"
+}

@@ -1,0 +1,37 @@
+{
+  "id": "DA-ADR-0003",
+  "type": "decision",
+  "title": "Store Typed Relationships as Front-Matter Keys",
+  "domain": "Foundations",
+  "layer": [
+    "technical"
+  ],
+  "status": "proposed",
+  "quality": "draft",
+  "confidence": "medium",
+  "epistemic_status": "recommendation",
+  "owner": "unassigned",
+  "version": "0.1.0",
+  "publication_tier": "community",
+  "summary": "Represent typed relationships as top-level front-matter keys named after controlled relationship types, each holding a list of wikilinks; store each edge once and derive inverses on export.",
+  "path": "20-architecture-decisions/records/Store Typed Relationships as Front-Matter Keys.md",
+  "relationships": [
+    {
+      "type": "depends-on",
+      "direction": "out",
+      "target": "DA-ADR-0001",
+      "title": "Use Markdown and Git as the Initial Knowledge Store"
+    }
+  ],
+  "sources": [],
+  "evidence": [],
+  "governance": {
+    "status": "proposed",
+    "authority": "unreviewed",
+    "required_levels": [
+      "technical"
+    ],
+    "records": []
+  },
+  "body_markdown": "# Store Typed Relationships as Front-Matter Keys\n\n## Context\n\nRelationships must be explicit and typed (spec \u00a76), machine-readable, validated, and visible in Obsidian's graph.\n\n## Problem\n\nWhere and how to store typed relationships?\n\n## Options\n\n1. Top-level keys per relationship type: `realized-by: [\"[[X]]\"]`.\n2. A nested list: `relationships: [{type: realized-by, target: \"[[X]]\"}]`.\n3. Inline in body text with a convention (e.g. `realized-by:: [[X]]`).\n\n## Evaluation Criteria\n\nObsidian graph visibility, validation simplicity, readability, portability.\n\n## Trade-offs\n\n- Option 1: links in list properties are shown in Obsidian's graph and properties panel; simple to validate; relationship names share the key namespace with metadata fields (validator rejects unknown keys).\n- Option 2: cleaner namespace, but nested links are not reliably shown in Obsidian's graph.\n- Option 3: depends on plugins (e.g. Dataview).\n\n## Decision\n\nProposed: option 1. Vocabulary in `00-system/relationships/relationship-types.yaml` with declared inverses. Each edge is stored once on the source object; either direction of a pair may be authored.\n\n## Consequences\n\n- Validator rejects keys that are neither schema fields nor relationship types.\n- Body wikilinks remain untyped navigation, not relationships.\n\n## Assumptions\n\n- Obsidian version with property (front-matter) link support. To verify per installed version.\n\n## Constraints\n\n- Relationship names must be YAML-key safe (kebab-case).\n\n## Related Architecture\n\n- [[Use Title-Based File Names for Knowledge Objects]]\n"
+}

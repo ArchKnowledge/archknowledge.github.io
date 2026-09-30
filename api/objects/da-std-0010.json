@@ -1,0 +1,56 @@
+{
+  "id": "DA-STD-0010",
+  "type": "standard",
+  "title": "SQL Standard Temporal Support",
+  "domain": "Standards & Regulations",
+  "status": "proposed",
+  "quality": "draft",
+  "confidence": "medium",
+  "epistemic_status": "external-standard",
+  "owner": "unassigned",
+  "version": "0.1.0",
+  "publication_tier": "community",
+  "summary": "Temporal features of the SQL standard (ISO/IEC 9075), introduced in SQL:2011 \u2014 application-time period tables and system-versioned tables.",
+  "aliases": [
+    "SQL:2011 temporal",
+    "ISO/IEC 9075 temporal"
+  ],
+  "path": "24-standards-regulations/SQL Standard Temporal Support.md",
+  "relationships": [
+    {
+      "type": "constrains",
+      "direction": "in",
+      "target": "DA-CON-0010",
+      "title": "Temporal Data Management"
+    },
+    {
+      "type": "constrains",
+      "direction": "in",
+      "target": "DA-TEC-0001",
+      "title": "SQL Server Temporal Tables"
+    },
+    {
+      "type": "constrains",
+      "direction": "in",
+      "target": "DA-PAT-0001",
+      "title": "Bitemporal Data Model"
+    },
+    {
+      "type": "constrains",
+      "direction": "in",
+      "target": "DA-PAT-0002",
+      "title": "System-Versioned History Table"
+    }
+  ],
+  "sources": [],
+  "evidence": [],
+  "governance": {
+    "status": "proposed",
+    "authority": "unreviewed",
+    "required_levels": [
+      "data-architecture"
+    ],
+    "records": []
+  },
+  "body_markdown": "# SQL Standard Temporal Support\n\n## Scope\n\nPeriod definitions on tables; application-time period tables (valid time); system-versioned tables (transaction time); temporal predicates and query syntax such as `FOR SYSTEM_TIME AS OF`.\n\n## Requirements\n\nDBMS conformance varies per product and feature; check each product.\n\n## Applicability\n\nPhysical realization of [[System-Versioned History Table]] and [[Bitemporal Data Model]].\n\n## Related Architecture Concepts\n\n[[Temporal Data Management]].\n\n## Related Controls\n\nNone.\n\n## Verification Notes\n\nFeature details paraphrased from general knowledge; verify against the standard or authoritative secondary literature.\n"
+}

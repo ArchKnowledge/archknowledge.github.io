@@ -1,0 +1,70 @@
+{
+  "id": "DA-CON-0008",
+  "type": "concept",
+  "title": "Logical Data Model",
+  "domain": "Data Modeling",
+  "layer": [
+    "logical"
+  ],
+  "status": "proposed",
+  "quality": "draft",
+  "confidence": "high",
+  "epistemic_status": "common-practice",
+  "owner": "unassigned",
+  "version": "0.1.0",
+  "publication_tier": "community",
+  "definition": "A data model that structures information in a chosen data paradigm (e.g. relational, dimensional, graph, document) with keys, relationships and constraints, independent of a specific product.",
+  "aliases": [
+    "LDM"
+  ],
+  "path": "03-data-modeling/logical/Logical Data Model.md",
+  "relationships": [
+    {
+      "type": "part-of",
+      "direction": "out",
+      "target": "DA-CON-0003",
+      "title": "Architecture Layer"
+    },
+    {
+      "type": "specializes",
+      "direction": "out",
+      "target": "DA-CON-0005",
+      "title": "Data Model"
+    },
+    {
+      "type": "realizes",
+      "direction": "out",
+      "target": "DA-CON-0007",
+      "title": "Information Model"
+    },
+    {
+      "type": "owned-by",
+      "direction": "out",
+      "target": "DA-ROL-0008",
+      "title": "Data Architect"
+    },
+    {
+      "type": "produced-by",
+      "direction": "in",
+      "target": "DA-MTH-0001",
+      "title": "Layered Model Derivation"
+    },
+    {
+      "type": "realized-by",
+      "direction": "in",
+      "target": "DA-CON-0009",
+      "title": "Physical Data Model"
+    }
+  ],
+  "sources": [],
+  "evidence": [],
+  "governance": {
+    "status": "proposed",
+    "authority": "unreviewed",
+    "required_levels": [
+      "data-architecture"
+    ],
+    "records": []
+  },
+  "body_markdown": "# Logical Data Model\n\n## Definition\n\nA Logical Data Model structures information in a chosen data paradigm \u2014 relational, dimensional, graph, document \u2014 with keys, relationships and constraints, independent of a specific database product.\n\n## Explanation\n\nDecisions at this layer include normalization level, identifier strategy, the temporal modeling approach (e.g. [[Bitemporal Data Model]] versus [[Slowly Changing Dimension Type 2]]) and paradigm-specific structures. It [[Information Model|realizes the information model]] and is realized by the [[Physical Data Model]].\n\n## Distinctions\n\n- Not product-specific: data types are logical (e.g. \"date\", \"amount\"), not `DATETIME2(7)`.\n- Not paradigm-independent: that is the [[Information Model]].\n\n## Examples\n\n- A third-normal-form relational model of orders with surrogate and natural keys.\n- A dimensional model with a Sales fact and conformed Customer dimension.\n"
+}

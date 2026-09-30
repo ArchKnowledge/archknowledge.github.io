@@ -1,0 +1,55 @@
+{
+  "id": "DA-CON-0006",
+  "type": "concept",
+  "title": "Conceptual Data Model",
+  "domain": "Data Modeling",
+  "layer": [
+    "conceptual"
+  ],
+  "status": "proposed",
+  "quality": "draft",
+  "confidence": "high",
+  "epistemic_status": "common-practice",
+  "owner": "unassigned",
+  "version": "0.1.0",
+  "publication_tier": "community",
+  "definition": "A data model that identifies the business things of interest and their high-level relationships, without attributes' technical detail and independent of any implementation.",
+  "path": "03-data-modeling/conceptual/Conceptual Data Model.md",
+  "relationships": [
+    {
+      "type": "part-of",
+      "direction": "out",
+      "target": "DA-CON-0003",
+      "title": "Architecture Layer"
+    },
+    {
+      "type": "specializes",
+      "direction": "out",
+      "target": "DA-CON-0005",
+      "title": "Data Model"
+    },
+    {
+      "type": "precedes",
+      "direction": "out",
+      "target": "DA-CON-0007",
+      "title": "Information Model"
+    },
+    {
+      "type": "represents",
+      "direction": "in",
+      "target": "DA-CON-0011",
+      "title": "Business Concept"
+    }
+  ],
+  "sources": [],
+  "evidence": [],
+  "governance": {
+    "status": "proposed",
+    "authority": "unreviewed",
+    "required_levels": [
+      "semantic"
+    ],
+    "records": []
+  },
+  "body_markdown": "# Conceptual Data Model\n\n## Definition\n\nA Conceptual Data Model identifies the business things of interest and their high-level relationships, without technical detail and independent of any implementation.\n\n## Explanation\n\nIt fixes **scope** and **vocabulary**: which [[Business Concept|business concepts]] are in view and how they relate. It is the first data model to be agreed with business stakeholders and a key input to the [[Information Model]]. Every entity should trace to a governed concept ([[Concept-to-Model Traceability]]).\n\n## Distinctions\n\n- Versus [[Semantic Model]]: a conceptual model shows *which* concepts and relationships matter; the semantic model states *precisely what they mean* (definitions, identity criteria, specialization, equivalence). In many practices these are merged; this knowledge base keeps them separate (see [[Architecture Layer]]).\n- Versus [[Logical Data Model]]: no keys, no normalization, no paradigm.\n\n## Examples\n\n- \"A Customer holds one or more Agreements; an Agreement covers one or more Products.\"\n"
+}

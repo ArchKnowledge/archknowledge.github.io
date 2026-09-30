@@ -1,0 +1,70 @@
+{
+  "id": "DA-RRL-0001",
+  "type": "recommendation-rule",
+  "title": "Retroactive Corrections Call for Bitemporal History",
+  "domain": "Decision Intelligence",
+  "status": "proposed",
+  "quality": "draft",
+  "confidence": "medium",
+  "epistemic_status": "recommendation",
+  "owner": "unassigned",
+  "version": "0.1.0",
+  "publication_tier": "community",
+  "summary": "If backdated corrections must be reconstructable and past states must be reproducible, recommend a bitemporal data model.",
+  "path": "25-decision-intelligence/recommendation-rules/Retroactive Corrections Call for Bitemporal History.md",
+  "relationships": [
+    {
+      "type": "recommends",
+      "direction": "out",
+      "target": "DA-PAT-0001",
+      "title": "Bitemporal Data Model"
+    },
+    {
+      "type": "derived-from",
+      "direction": "out",
+      "target": "DA-PRI-0010",
+      "title": "Historical Requirements Are Explicit"
+    },
+    {
+      "type": "part-of",
+      "direction": "out",
+      "target": "DA-FWK-0001",
+      "title": "Architecture Decision Framework"
+    },
+    {
+      "type": "consumed-by",
+      "direction": "in",
+      "target": "DA-EXA-0001",
+      "title": "Insurance Policy History Example"
+    }
+  ],
+  "sources": [],
+  "evidence": [],
+  "governance": {
+    "status": "proposed",
+    "authority": "unreviewed",
+    "required_levels": [
+      "data-architecture"
+    ],
+    "records": []
+  },
+  "body_markdown": "# Retroactive Corrections Call for Bitemporal History\n\n## Rule\n\n<!-- BEGIN GENERATED -->\n- **IF** all of:\n  - `history.retroactive_corrections` equals `True`\n  - `history.reproducibility_required` equals `True`\n- **THEN** recommend: [[Bitemporal Data Model]]\n- **BECAUSE**: [[Historical Requirements Are Explicit]]\n<!-- END GENERATED -->\n\n## Rationale\n\nOnly a model with both valid time and transaction time can answer \"what did we believe at time T\u2032 about time T?\" after backdated corrections ([[Bitemporal Data Model]]).\n\n## Evidence\n\nCommon practice in regulated domains; no verified source attached yet.\n\n## Limitations\n\nDoes not weigh cost; combine with [[History Strategy Scoring Model]].\n",
+  "rule": {
+    "when": [
+      {
+        "fact": "history.retroactive_corrections",
+        "equals": true
+      },
+      {
+        "fact": "history.reproducibility_required",
+        "equals": true
+      }
+    ],
+    "recommend": [
+      "[[Bitemporal Data Model]]"
+    ],
+    "because": [
+      "[[Historical Requirements Are Explicit]]"
+    ]
+  }
+}

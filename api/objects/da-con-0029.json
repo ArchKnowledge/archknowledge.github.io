@@ -1,0 +1,76 @@
+{
+  "id": "DA-CON-0029",
+  "type": "concept",
+  "title": "Data Integration",
+  "domain": "Data Integration",
+  "layer": [
+    "logical",
+    "physical",
+    "technical"
+  ],
+  "status": "proposed",
+  "quality": "draft",
+  "confidence": "high",
+  "epistemic_status": "common-practice",
+  "owner": "unassigned",
+  "version": "0.1.0",
+  "publication_tier": "community",
+  "definition": "The combination of data from different sources, and its movement between systems, so that it can be used consistently for a shared purpose.",
+  "path": "09-data-integration/Data Integration.md",
+  "relationships": [
+    {
+      "type": "part-of",
+      "direction": "out",
+      "target": "DA-CON-0001",
+      "title": "Data Architecture"
+    },
+    {
+      "type": "governed-by",
+      "direction": "out",
+      "target": "DA-PAT-0008",
+      "title": "Data Contract"
+    },
+    {
+      "type": "applicable-to",
+      "direction": "in",
+      "target": "DA-PRI-0008",
+      "title": "Each Data Element Has an Authoritative Source"
+    },
+    {
+      "type": "realized-by",
+      "direction": "in",
+      "target": "DA-PAT-0006",
+      "title": "Batch Extract-Transform-Load"
+    },
+    {
+      "type": "realized-by",
+      "direction": "in",
+      "target": "DA-PAT-0005",
+      "title": "Change Data Capture"
+    },
+    {
+      "type": "realized-by",
+      "direction": "in",
+      "target": "DA-PAT-0007",
+      "title": "Data Virtualization"
+    },
+    {
+      "type": "realized-by",
+      "direction": "in",
+      "target": "DA-PAT-0004",
+      "title": "Event Sourcing"
+    }
+  ],
+  "sources": [],
+  "evidence": [],
+  "governance": {
+    "status": "proposed",
+    "authority": "unreviewed",
+    "required_levels": [
+      "data-architecture",
+      "technical"
+    ],
+    "records": []
+  },
+  "body_markdown": "# Data Integration\n\n## Definition\n\nData Integration is the combination of data from different sources, and its movement between systems, so that it can be used consistently for a shared purpose.\n\n## Explanation\n\nIntegration styles differ in latency, coupling, and where transformation happens:\n\n| Style | Latency | Coupling | Pattern |\n|---|---|---|---|\n| Batch | hours\u2013days | low runtime coupling | [[Batch Extract-Transform-Load]] |\n| Change-based | seconds\u2013minutes | medium | [[Change Data Capture]] |\n| Event-based | seconds | domain events as contract | [[Event Sourcing]] / event streaming |\n| Virtual | query-time | high runtime coupling | [[Data Virtualization]] |\n\nThe semantic side of integration (do these fields mean the same?) is often the harder part; see [[Meaning Before Representation]]. Interfaces should be governed by explicit [[Data Contract|data contracts]]. Anti-pattern: [[Point-to-Point Integration Sprawl]].\n\n## Distinctions\n\n- Integration vs [[Data Migration]]: permanent vs transitional.\n\n## Examples\n\n- Replicating customer changes from CRM to the data warehouse via CDC every minute.\n"
+}

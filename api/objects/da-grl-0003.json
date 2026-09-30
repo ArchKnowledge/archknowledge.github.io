@@ -1,0 +1,49 @@
+{
+  "id": "DA-GRL-0003",
+  "type": "governance-rule",
+  "title": "Separation of Duties in Approval",
+  "domain": "Architecture Governance",
+  "layer": [
+    "cross-layer"
+  ],
+  "status": "proposed",
+  "quality": "draft",
+  "confidence": "medium",
+  "epistemic_status": "recommendation",
+  "owner": "unassigned",
+  "version": "0.1.0",
+  "publication_tier": "community",
+  "summary": "Nobody approves a change they proposed or an object they own.",
+  "path": "16-architecture-governance/decision-making/Separation of Duties in Approval.md",
+  "relationships": [
+    {
+      "type": "applies-to",
+      "direction": "out",
+      "target": "DA-GOV-0007",
+      "title": "Knowledge Repository Governance"
+    },
+    {
+      "type": "part-of",
+      "direction": "out",
+      "target": "DA-GOV-0001",
+      "title": "Architecture Governance Model"
+    },
+    {
+      "type": "governs",
+      "direction": "in",
+      "target": "DA-PRC-0001",
+      "title": "Knowledge Change Review Process"
+    }
+  ],
+  "sources": [],
+  "evidence": [],
+  "governance": {
+    "status": "proposed",
+    "authority": "unreviewed",
+    "required_levels": [
+      "data-architecture"
+    ],
+    "records": []
+  },
+  "body_markdown": "# Separation of Duties in Approval\n\n## Rule\n\nA decider in a governance record is neither the record's `proposed_by` nor the object's `owner` (or a member of the owner role).\n\n## Rationale\n\nFour-eyes principle; prevents self-approval.\n\n## Scope\n\nAll governance records.\n\n## Enforcement\n\nAutomated: E096. Machine definition: AR-003.\n\n## Exceptions\n\nNone.\n"
+}

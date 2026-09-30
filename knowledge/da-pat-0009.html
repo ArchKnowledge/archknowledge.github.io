@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Layered Data Refinement · Architecture Knowledge Graph</title>
+<meta name="description" content="Organise an analytical platform in successive layers — raw, conformed, consumption-ready — each with explicit quality, modeling and governance guarantees.">
+<link rel="canonical" href="https://archknowledge.github.io/knowledge/da-pat-0009.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Architecture Knowledge Graph">
+<meta property="og:title" content="Layered Data Refinement">
+<meta property="og:description" content="Organise an analytical platform in successive layers — raw, conformed, consumption-ready — each with explicit quality, modeling and governance guarantees.">
+<meta property="og:url" content="https://archknowledge.github.io/knowledge/da-pat-0009.html">
+<meta name="twitter:card" content="summary">
+<meta name="color-scheme" content="light dark">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../assets/style.css">
+<meta name="akg-root" content="../">
+<script src="../assets/site.js" defer></script>
+
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="../index.html" aria-label="Architecture Knowledge Graph — home">
+      <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true"><path d="M6 24 16 8l10 16M6 24h20M16 8v16" /><circle cx="16" cy="8" r="3"/><circle cx="6" cy="24" r="3"/><circle cx="26" cy="24" r="3"/><circle cx="16" cy="24" r="2.2"/></svg>
+      <span>Architecture<br>Knowledge Graph</span>
+    </a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+    <nav id="site-nav" class="site-nav" aria-label="Main">
+      <ul>
+<li><a href="../why.html">Why</a></li>
+<li><a href="../knowledge-graph.html">Knowledge Graph</a></li>
+<li><a href="../explore.html" aria-current="page">Explore</a></li>
+<li><a href="../products.html">Products</a></li>
+<li><a href="../governance.html">Governance</a></li>
+<li><a href="../roadmap.html">Roadmap</a></li>
+<li><a href="../search.html">Search</a></li>
+        <li><a class="gh" href="https://github.com/ArchKnowledge/Architecture-Knowledge-Graph">GitHub <span class="nav-note">private</span></a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+<p class="preview-bar wrap" role="note">Early preview · Phase 1 of the roadmap · All knowledge is in draft and awaiting human review.</p>
+<main id="main">
+
+<article class="object page-narrow">
+  <p class="eyebrow"><span class="dot t-pattern"></span>Pattern · <a href="../explore/data-platforms.html">Data Platforms</a></p>
+  <h1>Layered Data Refinement</h1>
+  <p class="lead">Organise an analytical platform in successive layers — raw, conformed, consumption-ready — each with explicit quality, modeling and governance guarantees.</p>
+  <p class="notice" role="note"><strong>Draft knowledge.</strong> Status <code>proposed</code>, quality <code>draft</code>. Not yet reviewed or approved by a human architect.</p>
+  <div class="object-grid">
+    <div class="object-body"><h2>Problem</h2>
+<p>Analytical platforms mix raw and curated data, so consumers cannot tell what is trustworthy and pipelines become entangled.</p>
+<h2>Context</h2>
+<p>Data lakes, lakehouses and warehouses serving several consumers.</p>
+<h2>Forces</h2>
+<ul>
+<li>Keep raw data for replay/audit vs. offer curated, governed data.</li>
+<li>Number of layers vs. latency and cost.</li>
+</ul>
+<h2>Solution</h2>
+<p>Define layers with contracts:</p>
+<table>
+<thead>
+<tr>
+<th>Layer</th>
+<th>Also called</th>
+<th>Content</th>
+<th>Guarantee</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Raw</td>
+<td>bronze, landing</td>
+<td>source data as received, append-only</td>
+<td>completeness of receipt, lineage</td>
+</tr>
+<tr>
+<td>Conformed</td>
+<td>silver, integrated</td>
+<td>cleansed, integrated, historized, linked to concepts</td>
+<td>quality rules passed, semantics mapped</td>
+</tr>
+<tr>
+<td>Consumption</td>
+<td>gold, marts</td>
+<td>purpose-built models (e.g. dimensional)</td>
+<td>fit for a specific use, owned</td>
+</tr>
+</tbody>
+</table>
+<p>Promotion between layers passes a <a class="ref t-pattern" href="../knowledge/da-pat-0010.html">Data Quality Gate</a>.</p>
+<h2>Architecture</h2>
+<pre><code class="language-text">Sources → Raw → [gate] → Conformed → [gate] → Consumption → BI / ML / APIs
+</code></pre>
+<h2>Advantages</h2>
+<ul>
+<li>Replayability; clear trust levels; separation of concerns.</li>
+</ul>
+<h2>Disadvantages</h2>
+<ul>
+<li>Data duplication; added latency.</li>
+</ul>
+<h2>Risks</h2>
+<ul>
+<li>Layers named but without guarantees ("gold" that nobody owns).</li>
+<li>Semantic integration postponed indefinitely in the conformed layer.</li>
+</ul>
+<h2>When to Use</h2>
+<ul>
+<li>Multi-source, multi-consumer analytical platforms.</li>
+</ul>
+<h2>When Not to Use</h2>
+<ul>
+<li>Single-source operational reporting; virtualization suffices.</li>
+</ul>
+<h2>Alternatives</h2>
+<p>Classic staging–warehouse–mart; <a class="ref t-pattern" href="../knowledge/da-pat-0007.html">Data Virtualization</a>.</p>
+<h2>Examples</h2>
+<ul>
+<li>Claims data landed raw hourly, conformed with a bitemporal policy model, served as a claims mart.</li>
+</ul>
+<h2>Related Decisions</h2>
+<ul>
+<li><span class="ref-locked" title="Professional tier — not published on this site">Select Historical Data Strategy <span class="tier-tag">Professional</span></span></li>
+</ul></div>
+    <aside class="object-meta" aria-label="Metadata and relationships">
+      <h2>Metadata</h2><dl><dt>ID</dt><dd><code>DA-PAT-0009</code></dd><dt>Type</dt><dd>Pattern</dd><dt>Domain</dt><dd><a href="../explore/data-platforms.html">Data Platforms</a></dd><dt>Layer</dt><dd>logical, physical</dd><dt>Status</dt><dd>proposed</dd><dt>Quality</dt><dd>draft</dd><dt>Confidence</dt><dd>medium</dd><dt>Epistemic status</dt><dd>common-practice</dd><dt>Content tier</dt><dd>Community</dd><dt>Version</dt><dd>0.1.0</dd><dt>Updated</dt><dd>2026-09-29</dd><dt>Source file</dt><dd><code>19-architecture-patterns/Layered Data Refinement.md</code></dd></dl>
+      <h2>Relationships</h2>
+      <table class='rels'><tbody><tr><td><code>part-of</code></td><td><a class="ref t-refarch" href="../knowledge/da-rar-0001.html">Governed Analytical Data Platform</a></td><td class="muted">Reference architecture</td></tr><tr><td><code>realizes</code></td><td><a class="ref t-concept" href="../knowledge/da-con-0028.html">Data Platform</a></td><td class="muted">Concept</td></tr><tr><td><code>supported-by</code></td><td><a class="ref t-pattern" href="../knowledge/da-pat-0010.html">Data Quality Gate</a></td><td class="muted">Pattern</td></tr><tr><td><code>has-part</code></td><td><a class="ref t-pattern" href="../knowledge/da-pat-0003.html">Slowly Changing Dimension Type 2</a></td><td class="muted">Pattern</td></tr><tr><td><code>implemented-by</code></td><td><a class="ref t-tech" href="../knowledge/da-tec-0002.html">Apache Iceberg</a></td><td class="muted">Technology</td></tr></tbody></table>
+      <h2>Sources</h2><p class="muted">No verified source attached yet.</p>
+      <h2>Feedback</h2><p><a href="mailto:dalust1997@gmail.com?subject=Feedback%3A%20DA-PAT-0009%20Layered%20Data%20Refinement&amp;body=Page%20or%20knowledge%20object%3A%20DA-PAT-0009%20-%20Layered%20Data%20Refinement%0AKind%20of%20feedback%20%28factual%20error%20/%20unclear%20/%20missing%20/%20terminology%20/%20suggestion%20/%20other%29%3A%20%0AWhat%20should%20change%2C%20and%20why%3A%0A%0A%0ASource%20%28optional%29%3A%0A">Give feedback on this page</a> — report an error, something unclear or missing, or a source.</p>
+    </aside>
+  </div>
+</article>
+</main>
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <div>
+      <p class="footer-brand">Architecture Knowledge Graph</p>
+      <p class="muted">A structured and governed knowledge graph for data, information and enterprise architecture.</p>
+    </div>
+    <div>
+      <p class="muted">Generated from the knowledge graph on 2026-09-30: 155 objects, 388 typed relationships.</p>
+      <p class="muted"><a href="mailto:dalust1997@gmail.com?subject=Feedback%3A%20Architecture%20Knowledge%20Graph&amp;body=Page%20or%20knowledge%20object%3A%20%28page%20title%2C%20ID%20or%20URL%29%0AKind%20of%20feedback%20%28factual%20error%20/%20unclear%20/%20missing%20/%20terminology%20/%20suggestion%20/%20other%29%3A%20%0AWhat%20should%20change%2C%20and%20why%3A%0A%0A%0ASource%20%28optional%29%3A%0A">Send feedback</a> · <a href="https://github.com/ArchKnowledge/Architecture-Knowledge-Graph">Source repository</a> <span class="muted">(private during phase 1)</span> · No products are currently for sale.</p>
+      <p class="muted">© 2026 Architecture Knowledge Graph project. Content licence to be decided; all rights reserved until then. Referenced standards belong to their issuing organisations.</p>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

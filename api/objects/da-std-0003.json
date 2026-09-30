@@ -1,0 +1,52 @@
+{
+  "id": "DA-STD-0003",
+  "type": "standard",
+  "title": "RDF 1.1",
+  "domain": "Standards & Regulations",
+  "status": "proposed",
+  "quality": "draft",
+  "confidence": "high",
+  "epistemic_status": "external-standard",
+  "owner": "unassigned",
+  "version": "0.1.0",
+  "publication_tier": "community",
+  "summary": "Resource Description Framework 1.1 \u2014 the W3C graph data model of subject\u2013predicate\u2013object triples identified by IRIs, underlying SKOS and OWL.",
+  "aliases": [
+    "Resource Description Framework",
+    "RDF"
+  ],
+  "path": "24-standards-regulations/RDF 1.1.md",
+  "relationships": [
+    {
+      "type": "dependency-of",
+      "direction": "in",
+      "target": "DA-CON-0013",
+      "title": "Ontology"
+    },
+    {
+      "type": "dependency-of",
+      "direction": "in",
+      "target": "DA-STD-0002",
+      "title": "OWL 2"
+    },
+    {
+      "type": "dependency-of",
+      "direction": "in",
+      "target": "DA-STD-0001",
+      "title": "SKOS"
+    }
+  ],
+  "sources": [
+    "RDF 1.1 Concepts and Abstract Syntax, W3C Recommendation, https://www.w3.org/TR/rdf11-concepts/"
+  ],
+  "evidence": [],
+  "governance": {
+    "status": "proposed",
+    "authority": "unreviewed",
+    "required_levels": [
+      "data-architecture"
+    ],
+    "records": []
+  },
+  "body_markdown": "# RDF 1.1\n\n## Scope\n\nAbstract graph data model (triples, IRIs, literals, blank nodes, datasets) and serializations (e.g. Turtle, N-Triples, JSON-LD, RDF/XML).\n\n## Requirements\n\nData model definition; not a compliance standard.\n\n## Applicability\n\nSemantic models, linked data, knowledge graph exports. This repository's `dakb.py export` emits Turtle as a transformation path.\n\n## Related Architecture Concepts\n\n[[Ontology]], [[Semantic Model]], [[Metadata]].\n\n## Related Controls\n\nNone.\n\n## Verification Notes\n\nA successor (RDF 1.2) was in progress at W3C at the time of writing; status to be checked by the reviewer.\n"
+}

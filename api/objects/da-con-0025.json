@@ -1,0 +1,62 @@
+{
+  "id": "DA-CON-0025",
+  "type": "concept",
+  "title": "Master Data",
+  "domain": "Master Data",
+  "layer": [
+    "business",
+    "conceptual"
+  ],
+  "status": "proposed",
+  "quality": "draft",
+  "confidence": "high",
+  "epistemic_status": "common-practice",
+  "owner": "unassigned",
+  "version": "0.1.0",
+  "publication_tier": "community",
+  "definition": "The data about core business entities \u2014 such as parties, products, locations and assets \u2014 that is shared across processes and systems and provides context to transactions.",
+  "path": "12-master-data/Master Data.md",
+  "relationships": [
+    {
+      "type": "distinct-from",
+      "direction": "out",
+      "target": "DA-CON-0027",
+      "title": "Reference Data"
+    },
+    {
+      "type": "applicable-to",
+      "direction": "in",
+      "target": "DA-PRI-0008",
+      "title": "Each Data Element Has an Authoritative Source"
+    },
+    {
+      "type": "has-part",
+      "direction": "in",
+      "target": "DA-CON-0026",
+      "title": "Golden Record"
+    },
+    {
+      "type": "realized-by",
+      "direction": "in",
+      "target": "DA-PAT-0012",
+      "title": "Master Data Hub"
+    },
+    {
+      "type": "applicable-to",
+      "direction": "in",
+      "target": "DA-STD-0005",
+      "title": "ISO 8000 Data Quality"
+    }
+  ],
+  "sources": [],
+  "evidence": [],
+  "governance": {
+    "status": "proposed",
+    "authority": "unreviewed",
+    "required_levels": [
+      "semantic"
+    ],
+    "records": []
+  },
+  "body_markdown": "# Master Data\n\n## Definition\n\nMaster Data is the data about core business entities \u2014 parties, products, locations, assets \u2014 that is shared across processes and systems and provides context to transactions.\n\n## Explanation\n\nMaster data is characterised by: sharing across many processes, relatively slow change, high impact of errors, and identity problems (the same customer in five systems). Master data management (MDM) addresses identity resolution, consolidation into a [[Golden Record]], distribution, and governance.\n\nThe architecture style (registry, consolidation, coexistence, centralized) is selected with [[Master Data Architecture Decision Tree]] and realized by a [[Master Data Hub]].\n\n## Distinctions\n\n- Master data vs [[Reference Data]]: reference data classifies (code lists: country, currency, status); master data describes business entities. Reference data is usually smaller, more stable, and often externally defined. The two are frequently confused; they are linked with `distinct-from`.\n- Master data vs **transactional data**: transactions (orders, claims) reference master data.\n\n## Examples\n\n- Customer, supplier, product, employee, site.\n"
+}

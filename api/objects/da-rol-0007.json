@@ -1,0 +1,43 @@
+{
+  "id": "DA-ROL-0007",
+  "type": "role",
+  "title": "Information Architect",
+  "domain": "Architecture",
+  "layer": [
+    "information"
+  ],
+  "status": "proposed",
+  "quality": "draft",
+  "confidence": "medium",
+  "epistemic_status": "common-practice",
+  "owner": "unassigned",
+  "version": "0.1.0",
+  "publication_tier": "community",
+  "summary": "Architect responsible for information models that represent governed meaning as paradigm-independent structures.",
+  "path": "06-data-governance/roles/Information Architect.md",
+  "relationships": [
+    {
+      "type": "part-of",
+      "direction": "out",
+      "target": "DA-GOV-0003",
+      "title": "Governance Roles"
+    },
+    {
+      "type": "owns",
+      "direction": "in",
+      "target": "DA-CON-0007",
+      "title": "Information Model"
+    }
+  ],
+  "sources": [],
+  "evidence": [],
+  "governance": {
+    "status": "proposed",
+    "authority": "unreviewed",
+    "required_levels": [
+      "information-model"
+    ],
+    "records": []
+  },
+  "body_markdown": "# Information Architect\n\n## Purpose\n\nBridge meaning and data structures.\n\n## Responsibilities\n\n- Design and maintain [[Information Model|information models]].\n- State information-level history and quality requirements.\n- Ensure [[Concept-to-Model Traceability]].\n\n## Decision Rights\n\nInformation model level lead approver; owner sign-off for governed concepts.\n\n## Inputs\n\nSemantic model; requirements.\n\n## Outputs\n\nInformation models; traceability links.\n\n## Required Competencies\n\nInformation modeling (UML/ER); semantics.\n\n## Escalation Paths\n\nSemantic gaps \u2192 [[Semantic Architect]]; realization conflicts \u2192 [[Data Architect]].\n\n## Related Governance Processes\n\n- [[Decision Rights Model]]\n- [[Architecture Change Process]]\n- [[Governance Lifecycle]]\n"
+}

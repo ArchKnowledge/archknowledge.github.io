@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Use Markdown and Git as the Initial Knowledge Store · Architecture Knowledge Graph</title>
+<meta name="description" content="Implement the knowledge graph initially as Markdown files with YAML front matter in a Git repository, navigable in Obsidian, validated by a script.">
+<link rel="canonical" href="https://archknowledge.github.io/knowledge/da-adr-0001.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Architecture Knowledge Graph">
+<meta property="og:title" content="Use Markdown and Git as the Initial Knowledge Store">
+<meta property="og:description" content="Implement the knowledge graph initially as Markdown files with YAML front matter in a Git repository, navigable in Obsidian, validated by a script.">
+<meta property="og:url" content="https://archknowledge.github.io/knowledge/da-adr-0001.html">
+<meta name="twitter:card" content="summary">
+<meta name="color-scheme" content="light dark">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../assets/style.css">
+<meta name="akg-root" content="../">
+<script src="../assets/site.js" defer></script>
+
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="../index.html" aria-label="Architecture Knowledge Graph — home">
+      <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true"><path d="M6 24 16 8l10 16M6 24h20M16 8v16" /><circle cx="16" cy="8" r="3"/><circle cx="6" cy="24" r="3"/><circle cx="26" cy="24" r="3"/><circle cx="16" cy="24" r="2.2"/></svg>
+      <span>Architecture<br>Knowledge Graph</span>
+    </a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+    <nav id="site-nav" class="site-nav" aria-label="Main">
+      <ul>
+<li><a href="../why.html">Why</a></li>
+<li><a href="../knowledge-graph.html">Knowledge Graph</a></li>
+<li><a href="../explore.html" aria-current="page">Explore</a></li>
+<li><a href="../products.html">Products</a></li>
+<li><a href="../governance.html">Governance</a></li>
+<li><a href="../roadmap.html">Roadmap</a></li>
+<li><a href="../search.html">Search</a></li>
+        <li><a class="gh" href="https://github.com/ArchKnowledge/Architecture-Knowledge-Graph">GitHub <span class="nav-note">private</span></a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+<p class="preview-bar wrap" role="note">Early preview · Phase 1 of the roadmap · All knowledge is in draft and awaiting human review.</p>
+<main id="main">
+
+<article class="object page-narrow">
+  <p class="eyebrow"><span class="dot t-decision"></span>Decision · <a href="../explore/foundations.html">Foundations</a></p>
+  <h1>Use Markdown and Git as the Initial Knowledge Store</h1>
+  <p class="lead">Implement the knowledge graph initially as Markdown files with YAML front matter in a Git repository, navigable in Obsidian, validated by a script.</p>
+  <p class="notice" role="note"><strong>Draft knowledge.</strong> Status <code>proposed</code>, quality <code>draft</code>. Not yet reviewed or approved by a human architect.</p>
+  <div class="object-grid">
+    <div class="object-body"><h2>Context</h2>
+<p>The knowledge base must be personally usable now, governed, and transformable later into another knowledge-store technology (spec §19, §38).</p>
+<h2>Problem</h2>
+<p>Which storage and change-management mechanism to use for version 0.1?</p>
+<h2>Options</h2>
+<ol>
+<li>Markdown + YAML front matter + Git (+ Obsidian as viewer).</li>
+<li>A graph database (property graph or RDF triple store) from the start.</li>
+<li>A wiki or document-management system.</li>
+</ol>
+<h2>Evaluation Criteria</h2>
+<p>Human readability, machine readability, change governance, tooling cost, portability, graph navigation.</p>
+<h2>Trade-offs</h2>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Gains</th>
+<th>Losses</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Markdown + Git</td>
+<td>readable, diffable, PR-based governance, free, portable</td>
+<td>no query language, validation must be built</td>
+</tr>
+<tr>
+<td>Graph database</td>
+<td>queries, constraints</td>
+<td>lower readability, no PR review, lock-in early</td>
+</tr>
+<tr>
+<td>Wiki</td>
+<td>easy editing</td>
+<td>weak structure and validation</td>
+</tr>
+</tbody>
+</table>
+<h2>Decision</h2>
+<p>Proposed: option 1. Typed relationships live in front matter so the files can be exported to a graph (<code>dakb.py export</code> produces JSON, CSV and RDF Turtle).</p>
+<h2>Consequences</h2>
+<ul>
+<li>Validation is implemented as a script and CI workflow.</li>
+<li>Query capability is limited until export targets are used.</li>
+</ul>
+<h2>Assumptions</h2>
+<ul>
+<li>Repository stays below a few thousand objects for the Markdown phase.</li>
+</ul>
+<h2>Constraints</h2>
+<ul>
+<li>Must open in Obsidian (spec §38).</li>
+</ul>
+<h2>Related Architecture</h2>
+<ul>
+<li><a class="ref t-decision" href="../knowledge/da-adr-0003.html">Store Typed Relationships as Front-Matter Keys</a></li>
+<li><a class="ref t-decision" href="../knowledge/da-adr-0002.html">Use Title-Based File Names for Knowledge Objects</a></li>
+</ul></div>
+    <aside class="object-meta" aria-label="Metadata and relationships">
+      <h2>Metadata</h2><dl><dt>ID</dt><dd><code>DA-ADR-0001</code></dd><dt>Type</dt><dd>Decision</dd><dt>Domain</dt><dd><a href="../explore/foundations.html">Foundations</a></dd><dt>Layer</dt><dd>technical</dd><dt>Status</dt><dd>proposed</dd><dt>Quality</dt><dd>draft</dd><dt>Confidence</dt><dd>high</dd><dt>Epistemic status</dt><dd>recommendation</dd><dt>Content tier</dt><dd>Community</dd><dt>Version</dt><dd>0.1.0</dd><dt>Updated</dt><dd>2026-09-29</dd><dt>Source file</dt><dd><code>20-architecture-decisions/records/Use Markdown and Git as the Initial Knowledge Store.md</code></dd></dl>
+      <h2>Relationships</h2>
+      <table class='rels'><tbody><tr><td><code>governed-by</code></td><td><a class="ref t-gov" href="../knowledge/da-gov-0007.html">Knowledge Repository Governance</a></td><td class="muted">Governance model</td></tr><tr><td><code>dependency-of</code></td><td><a class="ref t-decision" href="../knowledge/da-adr-0003.html">Store Typed Relationships as Front-Matter Keys</a></td><td class="muted">Decision</td></tr><tr><td><code>dependency-of</code></td><td><a class="ref t-decision" href="../knowledge/da-adr-0002.html">Use Title-Based File Names for Knowledge Objects</a></td><td class="muted">Decision</td></tr><tr><td><code>supports</code></td><td><a class="ref t-principle" href="../knowledge/da-pri-0009.html">Governance Is Embedded in Delivery</a></td><td class="muted">Principle</td></tr></tbody></table>
+      <h2>Sources</h2><p class="muted">No verified source attached yet.</p>
+      <h2>Feedback</h2><p><a href="mailto:dalust1997@gmail.com?subject=Feedback%3A%20DA-ADR-0001%20Use%20Markdown%20and%20Git%20as%20the%20Initial%20Knowledge%20Store&amp;body=Page%20or%20knowledge%20object%3A%20DA-ADR-0001%20-%20Use%20Markdown%20and%20Git%20as%20the%20Initial%20Knowledge%20Store%0AKind%20of%20feedback%20%28factual%20error%20/%20unclear%20/%20missing%20/%20terminology%20/%20suggestion%20/%20other%29%3A%20%0AWhat%20should%20change%2C%20and%20why%3A%0A%0A%0ASource%20%28optional%29%3A%0A">Give feedback on this page</a> — report an error, something unclear or missing, or a source.</p>
+    </aside>
+  </div>
+</article>
+</main>
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <div>
+      <p class="footer-brand">Architecture Knowledge Graph</p>
+      <p class="muted">A structured and governed knowledge graph for data, information and enterprise architecture.</p>
+    </div>
+    <div>
+      <p class="muted">Generated from the knowledge graph on 2026-09-30: 155 objects, 388 typed relationships.</p>
+      <p class="muted"><a href="mailto:dalust1997@gmail.com?subject=Feedback%3A%20Architecture%20Knowledge%20Graph&amp;body=Page%20or%20knowledge%20object%3A%20%28page%20title%2C%20ID%20or%20URL%29%0AKind%20of%20feedback%20%28factual%20error%20/%20unclear%20/%20missing%20/%20terminology%20/%20suggestion%20/%20other%29%3A%20%0AWhat%20should%20change%2C%20and%20why%3A%0A%0A%0ASource%20%28optional%29%3A%0A">Send feedback</a> · <a href="https://github.com/ArchKnowledge/Architecture-Knowledge-Graph">Source repository</a> <span class="muted">(private during phase 1)</span> · No products are currently for sale.</p>
+      <p class="muted">© 2026 Architecture Knowledge Graph project. Content licence to be decided; all rights reserved until then. Referenced standards belong to their issuing organisations.</p>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

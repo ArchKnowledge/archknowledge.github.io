@@ -1,0 +1,61 @@
+{
+  "id": "DA-CON-0013",
+  "type": "concept",
+  "title": "Ontology",
+  "domain": "Semantic Architecture",
+  "layer": [
+    "semantic"
+  ],
+  "status": "proposed",
+  "quality": "draft",
+  "confidence": "high",
+  "epistemic_status": "common-practice",
+  "owner": "unassigned",
+  "version": "0.1.0",
+  "publication_tier": "community",
+  "definition": "A formal, explicit specification of concepts in a domain, their properties and relationships, and logical axioms, expressed so that machines can reason over it.",
+  "path": "04-semantic-architecture/concepts/Ontology.md",
+  "relationships": [
+    {
+      "type": "specializes",
+      "direction": "out",
+      "target": "DA-CON-0012",
+      "title": "Semantic Model"
+    },
+    {
+      "type": "supported-by",
+      "direction": "out",
+      "target": "DA-STD-0002",
+      "title": "OWL 2"
+    },
+    {
+      "type": "depends-on",
+      "direction": "out",
+      "target": "DA-STD-0003",
+      "title": "RDF 1.1"
+    },
+    {
+      "type": "owned-by",
+      "direction": "out",
+      "target": "DA-ROL-0006",
+      "title": "Ontology Engineer"
+    },
+    {
+      "type": "recommended-by",
+      "direction": "in",
+      "target": "DA-DTR-0005",
+      "title": "Semantic Modeling Approach Decision Tree"
+    }
+  ],
+  "sources": [],
+  "evidence": [],
+  "governance": {
+    "status": "proposed",
+    "authority": "unreviewed",
+    "required_levels": [
+      "semantic"
+    ],
+    "records": []
+  },
+  "body_markdown": "# Ontology\n\n## Definition\n\nAn Ontology is a formal, explicit specification of the concepts in a domain, their properties and relationships, and logical axioms (e.g. disjointness, cardinality, equivalence), expressed so that machines can reason over it.\n\n## Explanation\n\nOntologies are the most formal form of [[Semantic Model]]. On the web-standards stack they are typically expressed in [[OWL 2]] serialized as [[RDF 1.1]]. Their value lies in inference (deriving implicit facts), consistency checking and integration of heterogeneous sources through shared meaning.\n\n## Distinctions\n\n- Versus [[Taxonomy]]: a taxonomy only has broader/narrower; an ontology has typed properties and axioms.\n- Versus [[Information Model]]: an ontology describes meaning under an open-world assumption; an information model describes the structure of records, typically under a closed-world assumption. Confusing the two leads to surprising validation behaviour.\n\n## Examples\n\n- A domain ontology stating that every Vehicle Registration relates to exactly one Vehicle and that Natural Person and Legal Person are disjoint.\n"
+}

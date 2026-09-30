@@ -1,0 +1,72 @@
+{
+  "id": "DA-PRI-0008",
+  "type": "principle",
+  "title": "Each Data Element Has an Authoritative Source",
+  "domain": "Architecture",
+  "layer": [
+    "conceptual",
+    "logical"
+  ],
+  "status": "proposed",
+  "quality": "draft",
+  "confidence": "high",
+  "epistemic_status": "recommendation",
+  "owner": "unassigned",
+  "version": "0.1.0",
+  "publication_tier": "community",
+  "summary": "For every shared data element, exactly one authoritative source is designated; other copies are derived and traceable to it.",
+  "aliases": [
+    "Single Authoritative Source"
+  ],
+  "path": "02-architecture/principles/Each Data Element Has an Authoritative Source.md",
+  "relationships": [
+    {
+      "type": "applies-to",
+      "direction": "out",
+      "target": "DA-CON-0025",
+      "title": "Master Data"
+    },
+    {
+      "type": "applies-to",
+      "direction": "out",
+      "target": "DA-CON-0027",
+      "title": "Reference Data"
+    },
+    {
+      "type": "applies-to",
+      "direction": "out",
+      "target": "DA-CON-0029",
+      "title": "Data Integration"
+    },
+    {
+      "type": "realized-by",
+      "direction": "in",
+      "target": "DA-PAT-0012",
+      "title": "Master Data Hub"
+    },
+    {
+      "type": "realized-by",
+      "direction": "in",
+      "target": "DA-PAT-0013",
+      "title": "Reference Data Hub"
+    },
+    {
+      "type": "violated-by",
+      "direction": "in",
+      "target": "DA-APT-0003",
+      "title": "Point-to-Point Integration Sprawl"
+    }
+  ],
+  "sources": [],
+  "evidence": [],
+  "governance": {
+    "status": "proposed",
+    "authority": "unreviewed",
+    "required_levels": [
+      "semantic",
+      "data-architecture"
+    ],
+    "records": []
+  },
+  "body_markdown": "# Each Data Element Has an Authoritative Source\n\n## Statement\n\nFor every shared data element, exactly one authoritative source shall be designated; other copies are derived and traceable to it.\n\n## Rationale\n\nMultiple uncoordinated sources of the same fact produce contradictory answers and unresolvable reconciliation disputes.\n\n## Implications\n\n- Authoritative source is recorded as metadata per data element or data set.\n- Copies are read-only derivations with [[Data Lineage|lineage]].\n- Where several systems legitimately create the same entity, a [[Master Data Hub]] defines authority per attribute.\n\n## Consequences\n\n- Positive: defensible answers, simpler integration.\n- Negative: may require re-platforming data entry.\n\n## Applicability\n\nShared master, reference and key transactional data.\n\n## Exceptions\n\nTransitional states during [[Data Migration]], explicitly time-boxed.\n\n## Related Principles\n\n- [[Data Has an Accountable Owner]]\n"
+}

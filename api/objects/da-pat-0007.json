@@ -1,0 +1,42 @@
+{
+  "id": "DA-PAT-0007",
+  "type": "pattern",
+  "title": "Data Virtualization",
+  "domain": "Data Integration",
+  "layer": [
+    "logical",
+    "technical"
+  ],
+  "status": "proposed",
+  "quality": "draft",
+  "confidence": "medium",
+  "epistemic_status": "common-practice",
+  "owner": "unassigned",
+  "version": "0.1.0",
+  "publication_tier": "community",
+  "summary": "Provide an integrated, queryable view over multiple sources at query time without physically copying the data.",
+  "aliases": [
+    "Data Federation"
+  ],
+  "path": "19-architecture-patterns/Data Virtualization.md",
+  "relationships": [
+    {
+      "type": "realizes",
+      "direction": "out",
+      "target": "DA-CON-0029",
+      "title": "Data Integration"
+    }
+  ],
+  "sources": [],
+  "evidence": [],
+  "governance": {
+    "status": "proposed",
+    "authority": "unreviewed",
+    "required_levels": [
+      "data-architecture",
+      "technical"
+    ],
+    "records": []
+  },
+  "body_markdown": "# Data Virtualization\n\n## Problem\n\nConsumers need a combined view of data from several systems, but copying is undesirable (latency, duplication, privacy).\n\n## Context\n\nExploratory analytics, low-volume operational lookups, regulated data that must stay in place.\n\n## Forces\n\n- Freshness and no duplication vs. performance and source load.\n\n## Solution\n\nA virtualization layer exposes logical views that are translated at query time into queries on the underlying sources, with optional caching.\n\n## Architecture\n\n```text\nConsumer \u2192 virtual view layer (semantic mapping, security) \u2192 source A / source B / source C\n```\n\n## Advantages\n\n- Current data; no copies to govern.\n- Fast to set up for prototypes.\n\n## Disadvantages\n\n- Performance depends on sources; complex joins across sources are slow.\n- No history unless sources keep it.\n\n## Risks\n\n- Operational sources overloaded by analytical queries.\n\n## When to Use\n\n- Low volume, high freshness, data must not be copied.\n\n## When Not to Use\n\n- Heavy analytics or history requirements \u2192 [[Batch Extract-Transform-Load]] into a platform.\n\n## Alternatives\n\n[[Batch Extract-Transform-Load]], [[Change Data Capture]].\n\n## Examples\n\n- A combined customer view for a service desk over CRM and billing.\n\n## Related Decisions\n\n- [[Select Data Integration Style]]\n"
+}

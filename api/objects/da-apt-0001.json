@@ -1,0 +1,61 @@
+{
+  "id": "DA-APT-0001",
+  "type": "anti-pattern",
+  "title": "Implicit Semantics",
+  "domain": "Semantic Architecture",
+  "layer": [
+    "semantic"
+  ],
+  "status": "proposed",
+  "quality": "draft",
+  "confidence": "medium",
+  "epistemic_status": "expert-interpretation",
+  "owner": "unassigned",
+  "version": "0.1.0",
+  "publication_tier": "community",
+  "summary": "The meaning of data exists only implicitly in column names, application code or people's heads, instead of in governed definitions.",
+  "path": "19-architecture-patterns/anti-patterns/Implicit Semantics.md",
+  "relationships": [
+    {
+      "type": "violates",
+      "direction": "out",
+      "target": "DA-PRI-0002",
+      "title": "Meaning Before Representation"
+    },
+    {
+      "type": "causes",
+      "direction": "out",
+      "target": "DA-APT-0002",
+      "title": "Overloaded Attribute"
+    },
+    {
+      "type": "mitigated-by",
+      "direction": "in",
+      "target": "DA-PAT-0014",
+      "title": "Concept-to-Model Traceability"
+    },
+    {
+      "type": "mitigated-by",
+      "direction": "in",
+      "target": "DA-PAT-0008",
+      "title": "Data Contract"
+    },
+    {
+      "type": "caused-by",
+      "direction": "in",
+      "target": "DA-APT-0006",
+      "title": "Physical-Model-First Design"
+    }
+  ],
+  "sources": [],
+  "evidence": [],
+  "governance": {
+    "status": "proposed",
+    "authority": "unreviewed",
+    "required_levels": [
+      "semantic"
+    ],
+    "records": []
+  },
+  "body_markdown": "# Implicit Semantics\n\n## Problem\n\nData meaning is inferred from names (`status`, `date1`, `klant_type`) and code, never stated.\n\n## Symptoms\n\n- Recurring discussions about \"what this field really means\".\n- Two reports with the same KPI name and different numbers.\n- Migration mappings based on column names only.\n\n## Root Causes\n\n- Delivery pressure; no semantic role; modeling starts at the physical layer ([[Physical-Model-First Design]]).\n\n## Consequences\n\n- Integration errors, misreporting, costly migrations, regulatory risk.\n\n## Detection\n\n- Sample columns of key tables: can a definition, owner and concept link be found for each? Coverage below an agreed threshold indicates the anti-pattern.\n\n## Remediation\n\n- Introduce governed [[Business Concept|concepts]] for high-value data first; link models ([[Concept-to-Model Traceability]]); require definitions in [[Data Contract|data contracts]].\n\n## Alternative Patterns\n\n[[Concept-to-Model Traceability]], [[Data Contract]].\n\n## When It May Be Acceptable\n\nLocal, short-lived data with a single producer and consumer.\n"
+}

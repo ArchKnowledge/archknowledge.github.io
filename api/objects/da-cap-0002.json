@@ -1,0 +1,40 @@
+{
+  "id": "DA-CAP-0002",
+  "type": "capability",
+  "title": "Architecture Decision Management Capability",
+  "domain": "Architecture",
+  "status": "proposed",
+  "quality": "draft",
+  "confidence": "medium",
+  "epistemic_status": "expert-interpretation",
+  "owner": "unassigned",
+  "version": "0.1.0",
+  "publication_tier": "community",
+  "summary": "The ability to take, record, govern and trace architecture decisions consistently across teams.",
+  "path": "02-architecture/capabilities/Architecture Decision Management Capability.md",
+  "relationships": [
+    {
+      "type": "requires",
+      "direction": "out",
+      "target": "DA-CON-0004",
+      "title": "Architecture Decision"
+    },
+    {
+      "type": "realized-by",
+      "direction": "in",
+      "target": "DA-FWK-0001",
+      "title": "Architecture Decision Framework"
+    }
+  ],
+  "sources": [],
+  "evidence": [],
+  "governance": {
+    "status": "proposed",
+    "authority": "unreviewed",
+    "required_levels": [
+      "data-architecture"
+    ],
+    "records": []
+  },
+  "body_markdown": "# Architecture Decision Management Capability\n\n## Description\n\nTaking decisions with explicit criteria and options, recording them, approving them with the right decision rights, and tracing them to implementation.\n\n## Outcomes\n\nFewer re-debated decisions; auditable architecture; faster onboarding.\n\n## Enablers\n\n[[Architecture Decision Framework]], [[Decision Rights Model]], decision trees and scoring models.\n\n## Maturity Indicators\n\n| Level | Indicator |\n|---|---|\n| 1 Fragmented | Decisions in meeting notes and e-mail |\n| 2 Documented | ADRs written for some decisions |\n| 3 Structured | ADRs linked to principles, patterns and architectures |\n| 4 Governed | Approval per decision rights, recorded and auditable |\n| 5 Executable | Decision logic and rules executed by tools; decisions validated against implementations |\n"
+}

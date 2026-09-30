@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Knowledge Graph · Architecture Knowledge Graph</title>
+<meta name="description" content="How the Architecture Knowledge Graph works — knowledge objects, typed relationships as first-class knowledge, and traceability from principle to implementation.">
+<link rel="canonical" href="https://archknowledge.github.io/knowledge-graph.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Architecture Knowledge Graph">
+<meta property="og:title" content="Knowledge Graph">
+<meta property="og:description" content="How the Architecture Knowledge Graph works — knowledge objects, typed relationships as first-class knowledge, and traceability from principle to implementation.">
+<meta property="og:url" content="https://archknowledge.github.io/knowledge-graph.html">
+<meta name="twitter:card" content="summary">
+<meta name="color-scheme" content="light dark">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/style.css">
+<meta name="akg-root" content="">
+<script src="assets/site.js" defer></script>
+
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="index.html" aria-label="Architecture Knowledge Graph — home">
+      <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true"><path d="M6 24 16 8l10 16M6 24h20M16 8v16" /><circle cx="16" cy="8" r="3"/><circle cx="6" cy="24" r="3"/><circle cx="26" cy="24" r="3"/><circle cx="16" cy="24" r="2.2"/></svg>
+      <span>Architecture<br>Knowledge Graph</span>
+    </a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+    <nav id="site-nav" class="site-nav" aria-label="Main">
+      <ul>
+<li><a href="why.html">Why</a></li>
+<li><a href="knowledge-graph.html" aria-current="page">Knowledge Graph</a></li>
+<li><a href="explore.html">Explore</a></li>
+<li><a href="products.html">Products</a></li>
+<li><a href="governance.html">Governance</a></li>
+<li><a href="roadmap.html">Roadmap</a></li>
+<li><a href="search.html">Search</a></li>
+        <li><a class="gh" href="https://github.com/ArchKnowledge/Architecture-Knowledge-Graph">GitHub <span class="nav-note">private</span></a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+<p class="preview-bar wrap" role="note">Early preview · Phase 1 of the roadmap · All knowledge is in draft and awaiting human review.</p>
+<main id="main">
+<div class="wrap page-head">
+  <p class="eyebrow">The model</p>
+  <h1>Knowledge objects, connected by typed relationships</h1>
+  <p class="lead">The graph has 155 objects and 388 relationships. Each relationship has a type from a controlled vocabulary, so it says <em>how</em> two pieces of knowledge relate, not just <em>that</em> they do.</p>
+</div>
+
+<section class="section">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Example, generated from the repository</p>
+      <h2>Temporal Data Management and its neighbours</h2>
+      <p>Every line below is a real relationship stored in the repository. Relationship names are read from the object's side; inverses (for example <code>realized-by</code> for <code>realizes</code>) are derived automatically.</p>
+    </div>
+    <figure class="figure">
+      <svg class="kg ego" viewBox="0 0 1000 540" role="group" aria-labelledby="ego-title ego-desc">
+<title id="ego-title">Relationships of Temporal Data Management</title>
+<desc id="ego-desc">Temporal Data Management and its 10 typed relationships, generated from the repository.</desc>
+<line class="ego-edge" x1="500.0" y1="270.0" x2="500.0" y2="70.0"/>
+<text class="edge-label" x="500.0" y="166.0" text-anchor="middle">addressed-by</text>
+<line class="ego-edge" x1="500.0" y1="270.0" x2="646.9" y2="108.2"/>
+<text class="edge-label" x="576.4" y="185.9" text-anchor="middle">assessed-by</text>
+<line class="ego-edge" x1="500.0" y1="270.0" x2="737.8" y2="208.2"/>
+<text class="edge-label" x="623.6" y="237.9" text-anchor="middle">constrained-by</text>
+<line class="ego-edge" x1="500.0" y1="270.0" x2="737.8" y2="331.8"/>
+<text class="edge-label" x="623.6" y="302.1" text-anchor="middle">constrained-by</text>
+<line class="ego-edge" x1="500.0" y1="270.0" x2="646.9" y2="431.8"/>
+<text class="edge-label" x="576.4" y="354.1" text-anchor="middle">part-of</text>
+<line class="ego-edge" x1="500.0" y1="270.0" x2="500.0" y2="470.0"/>
+<text class="edge-label" x="500.0" y="374.0" text-anchor="middle">realized-by</text>
+<line class="ego-edge" x1="500.0" y1="270.0" x2="353.1" y2="431.8"/>
+<text class="edge-label" x="423.6" y="354.1" text-anchor="middle">realized-by</text>
+<line class="ego-edge" x1="500.0" y1="270.0" x2="262.2" y2="331.8"/>
+<text class="edge-label" x="376.4" y="302.1" text-anchor="middle">realized-by</text>
+<line class="ego-edge" x1="500.0" y1="270.0" x2="262.2" y2="208.2"/>
+<text class="edge-label" x="376.4" y="237.9" text-anchor="middle">realized-by</text>
+<line class="ego-edge" x1="500.0" y1="270.0" x2="353.1" y2="108.2"/>
+<text class="edge-label" x="423.6" y="185.9" text-anchor="middle">required-by</text>
+<g class="t-decision locked"><circle cx="500.0" cy="70.0" r="8"/><text x="500.0" y="56.0" text-anchor="middle">Select Historical Data Strategy</text></g>
+<g class="t-tool locked"><circle cx="646.9" cy="108.2" r="8"/><text x="658.9" y="112.2" text-anchor="start">History Requirements Are Specified</text></g>
+<a href="knowledge/da-pri-0010.html" class="t-principle"><title>Historical Requirements Are Explicit (Principle)</title><circle cx="737.8" cy="208.2" r="8"/><text x="749.8" y="212.2" text-anchor="start">Historical Requirements Are Explicit</text></a>
+<a href="knowledge/da-std-0010.html" class="t-standard"><title>SQL Standard Temporal Support (Standard)</title><circle cx="737.8" cy="331.8" r="8"/><text x="749.8" y="335.8" text-anchor="start">SQL Standard Temporal Support</text></a>
+<a href="knowledge/da-con-0023.html" class="t-concept"><title>Data Lifecycle (Concept)</title><circle cx="646.9" cy="431.8" r="8"/><text x="658.9" y="435.8" text-anchor="start">Data Lifecycle</text></a>
+<a href="knowledge/da-pat-0001.html" class="t-pattern"><title>Bitemporal Data Model (Pattern)</title><circle cx="500.0" cy="470.0" r="8"/><text x="500.0" y="492.0" text-anchor="middle">Bitemporal Data Model</text></a>
+<a href="knowledge/da-pat-0004.html" class="t-pattern"><title>Event Sourcing (Pattern)</title><circle cx="353.1" cy="431.8" r="8"/><text x="341.1" y="435.8" text-anchor="end">Event Sourcing</text></a>
+<a href="knowledge/da-pat-0003.html" class="t-pattern"><title>Slowly Changing Dimension Type 2 (Pattern)</title><circle cx="262.2" cy="331.8" r="8"/><text x="250.2" y="335.8" text-anchor="end">Slowly Changing Dimension Type 2</text></a>
+<a href="knowledge/da-pat-0002.html" class="t-pattern"><title>System-Versioned History Table (Pattern)</title><circle cx="262.2" cy="208.2" r="8"/><text x="250.2" y="212.2" text-anchor="end">System-Versioned History Table</text></a>
+<a href="knowledge/da-cap-0001.html" class="t-concept"><title>Historical Data Reconstruction Capability (Capability)</title><circle cx="353.1" cy="108.2" r="8"/><text x="341.1" y="112.2" text-anchor="end">Historical Data Reconstruction Capability</text></a>
+<a href="knowledge/da-con-0010.html" class="t-concept center"><circle cx="500.0" cy="270.0" r="15"/><text x="500.0" y="304.0" text-anchor="middle">Temporal Data Management</text></a>
+</svg>
+      <ul class="legend" aria-label="Legend: node colour by object type"><li><span class="dot t-concept"></span>Concept</li><li><span class="dot t-principle"></span>Principle</li><li><span class="dot t-pattern"></span>Pattern</li><li><span class="dot t-anti"></span>Anti-pattern</li><li><span class="dot t-decision"></span>Decision / tree</li><li><span class="dot t-gov"></span>Governance</li><li><span class="dot t-standard"></span>Standard</li><li><span class="dot t-tech"></span>Technology</li><li><span class="dot t-refarch"></span>Reference architecture</li><li><span class="dot t-tool"></span>Assessment / template</li></ul>
+    </figure>
+    <div class="tree" role="group" aria-label="Relationships of the example as a tree">Temporal Data Management
+   ├── addressed-by → <span class="ref-locked" title="Professional tier — not published on this site">Select Historical Data Strategy <span class="tier-tag">Professional</span></span> <span class="muted">(Decision)</span>
+   ├── assessed-by → <span class="ref-locked" title="Professional tier — not published on this site">History Requirements Are Specified <span class="tier-tag">Professional</span></span> <span class="muted">(Assessment criterion)</span>
+   ├── constrained-by → <a class="ref t-principle" href="knowledge/da-pri-0010.html">Historical Requirements Are Explicit</a> <span class="muted">(Principle)</span>
+   ├── constrained-by → <a class="ref t-standard" href="knowledge/da-std-0010.html">SQL Standard Temporal Support</a> <span class="muted">(Standard)</span>
+   ├── part-of → <a class="ref t-concept" href="knowledge/da-con-0023.html">Data Lifecycle</a> <span class="muted">(Concept)</span>
+   ├── realized-by → <a class="ref t-pattern" href="knowledge/da-pat-0001.html">Bitemporal Data Model</a> <span class="muted">(Pattern)</span>
+   ├── realized-by → <a class="ref t-pattern" href="knowledge/da-pat-0004.html">Event Sourcing</a> <span class="muted">(Pattern)</span>
+   ├── realized-by → <a class="ref t-pattern" href="knowledge/da-pat-0003.html">Slowly Changing Dimension Type 2</a> <span class="muted">(Pattern)</span>
+   ├── realized-by → <a class="ref t-pattern" href="knowledge/da-pat-0002.html">System-Versioned History Table</a> <span class="muted">(Pattern)</span>
+   └── required-by → <a class="ref t-concept" href="knowledge/da-cap-0001.html">Historical Data Reconstruction Capability</a> <span class="muted">(Capability)</span></div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap cols-2">
+    <div>
+      <h2>Relationships are first-class knowledge</h2>
+      <p>A statement like “a bitemporal data model <code>realizes</code> temporal data management” is itself knowledge. It can be validated (does the target exist?), queried (what realizes this concept?), governed (who approved it?) and reasoned over.</p>
+      <p>Generic <code>related-to</code> links are allowed only as a last resort; the validator warns when they dominate an object.</p>
+      <h3>Traceability</h3>
+      <ol class="flow" aria-label="Traceability chain">
+        <li>Principle</li><li>Pattern</li><li>Decision</li><li>Architecture</li><li>Implementation</li>
+      </ol>
+      <p class="muted" style="margin-top:1rem">Recommendations should be traceable along this chain, so that any decision can be explained by the knowledge it rests on.</p>
+    </div>
+    <div>
+      <h2>Relationship vocabulary</h2>
+      <div class="table-scroll">
+      <table>
+        <thead><tr><th>Category</th><th>Types (canonical direction)</th><th class="num">In use</th></tr></thead>
+        <tbody><tr><th scope="row">Semantic</th><td><code>specializes</code>, <code>represented-by</code>, <code>equivalent-to</code>, <code>alternative-to</code>, <code>distinct-from</code>, <code>conflicts-with</code></td><td class="num">20</td></tr>
+<tr><th scope="row">Structural</th><td><code>part-of</code></td><td class="num">71</td></tr>
+<tr><th scope="row">Realization</th><td><code>realizes</code>, <code>implements</code>, <code>supported-by</code></td><td class="num">78</td></tr>
+<tr><th scope="row">Dependency</th><td><code>depends-on</code>, <code>requires</code></td><td class="num">22</td></tr>
+<tr><th scope="row">Governance</th><td><code>governed-by</code>, <code>constrained-by</code>, <code>owned-by</code>, <code>decided-by</code>, <code>validated-by</code>, <code>measured-by</code></td><td class="num">85</td></tr>
+<tr><th scope="row">Flow</th><td><code>produces</code>, <code>consumes</code>, <code>precedes</code></td><td class="num">10</td></tr>
+<tr><th scope="row">Causal</th><td><code>causes</code>, <code>mitigates</code>, <code>addresses</code>, <code>violates</code></td><td class="num">22</td></tr>
+<tr><th scope="row">Decision</th><td><code>recommends</code></td><td class="num">26</td></tr>
+<tr><th scope="row">Assessment</th><td><code>assesses</code></td><td class="num">27</td></tr>
+<tr><th scope="row">Scope</th><td><code>applies-to</code></td><td class="num">11</td></tr>
+<tr><th scope="row">Provenance</th><td><code>derived-from</code></td><td class="num">14</td></tr>
+<tr><th scope="row">Lifecycle</th><td><code>supersedes</code></td><td class="num">0</td></tr>
+<tr><th scope="row">Generic</th><td><code>related-to</code></td><td class="num">2</td></tr></tbody>
+      </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Object types</h2>
+      <p>Each type has a canonical schema: required metadata, allowed values and required sections. Counts are from the repository.</p>
+    </div>
+    <div class="table-scroll">
+    <table>
+      <thead><tr><th>Type</th><th>Purpose</th><th class="num">Objects</th></tr></thead>
+      <tbody><tr><th scope="row"><span class="dot t-concept"></span>Concept</th><td>Defines a domain concept.</td><td class="num">29</td></tr>
+<tr><th scope="row"><span class="dot t-principle"></span>Principle</th><td>An architectural principle: statement, rationale, implications.</td><td class="num">10</td></tr>
+<tr><th scope="row"><span class="dot t-pattern"></span>Pattern</th><td>A reusable architectural solution to a recurring problem in context.</td><td class="num">16</td></tr>
+<tr><th scope="row"><span class="dot t-anti"></span>Anti-pattern</th><td>An approach that repeatedly causes problems. Not an absolute rule.</td><td class="num">6</td></tr>
+<tr><th scope="row"><span class="dot t-decision"></span>Decision</th><td>An architecture decision record (ADR-like), independent of architecture documentation.</td><td class="num">10</td></tr>
+<tr><th scope="row"><span class="dot t-decision"></span>Decision tree</th><td>Explicit decision logic whose nodes link to knowledge objects.</td><td class="num">5</td></tr>
+<tr><th scope="row"><span class="dot t-decision"></span>Framework</th><td>A structured set of concepts, stages and rules for approaching a class of problems (e.g. a decision framework).</td><td class="num">1</td></tr>
+<tr><th scope="row"><span class="dot t-decision"></span>Scoring model</th><td>Machine-readable weighted criteria and option scores for comparing alternatives.</td><td class="num">1</td></tr>
+<tr><th scope="row"><span class="dot t-decision"></span>Recommendation rule</th><td>Machine-readable IF-conditions-THEN-recommend rule linking situations to knowledge objects.</td><td class="num">2</td></tr>
+<tr><th scope="row"><span class="dot t-gov"></span>Architecture rule</th><td>Machine-checkable assertion about an architecture (applied today to this knowledge graph itself).</td><td class="num">2</td></tr>
+<tr><th scope="row"><span class="dot t-refarch"></span>Reference architecture</th><td>A reusable architectural structure.</td><td class="num">3</td></tr>
+<tr><th scope="row"><span class="dot t-standard"></span>Standard</th><td>An external or internal standard or regulation.</td><td class="num">10</td></tr>
+<tr><th scope="row"><span class="dot t-tech"></span>Technology</th><td>Technology-specific knowledge realizing generic concepts or patterns.</td><td class="num">3</td></tr>
+<tr><th scope="row"><span class="dot t-concept"></span>Capability</th><td>What an organisation or platform is able to do, independent of how (assessable with a maturity model).</td><td class="num">2</td></tr>
+<tr><th scope="row"><span class="dot t-tool"></span>Method</th><td>A repeatable way of working that produces an architectural result (steps, inputs, outputs).</td><td class="num">1</td></tr>
+<tr><th scope="row"><span class="dot t-gov"></span>Governance model</th><td>A governance model, lifecycle, decision-rights model or governance process.</td><td class="num">8</td></tr>
+<tr><th scope="row"><span class="dot t-gov"></span>Governance rule</th><td>A governance rule stated as knowledge; references its machine-enforced rule in approval-rules.yaml where one exists.</td><td class="num">3</td></tr>
+<tr><th scope="row"><span class="dot t-gov"></span>Process</th><td>A repeatable process with steps, inputs and outputs.</td><td class="num">1</td></tr>
+<tr><th scope="row"><span class="dot t-gov"></span>Role</th><td>A reusable governance role definition.</td><td class="num">15</td></tr>
+<tr><th scope="row"><span class="dot t-gov"></span>Control</th><td>A governance control.</td><td class="num">8</td></tr>
+<tr><th scope="row"><span class="dot t-tool"></span>Assessment</th><td>An assessment framework or maturity model.</td><td class="num">3</td></tr>
+<tr><th scope="row"><span class="dot t-tool"></span>Assessment criterion</th><td>A single assessable criterion with question, evidence and scoring.</td><td class="num">10</td></tr>
+<tr><th scope="row"><span class="dot t-tool"></span>Template</th><td>A reusable practice artifact (not an authoring template; those live in 00-system/templates).</td><td class="num">4</td></tr>
+<tr><th scope="row"><span class="dot t-concept"></span>Requirement</th><td>A requirement that architecture must satisfy.</td><td class="num">1</td></tr>
+<tr><th scope="row"><span class="dot t-concept"></span>Example</th><td>A worked example or case study.</td><td class="num">1</td></tr></tbody>
+    </table>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap cols-2">
+    <div>
+      <h2>One source, many consumers</h2>
+      <p>The knowledge lives as Markdown files with YAML metadata in Git. The same files are read by people in Obsidian and GitHub, by the validator, by this website, and by exporters that produce JSON, CSV and RDF (Turtle).</p>
+      <p>This website contains no copied knowledge: every page about an object is generated from its file at build time.</p>
+    </div>
+    <div>
+<pre aria-label="Architecture: one knowledge graph, several consumers">                Knowledge Graph (Git)
+                         │
+              ┌──────────┼──────────┐
+            GitHub    Website    API (planned)
+              │          │          │
+           Obsidian   Search    SaaS (later)
+              │     (planned)       │
+              └──────────┼──────────┘
+               AI / decision engines (later)</pre>
+    </div>
+  </div>
+</section>
+
+</main>
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <div>
+      <p class="footer-brand">Architecture Knowledge Graph</p>
+      <p class="muted">A structured and governed knowledge graph for data, information and enterprise architecture.</p>
+    </div>
+    <div>
+      <p class="muted">Generated from the knowledge graph on 2026-09-30: 155 objects, 388 typed relationships.</p>
+      <p class="muted"><a href="mailto:dalust1997@gmail.com?subject=Feedback%3A%20Architecture%20Knowledge%20Graph&amp;body=Page%20or%20knowledge%20object%3A%20%28page%20title%2C%20ID%20or%20URL%29%0AKind%20of%20feedback%20%28factual%20error%20/%20unclear%20/%20missing%20/%20terminology%20/%20suggestion%20/%20other%29%3A%20%0AWhat%20should%20change%2C%20and%20why%3A%0A%0A%0ASource%20%28optional%29%3A%0A">Send feedback</a> · <a href="https://github.com/ArchKnowledge/Architecture-Knowledge-Graph">Source repository</a> <span class="muted">(private during phase 1)</span> · No products are currently for sale.</p>
+      <p class="muted">© 2026 Architecture Knowledge Graph project. Content licence to be decided; all rights reserved until then. Referenced standards belong to their issuing organisations.</p>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

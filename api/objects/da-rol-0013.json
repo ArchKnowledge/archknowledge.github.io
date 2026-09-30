@@ -1,0 +1,37 @@
+{
+  "id": "DA-ROL-0013",
+  "type": "role",
+  "title": "Security Architect",
+  "domain": "Data Security & Privacy",
+  "layer": [
+    "cross-layer"
+  ],
+  "status": "proposed",
+  "quality": "draft",
+  "confidence": "medium",
+  "epistemic_status": "common-practice",
+  "owner": "unassigned",
+  "version": "0.1.0",
+  "publication_tier": "community",
+  "summary": "Architect responsible for security architecture, classification schemes and security controls for data.",
+  "path": "06-data-governance/roles/Security Architect.md",
+  "relationships": [
+    {
+      "type": "part-of",
+      "direction": "out",
+      "target": "DA-GOV-0003",
+      "title": "Governance Roles"
+    }
+  ],
+  "sources": [],
+  "evidence": [],
+  "governance": {
+    "status": "proposed",
+    "authority": "unreviewed",
+    "required_levels": [
+      "data-architecture"
+    ],
+    "records": []
+  },
+  "body_markdown": "# Security Architect\n\n## Purpose\n\nProtect data according to its classification and risk.\n\n## Responsibilities\n\n- Define classification scheme and security controls.\n- Review designs for security.\n- Advise on access models.\n\n## Decision Rights\n\nSecurity controls and classification rules; veto on security grounds via escalation.\n\n## Inputs\n\nRisk assessments; regulations; designs.\n\n## Outputs\n\nSecurity requirements; review outcomes.\n\n## Required Competencies\n\nSecurity architecture; IAM; cryptography.\n\n## Escalation Paths\n\nRisk acceptance \u2192 risk owner / [[Data Owner]].\n\n## Related Governance Processes\n\n- [[Decision Rights Model]]\n- [[Architecture Change Process]]\n- [[Governance Lifecycle]]\n"
+}

@@ -1,0 +1,44 @@
+{
+  "id": "DA-ROL-0011",
+  "type": "role",
+  "title": "Solution Architect",
+  "domain": "Architecture",
+  "layer": [
+    "physical",
+    "technical"
+  ],
+  "status": "proposed",
+  "quality": "draft",
+  "confidence": "medium",
+  "epistemic_status": "common-practice",
+  "owner": "unassigned",
+  "version": "0.1.0",
+  "publication_tier": "community",
+  "summary": "Architect responsible for the design of a specific solution within enterprise and data architecture constraints.",
+  "path": "06-data-governance/roles/Solution Architect.md",
+  "relationships": [
+    {
+      "type": "depends-on",
+      "direction": "out",
+      "target": "DA-ROL-0008",
+      "title": "Data Architect"
+    },
+    {
+      "type": "part-of",
+      "direction": "out",
+      "target": "DA-GOV-0003",
+      "title": "Governance Roles"
+    }
+  ],
+  "sources": [],
+  "evidence": [],
+  "governance": {
+    "status": "proposed",
+    "authority": "unreviewed",
+    "required_levels": [
+      "technical"
+    ],
+    "records": []
+  },
+  "body_markdown": "# Solution Architect\n\n## Purpose\n\nDeliver solution designs that honour higher-layer decisions.\n\n## Responsibilities\n\n- Design solution components and interfaces.\n- Select integration style per flow ([[Select Data Integration Style]]).\n- Escalate when higher-layer decisions cannot be honoured.\n\n## Decision Rights\n\nTechnical level within standards; data architecture choices for the solution below threshold.\n\n## Inputs\n\nRequirements; data architecture; platform standards.\n\n## Outputs\n\nSolution designs; solution ADRs.\n\n## Required Competencies\n\nSolution design; integration; delivery.\n\n## Escalation Paths\n\nConflicts with data architecture \u2192 [[Data Architect]].\n\n## Related Governance Processes\n\n- [[Decision Rights Model]]\n- [[Architecture Change Process]]\n- [[Governance Lifecycle]]\n"
+}

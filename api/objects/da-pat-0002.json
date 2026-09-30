@@ -1,0 +1,79 @@
+{
+  "id": "DA-PAT-0002",
+  "type": "pattern",
+  "title": "System-Versioned History Table",
+  "domain": "Data Modeling",
+  "layer": [
+    "logical",
+    "physical"
+  ],
+  "status": "proposed",
+  "quality": "draft",
+  "confidence": "high",
+  "epistemic_status": "common-practice",
+  "owner": "unassigned",
+  "version": "0.1.0",
+  "publication_tier": "community",
+  "summary": "Let the database automatically keep every prior version of a row, with system-maintained transaction-time periods, in an associated history table.",
+  "aliases": [
+    "Transaction-Time Table",
+    "History Database"
+  ],
+  "path": "19-architecture-patterns/System-Versioned History Table.md",
+  "relationships": [
+    {
+      "type": "realizes",
+      "direction": "out",
+      "target": "DA-CAP-0001",
+      "title": "Historical Data Reconstruction Capability"
+    },
+    {
+      "type": "realizes",
+      "direction": "out",
+      "target": "DA-CON-0010",
+      "title": "Temporal Data Management"
+    },
+    {
+      "type": "constrained-by",
+      "direction": "out",
+      "target": "DA-STD-0010",
+      "title": "SQL Standard Temporal Support"
+    },
+    {
+      "type": "implemented-by",
+      "direction": "in",
+      "target": "DA-TEC-0001",
+      "title": "SQL Server Temporal Tables"
+    },
+    {
+      "type": "alternative-to",
+      "direction": "in",
+      "target": "DA-PAT-0001",
+      "title": "Bitemporal Data Model"
+    },
+    {
+      "type": "alternative-to",
+      "direction": "in",
+      "target": "DA-PAT-0004",
+      "title": "Event Sourcing"
+    },
+    {
+      "type": "recommended-by",
+      "direction": "in",
+      "target": "DA-DTR-0001",
+      "title": "Database History Pattern Decision Tree"
+    }
+  ],
+  "sources": [],
+  "evidence": [],
+  "governance": {
+    "status": "proposed",
+    "authority": "unreviewed",
+    "required_levels": [
+      "data-architecture",
+      "technical"
+    ],
+    "records": []
+  },
+  "body_markdown": "# System-Versioned History Table\n\n## Problem\n\nOperational data is updated in place, but users or auditors need to see what the data looked like at a past point in (system) time.\n\n## Context\n\nOperational databases where history of *recorded* state is needed and valid-time corrections are rare or not required.\n\n## Forces\n\n- Applications should not have to write history themselves.\n- History must be tamper-resistant.\n- Current-state queries must remain fast.\n\n## Solution\n\nEach row carries a system-maintained period (`sys_start`, `sys_end`). On update/delete, the DBMS moves the prior version to a history table. Queries use \"as of\" syntax to read past states.\n\n## Architecture\n\n```text\nCurrent table (period open) \u2500\u2500on update/delete\u2500\u2500\u25b6 History table (closed periods)\n                  \u25b2                                       \u2502\n                  \u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500 FOR SYSTEM_TIME AS OF \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n```\n\n## Advantages\n\n- Transparent to applications.\n- Consistent, DBMS-enforced transaction time.\n- Standardized in SQL ([[SQL Standard Temporal Support]]).\n\n## Disadvantages\n\n- Captures transaction time only; backdated business corrections are not represented as such.\n- History growth needs retention management.\n\n## Risks\n\n- Mistaking system time for business validity leads to wrong reconstructions.\n- Schema changes on temporal tables can be constrained by the DBMS.\n\n## When to Use\n\n- \"What did the database say at time T?\" is the key question.\n\n## When Not to Use\n\n- Retroactive valid-time corrections must be reconstructable \u2192 [[Bitemporal Data Model]].\n\n## Alternatives\n\n[[Bitemporal Data Model]], [[Event Sourcing]], application-maintained audit tables.\n\n## Examples\n\n- Reconstructing a customer's contact details as stored at the moment a letter was sent.\n\n## Related Decisions\n\n- [[Select Historical Data Strategy]]\n"
+}

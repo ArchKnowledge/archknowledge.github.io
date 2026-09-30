@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Knowledge Base Maturity Model · Architecture Knowledge Graph</title>
+<meta name="description" content="Five-level maturity model for an architecture knowledge base, from fragmented to executable, with observable indicators and automatable checks per level.">
+<link rel="canonical" href="https://archknowledge.github.io/knowledge/da-asm-0001.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Architecture Knowledge Graph">
+<meta property="og:title" content="Knowledge Base Maturity Model">
+<meta property="og:description" content="Five-level maturity model for an architecture knowledge base, from fragmented to executable, with observable indicators and automatable checks per level.">
+<meta property="og:url" content="https://archknowledge.github.io/knowledge/da-asm-0001.html">
+<meta name="twitter:card" content="summary">
+<meta name="color-scheme" content="light dark">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../assets/style.css">
+<meta name="akg-root" content="../">
+<script src="../assets/site.js" defer></script>
+
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="../index.html" aria-label="Architecture Knowledge Graph — home">
+      <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true"><path d="M6 24 16 8l10 16M6 24h20M16 8v16" /><circle cx="16" cy="8" r="3"/><circle cx="6" cy="24" r="3"/><circle cx="26" cy="24" r="3"/><circle cx="16" cy="24" r="2.2"/></svg>
+      <span>Architecture<br>Knowledge Graph</span>
+    </a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+    <nav id="site-nav" class="site-nav" aria-label="Main">
+      <ul>
+<li><a href="../why.html">Why</a></li>
+<li><a href="../knowledge-graph.html">Knowledge Graph</a></li>
+<li><a href="../explore.html" aria-current="page">Explore</a></li>
+<li><a href="../products.html">Products</a></li>
+<li><a href="../governance.html">Governance</a></li>
+<li><a href="../roadmap.html">Roadmap</a></li>
+<li><a href="../search.html">Search</a></li>
+        <li><a class="gh" href="https://github.com/ArchKnowledge/Architecture-Knowledge-Graph">GitHub <span class="nav-note">private</span></a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+<p class="preview-bar wrap" role="note">Early preview · Phase 1 of the roadmap · All knowledge is in draft and awaiting human review.</p>
+<main id="main">
+
+<article class="object page-narrow">
+  <p class="eyebrow"><span class="dot t-tool"></span>Assessment · <a href="../explore/assessments-maturity.html">Assessments &amp; Maturity</a></p>
+  <h1>Knowledge Base Maturity Model</h1>
+  <p class="lead">Five-level maturity model for an architecture knowledge base, from fragmented to executable, with observable indicators and automatable checks per level.</p>
+  <p class="notice" role="note"><strong>Draft knowledge.</strong> Status <code>proposed</code>, quality <code>draft</code>. Not yet reviewed or approved by a human architect.</p>
+  <div class="object-grid">
+    <div class="object-body"><h2>Purpose</h2>
+<p>Assess and steer the maturity of this (or any) architecture knowledge base (spec §18). Target: Level 5.</p>
+<h2>Scope</h2>
+<p>The knowledge base as a whole, or a single domain within it.</p>
+<h2>Structure</h2>
+<table>
+<thead>
+<tr>
+<th>Level</th>
+<th>Name</th>
+<th>Description</th>
+<th>Observable indicators</th>
+<th>Automatable check</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Fragmented</td>
+<td>Knowledge exists but is mostly unstructured.</td>
+<td>documents, notes, no IDs</td>
+<td>—</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Documented</td>
+<td>Knowledge is documented and categorized.</td>
+<td>domain folders; titles; some metadata</td>
+<td>% objects with <code>type</code> and <code>domain</code></td>
+</tr>
+<tr>
+<td>3</td>
+<td>Structured</td>
+<td>Knowledge objects and relationships are explicit.</td>
+<td>schemas; typed relationships; resolved links</td>
+<td>zero E0xx errors; relationships per object ≥ 2; few orphans</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Governed</td>
+<td>Ownership, validation and lifecycle management.</td>
+<td>owners/reviewers assigned; lifecycle transitions enforced in CI; approvals recorded</td>
+<td>% objects ≥ <code>validated</code> with owner; CI transition check active</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Executable</td>
+<td>Knowledge drives decisions, assessments, validation and automation.</td>
+<td>decision trees and assessments used in practice; products generated from graph; validation of real architectures against knowledge</td>
+<td>exports consumed by tools; assessments derived from objects</td>
+</tr>
+</tbody>
+</table>
+<h2>Scoring Mechanism</h2>
+<p>Ordinal per domain: the highest level whose indicators are <strong>all</strong> met. No averaging across domains — report per domain.</p>
+<h2>Interpretation</h2>
+<p>Release 0.1 of this repository is expected to reach <strong>Level 3 (Structured)</strong> structurally, with Level 4 mechanisms in place (lifecycle, owner checks, CI) but not yet exercised: no object has passed human review, so it cannot claim Level 4.</p>
+<h2>Recommended Actions</h2>
+<ul>
+<li>2 → 3: introduce schemas and typed relationships; run the validator.</li>
+<li>3 → 4: assign owners and reviewers; move objects through review; enforce <code>--base</code> transition checks in CI.</li>
+<li>4 → 5: use decision trees and assessments in real engagements; generate products (checklists, guides) from the graph; feed exports into tooling.</li>
+</ul></div>
+    <aside class="object-meta" aria-label="Metadata and relationships">
+      <h2>Metadata</h2><dl><dt>ID</dt><dd><code>DA-ASM-0001</code></dd><dt>Type</dt><dd>Assessment</dd><dt>Domain</dt><dd><a href="../explore/assessments-maturity.html">Assessments &amp; Maturity</a></dd><dt>Layer</dt><dd>—</dd><dt>Status</dt><dd>proposed</dd><dt>Quality</dt><dd>draft</dd><dt>Confidence</dt><dd>medium</dd><dt>Epistemic status</dt><dd>recommendation</dd><dt>Content tier</dt><dd>Community</dd><dt>Version</dt><dd>0.1.0</dd><dt>Updated</dt><dd>2026-09-29</dd><dt>Source file</dt><dd><code>21-assessments/Knowledge Base Maturity Model.md</code></dd></dl>
+      <h2>Relationships</h2>
+      <table class='rels'><tbody><tr><td><code>assesses</code></td><td><a class="ref t-gov" href="../knowledge/da-gov-0006.html">Knowledge Quality Model</a></td><td class="muted">Governance model</td></tr><tr><td><code>assesses</code></td><td><a class="ref t-gov" href="../knowledge/da-gov-0007.html">Knowledge Repository Governance</a></td><td class="muted">Governance model</td></tr><tr><td><code>supported-by</code></td><td><span class="ref-locked" title="Professional tier — not published on this site">Mandatory Metadata Control <span class="tier-tag">Professional</span></span></td><td class="muted">Control</td></tr><tr><td><code>supported-by</code></td><td><span class="ref-locked" title="Professional tier — not published on this site">Traceability Control <span class="tier-tag">Professional</span></span></td><td class="muted">Control</td></tr><tr><td><code>source-of</code></td><td><span class="ref-locked" title="Professional tier — not published on this site">Architecture Capability Maturity Model <span class="tier-tag">Professional</span></span></td><td class="muted">Assessment</td></tr></tbody></table>
+      <h2>Sources</h2><p class="muted">No verified source attached yet.</p>
+      <h2>Feedback</h2><p><a href="mailto:dalust1997@gmail.com?subject=Feedback%3A%20DA-ASM-0001%20Knowledge%20Base%20Maturity%20Model&amp;body=Page%20or%20knowledge%20object%3A%20DA-ASM-0001%20-%20Knowledge%20Base%20Maturity%20Model%0AKind%20of%20feedback%20%28factual%20error%20/%20unclear%20/%20missing%20/%20terminology%20/%20suggestion%20/%20other%29%3A%20%0AWhat%20should%20change%2C%20and%20why%3A%0A%0A%0ASource%20%28optional%29%3A%0A">Give feedback on this page</a> — report an error, something unclear or missing, or a source.</p>
+    </aside>
+  </div>
+</article>
+</main>
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <div>
+      <p class="footer-brand">Architecture Knowledge Graph</p>
+      <p class="muted">A structured and governed knowledge graph for data, information and enterprise architecture.</p>
+    </div>
+    <div>
+      <p class="muted">Generated from the knowledge graph on 2026-09-30: 155 objects, 388 typed relationships.</p>
+      <p class="muted"><a href="mailto:dalust1997@gmail.com?subject=Feedback%3A%20Architecture%20Knowledge%20Graph&amp;body=Page%20or%20knowledge%20object%3A%20%28page%20title%2C%20ID%20or%20URL%29%0AKind%20of%20feedback%20%28factual%20error%20/%20unclear%20/%20missing%20/%20terminology%20/%20suggestion%20/%20other%29%3A%20%0AWhat%20should%20change%2C%20and%20why%3A%0A%0A%0ASource%20%28optional%29%3A%0A">Send feedback</a> · <a href="https://github.com/ArchKnowledge/Architecture-Knowledge-Graph">Source repository</a> <span class="muted">(private during phase 1)</span> · No products are currently for sale.</p>
+      <p class="muted">© 2026 Architecture Knowledge Graph project. Content licence to be decided; all rights reserved until then. Referenced standards belong to their issuing organisations.</p>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

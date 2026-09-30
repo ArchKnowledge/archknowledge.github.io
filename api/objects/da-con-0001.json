@@ -1,0 +1,106 @@
+{
+  "id": "DA-CON-0001",
+  "type": "concept",
+  "title": "Data Architecture",
+  "domain": "Architecture",
+  "layer": [
+    "cross-layer"
+  ],
+  "status": "proposed",
+  "quality": "draft",
+  "confidence": "high",
+  "epistemic_status": "common-practice",
+  "owner": "unassigned",
+  "version": "0.1.0",
+  "publication_tier": "community",
+  "definition": "The discipline and resulting structures that define how an organisation's data is described, organised, integrated, governed and realized across systems, from business meaning to technical implementation.",
+  "aliases": [
+    "DA"
+  ],
+  "path": "02-architecture/concepts/Data Architecture.md",
+  "relationships": [
+    {
+      "type": "governed-by",
+      "direction": "out",
+      "target": "DA-CON-0018",
+      "title": "Data Governance"
+    },
+    {
+      "type": "governed-by",
+      "direction": "out",
+      "target": "DA-GOV-0001",
+      "title": "Architecture Governance Model"
+    },
+    {
+      "type": "supported-by",
+      "direction": "out",
+      "target": "DA-CON-0016",
+      "title": "Metadata"
+    },
+    {
+      "type": "constrained-by",
+      "direction": "out",
+      "target": "DA-PRI-0003",
+      "title": "Decisions Belong to Their Layer"
+    },
+    {
+      "type": "constrained-by",
+      "direction": "out",
+      "target": "DA-PRI-0004",
+      "title": "Technology-Neutral Architecture First"
+    },
+    {
+      "type": "derived-from",
+      "direction": "out",
+      "target": "DA-STD-0008",
+      "title": "DAMA-DMBOK"
+    },
+    {
+      "type": "governed-by",
+      "direction": "out",
+      "target": "DA-ROL-0010",
+      "title": "Enterprise Architect"
+    },
+    {
+      "type": "has-part",
+      "direction": "in",
+      "target": "DA-CON-0023",
+      "title": "Data Lifecycle"
+    },
+    {
+      "type": "related-to",
+      "direction": "in",
+      "target": "DA-CON-0002",
+      "title": "Information Architecture"
+    },
+    {
+      "type": "has-part",
+      "direction": "in",
+      "target": "DA-CON-0005",
+      "title": "Data Model"
+    },
+    {
+      "type": "has-part",
+      "direction": "in",
+      "target": "DA-CON-0028",
+      "title": "Data Platform"
+    },
+    {
+      "type": "has-part",
+      "direction": "in",
+      "target": "DA-CON-0029",
+      "title": "Data Integration"
+    }
+  ],
+  "sources": [],
+  "evidence": [],
+  "governance": {
+    "status": "proposed",
+    "authority": "unreviewed",
+    "required_levels": [
+      "data-architecture"
+    ],
+    "records": []
+  },
+  "body_markdown": "# Data Architecture\n\n## Definition\n\nData Architecture is the discipline and the resulting set of structures that define how an organisation's data is described, organised, integrated, governed and realized across systems \u2014 from business meaning down to technical implementation.\n\n## Explanation\n\nData Architecture spans the whole [[Architecture Layer]] stack. It is not a single model or a single platform; it is the coherent set of decisions that determine:\n\n- which data exists and what it means (in cooperation with [[Semantic Model|semantic]] and [[Information Architecture|information architecture]]);\n- how data is structured ([[Data Model|data models]] at conceptual, logical and physical level);\n- where data is authoritative and how it moves ([[Data Integration]], [[Each Data Element Has an Authoritative Source]]);\n- how data is stored and processed ([[Data Platform]]);\n- how data changes over time ([[Data Lifecycle]], [[Temporal Data Management]]);\n- how all of this is governed ([[Data Governance]], [[Architecture Governance Model]]).\n\nIts outputs are models, principles, standards, patterns, [[Architecture Decision|architecture decisions]] and reference architectures.\n\n## Distinctions\n\n- **Not the same as [[Information Architecture]]**: information architecture focuses on the structure and meaning of information as used by people and processes; data architecture additionally covers realization, integration, platforms and operations. The boundary is contested (see Open Questions).\n- **Not the same as a [[Data Platform]]**: a platform is one realization component of the architecture.\n- **Not the same as data modeling** ([[Data Model]]): modeling is one of the core activities within data architecture.\n\n## Examples\n\n- Defining that customer data is authoritative in one system and replicated elsewhere via [[Change Data Capture]].\n- Deciding that historical data must be reconstructable for seven years, and choosing a [[Bitemporal Data Model]] to realize that.\n\n## Open Questions\n\n- The boundary between data architecture and information architecture differs between frameworks. This knowledge base treats them as overlapping disciplines with different emphasis; the interpretation is `expert-interpretation` and awaits review.\n"
+}

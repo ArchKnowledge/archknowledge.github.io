@@ -1,0 +1,59 @@
+{
+  "id": "DA-APT-0002",
+  "type": "anti-pattern",
+  "title": "Overloaded Attribute",
+  "domain": "Data Modeling",
+  "layer": [
+    "information",
+    "logical",
+    "physical"
+  ],
+  "status": "proposed",
+  "quality": "draft",
+  "confidence": "medium",
+  "epistemic_status": "common-practice",
+  "owner": "unassigned",
+  "version": "0.1.0",
+  "publication_tier": "community",
+  "summary": "One attribute carries different meanings depending on context, record type or time, instead of separate, well-defined attributes.",
+  "path": "19-architecture-patterns/anti-patterns/Overloaded Attribute.md",
+  "relationships": [
+    {
+      "type": "violates",
+      "direction": "out",
+      "target": "DA-PRI-0002",
+      "title": "Meaning Before Representation"
+    },
+    {
+      "type": "mitigated-by",
+      "direction": "in",
+      "target": "DA-PAT-0014",
+      "title": "Concept-to-Model Traceability"
+    },
+    {
+      "type": "caused-by",
+      "direction": "in",
+      "target": "DA-APT-0001",
+      "title": "Implicit Semantics"
+    },
+    {
+      "type": "caused-by",
+      "direction": "in",
+      "target": "DA-APT-0005",
+      "title": "Migration Without Data Profiling"
+    }
+  ],
+  "sources": [],
+  "evidence": [],
+  "governance": {
+    "status": "proposed",
+    "authority": "unreviewed",
+    "required_levels": [
+      "information-model",
+      "data-architecture",
+      "technical"
+    ],
+    "records": []
+  },
+  "body_markdown": "# Overloaded Attribute\n\n## Problem\n\nA field such as `date_1` holds the start date for policies and the birth date for persons; `code` means different code lists per record type.\n\n## Symptoms\n\n- Interpretation depends on another column's value.\n- Many CASE expressions in consumers.\n- Quality rules that differ per record type for the same field.\n\n## Root Causes\n\n- Avoiding schema changes; generic \"flexible\" designs; reuse of legacy fields.\n\n## Consequences\n\n- Ambiguous reports; failed validations; migration mapping errors.\n\n## Detection\n\n- Profiling: value distributions differing strongly by record type; comments like \"if type = X then \u2026\".\n\n## Remediation\n\n- Split into distinct attributes linked to distinct concepts; during migration, map per context.\n\n## Alternative Patterns\n\n[[Concept-to-Model Traceability]].\n\n## When It May Be Acceptable\n\nGeneric key-value stores where the key explicitly identifies the meaning (then it is metadata-driven, not overloaded).\n"
+}

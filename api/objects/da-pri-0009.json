@@ -1,0 +1,55 @@
+{
+  "id": "DA-PRI-0009",
+  "type": "principle",
+  "title": "Governance Is Embedded in Delivery",
+  "domain": "Architecture Governance",
+  "layer": [
+    "cross-layer"
+  ],
+  "status": "proposed",
+  "quality": "draft",
+  "confidence": "medium",
+  "epistemic_status": "recommendation",
+  "owner": "unassigned",
+  "version": "0.1.0",
+  "publication_tier": "community",
+  "summary": "Governance controls are built into the delivery workflow as automated and review steps, rather than applied as a separate documentation phase at the end.",
+  "path": "16-architecture-governance/principles/Governance Is Embedded in Delivery.md",
+  "relationships": [
+    {
+      "type": "supported-by",
+      "direction": "out",
+      "target": "DA-ADR-0001",
+      "title": "Use Markdown and Git as the Initial Knowledge Store"
+    },
+    {
+      "type": "constrains",
+      "direction": "in",
+      "target": "DA-CON-0018",
+      "title": "Data Governance"
+    },
+    {
+      "type": "realized-by",
+      "direction": "in",
+      "target": "DA-GOV-0001",
+      "title": "Architecture Governance Model"
+    },
+    {
+      "type": "violated-by",
+      "direction": "in",
+      "target": "DA-APT-0004",
+      "title": "Governance as Afterthought"
+    }
+  ],
+  "sources": [],
+  "evidence": [],
+  "governance": {
+    "status": "proposed",
+    "authority": "unreviewed",
+    "required_levels": [
+      "data-architecture"
+    ],
+    "records": []
+  },
+  "body_markdown": "# Governance Is Embedded in Delivery\n\n## Statement\n\nGovernance controls shall be built into the delivery workflow as automated checks and review steps, rather than applied as a separate documentation phase at the end.\n\n## Rationale\n\nEnd-of-process governance finds problems when they are most expensive to fix and turns governance into paperwork.\n\n## Implications\n\n- Controls have triggers inside the workflow (pull request, model check-in, deployment).\n- Automated validation produces VALID / WARNING / BLOCKING ERROR, as this repository does with `00-system/validation/dakb.py`.\n\n## Consequences\n\n- Positive: earlier feedback, less bureaucracy, evidence generated automatically.\n- Negative: requires tooling and explicit, machine-checkable rules.\n\n## Applicability\n\nArchitecture and data delivery; this knowledge base itself.\n\n## Exceptions\n\nGovernance decisions requiring human judgement remain human ([[Knowledge Repository Governance]]); automation provides evidence, not approval.\n\n## Related Principles\n\n- [[Metadata Is Captured by Design]]\n"
+}

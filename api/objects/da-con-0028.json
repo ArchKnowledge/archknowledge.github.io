@@ -1,0 +1,62 @@
+{
+  "id": "DA-CON-0028",
+  "type": "concept",
+  "title": "Data Platform",
+  "domain": "Data Platforms",
+  "layer": [
+    "physical",
+    "technical"
+  ],
+  "status": "proposed",
+  "quality": "draft",
+  "confidence": "medium",
+  "epistemic_status": "common-practice",
+  "owner": "unassigned",
+  "version": "0.1.0",
+  "publication_tier": "community",
+  "definition": "The integrated set of technical capabilities \u2014 storage, processing, integration, metadata, security and operations \u2014 on which data is stored, transformed and served.",
+  "path": "08-data-platforms/Data Platform.md",
+  "relationships": [
+    {
+      "type": "governed-by",
+      "direction": "out",
+      "target": "DA-ROL-0012",
+      "title": "Platform Architect"
+    },
+    {
+      "type": "part-of",
+      "direction": "out",
+      "target": "DA-CON-0001",
+      "title": "Data Architecture"
+    },
+    {
+      "type": "constrained-by",
+      "direction": "out",
+      "target": "DA-PRI-0004",
+      "title": "Technology-Neutral Architecture First"
+    },
+    {
+      "type": "realized-by",
+      "direction": "in",
+      "target": "DA-RAR-0001",
+      "title": "Governed Analytical Data Platform"
+    },
+    {
+      "type": "realized-by",
+      "direction": "in",
+      "target": "DA-PAT-0009",
+      "title": "Layered Data Refinement"
+    }
+  ],
+  "sources": [],
+  "evidence": [],
+  "governance": {
+    "status": "proposed",
+    "authority": "unreviewed",
+    "required_levels": [
+      "technical"
+    ],
+    "records": []
+  },
+  "body_markdown": "# Data Platform\n\n## Definition\n\nA Data Platform is the integrated set of technical capabilities \u2014 storage, processing, integration, metadata, security and operations \u2014 on which data is stored, transformed and served.\n\n## Explanation\n\nA platform is described first in terms of **capabilities** (technology-neutral), then realized by products. Typical capability groups: ingestion, storage, processing, serving, [[Metadata|metadata]] and catalog, [[Data Quality|quality]], security and access, orchestration, observability.\n\nPlatform styles include operational databases, data warehouses, data lakes, lakehouses and streaming platforms. [[Layered Data Refinement]] is a common structuring pattern; [[Governed Analytical Data Platform]] is the reference architecture in this knowledge base.\n\n## Distinctions\n\n- Platform vs [[Data Architecture]]: the platform is the realization substrate; architecture also covers meaning, models and governance.\n\n## Examples\n\n- A cloud lakehouse using [[Apache Iceberg]] tables, an orchestration service and a catalog.\n"
+}

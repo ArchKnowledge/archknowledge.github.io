@@ -1,0 +1,48 @@
+{
+  "id": "DA-PAT-0016",
+  "type": "pattern",
+  "title": "Big Bang Data Migration",
+  "domain": "Data Migration",
+  "layer": [
+    "logical",
+    "technical"
+  ],
+  "status": "proposed",
+  "quality": "draft",
+  "confidence": "high",
+  "epistemic_status": "common-practice",
+  "owner": "unassigned",
+  "version": "0.1.0",
+  "publication_tier": "community",
+  "summary": "Migrate all data in a single cut-over event after rehearsals, switching all users from source to target at once.",
+  "aliases": [
+    "Single Cut-over Migration"
+  ],
+  "path": "19-architecture-patterns/Big Bang Data Migration.md",
+  "relationships": [
+    {
+      "type": "realizes",
+      "direction": "out",
+      "target": "DA-CON-0024",
+      "title": "Data Migration"
+    },
+    {
+      "type": "alternative-to",
+      "direction": "in",
+      "target": "DA-PAT-0015",
+      "title": "Phased Data Migration"
+    }
+  ],
+  "sources": [],
+  "evidence": [],
+  "governance": {
+    "status": "proposed",
+    "authority": "unreviewed",
+    "required_levels": [
+      "data-architecture",
+      "technical"
+    ],
+    "records": []
+  },
+  "body_markdown": "# Big Bang Data Migration\n\n## Problem\n\nData must move to a new system, and coexistence is impractical.\n\n## Context\n\nModerate volumes, tightly coupled data, acceptable downtime window.\n\n## Forces\n\n- Simplicity vs. concentrated risk.\n\n## Solution\n\nBuild and rehearse the full migration repeatedly (dress rehearsals with production copies), reconcile each rehearsal, then execute once in a planned window with a go/no-go decision and rollback plan.\n\n## Architecture\n\n```text\nFreeze \u2192 extract \u2192 transform \u2192 load \u2192 reconcile \u2192 go/no-go \u2192 switch (or rollback)\n```\n\n## Advantages\n\n- No coexistence; simpler design; shorter total duration.\n\n## Disadvantages\n\n- All risk concentrated in one event.\n\n## Risks\n\n- Downtime overrun; rollback infeasible after go-live transactions.\n\n## When to Use\n\n- Data cannot be partitioned; downtime acceptable; rehearsals feasible.\n\n## When Not to Use\n\n- Mission-critical systems without downtime tolerance.\n\n## Alternatives\n\n[[Phased Data Migration]].\n\n## Examples\n\n- Weekend cut-over of an HR system after three rehearsals.\n\n## Related Decisions\n\n- [[Select Data Migration Approach]]\n"
+}

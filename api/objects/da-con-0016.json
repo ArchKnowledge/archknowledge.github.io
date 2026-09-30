@@ -1,0 +1,79 @@
+{
+  "id": "DA-CON-0016",
+  "type": "concept",
+  "title": "Metadata",
+  "domain": "Metadata Management",
+  "layer": [
+    "cross-layer"
+  ],
+  "status": "proposed",
+  "quality": "draft",
+  "confidence": "high",
+  "epistemic_status": "common-practice",
+  "owner": "unassigned",
+  "version": "0.1.0",
+  "publication_tier": "community",
+  "definition": "Data that describes other data or data-related assets \u2014 their meaning, structure, origin, quality, ownership, usage, security and processing.",
+  "path": "05-metadata/concepts/Metadata.md",
+  "relationships": [
+    {
+      "type": "constrained-by",
+      "direction": "out",
+      "target": "DA-PRI-0006",
+      "title": "Metadata Is Captured by Design"
+    },
+    {
+      "type": "constrained-by",
+      "direction": "out",
+      "target": "DA-STD-0004",
+      "title": "ISO IEC 11179 Metadata Registries"
+    },
+    {
+      "type": "governed-by",
+      "direction": "out",
+      "target": "DA-CON-0018",
+      "title": "Data Governance"
+    },
+    {
+      "type": "supports",
+      "direction": "in",
+      "target": "DA-CON-0001",
+      "title": "Data Architecture"
+    },
+    {
+      "type": "has-part",
+      "direction": "in",
+      "target": "DA-CON-0017",
+      "title": "Data Lineage"
+    },
+    {
+      "type": "supports",
+      "direction": "in",
+      "target": "DA-CON-0021",
+      "title": "Data Quality"
+    },
+    {
+      "type": "distinct-from",
+      "direction": "in",
+      "target": "DA-CON-0027",
+      "title": "Reference Data"
+    },
+    {
+      "type": "produced-by",
+      "direction": "in",
+      "target": "DA-PAT-0011",
+      "title": "Metadata Harvesting"
+    }
+  ],
+  "sources": [],
+  "evidence": [],
+  "governance": {
+    "status": "proposed",
+    "authority": "unreviewed",
+    "required_levels": [
+      "data-architecture"
+    ],
+    "records": []
+  },
+  "body_markdown": "# Metadata\n\n## Definition\n\nMetadata is data that describes other data or data-related assets \u2014 their meaning, structure, origin, quality, ownership, usage, security and processing.\n\n## Explanation\n\nThis knowledge base distinguishes nine metadata categories (spec \u00a79). The categories overlap; a single attribute may serve several.\n\n| Category | Describes | Examples | Typical owner |\n|---|---|---|---|\n| Business | meaning and business context | definitions, business rules, owner | [[Data Owner]] / [[Data Steward]] |\n| Technical | structure and storage | schemas, data types, keys | [[Data Custodian]] |\n| Operational | runtime behaviour | load times, row counts, job status | platform operations |\n| Process | processes that create/use data | producing process, SLA | process owner |\n| Semantic | meaning formally | concept links, ontology IRIs | [[Semantic Architect]] |\n| Governance | decisions and accountability | status, approvals, policies | [[Data Steward]] |\n| Quality | fitness for use | DQ rules, scores | [[Data Steward]] |\n| Security | protection | classification, access policies | [[Security Architect]] |\n| Lineage | origin and flow | source-to-target mappings | [[Data Architect]] |\n\nArchitectural concerns: metadata **ownership**, **lifecycle** (metadata also goes through [[Governance Lifecycle|draft \u2192 approved \u2192 deprecated]]), **standards** ([[ISO IEC 11179 Metadata Registries]]), **quality**, **repositories and APIs**, and **automation** ([[Metadata Harvesting]]). See [[Metadata Management Reference Architecture]].\n\n## Distinctions\n\n- Metadata vs [[Reference Data]]: reference data are values used *in* business data; metadata *describes* data.\n- The distinction is role-based, not intrinsic: a data dictionary is data to its own maintenance system.\n\n## Examples\n\n- A column's business definition, its classification \"confidential\" and its lineage from a source system.\n"
+}

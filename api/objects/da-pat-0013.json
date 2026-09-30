@@ -1,0 +1,51 @@
+{
+  "id": "DA-PAT-0013",
+  "type": "pattern",
+  "title": "Reference Data Hub",
+  "domain": "Reference Data",
+  "layer": [
+    "logical",
+    "technical"
+  ],
+  "status": "proposed",
+  "quality": "draft",
+  "confidence": "medium",
+  "epistemic_status": "common-practice",
+  "owner": "unassigned",
+  "version": "0.1.0",
+  "publication_tier": "community",
+  "summary": "Maintain code lists centrally with versions, validity periods and cross-list mappings, and distribute them to consuming systems.",
+  "path": "19-architecture-patterns/Reference Data Hub.md",
+  "relationships": [
+    {
+      "type": "realizes",
+      "direction": "out",
+      "target": "DA-CON-0027",
+      "title": "Reference Data"
+    },
+    {
+      "type": "realizes",
+      "direction": "out",
+      "target": "DA-PRI-0008",
+      "title": "Each Data Element Has an Authoritative Source"
+    },
+    {
+      "type": "alternative-to",
+      "direction": "out",
+      "target": "DA-PAT-0012",
+      "title": "Master Data Hub"
+    }
+  ],
+  "sources": [],
+  "evidence": [],
+  "governance": {
+    "status": "proposed",
+    "authority": "unreviewed",
+    "required_levels": [
+      "data-architecture",
+      "technical"
+    ],
+    "records": []
+  },
+  "body_markdown": "# Reference Data Hub\n\n## Problem\n\nCode lists are copied into every application and drift apart.\n\n## Context\n\nMany systems using the same classifications (status codes, product types, external code lists).\n\n## Forces\n\n- Local extensions vs. central consistency.\n\n## Solution\n\nOne governed store per code list with: code, label(s), definition, validity period, version, mapping to other lists and to [[Controlled Vocabulary|vocabulary]] concepts. Distribution via API, files or events; consumers validate against it.\n\n## Architecture\n\n```text\nSteward \u2192 Reference Data Hub (versions, mappings) \u2192 publish \u2192 systems / platform / catalog\n```\n\n## Advantages\n\n- Consistent classification; controlled change.\n\n## Disadvantages\n\n- Additional component; synchronisation latency.\n\n## Risks\n\n- Retiring a code without validity periods breaks historical data.\n\n## When to Use\n\n- Code lists shared by several systems or used in regulatory reporting.\n\n## When Not to Use\n\n- Truly local, application-internal enumerations.\n\n## Alternatives\n\n[[Master Data Hub]] (if the tool covers reference data), static published files.\n\n## Examples\n\n- Claim status codes with mapping to a regulator's reporting codes.\n\n## Related Decisions\n\n- [[Select Master Data Hub Style]]\n"
+}

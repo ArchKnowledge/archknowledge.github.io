@@ -1,0 +1,66 @@
+{
+  "id": "DA-PAT-0012",
+  "type": "pattern",
+  "title": "Master Data Hub",
+  "domain": "Master Data",
+  "layer": [
+    "logical",
+    "technical"
+  ],
+  "status": "proposed",
+  "quality": "draft",
+  "confidence": "medium",
+  "epistemic_status": "common-practice",
+  "owner": "unassigned",
+  "version": "0.1.0",
+  "publication_tier": "community",
+  "summary": "Manage shared master data entities in a hub that performs identity resolution, maintains golden records and cross-references, and distributes master data, in registry, consolidation, coexistence or centralized style.",
+  "aliases": [
+    "MDM Hub"
+  ],
+  "path": "19-architecture-patterns/Master Data Hub.md",
+  "relationships": [
+    {
+      "type": "realizes",
+      "direction": "out",
+      "target": "DA-CON-0025",
+      "title": "Master Data"
+    },
+    {
+      "type": "realizes",
+      "direction": "out",
+      "target": "DA-PRI-0008",
+      "title": "Each Data Element Has an Authoritative Source"
+    },
+    {
+      "type": "produces",
+      "direction": "out",
+      "target": "DA-CON-0026",
+      "title": "Golden Record"
+    },
+    {
+      "type": "mitigates",
+      "direction": "out",
+      "target": "DA-APT-0003",
+      "title": "Point-to-Point Integration Sprawl"
+    },
+    {
+      "type": "alternative-to",
+      "direction": "in",
+      "target": "DA-PAT-0013",
+      "title": "Reference Data Hub"
+    }
+  ],
+  "sources": [],
+  "evidence": [],
+  "governance": {
+    "status": "proposed",
+    "authority": "unreviewed",
+    "required_levels": [
+      "data-architecture",
+      "technical"
+    ],
+    "records": []
+  },
+  "body_markdown": "# Master Data Hub\n\n## Problem\n\nThe same business entity exists in many systems with conflicting values and identifiers.\n\n## Context\n\nCustomer, product or supplier data maintained in several applications.\n\n## Forces\n\n- Source system autonomy vs. central authority.\n- Real-time consistency vs. implementation effort.\n\n## Solution\n\nA hub matches records, keeps cross-references, applies survivorship to build a [[Golden Record]] and distributes it. Four common implementation styles:\n\n| Style | Authoring | Golden record | Invasiveness |\n|---|---|---|---|\n| Registry | in sources | virtual (index + cross-ref) | low |\n| Consolidation | in sources | physical, read-only in hub (for analytics) | low\u2013medium |\n| Coexistence | in sources and hub | physical, synchronised back | medium\u2013high |\n| Centralized (transaction) | in hub only | physical, authoritative | high |\n\n## Architecture\n\n```text\nSources \u21c4 match/merge + survivorship + cross-reference \u21c4 Hub \u21c4 distribution (API/events) \u2192 consumers\n```\n\n## Advantages\n\n- Single identity; consistent attributes; reusable services.\n\n## Disadvantages\n\n- Organisational change; hub becomes critical infrastructure.\n\n## Risks\n\n- Technology-first MDM without ownership and definitions fails.\n\n## When to Use\n\n- Shared entities with material cost of inconsistency.\n\n## When Not to Use\n\n- Entities used by one system only.\n\n## Alternatives\n\nPer-attribute authoritative sources with plain integration; [[Reference Data Hub]] for code lists.\n\n## Examples\n\n- Consolidation-style customer hub feeding the analytics platform, later evolving to coexistence.\n\n## Related Decisions\n\n- [[Select Master Data Hub Style]]\n"
+}

@@ -1,0 +1,61 @@
+{
+  "id": "DA-PAT-0015",
+  "type": "pattern",
+  "title": "Phased Data Migration",
+  "domain": "Data Migration",
+  "layer": [
+    "logical",
+    "technical"
+  ],
+  "status": "proposed",
+  "quality": "draft",
+  "confidence": "high",
+  "epistemic_status": "common-practice",
+  "owner": "unassigned",
+  "version": "0.1.0",
+  "publication_tier": "community",
+  "summary": "Migrate data in successive waves (by product, region or entity), with source and target coexisting and synchronised during the transition.",
+  "aliases": [
+    "Incremental Migration",
+    "Trickle Migration"
+  ],
+  "path": "19-architecture-patterns/Phased Data Migration.md",
+  "relationships": [
+    {
+      "type": "realizes",
+      "direction": "out",
+      "target": "DA-CON-0024",
+      "title": "Data Migration"
+    },
+    {
+      "type": "alternative-to",
+      "direction": "out",
+      "target": "DA-PAT-0016",
+      "title": "Big Bang Data Migration"
+    },
+    {
+      "type": "depends-on",
+      "direction": "out",
+      "target": "DA-PAT-0005",
+      "title": "Change Data Capture"
+    },
+    {
+      "type": "mitigates",
+      "direction": "out",
+      "target": "DA-APT-0005",
+      "title": "Migration Without Data Profiling"
+    }
+  ],
+  "sources": [],
+  "evidence": [],
+  "governance": {
+    "status": "proposed",
+    "authority": "unreviewed",
+    "required_levels": [
+      "data-architecture",
+      "technical"
+    ],
+    "records": []
+  },
+  "body_markdown": "# Phased Data Migration\n\n## Problem\n\nA single cut-over is too risky or impossible within the available downtime.\n\n## Context\n\nLarge or business-critical migrations; systems that can coexist.\n\n## Forces\n\n- Risk reduction vs. cost and complexity of coexistence.\n\n## Solution\n\nPartition the data into waves. For each wave: migrate, reconcile, switch users/processes. Keep source and target synchronised (e.g. [[Change Data Capture]] or dual write) for data shared across waves.\n\n## Architecture\n\n```text\nLegacy \u2500\u2500wave 1..n migration\u2500\u2500\u25b6 Target\n   \u25b2  \u25c0\u2500\u2500\u2500\u2500 synchronisation (bidirectional where needed) \u2500\u2500\u2500\u2500\u2518\n```\n\n## Advantages\n\n- Smaller blast radius; learning between waves.\n\n## Disadvantages\n\n- Coexistence complexity; longer total duration; temporary interfaces.\n\n## Risks\n\n- Synchronisation errors; wave boundaries that cut through shared entities.\n\n## When to Use\n\n- High risk, limited downtime, separable data.\n\n## When Not to Use\n\n- Tightly coupled data that cannot be partitioned; small volumes.\n\n## Alternatives\n\n[[Big Bang Data Migration]].\n\n## Examples\n\n- Migrating policies product line by product line.\n\n## Related Decisions\n\n- [[Select Data Migration Approach]]\n"
+}

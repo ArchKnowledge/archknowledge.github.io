@@ -1,0 +1,43 @@
+{
+  "id": "DA-PRI-0001",
+  "type": "principle",
+  "title": "Data Has an Accountable Owner",
+  "domain": "Data Governance",
+  "layer": [
+    "business"
+  ],
+  "status": "proposed",
+  "quality": "draft",
+  "confidence": "high",
+  "epistemic_status": "recommendation",
+  "owner": "unassigned",
+  "version": "0.1.0",
+  "publication_tier": "community",
+  "summary": "Every governed data set, concept and architecture artifact has exactly one accountable owner with decision rights over it.",
+  "path": "06-data-governance/principles/Data Has an Accountable Owner.md",
+  "relationships": [
+    {
+      "type": "applies-to",
+      "direction": "out",
+      "target": "DA-CON-0011",
+      "title": "Business Concept"
+    },
+    {
+      "type": "constrains",
+      "direction": "in",
+      "target": "DA-CON-0019",
+      "title": "Data Ownership"
+    }
+  ],
+  "sources": [],
+  "evidence": [],
+  "governance": {
+    "status": "proposed",
+    "authority": "unreviewed",
+    "required_levels": [
+      "semantic"
+    ],
+    "records": []
+  },
+  "body_markdown": "# Data Has an Accountable Owner\n\n## Statement\n\nEvery governed data set, [[Business Concept|concept]] and architecture artifact shall have exactly one accountable owner with decision rights over it.\n\n## Rationale\n\nWithout an accountable owner, definitions drift, quality issues have no one to escalate to, and access decisions default to whoever administers the system.\n\n## Implications\n\n- Ownership is recorded as metadata and checked by the [[Ownership Control]].\n- Objects without owner cannot pass beyond `proposed` in the [[Governance Lifecycle]] (enforced by the validator for knowledge objects).\n- Owners must have authority matching their scope; see [[Decision Rights Model]].\n\n## Consequences\n\n- Positive: clear escalation, faster decisions, measurable accountability.\n- Negative: requires organisational commitment; nominal owners without time are a known failure mode.\n\n## Applicability\n\nAll shared and governed data; knowledge objects of this knowledge base.\n\n## Exceptions\n\nTransient technical data (logs, temporary staging) may be owned collectively by the platform team. Exceptions are granted by the [[Data Governance]] body and recorded.\n\n## Related Principles\n\n- [[Governance Is Embedded in Delivery]]\n- [[Each Data Element Has an Authoritative Source]]\n"
+}

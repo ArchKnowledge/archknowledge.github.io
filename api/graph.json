@@ -1,0 +1,3476 @@
+{
+  "nodes": [
+    {
+      "id": "DA-CON-0003",
+      "type": "concept",
+      "title": "Architecture Layer",
+      "domain": "Foundations",
+      "layer": [
+        "cross-layer"
+      ],
+      "status": "proposed",
+      "quality": "draft",
+      "confidence": "medium",
+      "epistemic_status": "expert-interpretation",
+      "owner": "unassigned",
+      "version": "0.1.0",
+      "publication_tier": "community",
+      "definition": "A level of abstraction in the architecture stack (business, conceptual, semantic, information, logical, physical, technical) with its own questions, artifacts and decision rights.",
+      "aliases": [
+        "Architecture Layers",
+        "Layer Model"
+      ],
+      "path": "01-foundations/concepts/Architecture Layer.md"
+    },
+    {
+      "id": "DA-CAP-0002",
+      "type": "capability",
+      "title": "Architecture Decision Management Capability",
+      "domain": "Architecture",
+      "status": "proposed",
+      "quality": "draft",
+      "confidence": "medium",
+      "epistemic_status": "expert-interpretation",
+      "owner": "unassigned",
+      "version": "0.1.0",
+      "publication_tier": "community",
+      "summary": "The ability to take, record, govern and trace architecture decisions consistently across teams.",
+      "path": "02-architecture/capabilities/Architecture Decision Management Capability.md"
+    },
+    {
+      "id": "DA-CAP-0001",
+      "type": "capability",
+      "title": "Historical Data Reconstruction Capability",
+      "domain": "Architecture",
+      "status": "proposed",
+      "quality": "draft",
+      "confidence": "medium",
+      "epistemic_status": "expert-interpretation",
+      "owner": "unassigned",
+      "version": "0.1.0",
+      "publication_tier": "community",
+      "summary": "The ability of an organisation to reconstruct past states of its data - as they were true and as they were known - for operations, audit and regulation.",
+      "path": "02-architecture/capabilities/Historical Data Reconstruction Capability.md"
+    },
+    {
+      "id": "DA-CON-0004",
+      "type": "concept",
+      "title": "Architecture Decision",
+      "domain": "Architecture",
+      "layer": [
+        "cross-layer"
+      ],
+      "status": "proposed",
+      "quality": "draft",
+      "confidence": "high",
+      "epistemic_status": "common-practice",
+      "owner": "unassigned",
+      "version": "0.1.0",
+      "publication_tier": "community",
+      "definition": "A justified choice between alternatives that affects the structure, qualities or constraints of an architecture, recorded independently of the architecture documentation it shapes.",
+      "aliases": [
+        "Architecture Decision Record",
+        "ADR"
+      ],
+      "path": "02-architecture/concepts/Architecture Decision.md"
+    },
+    {
+      "id": "DA-CON-0001",
+      "type": "concept",
+      "title": "Data Architecture",
+      "domain": "Architecture",
+      "layer": [
+        "cross-layer"
+      ],
+      "status": "proposed",
+      "quality": "draft",
+      "confidence": "high",
+      "epistemic_status": "common-practice",
+      "owner": "unassigned",
+      "version": "0.1.0",
+      "publication_tier": "community",
+      "definition": "The discipline and resulting structures that define how an organisation's data is described, organised, integrated, governed and realized across systems, from business meaning to technical implementation.",
+      "aliases": [
+        "DA"
+      ],
+      "path": "02-architecture/concepts/Data Architecture.md"
+    },
+    {
+      "id": "DA-CON-0002",
+      "type": "concept",
+      "title": "Information Architecture",
+      "domain": "Architecture",
+      "layer": [
+        "conceptual",
+        "semantic",
+        "information"
+      ],
+      "status": "proposed",
+      "quality": "draft",
+      "confidence": "medium",
+      "epistemic_status": "expert-interpretation",
+      "owner": "unassigned",
+      "version": "0.1.0",
+      "publication_tier": "community",
+      "definition": "The structuring of information \u2014 its meaning, organisation, classification and relationships \u2014 so that people and processes can find, understand and use it consistently.",
+      "path": "02-architecture/concepts/Information Architecture.md"
+    },
+    {
+      "id": "DA-MTH-0001",
+      "type": "method",
+      "title": "Layered Model Derivation",
+      "domain": "Architecture",
+      "layer": [
+        "semantic",
+        "information",
+        "logical",
+        "physical"
+      ],
+      "status": "proposed",
+      "quality": "draft",
+      "confidence": "medium",
+      "epistemic_status": "recommendation",
+      "owner": "unassigned",
+      "version": "0.1.0",
+      "publication_tier": "community",
+      "summary": "Derive models layer by layer - governed concepts, then information model, then logical, then physical - keeping a traceability link at every step.",
+      "path": "02-architecture/methods/Layered Model Derivation.md"
+    },
+    {
+      "id": "DA-PRI-0003",
+      "type": "principle",
+      "title": "Decisions Belong to Their Layer",
+      "domain": "Architecture",
+      "layer": [
+        "cross-layer"
+      ],
+      "status": "proposed",
+      "quality": "draft",
+      "confidence": "medium",
+      "epistemic_status": "recommendation",
+      "owner": "unassigned",
+      "version": "0.1.0",
+      "publication_tier": "community",
+      "summary": "Each architecture decision is taken at the layer where it belongs, by the role with decision rights for that layer, and lower layers do not silently override higher-layer decisions.",
+      "path": "02-architecture/principles/Decisions Belong to Their Layer.md"
+    },
+    {
+      "id": "DA-PRI-0008",
+      "type": "principle",
+      "title": "Each Data Element Has an Authoritative Source",
+      "domain": "Architecture",
+      "layer": [
+        "conceptual",
+        "logical"
+      ],
+      "status": "proposed",
+      "quality": "draft",
+      "confidence": "high",
+      "epistemic_status": "recommendation",
+      "owner": "unassigned",
+      "version": "0.1.0",
+      "publication_tier": "community",
+      "summary": "For every shared data element, exactly one authoritative source is designated; other copies are derived and traceable to it.",
+      "aliases": [
+        "Single Authoritative Source"
+      ],
+      "path": "02-architecture/principles/Each Data Element Has an Authoritative Source.md"
+    },
+    {
+      "id": "DA-PRI-0004",
+      "type": "principle",
+      "title": "Technology-Neutral Architecture First",
+      "domain": "Architecture",
+      "layer": [
+        "conceptual",
+        "semantic",
+        "information",
+        "logical"
+      ],
+      "status": "proposed",
+      "quality": "draft",
+      "confidence": "high",
+      "epistemic_status": "recommendation",
+      "owner": "unassigned",
+      "version": "0.1.0",
+      "publication_tier": "community",
+      "summary": "Architecture is expressed in technology-neutral concepts and patterns first; technology-specific choices reference and realize them.",
+      "path": "02-architecture/principles/Technology-Neutral Architecture First.md"
+    },
+    {
+      "id": "DA-CON-0005",
+      "type": "concept",
+      "title": "Data Model",
+      "domain": "Data Modeling",
+      "layer": [
+        "conceptual",
+        "information",
+        "logical",
+        "physical"
+      ],
+      "status": "proposed",
+      "quality": "draft",
+      "confidence": "high",
+      "epistemic_status": "common-practice",
+      "owner": "unassigned",
+      "version": "0.1.0",
+      "publication_tier": "community",
+      "definition": "A structured representation of data \u2014 its entities, attributes, relationships and constraints \u2014 at a stated level of abstraction and for a stated purpose.",
+      "path": "03-data-modeling/Data Model.md"
+    },
+    {
+      "id": "DA-CON-0007",
+      "type": "concept",
+      "title": "Information Model",
+      "domain": "Data Modeling",
+      "layer": [
+        "information"
+      ],
+      "status": "proposed",
+      "quality": "draft",
+      "confidence": "medium",
+      "epistemic_status": "expert-interpretation",
+      "owner": "unassigned",
+      "version": "0.1.0",
+      "publication_tier": "community",
+      "definition": "A paradigm-independent model that represents governed meaning as information structures \u2014 classes, attributes, relationships, cardinalities and information-level constraints including history requirements.",
+      "path": "03-data-modeling/Information Model.md"
+    },
+    {
+      "id": "DA-CON-0010",
+      "type": "concept",
+      "title": "Temporal Data Management",
+      "domain": "Data Modeling",
+      "layer": [
+        "information",
+        "logical",
+        "physical"
+      ],
+      "status": "proposed",
+      "quality": "draft",
+      "confidence": "high",
+      "epistemic_status": "common-practice",
+      "owner": "unassigned",
+      "version": "0.1.0",
+      "publication_tier": "community",
+      "definition": "The capture, storage and querying of how data and knowledge about data change over time, including valid time (when a fact is true in reality) and transaction time (when the fact was recorded).",
+      "aliases": [
+        "Data History",
+        "Historization"
+      ],
+      "path": "03-data-modeling/Temporal Data Management.md"
+    },
+    {
+      "id": "DA-CON-0006",
+      "type": "concept",
+      "title": "Conceptual Data Model",
+      "domain": "Data Modeling",
+      "layer": [
+        "conceptual"
+      ],
+      "status": "proposed",
+      "quality": "draft",
+      "confidence": "high",
+      "epistemic_status": "common-practice",
+      "owner": "unassigned",
+      "version": "0.1.0",
+      "publication_tier": "community",
+      "definition": "A data model that identifies the business things of interest and their high-level relationships, without attributes' technical detail and independent of any implementation.",
+      "path": "03-data-modeling/conceptual/Conceptual Data Model.md"
+    },
+    {
+      "id": "DA-CON-0008",
+      "type": "concept",
+      "title": "Logical Data Model",
+      "domain": "Data Modeling",
+      "layer": [
+        "logical"
+      ],
+      "status": "proposed",
+      "quality": "draft",
+      "confidence": "high",
+      "epistemic_status": "common-practice",
+      "owner": "unassigned",
+      "version": "0.1.0",
+      "publication_tier": "community",
+      "definition": "A data model that structures information in a chosen data paradigm (e.g. relational, dimensional, graph, document) with keys, relationships and constraints, independent of a specific product.",
+      "aliases": [
+        "LDM"
+      ],
+      "path": "03-data-modeling/logical/Logical Data Model.md"
+    },
+    {
+      "id": "DA-CON-0009",
+      "type": "concept",
+      "title": "Physical Data Model",
+      "domain": "Data Modeling",
+      "layer": [
+        "physical"
+      ],
+      "status": "proposed",
+      "quality": "draft",
+      "confidence": "high",
+      "epistemic_status": "common-practice",
+      "owner": "unassigned",
+      "version": "0.1.0",
+      "publication_tier": "community",
+      "definition": "A data model that specifies how a logical data model is realized in a specific data store, including data types, storage structures, indexing, partitioning and physical history mechanisms.",
+      "aliases": [
+        "PDM"
+      ],
+      "path": "03-data-modeling/physical/Physical Data Model.md"
+    },
+    {
+      "id": "DA-PRI-0002",
+      "type": "principle",
+      "title": "Meaning Before Representation",
+      "domain": "Semantic Architecture",
+      "layer": [
+        "semantic",
+        "information"
+      ],
+      "status": "proposed",
+      "quality": "draft",
+      "confidence": "medium",
+      "epistemic_status": "recommendation",
+      "owner": "unassigned",
+      "version": "0.1.0",
+      "publication_tier": "community",
+      "summary": "The meaning of a concept is defined and governed before, and independently of, its representation in information and data models.",
+      "path": "04-semantic-architecture/Meaning Before Representation.md"
+    },
+    {
+      "id": "DA-CON-0011",
+      "type": "concept",
+      "title": "Business Concept",
+      "domain": "Semantic Architecture",
+      "layer": [
+        "business",
+        "semantic"
+      ],
+      "status": "proposed",
+      "quality": "draft",
+      "confidence": "medium",
+      "epistemic_status": "expert-interpretation",
+      "owner": "unassigned",
+      "version": "0.1.0",
+      "publication_tier": "community",
+      "definition": "A unit of business meaning \u2014 a thing, event, role or idea the organisation talks and decides about \u2014 identified by a preferred term and a governed definition.",
+      "aliases": [
+        "Governed Concept"
+      ],
+      "path": "04-semantic-architecture/concepts/Business Concept.md"
+    },
+    {
+      "id": "DA-CON-0015",
+      "type": "concept",
+      "title": "Controlled Vocabulary",
+      "domain": "Semantic Architecture",
+      "layer": [
+        "semantic"
+      ],
+      "status": "proposed",
+      "quality": "draft",
+      "confidence": "high",
+      "epistemic_status": "common-practice",
+      "owner": "unassigned",
+      "version": "0.1.0",
+      "publication_tier": "community",
+      "definition": "A governed list of approved terms, each with a defined meaning, used to label and classify information consistently.",
+      "path": "04-semantic-architecture/concepts/Controlled Vocabulary.md"
+    },
+    {
+      "id": "DA-CON-0013",
+      "type": "concept",
+      "title": "Ontology",
+      "domain": "Semantic Architecture",
+      "layer": [
+        "semantic"
+      ],
+      "status": "proposed",
+      "quality": "draft",
+      "confidence": "high",
+      "epistemic_status": "common-practice",
+      "owner": "unassigned",
+      "version": "0.1.0",
+      "publication_tier": "community",
+      "definition": "A formal, explicit specification of concepts in a domain, their properties and relationships, and logical axioms, expressed so that machines can reason over it.",
+      "path": "04-semantic-architecture/concepts/Ontology.md"
+    },
+    {
+      "id": "DA-CON-0012",
+      "type": "concept",
+      "title": "Semantic Model",
+      "domain": "Semantic Architecture",
+      "layer": [
+        "semantic"
+      ],
+      "status": "proposed",
+      "quality": "draft",
+      "confidence": "medium",
+      "epistemic_status": "expert-interpretation",
+      "owner": "unassigned",
+      "version": "0.1.0",
+      "publication_tier": "community",
+      "definition": "An explicit, governed representation of meaning \u2014 concepts, their definitions, identity criteria and semantic relationships such as specialization, generalization, part-whole and equivalence.",
+      "path": "04-semantic-architecture/concepts/Semantic Model.md"
+    },
+    {
+      "id": "DA-CON-0014",
+      "type": "concept",
+      "title": "Taxonomy",
+      "domain": "Semantic Architecture",
+      "layer": [
+        "semantic"
+      ],
+      "status": "proposed",
+      "quality": "draft",
+      "confidence": "high",
+      "epistemic_status": "common-practice",
+      "owner": "unassigned",
+      "version": "0.1.0",
+      "publication_tier": "community",
+      "definition": "A hierarchical classification of concepts organised by broader/narrower relationships.",
+      "path": "04-semantic-architecture/concepts/Taxonomy.md"
+    },
+    {
+      "id": "DA-PRI-0006",
+      "type": "principle",
+      "title": "Metadata Is Captured by Design",
+      "domain": "Metadata Management",
+      "layer": [
+        "cross-layer"
+      ],
+      "status": "proposed",
+      "quality": "draft",
+      "confidence": "medium",
+      "epistemic_status": "recommendation",
+      "owner": "unassigned",
+      "version": "0.1.0",
+      "publication_tier": "community",
+      "summary": "Metadata is produced as part of designing and delivering data assets, preferably automatically, rather than documented afterwards.",
+      "path": "05-metadata/Metadata Is Captured by Design.md"
+    },
+    {
+      "id": "DA-CON-0017",
+      "type": "concept",
+      "title": "Data Lineage",
+      "domain": "Metadata Management",
+      "layer": [
+        "cross-layer"
+      ],
+      "status": "proposed",
+      "quality": "draft",
+      "confidence": "high",
+      "epistemic_status": "common-practice",
+      "owner": "unassigned",
+      "version": "0.1.0",
+      "publication_tier": "community",
+      "definition": "Metadata describing the origin of data and the path, transformations and dependencies through which it flows from source to consumption.",
+      "aliases": [
+        "Lineage"
+      ],
+      "path": "05-metadata/concepts/Data Lineage.md"
+    },
+    {
+      "id": "DA-CON-0016",
+      "type": "concept",
+      "title": "Metadata",
+      "domain": "Metadata Management",
+      "layer": [
+        "cross-layer"
+      ],
+      "status": "proposed",
+      "quality": "draft",
+      "confidence": "high",
+      "epistemic_status": "common-practice",
+      "owner": "unassigned",
+      "version": "0.1.0",
+      "publication_tier": "community",
+      "definition": "Data that describes other data or data-related assets \u2014 their meaning, structure, origin, quality, ownership, usage, security and processing.",
+      "path": "05-metadata/concepts/Metadata.md"
+    },
+    {
+      "id": "DA-CON-0018",
+      "type": "concept",
+      "title": "Data Governance",
+      "domain": "Data Governance",
+      "layer": [
+        "business",
+        "cross-layer"
+      ],
+      "status": "proposed",
+      "quality": "draft",
+      "confidence": "high",
+      "epistemic_status": "common-practice",
+      "owner": "unassigned",
+      "version": "0.1.0",
+      "publication_tier": "community",
+      "definition": "The exercise of authority, control and shared decision-making over the management of data assets \u2014 who may decide what about data, on which basis, and how compliance is ensured.",
+      "path": "06-data-governance/Data Governance.md"
+    },
+    {
+      "id": "DA-CON-0019",
+      "type": "concept",
+      "title": "Data Ownership",
+      "domain": "Data Governance",
+      "layer": [
+        "business"
+      ],
+      "status": "proposed",
+      "quality": "draft",
+      "confidence": "high",
+      "epistemic_status": "common-practice",
+      "owner": "unassigned",
+      "version": "0.1.0",
+      "publication_tier": "community",
+      "definition": "The assignment of accountability for a defined set of data \u2014 its meaning, quality, access and lifecycle \u2014 to a business role with the authority to make decisions about it.",
+      "path": "06-data-governance/Data Ownership.md"
+    },
+    {
+      "id": "DA-CON-0020",
+      "type": "concept",
+      "title": "Data Stewardship",
+      "domain": "Data Governance",
+      "layer": [
+        "business",
+        "cross-layer"
+      ],
+      "status": "proposed",
+      "quality": "draft",
+      "confidence": "high",
+      "epistemic_status": "common-practice",
+      "owner": "unassigned",
+      "version": "0.1.0",
+      "publication_tier": "community",
+      "definition": "The operational care for data on behalf of its owner \u2014 maintaining definitions, metadata, quality rules and issue resolution.",
+      "path": "06-data-governance/Data Stewardship.md"
+    },
+    {
+      "id": "DA-PRI-0001",
+      "type": "principle",
+      "title": "Data Has an Accountable Owner",
+      "domain": "Data Governance",
+      "layer": [
+        "business"
+      ],
+      "status": "proposed",
+      "quality": "draft",
+      "confidence": "high",
+      "epistemic_status": "recommendation",
+      "owner": "unassigned",
+      "version": "0.1.0",
+      "publication_tier": "community",
+      "summary": "Every governed data set, concept and architecture artifact has exactly one accountable owner with decision rights over it.",
+      "path": "06-data-governance/principles/Data Has an Accountable Owner.md"
+    },
+    {
+      "id": "DA-ROL-0015",
+      "type": "role",
+      "title": "Architecture Board",
+      "domain": "Architecture Governance",
+      "layer": [
+        "cross-layer"
+      ],
+      "status": "proposed",
+      "quality": "draft",
+      "confidence": "medium",
+      "epistemic_status": "common-practice",
+      "owner": "unassigned",
+      "version": "0.1.0",
+      "publication_tier": "community",
+      "summary": "Governance body that approves architecture decisions above the agreed threshold and decides on exceptions and cross-domain conflicts.",
+      "path": "06-data-governance/roles/Architecture Board.md"
+    },
+    {
+      "id": "DA-ROL-0008",
+      "type": "role",
+      "title": "Data Architect",
+      "domain": "Architecture",
+      "layer": [
+        "logical",
+        "cross-layer"
+      ],
+      "status": "proposed",
+      "quality": "draft",
+      "confidence": "medium",
+      "epistemic_status": "common-practice",
+      "owner": "unassigned",
+      "version": "0.1.0",
+      "publication_tier": "community",
+      "summary": "Architect responsible for the realization of information in data structures, flows, history mechanisms and authoritative sources.",
+      "path": "06-data-governance/roles/Data Architect.md"
+    },
+    {
+      "id": "DA-ROL-0003",
+      "type": "role",
+      "title": "Data Custodian",
+      "domain": "Data Governance",
+      "layer": [
+        "physical",
+        "technical"
+      ],
+      "status": "proposed",
+      "quality": "draft",
+      "confidence": "medium",
+      "epistemic_status": "common-practice",
+      "owner": "unassigned",
+      "version": "0.1.0",
+      "publication_tier": "community",
+      "summary": "Technical role operating the storage, security and availability of data according to owner decisions.",
+      "path": "06-data-governance/roles/Data Custodian.md"
+    },
+    {
+      "id": "DA-ROL-0001",
+      "type": "role",
+      "title": "Data Owner",
+      "domain": "Data Governance",
+      "layer": [
+        "business",
+        "semantic"
+      ],
+      "status": "proposed",
+      "quality": "draft",
+      "confidence": "medium",
+      "epistemic_status": "common-practice",
+      "owner": "unassigned",
+      "version": "0.1.0",
+      "publication_tier": "community",
+      "summary": "Business role accountable for a defined set of data: its meaning, quality requirements, access and lifecycle.",
+      "path": "06-data-governance/roles/Data Owner.md"
+    },
+    {
+      "id": "DA-ROL-0002",
+      "type": "role",
+      "title": "Data Steward",
+      "domain": "Data Governance",
+      "layer": [
+        "semantic",
+        "information"
+      ],
+      "status": "proposed",
+      "quality": "draft",
+      "confidence": "medium",
+      "epistemic_status": "common-practice",
+      "owner": "unassigned",
+      "version": "0.1.0",
+      "publication_tier": "community",
+      "summary": "Operational role caring for data on behalf of the owner: definitions, metadata, quality rules and issue resolution.",
+      "path": "06-data-governance/roles/Data Steward.md"
+    },
+    {
+      "id": "DA-ROL-0009",
+      "type": "role",
+      "title": "Domain Architect",
+      "domain": "Architecture",
+      "layer": [
+        "logical"
+      ],
+      "status": "proposed",
+      "quality": "draft",
+      "confidence": "medium",
+      "epistemic_status": "common-practice",
+      "owner": "unassigned",
+      "version": "0.1.0",
+      "publication_tier": "community",
+      "summary": "Architect accountable for coherent architecture within one business domain, aligned with enterprise principles.",
+      "path": "06-data-governance/roles/Domain Architect.md"
+    },
+    {
+      "id": "DA-ROL-0004",
+      "type": "role",
+      "title": "Domain Expert",
+      "domain": "Semantic Architecture",
+      "layer": [
+        "business",
+        "semantic"
+      ],
+      "status": "proposed",
+      "quality": "draft",
+      "confidence": "medium",
+      "epistemic_status": "common-practice",
+      "owner": "unassigned",
+      "version": "0.1.0",
+      "publication_tier": "community",
+      "summary": "Subject-matter authority whose knowledge of the business domain informs definitions and models.",
+      "path": "06-data-governance/roles/Domain Expert.md"
+    },
+    {
+      "id": "DA-ROL-0010",
+      "type": "role",
+      "title": "Enterprise Architect",
+      "domain": "Architecture",
+      "layer": [
+        "business",
+        "cross-layer"
+      ],
+      "status": "proposed",
+      "quality": "draft",
+      "confidence": "medium",
+      "epistemic_status": "common-practice",
+      "owner": "unassigned",
+      "version": "0.1.0",
+      "publication_tier": "community",
+      "summary": "Architect accountable for enterprise-wide principles, standards and cross-domain coherence.",
+      "path": "06-data-governance/roles/Enterprise Architect.md"
+    },
+    {
+      "id": "DA-ROL-0007",
+      "type": "role",
+      "title": "Information Architect",
+      "domain": "Architecture",
+      "layer": [
+        "information"
+      ],
+      "status": "proposed",
+      "quality": "draft",
+      "confidence": "medium",
+      "epistemic_status": "common-practice",
+      "owner": "unassigned",
+      "version": "0.1.0",
+      "publication_tier": "community",
+      "summary": "Architect responsible for information models that represent governed meaning as paradigm-independent structures.",
+      "path": "06-data-governance/roles/Information Architect.md"
+    },
+    {
+      "id": "DA-ROL-0006",
+      "type": "role",
+      "title": "Ontology Engineer",
+      "domain": "Semantic Architecture",
+      "layer": [
+        "semantic"
+      ],
+      "status": "proposed",
+      "quality": "draft",
+      "confidence": "medium",
+      "epistemic_status": "common-practice",
+      "owner": "unassigned",
+      "version": "0.1.0",
+      "publication_tier": "community",
+      "summary": "Specialist who formalises semantic models as ontologies and ensures their logical consistency.",
+      "path": "06-data-governance/roles/Ontology Engineer.md"
+    },
+    {
+      "id": "DA-ROL-0012",
+      "type": "role",
+      "title": "Platform Architect",
+      "domain": "Data Platforms",
+      "layer": [
+        "technical"
+      ],
+      "status": "proposed",
+      "quality": "draft",
+      "confidence": "medium",
+      "epistemic_status": "common-practice",
+      "owner": "unassigned",
+      "version": "0.1.0",
+      "publication_tier": "community",
+      "summary": "Architect responsible for data platform capabilities, technical standards and technology lifecycle.",
+      "path": "06-data-governance/roles/Platform Architect.md"
+    },
+    {
+      "id": "DA-ROL-0014",
+      "type": "role",
+      "title": "Privacy Specialist",
+      "domain": "Data Security & Privacy",
+      "layer": [
+        "cross-layer"
+      ],
+      "status": "proposed",
+      "quality": "draft",
+      "confidence": "medium",
+      "epistemic_status": "common-practice",
+      "owner": "unassigned",
+      "version": "0.1.0",
+      "publication_tier": "community",
+      "summary": "Specialist who assesses personal data processing for privacy compliance and advises on privacy by design.",
+      "path": "06-data-governance/roles/Privacy Specialist.md"
+    },
+    {
+      "id": "DA-ROL-0013",
+      "type": "role",
+      "title": "Security Architect",
+      "domain": "Data Security & Privacy",
+      "layer": [
+        "cross-layer"
+      ],
+      "status": "proposed",
+      "quality": "draft",
+      "confidence": "medium",
+      "epistemic_status": "common-practice",
+      "owner": "unassigned",
+      "version": "0.1.0",
+      "publication_tier": "community",
+      "summary": "Architect responsible for security architecture, classification schemes and security controls for data.",
+      "path": "06-data-governance/roles/Security Architect.md"
+    },
+    {
+      "id": "DA-ROL-0005",
+      "type": "role",
+      "title": "Semantic Architect",
+      "domain": "Semantic Architecture",
+      "layer": [
+        "semantic"
+      ],
+      "status": "proposed",
+      "quality": "draft",
+      "confidence": "medium",
+      "epistemic_status": "common-practice",
+      "owner": "unassigned",
+      "version": "0.1.0",
+      "publication_tier": "community",
+      "summary": "Architect responsible for the structure, formalism and integrity of semantic models across domains.",
+      "path": "06-data-governance/roles/Semantic Architect.md"
+    },
+    {
+      "id": "DA-ROL-0011",
+      "type": "role",
+      "title": "Solution Architect",
+      "domain": "Architecture",
+      "layer": [
+        "physical",
+        "technical"
+      ],
+      "status": "proposed",
+      "quality": "draft",
+      "confidence": "medium",
+      "epistemic_status": "common-practice",
+      "owner": "unassigned",
+      "version": "0.1.0",
+      "publication_tier": "community",
+      "summary": "Architect responsible for the design of a specific solution within enterprise and data architecture constraints.",
+      "path": "06-data-governance/roles/Solution Architect.md"
+    },
+    {
+      "id": "DA-CON-0021",
+      "type": "concept",
+      "title": "Data Quality",
+      "domain": "Data Quality",
+      "layer": [
+        "cross-layer"
+      ],
+      "status": "proposed",
+      "quality": "draft",
+      "confidence": "high",
+      "epistemic_status": "common-practice",
+      "owner": "unassigned",
+      "version": "0.1.0",
+      "publication_tier": "community",
+      "definition": "The degree to which data is fit for its intended uses, assessed against explicit requirements along defined quality dimensions.",
+      "aliases": [
+        "DQ"
+      ],
+      "path": "07-data-quality/Data Quality.md"
+    },
+    {
+      "id": "DA-PRI-0005",
+      "type": "principle",
+      "title": "Quality Is Managed at the Source",
+      "domain": "Data Quality",
+      "layer": [
+        "business",
+        "cross-layer"
+      ],
+      "status": "proposed",
+      "quality": "draft",
+      "confidence": "high",
+      "epistemic_status": "recommendation",
+      "owner": "unassigned",
+      "version": "0.1.0",
+      "publication_tier": "community",
+      "summary": "Data quality issues are prevented and corrected as close as possible to where data is created, rather than repaired downstream.",
+      "path": "07-data-quality/Quality Is Managed at the Source.md"
+    },
+    {
+      "id": "DA-CON-0022",
+      "type": "concept",
+      "title": "Data Quality Dimension",
+      "domain": "Data Quality",
+      "layer": [
+        "cross-layer"
+      ],
+      "status": "proposed",
+      "quality": "draft",
+      "confidence": "medium",
+      "epistemic_status": "common-practice",
+      "owner": "unassigned",
+      "version": "0.1.0",
+      "publication_tier": "community",
+      "definition": "A named aspect of data quality \u2014 such as completeness, accuracy, consistency, timeliness, validity or uniqueness \u2014 along which quality requirements are specified and measured.",
+      "path": "07-data-quality/dimensions/Data Quality Dimension.md"
+    },
+    {
+      "id": "DA-CON-0028",
+      "type": "concept",
+      "title": "Data Platform",
+      "domain": "Data Platforms",
+      "layer": [
+        "physical",
+        "technical"
+      ],
+      "status": "proposed",
+      "quality": "draft",
+      "confidence": "medium",
+      "epistemic_status": "common-practice",
+      "owner": "unassigned",
+      "version": "0.1.0",
+      "publication_tier": "community",
+      "definition": "The integrated set of technical capabilities \u2014 storage, processing, integration, metadata, security and operations \u2014 on which data is stored, transformed and served.",
+      "path": "08-data-platforms/Data Platform.md"
+    },
+    {
+      "id": "DA-CON-0029",
+      "type": "concept",
+      "title": "Data Integration",
+      "domain": "Data Integration",
+      "layer": [
+        "logical",
+        "physical",
+        "technical"
+      ],
+      "status": "proposed",
+      "quality": "draft",
+      "confidence": "high",
+      "epistemic_status": "common-practice",
+      "owner": "unassigned",
+      "version": "0.1.0",
+      "publication_tier": "community",
+      "definition": "The combination of data from different sources, and its movement between systems, so that it can be used consistently for a shared purpose.",
+      "path": "09-data-integration/Data Integration.md"
+    },
+    {
+      "id": "DA-CON-0023",
+      "type": "concept",
+      "title": "Data Lifecycle",
+      "domain": "Data Lifecycle",
+      "layer": [
+        "business",
+        "cross-layer"
+      ],
+      "status": "proposed",
+      "quality": "draft",
+      "confidence": "high",
+      "epistemic_status": "common-practice",
+      "owner": "unassigned",
+      "version": "0.1.0",
+      "publication_tier": "community",
+      "definition": "The sequence of stages data passes through \u2014 creation or acquisition, storage, use, change, sharing, archiving and disposal \u2014 together with the rules governing each transition.",
+      "path": "10-data-lifecycle/Data Lifecycle.md"
+    },
+    {
+      "id": "DA-PRI-0010",
+      "type": "principle",
+      "title": "Historical Requirements Are Explicit",
+      "domain": "Data Lifecycle",
+      "layer": [
+        "business",
+        "information"
+      ],
+      "status": "proposed",
+      "quality": "draft",
+      "confidence": "high",
+      "epistemic_status": "recommendation",
+      "owner": "unassigned",
+      "version": "0.1.0",
+      "publication_tier": "community",
+      "summary": "Requirements for history \u2014 which data, which time dimensions, which reconstruction questions and retention \u2014 are stated explicitly at the information layer before a history mechanism is chosen.",
+      "path": "10-data-lifecycle/Historical Requirements Are Explicit.md"
+    },
+    {
+      "id": "DA-CON-0024",
+      "type": "concept",
+      "title": "Data Migration",
+      "domain": "Data Migration",
+      "layer": [
+        "logical",
+        "physical",
+        "technical"
+      ],
+      "status": "proposed",
+      "quality": "draft",
+      "confidence": "high",
+      "epistemic_status": "common-practice",
+      "owner": "unassigned",
+      "version": "0.1.0",
+      "publication_tier": "community",
+      "definition": "The controlled, one-time or phased transfer of data from source systems to target systems, including mapping, transformation, cleansing, validation and reconciliation, with preserved meaning and traceability.",
+      "path": "11-data-migration/Data Migration.md"
+    },
+    {
+      "id": "DA-CON-0026",
+      "type": "concept",
+      "title": "Golden Record",
+      "domain": "Master Data",
+      "layer": [
+        "information",
+        "logical"
+      ],
+      "status": "proposed",
+      "quality": "draft",
+      "confidence": "high",
+      "epistemic_status": "common-practice",
+      "owner": "unassigned",
+      "version": "0.1.0",
+      "publication_tier": "community",
+      "definition": "The consolidated, best-known version of a master data entity, assembled from one or more source records according to survivorship rules.",
+      "aliases": [
+        "Best Version of the Truth"
+      ],
+      "path": "12-master-data/Golden Record.md"
+    },
+    {
+      "id": "DA-CON-0025",
+      "type": "concept",
+      "title": "Master Data",
+      "domain": "Master Data",
+      "layer": [
+        "business",
+        "conceptual"
+      ],
+      "status": "proposed",
+      "quality": "draft",
+      "confidence": "high",
+      "epistemic_status": "common-practice",
+      "owner": "unassigned",
+      "version": "0.1.0",
+      "publication_tier": "community",
+      "definition": "The data about core business entities \u2014 such as parties, products, locations and assets \u2014 that is shared across processes and systems and provides context to transactions.",
+      "path": "12-master-data/Master Data.md"
+    },
+    {
+      "id": "DA-CON-0027",
+      "type": "concept",
+      "title": "Reference Data",
+      "domain": "Reference Data",
+      "layer": [
+        "semantic",
+        "information",
+        "logical"
+      ],
+      "status": "proposed",
+      "quality": "draft",
+      "confidence": "high",
+      "epistemic_status": "common-practice",
+      "owner": "unassigned",
+      "version": "0.1.0",
+      "publication_tier": "community",
+      "definition": "Sets of permissible values \u2014 codes and their meanings \u2014 used to classify or categorise other data, often defined by external bodies and shared across systems.",
+      "aliases": [
+        "Code List",
+        "Code Table"
+      ],
+      "path": "13-reference-data/Reference Data.md"
+    },
+    {
+      "id": "DA-GOV-0001",
+      "type": "governance",
+      "title": "Architecture Governance Model",
+      "domain": "Architecture Governance",
+      "layer": [
+        "cross-layer"
+      ],
+      "status": "proposed",
+      "quality": "draft",
+      "confidence": "medium",
+      "epistemic_status": "recommendation",
+      "owner": "unassigned",
+      "version": "0.1.0",
+      "publication_tier": "community",
+      "summary": "The overall model of how data and architecture decisions are governed \u2014 layered decision rights, roles, lifecycle, controls and change process \u2014 treated as a first-class architectural layer.",
+      "path": "16-architecture-governance/Architecture Governance Model.md"
+    },
+    {
+      "id": "DA-GOV-0004",
+      "type": "governance",
+      "title": "Governance Lifecycle",
+      "domain": "Architecture Governance",
+      "layer": [
+        "cross-layer"
+      ],
+      "status": "proposed",
+      "quality": "draft",
+      "confidence": "medium",
+      "epistemic_status": "recommendation",
+      "owner": "unassigned",
+      "version": "0.1.0",
+      "publication_tier": "community",
+      "summary": "The lifecycle states of governed artifacts and knowledge objects, the allowed and invalid transitions, and who may perform each transition.",
+      "path": "16-architecture-governance/Governance Lifecycle.md"
+    },
+    {
+      "id": "DA-GOV-0003",
+      "type": "governance",
+      "title": "Governance Roles",
+      "domain": "Architecture Governance",
+      "layer": [
+        "cross-layer"
+      ],
+      "status": "proposed",
+      "quality": "draft",
+      "confidence": "medium",
+      "epistemic_status": "recommendation",
+      "owner": "unassigned",
+      "version": "0.1.0",
+      "publication_tier": "community",
+      "summary": "Overview of the reusable governance roles, their layer focus and their decision rights, linking to the individual role definitions.",
+      "path": "16-architecture-governance/Governance Roles.md"
+    },
+    {
+      "id": "DA-GOV-0006",
+      "type": "governance",
+      "title": "Knowledge Quality Model",
+      "domain": "Architecture Governance",
+      "layer": [
+        "cross-layer"
+      ],
+      "status": "proposed",
+      "quality": "draft",
+      "confidence": "medium",
+      "epistemic_status": "recommendation",
+      "owner": "unassigned",
+      "version": "0.1.0",
+      "publication_tier": "community",
+      "summary": "Quality criteria and quality statuses for knowledge objects, and how quality relates to lifecycle status, confidence and epistemic status.",
+      "path": "16-architecture-governance/Knowledge Quality Model.md"
+    },
+    {
+      "id": "DA-GOV-0007",
+      "type": "governance",
+      "title": "Knowledge Repository Governance",
+      "domain": "Architecture Governance",
+      "layer": [
+        "cross-layer"
+      ],
+      "status": "proposed",
+      "quality": "draft",
+      "confidence": "medium",
+      "epistemic_status": "recommendation",
+      "owner": "unassigned",
+      "version": "0.1.0",
+      "publication_tier": "community",
+      "summary": "How this knowledge base itself is governed \u2014 repository roles, Git workflow, automated validation, human-in-the-loop approval and rules for LLM contributions.",
+      "path": "16-architecture-governance/Knowledge Repository Governance.md"
+    },
+    {
+      "id": "DA-GOV-0008",
+      "type": "governance",
+      "title": "Terminology Governance",
+      "domain": "Architecture Governance",
+      "layer": [
+        "semantic"
+      ],
+      "status": "proposed",
+      "quality": "draft",
+      "confidence": "medium",
+      "epistemic_status": "recommendation",
+      "owner": "unassigned",
+      "version": "0.1.0",
+      "publication_tier": "community",
+      "summary": "How preferred terms, definitions, synonyms, forbidden terms and abbreviations are governed and how terminology inconsistencies are detected.",
+      "path": "16-architecture-governance/Terminology Governance.md"
+    },
+    {
+      "id": "DA-PRC-0001",
+      "type": "process",
+      "title": "Knowledge Change Review Process",
+      "domain": "Architecture Governance",
+      "layer": [
+        "cross-layer"
+      ],
+      "status": "proposed",
+      "quality": "draft",
+      "confidence": "medium",
+      "epistemic_status": "recommendation",
+      "owner": "unassigned",
+      "version": "0.1.0",
+      "publication_tier": "community",
+      "summary": "The pull-request based process by which a proposed change to the knowledge graph is validated, reviewed, decided per governance level, recorded, merged and published.",
+      "path": "16-architecture-governance/decision-making/Knowledge Change Review Process.md"
+    },
+    {
+      "id": "DA-GRL-0002",
+      "type": "governance-rule",
+      "title": "Separate Decision per Governance Level",
+      "domain": "Architecture Governance",
+      "layer": [
+        "cross-layer"
+      ],
+      "status": "proposed",
+      "quality": "draft",
+      "confidence": "medium",
+      "epistemic_status": "recommendation",
+      "owner": "unassigned",
+      "version": "0.1.0",
+      "publication_tier": "community",
+      "summary": "An approval contains one decision for each governance level the object's layers require - semantic, information model, data architecture, technical - never a single combined approval.",
+      "path": "16-architecture-governance/decision-making/Separate Decision per Governance Level.md"
+    },
+    {
+      "id": "DA-GRL-0003",
+      "type": "governance-rule",
+      "title": "Separation of Duties in Approval",
+      "domain": "Architecture Governance",
+      "layer": [
+        "cross-layer"
+      ],
+      "status": "proposed",
+      "quality": "draft",
+      "confidence": "medium",
+      "epistemic_status": "recommendation",
+      "owner": "unassigned",
+      "version": "0.1.0",
+      "publication_tier": "community",
+      "summary": "Nobody approves a change they proposed or an object they own.",
+      "path": "16-architecture-governance/decision-making/Separation of Duties in Approval.md"
+    },
+    {
+      "id": "DA-GRL-0001",
+      "type": "governance-rule",
+      "title": "Status Change Requires Governance Record",
+      "domain": "Architecture Governance",
+      "layer": [
+        "cross-layer"
+      ],
+      "status": "proposed",
+      "quality": "draft",
+      "confidence": "medium",
+      "epistemic_status": "recommendation",
+      "owner": "unassigned",
+      "version": "0.1.0",
+      "publication_tier": "community",
+      "summary": "An object may only be approved, published, implemented, deprecated or retired when an append-only governance record establishes that transition for its current version.",
+      "path": "16-architecture-governance/decision-making/Status Change Requires Governance Record.md"
+    },
+    {
+      "id": "DA-PRI-0007",
+      "type": "principle",
+      "title": "Architecture Decisions Are Traceable",
+      "domain": "Architecture Governance",
+      "layer": [
+        "cross-layer"
+      ],
+      "status": "proposed",
+      "quality": "draft",
+      "confidence": "high",
+      "epistemic_status": "recommendation",
+      "owner": "unassigned",
+      "version": "0.1.0",
+      "publication_tier": "community",
+      "summary": "Significant architecture decisions are recorded with their context, options and rationale, and are traceable from source knowledge to implementation.",
+      "path": "16-architecture-governance/principles/Architecture Decisions Are Traceable.md"
+    },
+    {
+      "id": "DA-PRI-0009",
+      "type": "principle",
+      "title": "Governance Is Embedded in Delivery",
+      "domain": "Architecture Governance",
+      "layer": [
+        "cross-layer"
+      ],
+      "status": "proposed",
+      "quality": "draft",
+      "confidence": "medium",
+      "epistemic_status": "recommendation",
+      "owner": "unassigned",
+      "version": "0.1.0",
+      "publication_tier": "community",
+      "summary": "Governance controls are built into the delivery workflow as automated and review steps, rather than applied as a separate documentation phase at the end.",
+      "path": "16-architecture-governance/principles/Governance Is Embedded in Delivery.md"
+    },
+    {
+      "id": "DA-TEC-0002",
+      "type": "technology",
+      "title": "Apache Iceberg",
+      "domain": "Technologies",
+      "status": "proposed",
+      "quality": "draft",
+      "confidence": "medium",
+      "epistemic_status": "common-practice",
+      "owner": "unassigned",
+      "version": "0.1.0",
+      "publication_tier": "community",
+      "summary": "Open table format for large analytic datasets providing snapshots, time travel, schema evolution and hidden partitioning on file/object storage.",
+      "path": "17-technology/databases/Apache Iceberg.md"
+    },
+    {
+      "id": "DA-TEC-0001",
+      "type": "technology",
+      "title": "SQL Server Temporal Tables",
+      "domain": "Technologies",
+      "status": "proposed",
+      "quality": "draft",
+      "confidence": "medium",
+      "epistemic_status": "common-practice",
+      "owner": "unassigned",
+      "version": "0.1.0",
+      "publication_tier": "community",
+      "summary": "Microsoft SQL Server / Azure SQL feature that implements system-versioned (transaction-time) tables with automatic history tables and FOR SYSTEM_TIME queries.",
+      "path": "17-technology/databases/SQL Server Temporal Tables.md"
+    },
+    {
+      "id": "DA-TEC-0003",
+      "type": "technology",
+      "title": "Debezium",
+      "domain": "Technologies",
+      "status": "proposed",
+      "quality": "draft",
+      "confidence": "medium",
+      "epistemic_status": "common-practice",
+      "owner": "unassigned",
+      "version": "0.1.0",
+      "publication_tier": "community",
+      "summary": "Open-source, log-based change data capture platform, commonly deployed on Kafka Connect, emitting row-level change events from databases.",
+      "path": "17-technology/integration/Debezium.md"
+    },
+    {
+      "id": "DA-RAR-0001",
+      "type": "reference-architecture",
+      "title": "Governed Analytical Data Platform",
+      "domain": "Data Platforms",
+      "layer": [
+        "logical",
+        "physical",
+        "technical"
+      ],
+      "status": "proposed",
+      "quality": "draft",
+      "confidence": "medium",
+      "epistemic_status": "recommendation",
+      "owner": "unassigned",
+      "version": "0.1.0",
+      "publication_tier": "community",
+      "summary": "Reference architecture for an analytical data platform with layered refinement, embedded quality gates, metadata and lineage, and governance built in.",
+      "path": "18-reference-architectures/Governed Analytical Data Platform.md"
+    },
+    {
+      "id": "DA-PAT-0006",
+      "type": "pattern",
+      "title": "Batch Extract-Transform-Load",
+      "domain": "Data Integration",
+      "layer": [
+        "logical",
+        "technical"
+      ],
+      "status": "proposed",
+      "quality": "draft",
+      "confidence": "high",
+      "epistemic_status": "common-practice",
+      "owner": "unassigned",
+      "version": "0.1.0",
+      "publication_tier": "community",
+      "summary": "Periodically extract data sets from sources, transform them and load them into a target, in scheduled batches (ETL or ELT).",
+      "aliases": [
+        "ETL",
+        "ELT",
+        "Batch Integration"
+      ],
+      "path": "19-architecture-patterns/Batch Extract-Transform-Load.md"
+    },
+    {
+      "id": "DA-PAT-0016",
+      "type": "pattern",
+      "title": "Big Bang Data Migration",
+      "domain": "Data Migration",
+      "layer": [
+        "logical",
+        "technical"
+      ],
+      "status": "proposed",
+      "quality": "draft",
+      "confidence": "high",
+      "epistemic_status": "common-practice",
+      "owner": "unassigned",
+      "version": "0.1.0",
+      "publication_tier": "community",
+      "summary": "Migrate all data in a single cut-over event after rehearsals, switching all users from source to target at once.",
+      "aliases": [
+        "Single Cut-over Migration"
+      ],
+      "path": "19-architecture-patterns/Big Bang Data Migration.md"
+    },
+    {
+      "id": "DA-PAT-0001",
+      "type": "pattern",
+      "title": "Bitemporal Data Model",
+      "domain": "Data Modeling",
+      "layer": [
+        "information",
+        "logical"
+      ],
+      "status": "proposed",
+      "quality": "draft",
+      "confidence": "high",
+      "epistemic_status": "common-practice",
+      "owner": "unassigned",
+      "version": "0.1.0",
+      "publication_tier": "community",
+      "summary": "Record both valid time and transaction time for each fact so that any past state can be reconstructed as it was true and as it was known.",
+      "aliases": [
+        "Bitemporal Model"
+      ],
+      "path": "19-architecture-patterns/Bitemporal Data Model.md"
+    },
+    {
+      "id": "DA-PAT-0005",
+      "type": "pattern",
+      "title": "Change Data Capture",
+      "domain": "Data Integration",
+      "layer": [
+        "logical",
+        "technical"
+      ],
+      "status": "proposed",
+      "quality": "draft",
+      "confidence": "high",
+      "epistemic_status": "common-practice",
+      "owner": "unassigned",
+      "version": "0.1.0",
+      "publication_tier": "community",
+      "summary": "Detect inserts, updates and deletes in a source database (typically from its transaction log) and propagate them as a change stream to targets.",
+      "aliases": [
+        "CDC"
+      ],
+      "path": "19-architecture-patterns/Change Data Capture.md"
+    },
+    {
+      "id": "DA-PAT-0014",
+      "type": "pattern",
+      "title": "Concept-to-Model Traceability",
+      "domain": "Semantic Architecture",
+      "layer": [
+        "semantic",
+        "information",
+        "logical",
+        "physical"
+      ],
+      "status": "proposed",
+      "quality": "draft",
+      "confidence": "medium",
+      "epistemic_status": "recommendation",
+      "owner": "unassigned",
+      "version": "0.1.0",
+      "publication_tier": "community",
+      "summary": "Link every model element at each layer to the governed concept it represents and to the model element it realizes, so meaning and impact can be traced across layers.",
+      "path": "19-architecture-patterns/Concept-to-Model Traceability.md"
+    },
+    {
+      "id": "DA-PAT-0008",
+      "type": "pattern",
+      "title": "Data Contract",
+      "domain": "Data Integration",
+      "layer": [
+        "information",
+        "logical"
+      ],
+      "status": "proposed",
+      "quality": "draft",
+      "confidence": "medium",
+      "epistemic_status": "common-practice",
+      "owner": "unassigned",
+      "version": "0.1.0",
+      "publication_tier": "community",
+      "summary": "Make the interface between a data producer and its consumers an explicit, versioned, owned agreement covering schema, semantics, quality and service levels, and enforce it automatically.",
+      "path": "19-architecture-patterns/Data Contract.md"
+    },
+    {
+      "id": "DA-PAT-0010",
+      "type": "pattern",
+      "title": "Data Quality Gate",
+      "domain": "Data Quality",
+      "layer": [
+        "logical",
+        "technical"
+      ],
+      "status": "proposed",
+      "quality": "draft",
+      "confidence": "medium",
+      "epistemic_status": "common-practice",
+      "owner": "unassigned",
+      "version": "0.1.0",
+      "publication_tier": "community",
+      "summary": "Validate data against explicit quality rules at defined points in a data flow and block, quarantine or flag data that fails, with evidence recorded.",
+      "aliases": [
+        "Quality Firewall"
+      ],
+      "path": "19-architecture-patterns/Data Quality Gate.md"
+    },
+    {
+      "id": "DA-PAT-0007",
+      "type": "pattern",
+      "title": "Data Virtualization",
+      "domain": "Data Integration",
+      "layer": [
+        "logical",
+        "technical"
+      ],
+      "status": "proposed",
+      "quality": "draft",
+      "confidence": "medium",
+      "epistemic_status": "common-practice",
+      "owner": "unassigned",
+      "version": "0.1.0",
+      "publication_tier": "community",
+      "summary": "Provide an integrated, queryable view over multiple sources at query time without physically copying the data.",
+      "aliases": [
+        "Data Federation"
+      ],
+      "path": "19-architecture-patterns/Data Virtualization.md"
+    },
+    {
+      "id": "DA-PAT-0004",
+      "type": "pattern",
+      "title": "Event Sourcing",
+      "domain": "Data Modeling",
+      "layer": [
+        "logical",
+        "technical"
+      ],
+      "status": "proposed",
+      "quality": "draft",
+      "confidence": "high",
+      "epistemic_status": "common-practice",
+      "owner": "unassigned",
+      "version": "0.1.0",
+      "publication_tier": "community",
+      "summary": "Persist every state change as an immutable domain event in an append-only log and derive current and past states by replaying events.",
+      "path": "19-architecture-patterns/Event Sourcing.md"
+    },
+    {
+      "id": "DA-PAT-0009",
+      "type": "pattern",
+      "title": "Layered Data Refinement",
+      "domain": "Data Platforms",
+      "layer": [
+        "logical",
+        "physical"
+      ],
+      "status": "proposed",
+      "quality": "draft",
+      "confidence": "medium",
+      "epistemic_status": "common-practice",
+      "owner": "unassigned",
+      "version": "0.1.0",
+      "publication_tier": "community",
+      "summary": "Organise an analytical platform in successive layers \u2014 raw, conformed, consumption-ready \u2014 each with explicit quality, modeling and governance guarantees.",
+      "aliases": [
+        "Medallion Architecture",
+        "Bronze-Silver-Gold"
+      ],
+      "path": "19-architecture-patterns/Layered Data Refinement.md"
+    },
+    {
+      "id": "DA-PAT-0012",
+      "type": "pattern",
+      "title": "Master Data Hub",
+      "domain": "Master Data",
+      "layer": [
+        "logical",
+        "technical"
+      ],
+      "status": "proposed",
+      "quality": "draft",
+      "confidence": "medium",
+      "epistemic_status": "common-practice",
+      "owner": "unassigned",
+      "version": "0.1.0",
+      "publication_tier": "community",
+      "summary": "Manage shared master data entities in a hub that performs identity resolution, maintains golden records and cross-references, and distributes master data, in registry, consolidation, coexistence or centralized style.",
+      "aliases": [
+        "MDM Hub"
+      ],
+      "path": "19-architecture-patterns/Master Data Hub.md"
+    },
+    {
+      "id": "DA-PAT-0011",
+      "type": "pattern",
+      "title": "Metadata Harvesting",
+      "domain": "Metadata Management",
+      "layer": [
+        "technical"
+      ],
+      "status": "proposed",
+      "quality": "draft",
+      "confidence": "medium",
+      "epistemic_status": "common-practice",
+      "owner": "unassigned",
+      "version": "0.1.0",
+      "publication_tier": "community",
+      "summary": "Automatically extract technical, operational and lineage metadata from source systems, pipelines and tools into a central metadata repository on a schedule or event basis.",
+      "path": "19-architecture-patterns/Metadata Harvesting.md"
+    },
+    {
+      "id": "DA-PAT-0015",
+      "type": "pattern",
+      "title": "Phased Data Migration",
+      "domain": "Data Migration",
+      "layer": [
+        "logical",
+        "technical"
+      ],
+      "status": "proposed",
+      "quality": "draft",
+      "confidence": "high",
+      "epistemic_status": "common-practice",
+      "owner": "unassigned",
+      "version": "0.1.0",
+      "publication_tier": "community",
+      "summary": "Migrate data in successive waves (by product, region or entity), with source and target coexisting and synchronised during the transition.",
+      "aliases": [
+        "Incremental Migration",
+        "Trickle Migration"
+      ],
+      "path": "19-architecture-patterns/Phased Data Migration.md"
+    },
+    {
+      "id": "DA-PAT-0013",
+      "type": "pattern",
+      "title": "Reference Data Hub",
+      "domain": "Reference Data",
+      "layer": [
+        "logical",
+        "technical"
+      ],
+      "status": "proposed",
+      "quality": "draft",
+      "confidence": "medium",
+      "epistemic_status": "common-practice",
+      "owner": "unassigned",
+      "version": "0.1.0",
+      "publication_tier": "community",
+      "summary": "Maintain code lists centrally with versions, validity periods and cross-list mappings, and distribute them to consuming systems.",
+      "path": "19-architecture-patterns/Reference Data Hub.md"
+    },
+    {
+      "id": "DA-PAT-0003",
+      "type": "pattern",
+      "title": "Slowly Changing Dimension Type 2",
+      "domain": "Analytics & BI",
+      "layer": [
+        "logical"
+      ],
+      "status": "proposed",
+      "quality": "draft",
+      "confidence": "high",
+      "epistemic_status": "common-practice",
+      "owner": "unassigned",
+      "version": "0.1.0",
+      "publication_tier": "community",
+      "summary": "In a dimensional model, preserve history of dimension attributes by inserting a new dimension row with its own surrogate key and effective period for each change.",
+      "aliases": [
+        "SCD2",
+        "SCD Type 2"
+      ],
+      "path": "19-architecture-patterns/Slowly Changing Dimension Type 2.md"
+    },
+    {
+      "id": "DA-PAT-0002",
+      "type": "pattern",
+      "title": "System-Versioned History Table",
+      "domain": "Data Modeling",
+      "layer": [
+        "logical",
+        "physical"
+      ],
+      "status": "proposed",
+      "quality": "draft",
+      "confidence": "high",
+      "epistemic_status": "common-practice",
+      "owner": "unassigned",
+      "version": "0.1.0",
+      "publication_tier": "community",
+      "summary": "Let the database automatically keep every prior version of a row, with system-maintained transaction-time periods, in an associated history table.",
+      "aliases": [
+        "Transaction-Time Table",
+        "History Database"
+      ],
+      "path": "19-architecture-patterns/System-Versioned History Table.md"
+    },
+    {
+      "id": "DA-APT-0004",
+      "type": "anti-pattern",
+      "title": "Governance as Afterthought",
+      "domain": "Architecture Governance",
+      "layer": [
+        "cross-layer"
+      ],
+      "status": "proposed",
+      "quality": "draft",
+      "confidence": "medium",
+      "epistemic_status": "expert-interpretation",
+      "owner": "unassigned",
+      "version": "0.1.0",
+      "publication_tier": "community",
+      "summary": "Governance is applied as a documentation and approval step at the end of delivery, instead of being embedded in the architecture and workflow.",
+      "path": "19-architecture-patterns/anti-patterns/Governance as Afterthought.md"
+    },
+    {
+      "id": "DA-APT-0001",
+      "type": "anti-pattern",
+      "title": "Implicit Semantics",
+      "domain": "Semantic Architecture",
+      "layer": [
+        "semantic"
+      ],
+      "status": "proposed",
+      "quality": "draft",
+      "confidence": "medium",
+      "epistemic_status": "expert-interpretation",
+      "owner": "unassigned",
+      "version": "0.1.0",
+      "publication_tier": "community",
+      "summary": "The meaning of data exists only implicitly in column names, application code or people's heads, instead of in governed definitions.",
+      "path": "19-architecture-patterns/anti-patterns/Implicit Semantics.md"
+    },
+    {
+      "id": "DA-APT-0005",
+      "type": "anti-pattern",
+      "title": "Migration Without Data Profiling",
+      "domain": "Data Migration",
+      "layer": [
+        "logical",
+        "technical"
+      ],
+      "status": "proposed",
+      "quality": "draft",
+      "confidence": "medium",
+      "epistemic_status": "common-practice",
+      "owner": "unassigned",
+      "version": "0.1.0",
+      "publication_tier": "community",
+      "summary": "Migration mappings are designed from documentation and schema only, without profiling the actual source data.",
+      "path": "19-architecture-patterns/anti-patterns/Migration Without Data Profiling.md"
+    },
+    {
+      "id": "DA-APT-0002",
+      "type": "anti-pattern",
+      "title": "Overloaded Attribute",
+      "domain": "Data Modeling",
+      "layer": [
+        "information",
+        "logical",
+        "physical"
+      ],
+      "status": "proposed",
+      "quality": "draft",
+      "confidence": "medium",
+      "epistemic_status": "common-practice",
+      "owner": "unassigned",
+      "version": "0.1.0",
+      "publication_tier": "community",
+      "summary": "One attribute carries different meanings depending on context, record type or time, instead of separate, well-defined attributes.",
+      "path": "19-architecture-patterns/anti-patterns/Overloaded Attribute.md"
+    },
+    {
+      "id": "DA-APT-0006",
+      "type": "anti-pattern",
+      "title": "Physical-Model-First Design",
+      "domain": "Data Modeling",
+      "layer": [
+        "physical"
+      ],
+      "status": "proposed",
+      "quality": "draft",
+      "confidence": "medium",
+      "epistemic_status": "expert-interpretation",
+      "owner": "unassigned",
+      "version": "0.1.0",
+      "publication_tier": "community",
+      "summary": "Data structures are designed directly as database tables, skipping the conceptual, semantic and information layers.",
+      "path": "19-architecture-patterns/anti-patterns/Physical-Model-First Design.md"
+    },
+    {
+      "id": "DA-APT-0003",
+      "type": "anti-pattern",
+      "title": "Point-to-Point Integration Sprawl",
+      "domain": "Data Integration",
+      "layer": [
+        "logical",
+        "technical"
+      ],
+      "status": "proposed",
+      "quality": "draft",
+      "confidence": "medium",
+      "epistemic_status": "common-practice",
+      "owner": "unassigned",
+      "version": "0.1.0",
+      "publication_tier": "community",
+      "summary": "Systems are integrated through many individually built point-to-point interfaces, each with its own mapping, semantics and quality handling.",
+      "path": "19-architecture-patterns/anti-patterns/Point-to-Point Integration Sprawl.md"
+    },
+    {
+      "id": "DA-ADR-0005",
+      "type": "decision",
+      "title": "Declare Epistemic Status on Every Object",
+      "domain": "Foundations",
+      "layer": [
+        "cross-layer"
+      ],
+      "status": "proposed",
+      "quality": "draft",
+      "confidence": "high",
+      "epistemic_status": "recommendation",
+      "owner": "unassigned",
+      "version": "0.1.0",
+      "publication_tier": "community",
+      "summary": "Every knowledge object declares epistemic_status (verified fact, external standard, common practice, expert interpretation, recommendation, hypothesis, experimental) and confidence, and leaves sources empty when no verified source exists.",
+      "path": "20-architecture-decisions/records/Declare Epistemic Status on Every Object.md"
+    },
+    {
+      "id": "DA-ADR-0004",
+      "type": "decision",
+      "title": "Separate Lifecycle Status from Knowledge Quality",
+      "domain": "Architecture Governance",
+      "layer": [
+        "cross-layer"
+      ],
+      "status": "proposed",
+      "quality": "draft",
+      "confidence": "medium",
+      "epistemic_status": "recommendation",
+      "owner": "unassigned",
+      "version": "0.1.0",
+      "publication_tier": "community",
+      "summary": "Track governance lifecycle (`status`) and knowledge quality (`quality`) as two separate fields, reconcile the spec's Draft/Proposed ambiguity with two initial states, and treat the spec's `approval_status` as derived from `status`.",
+      "path": "20-architecture-decisions/records/Separate Lifecycle Status from Knowledge Quality.md"
+    },
+    {
+      "id": "DA-ADR-0003",
+      "type": "decision",
+      "title": "Store Typed Relationships as Front-Matter Keys",
+      "domain": "Foundations",
+      "layer": [
+        "technical"
+      ],
+      "status": "proposed",
+      "quality": "draft",
+      "confidence": "medium",
+      "epistemic_status": "recommendation",
+      "owner": "unassigned",
+      "version": "0.1.0",
+      "publication_tier": "community",
+      "summary": "Represent typed relationships as top-level front-matter keys named after controlled relationship types, each holding a list of wikilinks; store each edge once and derive inverses on export.",
+      "path": "20-architecture-decisions/records/Store Typed Relationships as Front-Matter Keys.md"
+    },
+    {
+      "id": "DA-ADR-0001",
+      "type": "decision",
+      "title": "Use Markdown and Git as the Initial Knowledge Store",
+      "domain": "Foundations",
+      "layer": [
+        "technical"
+      ],
+      "status": "proposed",
+      "quality": "draft",
+      "confidence": "high",
+      "epistemic_status": "recommendation",
+      "owner": "unassigned",
+      "version": "0.1.0",
+      "publication_tier": "community",
+      "summary": "Implement the knowledge graph initially as Markdown files with YAML front matter in a Git repository, navigable in Obsidian, validated by a script.",
+      "path": "20-architecture-decisions/records/Use Markdown and Git as the Initial Knowledge Store.md"
+    },
+    {
+      "id": "DA-ADR-0002",
+      "type": "decision",
+      "title": "Use Title-Based File Names for Knowledge Objects",
+      "domain": "Foundations",
+      "layer": [
+        "technical"
+      ],
+      "status": "proposed",
+      "quality": "draft",
+      "confidence": "medium",
+      "epistemic_status": "recommendation",
+      "owner": "unassigned",
+      "version": "0.1.0",
+      "publication_tier": "community",
+      "summary": "Name each knowledge object file after its title (unique across the repository) and keep the immutable ID in front matter, so Obsidian wikilinks and graph labels are human-readable.",
+      "path": "20-architecture-decisions/records/Use Title-Based File Names for Knowledge Objects.md"
+    },
+    {
+      "id": "DA-ASM-0001",
+      "type": "assessment",
+      "title": "Knowledge Base Maturity Model",
+      "domain": "Assessments & Maturity",
+      "status": "proposed",
+      "quality": "draft",
+      "confidence": "medium",
+      "epistemic_status": "recommendation",
+      "owner": "unassigned",
+      "version": "0.1.0",
+      "publication_tier": "community",
+      "summary": "Five-level maturity model for an architecture knowledge base, from fragmented to executable, with observable indicators and automatable checks per level.",
+      "path": "21-assessments/Knowledge Base Maturity Model.md"
+    },
+    {
+      "id": "DA-TPL-0003",
+      "type": "template",
+      "title": "Data Model Review Checklist",
+      "domain": "Data Modeling",
+      "status": "proposed",
+      "quality": "draft",
+      "confidence": "medium",
+      "epistemic_status": "recommendation",
+      "owner": "unassigned",
+      "version": "0.1.0",
+      "publication_tier": "community",
+      "summary": "Checklist for reviewing a data model at its layer, derived from the principles, patterns and anti-patterns in this knowledge base.",
+      "path": "22-templates/Data Model Review Checklist.md"
+    },
+    {
+      "id": "DA-EXA-0001",
+      "type": "example",
+      "title": "Insurance Policy History Example",
+      "domain": "Examples & Case Studies",
+      "status": "proposed",
+      "quality": "draft",
+      "confidence": "medium",
+      "epistemic_status": "hypothesis",
+      "owner": "unassigned",
+      "version": "0.1.0",
+      "publication_tier": "community",
+      "summary": "Fictitious worked example: taking a history-strategy decision for policy data from requirement to recommendation, using the decision tree, a recommendation rule and a scoring model.",
+      "path": "23-examples/Insurance Policy History Example.md"
+    },
+    {
+      "id": "DA-REQ-0001",
+      "type": "requirement",
+      "title": "Policy State Is Reproducible As Known At Any Past Date",
+      "domain": "Examples & Case Studies",
+      "status": "proposed",
+      "quality": "draft",
+      "confidence": "medium",
+      "epistemic_status": "hypothesis",
+      "owner": "unassigned",
+      "version": "0.1.0",
+      "publication_tier": "community",
+      "summary": "Fictitious example requirement: the policy administration must reproduce any policy as it was valid on a date and as it was recorded at another date.",
+      "path": "23-examples/Policy State Is Reproducible As Known At Any Past Date.md"
+    },
+    {
+      "id": "DA-STD-0009",
+      "type": "standard",
+      "title": "ArchiMate",
+      "domain": "Standards & Regulations",
+      "status": "proposed",
+      "quality": "draft",
+      "confidence": "medium",
+      "epistemic_status": "external-standard",
+      "owner": "unassigned",
+      "version": "0.1.0",
+      "publication_tier": "community",
+      "summary": "ArchiMate \u2014 an Open Group modeling language for enterprise architecture covering business, application and technology layers and their relationships.",
+      "path": "24-standards-regulations/ArchiMate.md"
+    },
+    {
+      "id": "DA-STD-0008",
+      "type": "standard",
+      "title": "DAMA-DMBOK",
+      "domain": "Standards & Regulations",
+      "status": "proposed",
+      "quality": "draft",
+      "confidence": "medium",
+      "epistemic_status": "external-standard",
+      "owner": "unassigned",
+      "version": "0.1.0",
+      "publication_tier": "community",
+      "summary": "DAMA Data Management Body of Knowledge \u2014 an industry body of knowledge describing data management knowledge areas, including data architecture, modeling, governance, quality and metadata.",
+      "aliases": [
+        "DMBOK",
+        "DAMA-DMBOK2"
+      ],
+      "path": "24-standards-regulations/DAMA-DMBOK.md"
+    },
+    {
+      "id": "DA-STD-0007",
+      "type": "standard",
+      "title": "GDPR",
+      "domain": "Standards & Regulations",
+      "status": "proposed",
+      "quality": "draft",
+      "confidence": "high",
+      "epistemic_status": "external-standard",
+      "owner": "unassigned",
+      "version": "0.1.0",
+      "publication_tier": "community",
+      "summary": "General Data Protection Regulation (Regulation (EU) 2016/679) \u2014 EU regulation on the protection of natural persons with regard to the processing of personal data.",
+      "aliases": [
+        "General Data Protection Regulation",
+        "AVG"
+      ],
+      "path": "24-standards-regulations/GDPR.md"
+    },
+    {
+      "id": "DA-STD-0005",
+      "type": "standard",
+      "title": "ISO 8000 Data Quality",
+      "domain": "Standards & Regulations",
+      "status": "proposed",
+      "quality": "draft",
+      "confidence": "medium",
+      "epistemic_status": "external-standard",
+      "owner": "unassigned",
+      "version": "0.1.0",
+      "publication_tier": "community",
+      "summary": "ISO 8000 \u2014 a multi-part international standard series on data quality, including data quality management and the exchange of quality master data.",
+      "aliases": [
+        "ISO 8000"
+      ],
+      "path": "24-standards-regulations/ISO 8000 Data Quality.md"
+    },
+    {
+      "id": "DA-STD-0004",
+      "type": "standard",
+      "title": "ISO IEC 11179 Metadata Registries",
+      "domain": "Standards & Regulations",
+      "status": "proposed",
+      "quality": "draft",
+      "confidence": "medium",
+      "epistemic_status": "external-standard",
+      "owner": "unassigned",
+      "version": "0.1.0",
+      "publication_tier": "community",
+      "summary": "ISO/IEC 11179 \u2014 a multi-part international standard for metadata registries, describing how to register, define, name and identify data elements and related concepts.",
+      "aliases": [
+        "ISO/IEC 11179",
+        "MDR"
+      ],
+      "path": "24-standards-regulations/ISO IEC 11179 Metadata Registries.md"
+    },
+    {
+      "id": "DA-STD-0006",
+      "type": "standard",
+      "title": "ISO IEC 25012 Data Quality Model",
+      "domain": "Standards & Regulations",
+      "status": "proposed",
+      "quality": "draft",
+      "confidence": "medium",
+      "epistemic_status": "external-standard",
+      "owner": "unassigned",
+      "version": "0.1.0",
+      "publication_tier": "community",
+      "summary": "ISO/IEC 25012 \u2014 defines a general data quality model for data retained in a structured format within a computer system, with inherent and system-dependent characteristics.",
+      "aliases": [
+        "ISO/IEC 25012"
+      ],
+      "path": "24-standards-regulations/ISO IEC 25012 Data Quality Model.md"
+    },
+    {
+      "id": "DA-STD-0002",
+      "type": "standard",
+      "title": "OWL 2",
+      "domain": "Standards & Regulations",
+      "status": "proposed",
+      "quality": "draft",
+      "confidence": "high",
+      "epistemic_status": "external-standard",
+      "owner": "unassigned",
+      "version": "0.1.0",
+      "publication_tier": "community",
+      "summary": "Web Ontology Language 2 \u2014 a W3C language for ontologies with formally defined semantics, enabling reasoning over classes, properties and individuals.",
+      "aliases": [
+        "Web Ontology Language"
+      ],
+      "path": "24-standards-regulations/OWL 2.md"
+    },
+    {
+      "id": "DA-STD-0003",
+      "type": "standard",
+      "title": "RDF 1.1",
+      "domain": "Standards & Regulations",
+      "status": "proposed",
+      "quality": "draft",
+      "confidence": "high",
+      "epistemic_status": "external-standard",
+      "owner": "unassigned",
+      "version": "0.1.0",
+      "publication_tier": "community",
+      "summary": "Resource Description Framework 1.1 \u2014 the W3C graph data model of subject\u2013predicate\u2013object triples identified by IRIs, underlying SKOS and OWL.",
+      "aliases": [
+        "Resource Description Framework",
+        "RDF"
+      ],
+      "path": "24-standards-regulations/RDF 1.1.md"
+    },
+    {
+      "id": "DA-STD-0001",
+      "type": "standard",
+      "title": "SKOS",
+      "domain": "Standards & Regulations",
+      "status": "proposed",
+      "quality": "draft",
+      "confidence": "high",
+      "epistemic_status": "external-standard",
+      "owner": "unassigned",
+      "version": "0.1.0",
+      "publication_tier": "community",
+      "summary": "Simple Knowledge Organization System \u2014 a W3C data model for representing thesauri, taxonomies, classification schemes and other controlled vocabularies in RDF.",
+      "aliases": [
+        "Simple Knowledge Organization System"
+      ],
+      "path": "24-standards-regulations/SKOS.md"
+    },
+    {
+      "id": "DA-STD-0010",
+      "type": "standard",
+      "title": "SQL Standard Temporal Support",
+      "domain": "Standards & Regulations",
+      "status": "proposed",
+      "quality": "draft",
+      "confidence": "medium",
+      "epistemic_status": "external-standard",
+      "owner": "unassigned",
+      "version": "0.1.0",
+      "publication_tier": "community",
+      "summary": "Temporal features of the SQL standard (ISO/IEC 9075), introduced in SQL:2011 \u2014 application-time period tables and system-versioned tables.",
+      "aliases": [
+        "SQL:2011 temporal",
+        "ISO/IEC 9075 temporal"
+      ],
+      "path": "24-standards-regulations/SQL Standard Temporal Support.md"
+    },
+    {
+      "id": "DA-ARL-0002",
+      "type": "architecture-rule",
+      "title": "Pattern Realizes a Concept or Principle",
+      "domain": "Decision Intelligence",
+      "status": "proposed",
+      "quality": "draft",
+      "confidence": "medium",
+      "epistemic_status": "recommendation",
+      "owner": "unassigned",
+      "version": "0.1.0",
+      "publication_tier": "community",
+      "summary": "Every pattern realizes at least one concept or principle, keeping solutions traceable to the knowledge they serve.",
+      "path": "25-decision-intelligence/architecture-rules/Pattern Realizes a Concept or Principle.md"
+    },
+    {
+      "id": "DA-ARL-0001",
+      "type": "architecture-rule",
+      "title": "Technology Implements a Generic Pattern",
+      "domain": "Decision Intelligence",
+      "status": "proposed",
+      "quality": "draft",
+      "confidence": "medium",
+      "epistemic_status": "recommendation",
+      "owner": "unassigned",
+      "version": "0.1.0",
+      "publication_tier": "community",
+      "summary": "Every technology object implements at least one technology-neutral pattern, so technology knowledge never stands on its own.",
+      "path": "25-decision-intelligence/architecture-rules/Technology Implements a Generic Pattern.md"
+    },
+    {
+      "id": "DA-FWK-0001",
+      "type": "framework",
+      "title": "Architecture Decision Framework",
+      "domain": "Decision Intelligence",
+      "layer": [
+        "cross-layer"
+      ],
+      "status": "proposed",
+      "quality": "draft",
+      "confidence": "medium",
+      "epistemic_status": "recommendation",
+      "owner": "unassigned",
+      "version": "0.1.0",
+      "publication_tier": "community",
+      "summary": "A structured, machine-readable sequence for taking architecture decisions - question, criteria, conditions, alternatives, consequences, decision, evidence - that links each stage to knowledge objects.",
+      "path": "25-decision-intelligence/decision-frameworks/Architecture Decision Framework.md"
+    },
+    {
+      "id": "DA-DTR-0001",
+      "type": "decision-tree",
+      "title": "Database History Pattern Decision Tree",
+      "domain": "Decision Intelligence",
+      "layer": [
+        "information",
+        "logical"
+      ],
+      "status": "proposed",
+      "quality": "draft",
+      "confidence": "medium",
+      "epistemic_status": "recommendation",
+      "owner": "unassigned",
+      "version": "0.2.0",
+      "publication_tier": "community",
+      "summary": "Guides the choice of a history mechanism from explicit reconstruction requirements.",
+      "path": "25-decision-intelligence/decision-trees/Database History Pattern Decision Tree.md"
+    },
+    {
+      "id": "DA-DTR-0005",
+      "type": "decision-tree",
+      "title": "Semantic Modeling Approach Decision Tree",
+      "domain": "Decision Intelligence",
+      "layer": [
+        "semantic"
+      ],
+      "status": "proposed",
+      "quality": "draft",
+      "confidence": "medium",
+      "epistemic_status": "recommendation",
+      "owner": "unassigned",
+      "version": "0.2.0",
+      "publication_tier": "community",
+      "summary": "Guides the choice of semantic model formality \u2014 controlled vocabulary, SKOS taxonomy/thesaurus or OWL ontology.",
+      "path": "25-decision-intelligence/decision-trees/Semantic Modeling Approach Decision Tree.md"
+    },
+    {
+      "id": "DA-RRL-0001",
+      "type": "recommendation-rule",
+      "title": "Retroactive Corrections Call for Bitemporal History",
+      "domain": "Decision Intelligence",
+      "status": "proposed",
+      "quality": "draft",
+      "confidence": "medium",
+      "epistemic_status": "recommendation",
+      "owner": "unassigned",
+      "version": "0.1.0",
+      "publication_tier": "community",
+      "summary": "If backdated corrections must be reconstructable and past states must be reproducible, recommend a bitemporal data model.",
+      "path": "25-decision-intelligence/recommendation-rules/Retroactive Corrections Call for Bitemporal History.md"
+    }
+  ],
+  "edges": [
+    {
+      "source": "DA-CON-0006",
+      "type": "part-of",
+      "target": "DA-CON-0003"
+    },
+    {
+      "source": "DA-CON-0012",
+      "type": "part-of",
+      "target": "DA-CON-0003"
+    },
+    {
+      "source": "DA-CON-0007",
+      "type": "part-of",
+      "target": "DA-CON-0003"
+    },
+    {
+      "source": "DA-CON-0008",
+      "type": "part-of",
+      "target": "DA-CON-0003"
+    },
+    {
+      "source": "DA-CON-0009",
+      "type": "part-of",
+      "target": "DA-CON-0003"
+    },
+    {
+      "source": "DA-CON-0003",
+      "type": "constrained-by",
+      "target": "DA-PRI-0003"
+    },
+    {
+      "source": "DA-CAP-0002",
+      "type": "requires",
+      "target": "DA-CON-0004"
+    },
+    {
+      "source": "DA-CAP-0001",
+      "type": "requires",
+      "target": "DA-CON-0010"
+    },
+    {
+      "source": "DA-PAT-0001",
+      "type": "realizes",
+      "target": "DA-CAP-0001"
+    },
+    {
+      "source": "DA-PAT-0002",
+      "type": "realizes",
+      "target": "DA-CAP-0001"
+    },
+    {
+      "source": "DA-CON-0004",
+      "type": "constrained-by",
+      "target": "DA-PRI-0007"
+    },
+    {
+      "source": "DA-CON-0023",
+      "type": "part-of",
+      "target": "DA-CON-0001"
+    },
+    {
+      "source": "DA-CON-0001",
+      "type": "governed-by",
+      "target": "DA-CON-0018"
+    },
+    {
+      "source": "DA-CON-0001",
+      "type": "governed-by",
+      "target": "DA-GOV-0001"
+    },
+    {
+      "source": "DA-CON-0001",
+      "type": "supported-by",
+      "target": "DA-CON-0016"
+    },
+    {
+      "source": "DA-CON-0001",
+      "type": "constrained-by",
+      "target": "DA-PRI-0003"
+    },
+    {
+      "source": "DA-CON-0001",
+      "type": "constrained-by",
+      "target": "DA-PRI-0004"
+    },
+    {
+      "source": "DA-CON-0001",
+      "type": "derived-from",
+      "target": "DA-STD-0008"
+    },
+    {
+      "source": "DA-CON-0002",
+      "type": "related-to",
+      "target": "DA-CON-0001"
+    },
+    {
+      "source": "DA-CON-0007",
+      "type": "part-of",
+      "target": "DA-CON-0002"
+    },
+    {
+      "source": "DA-CON-0014",
+      "type": "part-of",
+      "target": "DA-CON-0002"
+    },
+    {
+      "source": "DA-CON-0002",
+      "type": "depends-on",
+      "target": "DA-CON-0012"
+    },
+    {
+      "source": "DA-MTH-0001",
+      "type": "realizes",
+      "target": "DA-PRI-0002"
+    },
+    {
+      "source": "DA-MTH-0001",
+      "type": "produces",
+      "target": "DA-CON-0007"
+    },
+    {
+      "source": "DA-MTH-0001",
+      "type": "produces",
+      "target": "DA-CON-0008"
+    },
+    {
+      "source": "DA-MTH-0001",
+      "type": "produces",
+      "target": "DA-CON-0009"
+    },
+    {
+      "source": "DA-PAT-0014",
+      "type": "supported-by",
+      "target": "DA-MTH-0001"
+    },
+    {
+      "source": "DA-PRI-0003",
+      "type": "applies-to",
+      "target": "DA-CON-0004"
+    },
+    {
+      "source": "DA-PRI-0008",
+      "type": "applies-to",
+      "target": "DA-CON-0025"
+    },
+    {
+      "source": "DA-PRI-0008",
+      "type": "applies-to",
+      "target": "DA-CON-0027"
+    },
+    {
+      "source": "DA-PRI-0008",
+      "type": "applies-to",
+      "target": "DA-CON-0029"
+    },
+    {
+      "source": "DA-PRI-0003",
+      "type": "supported-by",
+      "target": "DA-PRI-0004"
+    },
+    {
+      "source": "DA-CON-0005",
+      "type": "part-of",
+      "target": "DA-CON-0001"
+    },
+    {
+      "source": "DA-CON-0007",
+      "type": "specializes",
+      "target": "DA-CON-0005"
+    },
+    {
+      "source": "DA-CON-0010",
+      "type": "constrained-by",
+      "target": "DA-PRI-0010"
+    },
+    {
+      "source": "DA-CON-0010",
+      "type": "constrained-by",
+      "target": "DA-STD-0010"
+    },
+    {
+      "source": "DA-CON-0010",
+      "type": "part-of",
+      "target": "DA-CON-0023"
+    },
+    {
+      "source": "DA-CON-0006",
+      "type": "specializes",
+      "target": "DA-CON-0005"
+    },
+    {
+      "source": "DA-CON-0006",
+      "type": "precedes",
+      "target": "DA-CON-0007"
+    },
+    {
+      "source": "DA-CON-0008",
+      "type": "specializes",
+      "target": "DA-CON-0005"
+    },
+    {
+      "source": "DA-CON-0008",
+      "type": "realizes",
+      "target": "DA-CON-0007"
+    },
+    {
+      "source": "DA-CON-0009",
+      "type": "specializes",
+      "target": "DA-CON-0005"
+    },
+    {
+      "source": "DA-CON-0009",
+      "type": "realizes",
+      "target": "DA-CON-0008"
+    },
+    {
+      "source": "DA-TEC-0001",
+      "type": "implements",
+      "target": "DA-CON-0009"
+    },
+    {
+      "source": "DA-TEC-0002",
+      "type": "implements",
+      "target": "DA-CON-0009"
+    },
+    {
+      "source": "DA-PRI-0002",
+      "type": "applies-to",
+      "target": "DA-CON-0007"
+    },
+    {
+      "source": "DA-CON-0011",
+      "type": "part-of",
+      "target": "DA-CON-0012"
+    },
+    {
+      "source": "DA-CON-0011",
+      "type": "owned-by",
+      "target": "DA-ROL-0001"
+    },
+    {
+      "source": "DA-CON-0011",
+      "type": "governed-by",
+      "target": "DA-GOV-0008"
+    },
+    {
+      "source": "DA-CON-0011",
+      "type": "represented-by",
+      "target": "DA-CON-0006"
+    },
+    {
+      "source": "DA-CON-0015",
+      "type": "specializes",
+      "target": "DA-CON-0012"
+    },
+    {
+      "source": "DA-CON-0015",
+      "type": "governed-by",
+      "target": "DA-GOV-0008"
+    },
+    {
+      "source": "DA-CON-0015",
+      "type": "supported-by",
+      "target": "DA-STD-0001"
+    },
+    {
+      "source": "DA-CON-0013",
+      "type": "specializes",
+      "target": "DA-CON-0012"
+    },
+    {
+      "source": "DA-CON-0013",
+      "type": "supported-by",
+      "target": "DA-STD-0002"
+    },
+    {
+      "source": "DA-CON-0013",
+      "type": "depends-on",
+      "target": "DA-STD-0003"
+    },
+    {
+      "source": "DA-CON-0013",
+      "type": "owned-by",
+      "target": "DA-ROL-0006"
+    },
+    {
+      "source": "DA-CON-0012",
+      "type": "represented-by",
+      "target": "DA-CON-0007"
+    },
+    {
+      "source": "DA-CON-0012",
+      "type": "constrained-by",
+      "target": "DA-PRI-0002"
+    },
+    {
+      "source": "DA-CON-0012",
+      "type": "governed-by",
+      "target": "DA-ROL-0005"
+    },
+    {
+      "source": "DA-CON-0014",
+      "type": "specializes",
+      "target": "DA-CON-0012"
+    },
+    {
+      "source": "DA-CON-0014",
+      "type": "depends-on",
+      "target": "DA-CON-0015"
+    },
+    {
+      "source": "DA-CON-0014",
+      "type": "supported-by",
+      "target": "DA-STD-0001"
+    },
+    {
+      "source": "DA-CON-0017",
+      "type": "part-of",
+      "target": "DA-CON-0016"
+    },
+    {
+      "source": "DA-CON-0021",
+      "type": "supported-by",
+      "target": "DA-CON-0016"
+    },
+    {
+      "source": "DA-CON-0016",
+      "type": "constrained-by",
+      "target": "DA-PRI-0006"
+    },
+    {
+      "source": "DA-CON-0016",
+      "type": "constrained-by",
+      "target": "DA-STD-0004"
+    },
+    {
+      "source": "DA-CON-0016",
+      "type": "governed-by",
+      "target": "DA-CON-0018"
+    },
+    {
+      "source": "DA-CON-0018",
+      "type": "constrained-by",
+      "target": "DA-PRI-0009"
+    },
+    {
+      "source": "DA-CON-0018",
+      "type": "derived-from",
+      "target": "DA-STD-0008"
+    },
+    {
+      "source": "DA-CON-0019",
+      "type": "part-of",
+      "target": "DA-CON-0018"
+    },
+    {
+      "source": "DA-CON-0019",
+      "type": "constrained-by",
+      "target": "DA-PRI-0001"
+    },
+    {
+      "source": "DA-CON-0020",
+      "type": "part-of",
+      "target": "DA-CON-0018"
+    },
+    {
+      "source": "DA-CON-0020",
+      "type": "depends-on",
+      "target": "DA-CON-0019"
+    },
+    {
+      "source": "DA-PRI-0001",
+      "type": "applies-to",
+      "target": "DA-CON-0011"
+    },
+    {
+      "source": "DA-CON-0004",
+      "type": "decided-by",
+      "target": "DA-ROL-0015"
+    },
+    {
+      "source": "DA-ROL-0015",
+      "type": "part-of",
+      "target": "DA-GOV-0003"
+    },
+    {
+      "source": "DA-CON-0008",
+      "type": "owned-by",
+      "target": "DA-ROL-0008"
+    },
+    {
+      "source": "DA-ROL-0008",
+      "type": "part-of",
+      "target": "DA-GOV-0003"
+    },
+    {
+      "source": "DA-ROL-0003",
+      "type": "depends-on",
+      "target": "DA-ROL-0001"
+    },
+    {
+      "source": "DA-ROL-0003",
+      "type": "part-of",
+      "target": "DA-GOV-0003"
+    },
+    {
+      "source": "DA-ROL-0001",
+      "type": "realizes",
+      "target": "DA-CON-0019"
+    },
+    {
+      "source": "DA-ROL-0001",
+      "type": "part-of",
+      "target": "DA-GOV-0003"
+    },
+    {
+      "source": "DA-ROL-0002",
+      "type": "realizes",
+      "target": "DA-CON-0020"
+    },
+    {
+      "source": "DA-ROL-0002",
+      "type": "part-of",
+      "target": "DA-GOV-0003"
+    },
+    {
+      "source": "DA-ROL-0009",
+      "type": "specializes",
+      "target": "DA-ROL-0008"
+    },
+    {
+      "source": "DA-ROL-0009",
+      "type": "part-of",
+      "target": "DA-GOV-0003"
+    },
+    {
+      "source": "DA-ROL-0005",
+      "type": "supported-by",
+      "target": "DA-ROL-0004"
+    },
+    {
+      "source": "DA-ROL-0002",
+      "type": "supported-by",
+      "target": "DA-ROL-0004"
+    },
+    {
+      "source": "DA-ROL-0004",
+      "type": "part-of",
+      "target": "DA-GOV-0003"
+    },
+    {
+      "source": "DA-CON-0001",
+      "type": "governed-by",
+      "target": "DA-ROL-0010"
+    },
+    {
+      "source": "DA-ROL-0010",
+      "type": "part-of",
+      "target": "DA-GOV-0003"
+    },
+    {
+      "source": "DA-CON-0007",
+      "type": "owned-by",
+      "target": "DA-ROL-0007"
+    },
+    {
+      "source": "DA-ROL-0007",
+      "type": "part-of",
+      "target": "DA-GOV-0003"
+    },
+    {
+      "source": "DA-ROL-0006",
+      "type": "part-of",
+      "target": "DA-GOV-0003"
+    },
+    {
+      "source": "DA-CON-0028",
+      "type": "governed-by",
+      "target": "DA-ROL-0012"
+    },
+    {
+      "source": "DA-ROL-0012",
+      "type": "part-of",
+      "target": "DA-GOV-0003"
+    },
+    {
+      "source": "DA-ROL-0014",
+      "type": "constrained-by",
+      "target": "DA-STD-0007"
+    },
+    {
+      "source": "DA-ROL-0014",
+      "type": "part-of",
+      "target": "DA-GOV-0003"
+    },
+    {
+      "source": "DA-ROL-0013",
+      "type": "part-of",
+      "target": "DA-GOV-0003"
+    },
+    {
+      "source": "DA-ROL-0005",
+      "type": "part-of",
+      "target": "DA-GOV-0003"
+    },
+    {
+      "source": "DA-ROL-0011",
+      "type": "depends-on",
+      "target": "DA-ROL-0008"
+    },
+    {
+      "source": "DA-ROL-0011",
+      "type": "part-of",
+      "target": "DA-GOV-0003"
+    },
+    {
+      "source": "DA-CON-0021",
+      "type": "measured-by",
+      "target": "DA-CON-0022"
+    },
+    {
+      "source": "DA-CON-0021",
+      "type": "governed-by",
+      "target": "DA-CON-0018"
+    },
+    {
+      "source": "DA-CON-0021",
+      "type": "constrained-by",
+      "target": "DA-PRI-0005"
+    },
+    {
+      "source": "DA-CON-0021",
+      "type": "constrained-by",
+      "target": "DA-STD-0005"
+    },
+    {
+      "source": "DA-CON-0021",
+      "type": "constrained-by",
+      "target": "DA-STD-0006"
+    },
+    {
+      "source": "DA-CON-0021",
+      "type": "supported-by",
+      "target": "DA-PAT-0010"
+    },
+    {
+      "source": "DA-CON-0022",
+      "type": "derived-from",
+      "target": "DA-STD-0006"
+    },
+    {
+      "source": "DA-CON-0022",
+      "type": "derived-from",
+      "target": "DA-STD-0008"
+    },
+    {
+      "source": "DA-CON-0028",
+      "type": "part-of",
+      "target": "DA-CON-0001"
+    },
+    {
+      "source": "DA-CON-0028",
+      "type": "constrained-by",
+      "target": "DA-PRI-0004"
+    },
+    {
+      "source": "DA-CON-0029",
+      "type": "part-of",
+      "target": "DA-CON-0001"
+    },
+    {
+      "source": "DA-CON-0029",
+      "type": "governed-by",
+      "target": "DA-PAT-0008"
+    },
+    {
+      "source": "DA-CON-0023",
+      "type": "governed-by",
+      "target": "DA-CON-0018"
+    },
+    {
+      "source": "DA-CON-0023",
+      "type": "constrained-by",
+      "target": "DA-STD-0007"
+    },
+    {
+      "source": "DA-CON-0023",
+      "type": "constrained-by",
+      "target": "DA-PRI-0010"
+    },
+    {
+      "source": "DA-CON-0024",
+      "type": "depends-on",
+      "target": "DA-CON-0017"
+    },
+    {
+      "source": "DA-CON-0024",
+      "type": "depends-on",
+      "target": "DA-CON-0021"
+    },
+    {
+      "source": "DA-CON-0026",
+      "type": "part-of",
+      "target": "DA-CON-0025"
+    },
+    {
+      "source": "DA-CON-0025",
+      "type": "distinct-from",
+      "target": "DA-CON-0027"
+    },
+    {
+      "source": "DA-CON-0015",
+      "type": "represented-by",
+      "target": "DA-CON-0027"
+    },
+    {
+      "source": "DA-CON-0027",
+      "type": "distinct-from",
+      "target": "DA-CON-0016"
+    },
+    {
+      "source": "DA-CON-0027",
+      "type": "governed-by",
+      "target": "DA-ROL-0002"
+    },
+    {
+      "source": "DA-GOV-0001",
+      "type": "realizes",
+      "target": "DA-CON-0018"
+    },
+    {
+      "source": "DA-GOV-0001",
+      "type": "realizes",
+      "target": "DA-PRI-0009"
+    },
+    {
+      "source": "DA-GOV-0004",
+      "type": "part-of",
+      "target": "DA-GOV-0001"
+    },
+    {
+      "source": "DA-GOV-0004",
+      "type": "decided-by",
+      "target": "DA-ADR-0004"
+    },
+    {
+      "source": "DA-GOV-0003",
+      "type": "part-of",
+      "target": "DA-GOV-0001"
+    },
+    {
+      "source": "DA-GOV-0006",
+      "type": "part-of",
+      "target": "DA-GOV-0001"
+    },
+    {
+      "source": "DA-GOV-0006",
+      "type": "decided-by",
+      "target": "DA-ADR-0004"
+    },
+    {
+      "source": "DA-GOV-0006",
+      "type": "decided-by",
+      "target": "DA-ADR-0005"
+    },
+    {
+      "source": "DA-GOV-0007",
+      "type": "part-of",
+      "target": "DA-GOV-0001"
+    },
+    {
+      "source": "DA-GOV-0008",
+      "type": "part-of",
+      "target": "DA-GOV-0001"
+    },
+    {
+      "source": "DA-PRC-0001",
+      "type": "part-of",
+      "target": "DA-GOV-0007"
+    },
+    {
+      "source": "DA-PRC-0001",
+      "type": "governed-by",
+      "target": "DA-GRL-0001"
+    },
+    {
+      "source": "DA-PRC-0001",
+      "type": "governed-by",
+      "target": "DA-GRL-0002"
+    },
+    {
+      "source": "DA-PRC-0001",
+      "type": "governed-by",
+      "target": "DA-GRL-0003"
+    },
+    {
+      "source": "DA-GRL-0002",
+      "type": "derived-from",
+      "target": "DA-PRI-0003"
+    },
+    {
+      "source": "DA-GRL-0002",
+      "type": "part-of",
+      "target": "DA-GOV-0001"
+    },
+    {
+      "source": "DA-GRL-0003",
+      "type": "applies-to",
+      "target": "DA-GOV-0007"
+    },
+    {
+      "source": "DA-GRL-0003",
+      "type": "part-of",
+      "target": "DA-GOV-0001"
+    },
+    {
+      "source": "DA-GRL-0001",
+      "type": "applies-to",
+      "target": "DA-GOV-0004"
+    },
+    {
+      "source": "DA-GRL-0001",
+      "type": "part-of",
+      "target": "DA-GOV-0001"
+    },
+    {
+      "source": "DA-TEC-0002",
+      "type": "implements",
+      "target": "DA-PAT-0009"
+    },
+    {
+      "source": "DA-TEC-0001",
+      "type": "implements",
+      "target": "DA-PAT-0002"
+    },
+    {
+      "source": "DA-TEC-0001",
+      "type": "constrained-by",
+      "target": "DA-STD-0010"
+    },
+    {
+      "source": "DA-TEC-0003",
+      "type": "implements",
+      "target": "DA-PAT-0005"
+    },
+    {
+      "source": "DA-RAR-0001",
+      "type": "realizes",
+      "target": "DA-CON-0028"
+    },
+    {
+      "source": "DA-PAT-0010",
+      "type": "part-of",
+      "target": "DA-RAR-0001"
+    },
+    {
+      "source": "DA-PAT-0011",
+      "type": "part-of",
+      "target": "DA-RAR-0001"
+    },
+    {
+      "source": "DA-RAR-0001",
+      "type": "depends-on",
+      "target": "DA-PAT-0005"
+    },
+    {
+      "source": "DA-RAR-0001",
+      "type": "depends-on",
+      "target": "DA-PAT-0006"
+    },
+    {
+      "source": "DA-RAR-0001",
+      "type": "governed-by",
+      "target": "DA-GOV-0001"
+    },
+    {
+      "source": "DA-PAT-0006",
+      "type": "realizes",
+      "target": "DA-CON-0029"
+    },
+    {
+      "source": "DA-PAT-0016",
+      "type": "realizes",
+      "target": "DA-CON-0024"
+    },
+    {
+      "source": "DA-PAT-0001",
+      "type": "realizes",
+      "target": "DA-CON-0010"
+    },
+    {
+      "source": "DA-PAT-0001",
+      "type": "alternative-to",
+      "target": "DA-PAT-0002"
+    },
+    {
+      "source": "DA-PAT-0001",
+      "type": "alternative-to",
+      "target": "DA-PAT-0004"
+    },
+    {
+      "source": "DA-PAT-0001",
+      "type": "alternative-to",
+      "target": "DA-PAT-0003"
+    },
+    {
+      "source": "DA-PAT-0001",
+      "type": "constrained-by",
+      "target": "DA-STD-0010"
+    },
+    {
+      "source": "DA-PAT-0005",
+      "type": "realizes",
+      "target": "DA-CON-0029"
+    },
+    {
+      "source": "DA-PAT-0005",
+      "type": "alternative-to",
+      "target": "DA-PAT-0006"
+    },
+    {
+      "source": "DA-PAT-0014",
+      "type": "realizes",
+      "target": "DA-PRI-0002"
+    },
+    {
+      "source": "DA-PAT-0014",
+      "type": "mitigates",
+      "target": "DA-APT-0001"
+    },
+    {
+      "source": "DA-PAT-0014",
+      "type": "mitigates",
+      "target": "DA-APT-0002"
+    },
+    {
+      "source": "DA-PAT-0008",
+      "type": "realizes",
+      "target": "DA-PRI-0005"
+    },
+    {
+      "source": "DA-PAT-0008",
+      "type": "mitigates",
+      "target": "DA-APT-0003"
+    },
+    {
+      "source": "DA-PAT-0008",
+      "type": "mitigates",
+      "target": "DA-APT-0001"
+    },
+    {
+      "source": "DA-PAT-0010",
+      "type": "realizes",
+      "target": "DA-PRI-0005"
+    },
+    {
+      "source": "DA-PAT-0010",
+      "type": "measured-by",
+      "target": "DA-CON-0022"
+    },
+    {
+      "source": "DA-PAT-0007",
+      "type": "realizes",
+      "target": "DA-CON-0029"
+    },
+    {
+      "source": "DA-PAT-0004",
+      "type": "realizes",
+      "target": "DA-CON-0010"
+    },
+    {
+      "source": "DA-PAT-0004",
+      "type": "realizes",
+      "target": "DA-CON-0029"
+    },
+    {
+      "source": "DA-PAT-0004",
+      "type": "alternative-to",
+      "target": "DA-PAT-0002"
+    },
+    {
+      "source": "DA-PAT-0009",
+      "type": "realizes",
+      "target": "DA-CON-0028"
+    },
+    {
+      "source": "DA-PAT-0009",
+      "type": "part-of",
+      "target": "DA-RAR-0001"
+    },
+    {
+      "source": "DA-PAT-0009",
+      "type": "supported-by",
+      "target": "DA-PAT-0010"
+    },
+    {
+      "source": "DA-PAT-0012",
+      "type": "realizes",
+      "target": "DA-CON-0025"
+    },
+    {
+      "source": "DA-PAT-0012",
+      "type": "realizes",
+      "target": "DA-PRI-0008"
+    },
+    {
+      "source": "DA-PAT-0012",
+      "type": "produces",
+      "target": "DA-CON-0026"
+    },
+    {
+      "source": "DA-PAT-0011",
+      "type": "realizes",
+      "target": "DA-PRI-0006"
+    },
+    {
+      "source": "DA-PAT-0011",
+      "type": "produces",
+      "target": "DA-CON-0017"
+    },
+    {
+      "source": "DA-PAT-0011",
+      "type": "produces",
+      "target": "DA-CON-0016"
+    },
+    {
+      "source": "DA-PAT-0015",
+      "type": "realizes",
+      "target": "DA-CON-0024"
+    },
+    {
+      "source": "DA-PAT-0015",
+      "type": "alternative-to",
+      "target": "DA-PAT-0016"
+    },
+    {
+      "source": "DA-PAT-0015",
+      "type": "depends-on",
+      "target": "DA-PAT-0005"
+    },
+    {
+      "source": "DA-PAT-0013",
+      "type": "realizes",
+      "target": "DA-CON-0027"
+    },
+    {
+      "source": "DA-PAT-0013",
+      "type": "realizes",
+      "target": "DA-PRI-0008"
+    },
+    {
+      "source": "DA-PAT-0013",
+      "type": "alternative-to",
+      "target": "DA-PAT-0012"
+    },
+    {
+      "source": "DA-PAT-0003",
+      "type": "realizes",
+      "target": "DA-CON-0010"
+    },
+    {
+      "source": "DA-PAT-0003",
+      "type": "part-of",
+      "target": "DA-PAT-0009"
+    },
+    {
+      "source": "DA-PAT-0002",
+      "type": "realizes",
+      "target": "DA-CON-0010"
+    },
+    {
+      "source": "DA-PAT-0002",
+      "type": "constrained-by",
+      "target": "DA-STD-0010"
+    },
+    {
+      "source": "DA-APT-0004",
+      "type": "violates",
+      "target": "DA-PRI-0009"
+    },
+    {
+      "source": "DA-APT-0001",
+      "type": "violates",
+      "target": "DA-PRI-0002"
+    },
+    {
+      "source": "DA-APT-0001",
+      "type": "causes",
+      "target": "DA-APT-0002"
+    },
+    {
+      "source": "DA-APT-0005",
+      "type": "causes",
+      "target": "DA-APT-0002"
+    },
+    {
+      "source": "DA-PAT-0010",
+      "type": "mitigates",
+      "target": "DA-APT-0005"
+    },
+    {
+      "source": "DA-PAT-0015",
+      "type": "mitigates",
+      "target": "DA-APT-0005"
+    },
+    {
+      "source": "DA-APT-0002",
+      "type": "violates",
+      "target": "DA-PRI-0002"
+    },
+    {
+      "source": "DA-APT-0006",
+      "type": "violates",
+      "target": "DA-PRI-0002"
+    },
+    {
+      "source": "DA-APT-0006",
+      "type": "violates",
+      "target": "DA-PRI-0003"
+    },
+    {
+      "source": "DA-APT-0006",
+      "type": "causes",
+      "target": "DA-APT-0001"
+    },
+    {
+      "source": "DA-PAT-0014",
+      "type": "mitigates",
+      "target": "DA-APT-0006"
+    },
+    {
+      "source": "DA-APT-0003",
+      "type": "violates",
+      "target": "DA-PRI-0008"
+    },
+    {
+      "source": "DA-PAT-0012",
+      "type": "mitigates",
+      "target": "DA-APT-0003"
+    },
+    {
+      "source": "DA-ADR-0003",
+      "type": "depends-on",
+      "target": "DA-ADR-0001"
+    },
+    {
+      "source": "DA-ADR-0001",
+      "type": "governed-by",
+      "target": "DA-GOV-0007"
+    },
+    {
+      "source": "DA-PRI-0009",
+      "type": "supported-by",
+      "target": "DA-ADR-0001"
+    },
+    {
+      "source": "DA-ADR-0002",
+      "type": "depends-on",
+      "target": "DA-ADR-0001"
+    },
+    {
+      "source": "DA-ASM-0001",
+      "type": "assesses",
+      "target": "DA-GOV-0007"
+    },
+    {
+      "source": "DA-ASM-0001",
+      "type": "assesses",
+      "target": "DA-GOV-0006"
+    },
+    {
+      "source": "DA-TPL-0003",
+      "type": "derived-from",
+      "target": "DA-PRI-0002"
+    },
+    {
+      "source": "DA-TPL-0003",
+      "type": "derived-from",
+      "target": "DA-PRI-0003"
+    },
+    {
+      "source": "DA-TPL-0003",
+      "type": "derived-from",
+      "target": "DA-PRI-0010"
+    },
+    {
+      "source": "DA-EXA-0001",
+      "type": "depends-on",
+      "target": "DA-REQ-0001"
+    },
+    {
+      "source": "DA-EXA-0001",
+      "type": "consumes",
+      "target": "DA-DTR-0001"
+    },
+    {
+      "source": "DA-EXA-0001",
+      "type": "consumes",
+      "target": "DA-RRL-0001"
+    },
+    {
+      "source": "DA-REQ-0001",
+      "type": "constrained-by",
+      "target": "DA-PRI-0010"
+    },
+    {
+      "source": "DA-PAT-0001",
+      "type": "addresses",
+      "target": "DA-REQ-0001"
+    },
+    {
+      "source": "DA-STD-0009",
+      "type": "related-to",
+      "target": "DA-CON-0003"
+    },
+    {
+      "source": "DA-PAT-0004",
+      "type": "constrained-by",
+      "target": "DA-STD-0007"
+    },
+    {
+      "source": "DA-STD-0005",
+      "type": "applies-to",
+      "target": "DA-CON-0025"
+    },
+    {
+      "source": "DA-STD-0004",
+      "type": "applies-to",
+      "target": "DA-CON-0011"
+    },
+    {
+      "source": "DA-STD-0002",
+      "type": "depends-on",
+      "target": "DA-STD-0003"
+    },
+    {
+      "source": "DA-STD-0001",
+      "type": "depends-on",
+      "target": "DA-STD-0003"
+    },
+    {
+      "source": "DA-ARL-0001",
+      "type": "realizes",
+      "target": "DA-PRI-0004"
+    },
+    {
+      "source": "DA-CON-0004",
+      "type": "supported-by",
+      "target": "DA-FWK-0001"
+    },
+    {
+      "source": "DA-FWK-0001",
+      "type": "constrained-by",
+      "target": "DA-PRI-0007"
+    },
+    {
+      "source": "DA-FWK-0001",
+      "type": "constrained-by",
+      "target": "DA-PRI-0003"
+    },
+    {
+      "source": "DA-FWK-0001",
+      "type": "realizes",
+      "target": "DA-CAP-0002"
+    },
+    {
+      "source": "DA-DTR-0001",
+      "type": "recommends",
+      "target": "DA-PAT-0002"
+    },
+    {
+      "source": "DA-DTR-0001",
+      "type": "recommends",
+      "target": "DA-PAT-0001"
+    },
+    {
+      "source": "DA-DTR-0001",
+      "type": "recommends",
+      "target": "DA-PAT-0003"
+    },
+    {
+      "source": "DA-DTR-0001",
+      "type": "recommends",
+      "target": "DA-PAT-0004"
+    },
+    {
+      "source": "DA-DTR-0001",
+      "type": "recommends",
+      "target": "DA-PAT-0005"
+    },
+    {
+      "source": "DA-DTR-0001",
+      "type": "depends-on",
+      "target": "DA-PRI-0010"
+    },
+    {
+      "source": "DA-DTR-0005",
+      "type": "recommends",
+      "target": "DA-CON-0015"
+    },
+    {
+      "source": "DA-DTR-0005",
+      "type": "recommends",
+      "target": "DA-CON-0014"
+    },
+    {
+      "source": "DA-DTR-0005",
+      "type": "recommends",
+      "target": "DA-CON-0013"
+    },
+    {
+      "source": "DA-DTR-0005",
+      "type": "recommends",
+      "target": "DA-PAT-0014"
+    },
+    {
+      "source": "DA-DTR-0005",
+      "type": "recommends",
+      "target": "DA-STD-0002"
+    },
+    {
+      "source": "DA-DTR-0005",
+      "type": "recommends",
+      "target": "DA-STD-0001"
+    },
+    {
+      "source": "DA-RRL-0001",
+      "type": "recommends",
+      "target": "DA-PAT-0001"
+    },
+    {
+      "source": "DA-RRL-0001",
+      "type": "derived-from",
+      "target": "DA-PRI-0010"
+    },
+    {
+      "source": "DA-RRL-0001",
+      "type": "part-of",
+      "target": "DA-FWK-0001"
+    }
+  ],
+  "context": "https://w3id.org/akg/ontology#"
+}
